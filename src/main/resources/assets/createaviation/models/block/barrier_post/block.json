@@ -1,0 +1,61 @@
+{
+  "textures": {
+    "particle": "create:block/industrial_iron_block",
+    "material": "create:block/industrial_iron_block"
+  },
+  "elements": [
+    {
+      "name": "base",
+      "from": [4, 0, 4],
+      "to": [12, 1, 12],
+      "faces": {
+        "down":  {"uv": [4, 4, 12, 12], "texture": "#material"},
+        "up":    {"uv": [4, 4, 12, 12], "texture": "#material"},
+        "north": {"uv": [4, 15, 12, 16], "texture": "#material"},
+        "south": {"uv": [4, 15, 12, 16], "texture": "#material"},
+        "west":  {"uv": [4, 15, 12, 16], "texture": "#material"},
+        "east":  {"uv": [4, 15, 12, 16], "texture": "#material"}
+      }
+    },
+    {
+      "name": "post_base",
+      "from": [6, 1, 6.5],
+      "to": [10, 20, 9.5],
+      "faces": {
+        "up":    {"uv": [6, 6.5, 10, 9.5], "texture": "#material"},
+        "north": {"uv": [6, 0, 10, 16], "texture": "#material"},
+        "south": {"uv": [6, 0, 10, 16], "texture": "#material"},
+        "west":  {"uv": [6.5, 0, 9.5, 16], "texture": "#material"},
+        "east":  {"uv": [6.5, 0, 9.5, 16], "texture": "#material"}
+      }
+    },
+    {
+      "name": "post_bevel",
+      "from": [6.5, 1, 6],
+      "to": [9.5, 20, 10],
+      "faces": {
+        "up":    {"uv": [6.5, 6, 9.5, 10], "texture": "#material"},
+        "north": {"uv": [6.5, 0, 9.5, 16], "texture": "#material"},
+        "south": {"uv": [6.5, 0, 9.5, 16], "texture": "#material"},
+        "west":  {"uv": [6, 0, 10, 16], "texture": "#material"},
+        "east":  {"uv": [6, 0, 10, 16], "texture": "#material"}
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 2.5, 0],
+      "scale": [0.375, 0.375, 0.375]
+    },
+    "ground": {
+      "translation": [0, 3, 0],
+      "scale": [0.25, 0.25, 0.25]
+    },
+    "gui": {
+      "rotation": [30, 225, 0],
+      "translation": [0, -2.5, 0],
+      "scale": [0.5, 0.5, 0.5]
+    }
+  }
+}

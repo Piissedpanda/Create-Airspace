@@ -1,0 +1,14 @@
+{
+  "block.createaviation.barrier_post": "Barrier Post",
+  "createaviation.barrier_post.already_connected": "Barrier Posts are already connected",
+  "createaviation.barrier_post.blocks_invalid": "Barrier Post blocks invalid, Sneak-click to reset",
+  "createaviation.barrier_post.cannot_add_more_connections": "Cannot add more connections to this Barrier Post",
+  "createaviation.barrier_post.cannot_connect_vertically": "Cannot connect vertically",
+  "createaviation.barrier_post.select_second": "Select a second Barrier Post to connect",
+  "createaviation.barrier_post.selection_cleared": "Selection Cleared",
+  "createaviation.barrier_post.too_close": "Too close together",
+  "createaviation.barrier_post.too_far": "Too far apart",
+  "createaviation.barrier_post.too_steep": "Slope too steep",
+  "createaviation.barrier_post.valid_connection": "Can Connect ✔",
+  "itemGroup.createaviation.base": "Create Aviation"
+}

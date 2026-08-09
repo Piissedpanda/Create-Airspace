@@ -1,0 +1,14 @@
+{
+  "block.createaviation.barrier_post": "ʇsoԀ ɹǝıɹɹɐᗺ",
+  "createaviation.barrier_post.already_connected": "pǝʇɔǝuuoɔ ʎpɐǝɹןɐ ǝɹɐ sʇsoԀ ɹǝıɹɹɐᗺ",
+  "createaviation.barrier_post.blocks_invalid": "ʇǝsǝɹ oʇ ʞɔıןɔ-ʞɐǝuS 'pıןɐʌuı sʞɔoןq ʇsoԀ ɹǝıɹɹɐᗺ",
+  "createaviation.barrier_post.cannot_add_more_connections": "ʇsoԀ ɹǝıɹɹɐᗺ sıɥʇ oʇ suoıʇɔǝuuoɔ ǝɹoɯ ppɐ ʇouuɐƆ",
+  "createaviation.barrier_post.cannot_connect_vertically": "ʎןןɐɔıʇɹǝʌ ʇɔǝuuoɔ ʇouuɐƆ",
+  "createaviation.barrier_post.select_second": "ʇɔǝuuoɔ oʇ ʇsoԀ ɹǝıɹɹɐᗺ puoɔǝs ɐ ʇɔǝןǝS",
+  "createaviation.barrier_post.selection_cleared": "pǝɹɐǝןƆ uoıʇɔǝןǝS",
+  "createaviation.barrier_post.too_close": "ɹǝɥʇǝboʇ ǝsoןɔ oo⟘",
+  "createaviation.barrier_post.too_far": "ʇɹɐdɐ ɹɐɟ oo⟘",
+  "createaviation.barrier_post.too_steep": "dǝǝʇs ooʇ ǝdoןS",
+  "createaviation.barrier_post.valid_connection": "✔ ʇɔǝuuoƆ uɐƆ",
+  "itemGroup.createaviation.base": "uoıʇɐıʌⱯ ǝʇɐǝɹƆ"
+}
