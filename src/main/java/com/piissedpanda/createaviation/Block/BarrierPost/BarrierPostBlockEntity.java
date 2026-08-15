@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
+import org.joml.Vector3f;
+
 import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostShape.BarrierPostBB;
 import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostShape.BarrierPostOBB;
 import com.simibubi.create.api.contraption.transformable.TransformableBlockEntity;
@@ -22,11 +24,14 @@ import net.createmod.catnip.nbt.NBTHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ColorParticleOption;
+import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Clearable;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -41,6 +46,7 @@ public class BarrierPostBlockEntity extends SmartBlockEntity implements Transfor
 
 	public Set<BlockPos> connections = new HashSet<>();
 	public Map<BlockPos, ConnectionStats> connectionStats;
+	public Map<BlockPos, DyeColor> beltColors = new HashMap<>();
 	public int visualUpdateVersion;
 
 	public boolean checkInvalid;
@@ -161,6 +167,7 @@ public class BarrierPostBlockEntity extends SmartBlockEntity implements Transfor
 
 		connections.remove(localTarget);
 		connectionStats.remove(localTarget);
+		beltColors.remove(localTarget);
 		markVisualDirty();
 		notifyUpdate();
 		updateBeltShapes();
@@ -197,10 +204,16 @@ public class BarrierPostBlockEntity extends SmartBlockEntity implements Transfor
 	}
 
 	private void spawnDestroyParticles(BlockPos blockPos) {
+		int color = getBeltColor(blockPos).getTextureDiffuseColor();
+		Vector3f colorVec = new Vector3f(
+				((color >> 16) & 0xFF) / 255f,
+				((color >> 8) & 0xFF) / 255f,
+				(color & 0xFF) / 255f);
+
 		forPointsAlongBelt(blockPos, (int) Math.round(Vec3.atLowerCornerOf(blockPos)
 				.length() * 8),
 				vec -> level.addParticle(
-						new BlockParticleOption(ParticleTypes.BLOCK, Blocks.BLACK_WOOL.defaultBlockState()),
+						new DustParticleOptions(colorVec, 1f),
 						vec.x, vec.y, vec.z, 0, 0, 0));
 		// TODO: Change when implementing custom colors for belts
 	}
@@ -208,6 +221,10 @@ public class BarrierPostBlockEntity extends SmartBlockEntity implements Transfor
 	@Override
 	public void clearContent() {
 		connections.clear();
+		beltColors.clear();
+
+		if (connectionStats != null)
+			connectionStats.clear();
 	}
 
 	@Override
@@ -246,11 +263,54 @@ public class BarrierPostBlockEntity extends SmartBlockEntity implements Transfor
 					.invalidate(worldPosition);
 	}
 
+	private void writeBeltColors(CompoundTag tag) {
+		CompoundTag colors = new CompoundTag();
+
+		for (Map.Entry<BlockPos, DyeColor> entry : beltColors.entrySet()) {
+			CompoundTag color = new CompoundTag();
+
+			color.put("Pos", NbtUtils.writeBlockPos(entry.getKey()));
+			color.putString("Color", entry.getValue().getName());
+
+			colors.put(entry.getKey().toShortString(), color);
+		}
+
+		tag.put("BeltColors", colors);
+	}
+
+	private void readBeltColors(CompoundTag tag) {
+		beltColors.clear();
+
+		if (!tag.contains("BeltColors", CompoundTag.TAG_COMPOUND))
+			return;
+
+		CompoundTag colors = tag.getCompound("BeltColors");
+
+		for (String key : colors.getAllKeys()) {
+			CompoundTag colorTag = colors.getCompound(key);
+
+			if (!colorTag.contains("Pos") || !colorTag.contains("Color"))
+				continue;
+
+			BlockPos pos = NbtUtils.readBlockPos(colorTag, "Pos").orElse(null);
+			if (pos == null)
+				continue;
+
+			DyeColor color = DyeColor.byName(
+					colorTag.getString("Color"),
+					DyeColor.BLACK);
+
+			beltColors.put(pos, color);
+		}
+	}
+
 	@Override
 	public void writeSafe(CompoundTag tag, HolderLookup.Provider registries) {
 		super.writeSafe(tag, registries);
 		tag.put("Connections",
 				CatnipCodecUtils.encode(CatnipCodecs.set(BlockPos.CODEC), registries, connections).orElseThrow());
+
+		writeBeltColors(tag);
 	}
 
 	@Override
@@ -263,6 +323,8 @@ public class BarrierPostBlockEntity extends SmartBlockEntity implements Transfor
 
 		compound.put("Connections",
 				CatnipCodecUtils.encode(CatnipCodecs.set(BlockPos.CODEC), registries, connections).orElseThrow());
+
+		writeBeltColors(compound);
 	}
 
 	@Override
@@ -275,6 +337,11 @@ public class BarrierPostBlockEntity extends SmartBlockEntity implements Transfor
 		connections.clear();
 		CatnipCodecUtils.decode(CatnipCodecs.set(BlockPos.CODEC), registries, compound.get("Connections"))
 				.ifPresent(connections::addAll);
+
+		readBeltColors(compound);
+
+		beltColors.keySet().retainAll(connections);
+
 		connectionStats = null;
 		prepareStats();
 		updateBeltShapes();
@@ -294,7 +361,32 @@ public class BarrierPostBlockEntity extends SmartBlockEntity implements Transfor
 				.map(transform::applyWithoutOffset)
 				.toList());
 
+		Map<BlockPos, DyeColor> transformedColors = new HashMap<>();
+
+		for (Map.Entry<BlockPos, DyeColor> entry : beltColors.entrySet()) {
+			BlockPos transformedPos = transform.applyWithoutOffset(entry.getKey());
+			transformedColors.put(transformedPos, entry.getValue());
+		}
+
+		beltColors = transformedColors;
+
 		connectionStats = null;
+		markVisualDirty();
+		notifyUpdate();
+	}
+
+	public DyeColor getBeltColor(BlockPos connection) {
+		return beltColors.getOrDefault(connection, DyeColor.BLACK);
+	}
+
+	public void setBeltColor(BlockPos connection, DyeColor color) {
+		if (!connections.contains(connection))
+			return;
+
+		if (beltColors.get(connection) == color)
+			return;
+
+		beltColors.put(connection, color);
 		markVisualDirty();
 		notifyUpdate();
 	}

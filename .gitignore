@@ -34,7 +34,11 @@ bin/
 
 ### Minecraft Modding ###
 run/
+run2/
+runServer/
 !**/src/**/run/
 **/src/generated/**/.cache/
 repo/
 !**/src/**/repo/
+
+mcrcon.exe

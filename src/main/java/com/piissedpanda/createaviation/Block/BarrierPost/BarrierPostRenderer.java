@@ -23,6 +23,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.phys.Vec3;
@@ -100,14 +101,14 @@ public class BarrierPostRenderer extends SafeBlockEntityRenderer<BarrierPostBloc
 					.closerThan(Vec3.atCenterOf(tilePos)
 							.add(blockPos.getX() / 2f, blockPos.getY() / 2f, blockPos.getZ() / 2f), MIP_DISTANCE);
 
-			renderBelt(ms, buffer, stats.beltLength(), light1, light2, far);
+			renderBelt(ms, buffer, stats.beltLength(), light1, light2, far, be.getBeltColor(blockPos));
 
 			ms.popPose();
 		}
 	}
 
 	public static void renderBelt(PoseStack ms, MultiBufferSource buffer, float length, int light1,
-			int light2, boolean far) {
+			int light2, boolean far, DyeColor color) {
 		float radius = far ? 1f / 16f : 1.5f / 16f;
 		float minV = 0;
 		float maxV = far ? 1 / 16f : length + minV;
@@ -119,36 +120,37 @@ public class BarrierPostRenderer extends SafeBlockEntityRenderer<BarrierPostBloc
 
 		VertexConsumer vc = buffer.getBuffer(RenderTypes.belt(BELT_LOCATION));
 		renderPart(ms, vc, length, 0.0F, radius, radius, 0.0F, -radius, 0.0F, 0.0F, -radius, minU, maxU, minV, maxV,
-				light1, light2, far);
+				light1, light2, far, color);
 
 		ms.popPose();
 	}
 
 	private static void renderPart(PoseStack pPoseStack, VertexConsumer pConsumer, float pMaxY, float pX0, float pZ0,
 			float pX1, float pZ1, float pX2, float pZ2, float pX3, float pZ3, float pMinU, float pMaxU, float pMinV,
-			float pMaxV, int light1, int light2, boolean far) {
+			float pMaxV, int light1, int light2, boolean far, DyeColor color) {
 		PoseStack.Pose posestack$pose = pPoseStack.last();
 		Matrix4f matrix4f = posestack$pose.pose();
 
 		renderQuad(matrix4f, posestack$pose, pConsumer, 0, pMaxY, pX0, pZ0, pX3, pZ3, pMinU, pMaxU, pMinV, pMaxV,
 				light1,
-				light2);
+				light2,
+				color);
 	}
 
 	private static void renderQuad(Matrix4f pPose, PoseStack.Pose pNormal, VertexConsumer pConsumer, float pMinY,
 			float pMaxY,
 			float pMinX, float pMinZ, float pMaxX, float pMaxZ, float pMinU, float pMaxU, float pMinV, float pMaxV,
-			int light1, int light2) {
-		addVertex(pPose, pNormal, pConsumer, pMaxY, pMinX, pMinZ, pMaxU, pMinV, light2);
-		addVertex(pPose, pNormal, pConsumer, pMinY, pMinX, pMinZ, pMaxU, pMaxV, light1);
-		addVertex(pPose, pNormal, pConsumer, pMinY, pMaxX, pMaxZ, pMinU, pMaxV, light1);
-		addVertex(pPose, pNormal, pConsumer, pMaxY, pMaxX, pMaxZ, pMinU, pMinV, light2);
+			int light1, int light2, DyeColor color) {
+		addVertex(pPose, pNormal, pConsumer, pMaxY, pMinX, pMinZ, pMaxU, pMinV, light2, color);
+		addVertex(pPose, pNormal, pConsumer, pMinY, pMinX, pMinZ, pMaxU, pMaxV, light1, color);
+		addVertex(pPose, pNormal, pConsumer, pMinY, pMaxX, pMaxZ, pMinU, pMaxV, light1, color);
+		addVertex(pPose, pNormal, pConsumer, pMaxY, pMaxX, pMaxZ, pMinU, pMinV, light2, color);
 	}
 
 	private static void addVertex(Matrix4f pPose, PoseStack.Pose pNormal, VertexConsumer pConsumer, float pY, float pX,
-			float pZ, float pU, float pV, int light) {
+			float pZ, float pU, float pV, int light, DyeColor color) {
 		pConsumer.addVertex(pPose, pX, pY, pZ)
-				.setColor(1.0f, 1.0f, 1.0f, 1.0f)
+				.setColor(color.getTextureDiffuseColor())
 				.setUv(pU, pV)
 				.setOverlay(OverlayTexture.NO_OVERLAY)
 				.setLight(light)

@@ -125,12 +125,12 @@ public abstract class BarrierPostShape {
 
         public BarrierPostBB(Vec3 center) {
             bounds = new AABB(
-                    center.x - 1,
+                    center.x - 0.25,
                     center.y,
-                    center.z - 1,
-                    center.x + 1,
-                    center.y + 0.5,
-                    center.z + 1);
+                    center.z - 0.25,
+                    center.x + 0.25,
+                    center.y + 1.25,
+                    center.z + 0.25);
         }
 
         @Override

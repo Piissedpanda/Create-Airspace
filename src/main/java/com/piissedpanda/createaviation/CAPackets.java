@@ -3,6 +3,7 @@ package com.piissedpanda.createaviation;
 import java.util.Locale;
 
 import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostConnectionPacket;
+import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostDyeingPacket;
 
 import net.createmod.catnip.net.base.BasePacketPayload;
 import net.createmod.catnip.net.base.CatnipPacketRegistry;
@@ -12,7 +13,8 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 
 public enum CAPackets implements BasePacketPayload.PacketTypeProvider {
 
-    BARRIER_POST_CONNECT(BarrierPostConnectionPacket.class, BarrierPostConnectionPacket.STREAM_CODEC);
+    BARRIER_POST_CONNECT(BarrierPostConnectionPacket.class, BarrierPostConnectionPacket.STREAM_CODEC),
+    BARRIER_POST_DYE(BarrierPostDyeingPacket.class, BarrierPostDyeingPacket.STREAM_CODEC);
 
     private final CatnipPacketRegistry.PacketType<?> type;
 

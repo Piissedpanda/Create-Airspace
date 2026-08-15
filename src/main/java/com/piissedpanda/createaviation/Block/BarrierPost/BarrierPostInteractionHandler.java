@@ -18,6 +18,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
@@ -63,6 +64,7 @@ public class BarrierPostInteractionHandler {
 
         boolean isWrench = mc.player.isHolding(i -> i.is(Tags.Items.TOOLS_WRENCH));
         boolean dismantling = isWrench && mc.player.isShiftKeyDown();
+        boolean isDye = mc.player.isHolding(i -> i.is(Tags.Items.DYES));
         double range = mc.player.getAttributeValue(Attributes.BLOCK_INTERACTION_RANGE) + 1;
 
         Vec3 from = mc.player.getEyePosition();
@@ -114,7 +116,7 @@ public class BarrierPostInteractionHandler {
         selectedShape = bestShape;
         selectedBakedPosition = bestShape.getVec(bestPost, selectedBeltPosition);
 
-        if (!isWrench) {
+        if (!isWrench && !isDye) {
             Outliner.getInstance()
                     .chaseAABB("BeltPointSelection", new AABB(selectedBakedPosition, selectedBakedPosition))
                     .colored(Color.WHITE)
@@ -128,7 +130,8 @@ public class BarrierPostInteractionHandler {
         if (mc.player == null)
             return false;
 
-        return mc.player.isHolding(i -> i.is(Tags.Items.TOOLS_WRENCH));
+        return mc.player.isHolding(i -> i.is(Tags.Items.TOOLS_WRENCH))
+                || mc.player.isHolding(i -> i.is(Tags.Items.DYES));
     }
 
     public static boolean onUse() {
@@ -138,16 +141,36 @@ public class BarrierPostInteractionHandler {
         Minecraft mc = Minecraft.getInstance();
         ItemStack mainHandItem = mc.player.getMainHandItem();
         ItemStack offHandItem = mc.player.getOffhandItem();
-        ItemStack usedItem = mainHandItem.is(Tags.Items.TOOLS_WRENCH) ? mainHandItem : offHandItem;
+        ItemStack usedItem;
+        if (!mainHandItem.isEmpty() && (mainHandItem.is(Tags.Items.TOOLS_WRENCH) || mainHandItem.is(Tags.Items.DYES))) {
+            usedItem = mainHandItem;
+        } else if (!offHandItem.isEmpty()
+                && (offHandItem.is(Tags.Items.TOOLS_WRENCH) || offHandItem.is(Tags.Items.DYES))) {
+            usedItem = offHandItem;
+        } else {
+            return false;
+        }
 
         if (mc.player.isHolding(stack -> stack.is(Tags.Items.TOOLS_WRENCH))) {
             if (!mc.player.isShiftKeyDown()) {
                 return false;
             }
 
+            if (selectedConnection == null) {
+                return false;
+            }
+
             CatnipServices.NETWORK.sendToServer(
                     new BarrierPostConnectionPacket(selectedPost, selectedPost.offset(selectedConnection),
                             usedItem, false));
+            return true;
+        } else if (mc.player.isHolding(stack -> stack.is(Tags.Items.DYES))) {
+            if (selectedConnection == null) {
+                return false;
+            }
+            CatnipServices.NETWORK.sendToServer(
+                    new BarrierPostDyeingPacket(selectedPost, selectedPost.offset(selectedConnection), usedItem,
+                            DyeColor.getColor(usedItem)));
             return true;
         }
 
