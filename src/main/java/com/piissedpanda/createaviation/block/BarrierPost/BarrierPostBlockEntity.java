@@ -211,7 +211,6 @@ public class BarrierPostBlockEntity extends SmartBlockEntity implements Transfor
 				vec -> level.addParticle(
 						new DustParticleOptions(colorVec, 1f),
 						vec.x, vec.y, vec.z, 0, 0, 0));
-		// TODO: Change when implementing custom colors for belts
 	}
 
 	@Override
