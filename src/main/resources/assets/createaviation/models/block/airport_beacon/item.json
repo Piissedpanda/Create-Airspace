@@ -1,0 +1,210 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "create:block/brass_casing",
+    "casing": "create:block/brass_casing",
+    "frame": "create:block/industrial_iron_block",
+    "green": "minecraft:block/lime_concrete",
+    "white": "minecraft:block/white_concrete"
+  },
+  "elements": [
+    {
+      "name": "pedestal",
+      "from": [
+        3,
+        0,
+        3
+      ],
+      "to": [
+        13,
+        2,
+        13
+      ],
+      "faces": {
+        "north": {
+          "texture": "#casing"
+        },
+        "south": {
+          "texture": "#casing"
+        },
+        "west": {
+          "texture": "#casing"
+        },
+        "east": {
+          "texture": "#casing"
+        },
+        "up": {
+          "texture": "#casing"
+        },
+        "down": {
+          "texture": "#casing"
+        }
+      }
+    },
+    {
+      "name": "column",
+      "from": [
+        5,
+        2,
+        5
+      ],
+      "to": [
+        11,
+        8,
+        11
+      ],
+      "faces": {
+        "north": {
+          "texture": "#frame"
+        },
+        "south": {
+          "texture": "#frame"
+        },
+        "west": {
+          "texture": "#frame"
+        },
+        "east": {
+          "texture": "#frame"
+        },
+        "up": {
+          "texture": "#frame"
+        },
+        "down": {
+          "texture": "#frame"
+        }
+      }
+    },
+    {
+      "name": "drum",
+      "from": [
+        4,
+        8,
+        4
+      ],
+      "to": [
+        12,
+        14,
+        12
+      ],
+      "faces": {
+        "north": {
+          "texture": "#frame"
+        },
+        "south": {
+          "texture": "#frame"
+        },
+        "west": {
+          "texture": "#frame"
+        },
+        "east": {
+          "texture": "#frame"
+        },
+        "up": {
+          "texture": "#frame"
+        },
+        "down": {
+          "texture": "#frame"
+        }
+      }
+    },
+    {
+      "name": "cap",
+      "from": [
+        5,
+        14,
+        5
+      ],
+      "to": [
+        11,
+        15,
+        11
+      ],
+      "faces": {
+        "north": {
+          "texture": "#frame"
+        },
+        "south": {
+          "texture": "#frame"
+        },
+        "west": {
+          "texture": "#frame"
+        },
+        "east": {
+          "texture": "#frame"
+        },
+        "up": {
+          "texture": "#frame"
+        },
+        "down": {
+          "texture": "#frame"
+        }
+      }
+    },
+    {
+      "name": "lens_green",
+      "from": [
+        5.5,
+        9,
+        3
+      ],
+      "to": [
+        10.5,
+        13,
+        4
+      ],
+      "faces": {
+        "north": {
+          "texture": "#green"
+        },
+        "south": {
+          "texture": "#green"
+        },
+        "west": {
+          "texture": "#green"
+        },
+        "east": {
+          "texture": "#green"
+        },
+        "up": {
+          "texture": "#green"
+        },
+        "down": {
+          "texture": "#green"
+        }
+      }
+    },
+    {
+      "name": "lens_white",
+      "from": [
+        5.5,
+        9,
+        12
+      ],
+      "to": [
+        10.5,
+        13,
+        13
+      ],
+      "faces": {
+        "north": {
+          "texture": "#white"
+        },
+        "south": {
+          "texture": "#white"
+        },
+        "west": {
+          "texture": "#white"
+        },
+        "east": {
+          "texture": "#white"
+        },
+        "up": {
+          "texture": "#white"
+        },
+        "down": {
+          "texture": "#white"
+        }
+      }
+    }
+  ]
+}

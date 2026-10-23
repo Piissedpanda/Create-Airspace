@@ -3,6 +3,7 @@ package com.piissedpanda.createaviation.foundation.ponder.scenes;
 import com.piissedpanda.createaviation.CABlocks;
 import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlock;
 import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlockEntity;
+import com.piissedpanda.createaviation.block.AirportBeacon.AirportBeaconBlock;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlockEntity;
 import com.piissedpanda.createaviation.block.EdgeLight.EdgeLightBlock;
 import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
@@ -420,6 +421,57 @@ public class AirportAccessoriesScenes {
 				.pointAt(util.vector()
 						.of(2.5, 2.7, 2.5));
 		scene.idle(110);
+		scene.markAsFinished();
+	}
+
+	public static void airportBeacon(SceneBuilder builder, SceneBuildingUtil util) {
+		CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+		scene.title("airport_beacon", "Running Airport Beacons");
+		scene.configureBasePlate(0, 0, 5);
+		scene.world()
+				.showSection(util.select()
+						.layer(0), Direction.UP);
+		scene.idle(10);
+
+		BlockPos motor = util.grid()
+				.at(2, 1, 2);
+		BlockPos beacon = util.grid()
+				.at(2, 2, 2);
+		scene.world()
+				.showSection(util.select()
+						.position(motor), Direction.DOWN);
+		scene.idle(10);
+		scene.world()
+				.showSection(util.select()
+						.position(beacon), Direction.DOWN);
+		scene.idle(20);
+
+		scene.overlay()
+				.showText(70)
+				.text("Airport Beacons are powered by rotational force from below")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.blockSurface(beacon, Direction.WEST));
+		scene.idle(80);
+
+		scene.world()
+				.setKineticSpeed(util.select()
+						.fromTo(2, 1, 2, 2, 2, 2), 16);
+		scene.world()
+				.modifyBlock(beacon, s -> s.setValue(AirportBeaconBlock.LIT, true), false);
+		scene.effects()
+				.rotationSpeedIndicator(motor);
+		scene.idle(20);
+
+		scene.overlay()
+				.showText(90)
+				.text("While turning, they light up and sweep green and white light across the airfield")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(beacon));
+		scene.idle(100);
 		scene.markAsFinished();
 	}
 

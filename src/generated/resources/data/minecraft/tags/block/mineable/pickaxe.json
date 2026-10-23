@@ -7,6 +7,7 @@
     "createaviation:train_barrier_post",
     "createaviation:airfield_sign",
     "createaviation:edge_light",
-    "createaviation:windsock"
+    "createaviation:windsock",
+    "createaviation:airport_beacon"
   ]
 }

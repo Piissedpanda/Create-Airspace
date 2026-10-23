@@ -25,6 +25,8 @@ public class CAPonderScenes {
 				CAPonderTags.AIRPORT_ACCESSORIES);
 		HELPER.addStoryBoard(CABlocks.WINDSOCK, "windsock", AirportAccessoriesScenes::windsock,
 				CAPonderTags.AIRPORT_ACCESSORIES);
+		HELPER.addStoryBoard(CABlocks.AIRPORT_BEACON, "airport_beacon", AirportAccessoriesScenes::airportBeacon,
+				CAPonderTags.AIRPORT_ACCESSORIES);
 		HELPER.addStoryBoard(CABlocks.TRAFFIC_CONE, "traffic_cone", AirportAccessoriesScenes::trafficCone,
 				CAPonderTags.AIRPORT_ACCESSORIES);
 	}

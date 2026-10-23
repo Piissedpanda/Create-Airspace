@@ -21,6 +21,11 @@ public class CAShapes {
 
 			EDGE_LIGHT = cuboid(5, 0, 5, 11, 9, 11),
 
+			AIRPORT_BEACON = shape(3, 0, 3, 13, 2, 13)
+					.add(5, 2, 5, 11, 8, 11)
+					.add(4, 8, 4, 12, 15, 12)
+					.build(),
+
 			WINDSOCK = shape(5, 0, 5, 11, 1, 11)
 					.add(7, 1, 7, 9, 24, 9)
 					.build(),

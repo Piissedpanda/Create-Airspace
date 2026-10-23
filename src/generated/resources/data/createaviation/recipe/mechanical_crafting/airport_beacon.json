@@ -1,0 +1,31 @@
+{
+  "type": "create:mechanical_crafting",
+  "accept_mirrored": true,
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "create:brass_casing"
+    },
+    "G": {
+      "item": "minecraft:lime_stained_glass"
+    },
+    "S": {
+      "item": "create:shaft"
+    },
+    "T": {
+      "item": "create:electron_tube"
+    },
+    "W": {
+      "item": "minecraft:white_stained_glass"
+    }
+  },
+  "pattern": [
+    "GTW",
+    " C ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "createaviation:airport_beacon"
+  }
+}

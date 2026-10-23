@@ -10,6 +10,7 @@ import com.piissedpanda.createaviation.CreateAviation;
 import com.piissedpanda.createaviation.foundation.data.recipe.CACompactingRecipeGen;
 import com.piissedpanda.createaviation.foundation.data.recipe.CADeployingRecipeGen;
 import com.piissedpanda.createaviation.foundation.data.recipe.CAItemApplicationRecipeGen;
+import com.piissedpanda.createaviation.foundation.data.recipe.CAMechanicalCraftingRecipeGen;
 import com.piissedpanda.createaviation.foundation.ponder.CAPonderPlugin;
 import com.simibubi.create.foundation.utility.FilesHelper;
 import com.tterrag.registrate.providers.ProviderType;
@@ -38,6 +39,7 @@ public class CADatagen {
 		generator.addProvider(event.includeServer(), new CAItemApplicationRecipeGen(output, lookupProvider));
 		generator.addProvider(event.includeServer(), new CACompactingRecipeGen(output, lookupProvider));
 		generator.addProvider(event.includeServer(), new CADeployingRecipeGen(output, lookupProvider));
+		generator.addProvider(event.includeServer(), new CAMechanicalCraftingRecipeGen(output, lookupProvider));
 	}
 
 	private static void addExtraRegistrateData() {

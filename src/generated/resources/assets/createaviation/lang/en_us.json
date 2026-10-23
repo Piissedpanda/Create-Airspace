@@ -1,5 +1,6 @@
 {
   "block.createaviation.airfield_sign": "Airfield Sign",
+  "block.createaviation.airport_beacon": "Airport Beacon",
   "block.createaviation.andesite_barrier_post": "Andesite Barrier Post",
   "block.createaviation.barrier_post": "Barrier Post",
   "block.createaviation.black_terminal_seat": "Black Terminal Seat",
@@ -38,6 +39,9 @@
   "createaviation.ponder.airfield_sign.text_1": "Right-click with a named Name Tag or a Clipboard to write on a row of signs",
   "createaviation.ponder.airfield_sign.text_2": "Display Links can write on them as well",
   "createaviation.ponder.airfield_sign.text_3": "Use a Wrench on the front to switch between location, direction and mandatory signs",
+  "createaviation.ponder.airport_beacon.header": "Running Airport Beacons",
+  "createaviation.ponder.airport_beacon.text_1": "Airport Beacons are powered by rotational force from below",
+  "createaviation.ponder.airport_beacon.text_2": "While turning, they light up and sweep green and white light across the airfield",
   "createaviation.ponder.barrier_post.header": "Connecting Barrier Posts",
   "createaviation.ponder.barrier_post.text_1": "Right-click two Barrier Posts with a Wrench to connect them",
   "createaviation.ponder.barrier_post.text_2": "The distance between two posts is limited",

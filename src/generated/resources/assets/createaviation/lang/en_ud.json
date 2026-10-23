@@ -1,5 +1,6 @@
 {
   "block.createaviation.airfield_sign": "ubıS pןǝıɟɹıⱯ",
+  "block.createaviation.airport_beacon": "uoɔɐǝᗺ ʇɹodɹıⱯ",
   "block.createaviation.andesite_barrier_post": "ʇsoԀ ɹǝıɹɹɐᗺ ǝʇısǝpuⱯ",
   "block.createaviation.barrier_post": "ʇsoԀ ɹǝıɹɹɐᗺ",
   "block.createaviation.black_terminal_seat": "ʇɐǝS ןɐuıɯɹǝ⟘ ʞɔɐןᗺ",
@@ -38,6 +39,9 @@
   "createaviation.ponder.airfield_sign.text_1": "subıs ɟo ʍoɹ ɐ uo ǝʇıɹʍ oʇ pɹɐoqdıןƆ ɐ ɹo bɐ⟘ ǝɯɐN pǝɯɐu ɐ ɥʇıʍ ʞɔıןɔ-ʇɥbıᴚ",
   "createaviation.ponder.airfield_sign.text_2": "ןןǝʍ sɐ ɯǝɥʇ uo ǝʇıɹʍ uɐɔ sʞuıꞀ ʎɐןdsıᗡ",
   "createaviation.ponder.airfield_sign.text_3": "subıs ʎɹoʇɐpuɐɯ puɐ uoıʇɔǝɹıp 'uoıʇɐɔoן uǝǝʍʇǝq ɥɔʇıʍs oʇ ʇuoɹɟ ǝɥʇ uo ɥɔuǝɹM ɐ ǝs∩",
+  "createaviation.ponder.airport_beacon.header": "suoɔɐǝᗺ ʇɹodɹıⱯ buıuunᴚ",
+  "createaviation.ponder.airport_beacon.text_1": "ʍoןǝq ɯoɹɟ ǝɔɹoɟ ןɐuoıʇɐʇoɹ ʎq pǝɹǝʍod ǝɹɐ suoɔɐǝᗺ ʇɹodɹıⱯ",
+  "createaviation.ponder.airport_beacon.text_2": "pןǝıɟɹıɐ ǝɥʇ ssoɹɔɐ ʇɥbıן ǝʇıɥʍ puɐ uǝǝɹb dǝǝʍs puɐ dn ʇɥbıן ʎǝɥʇ 'buıuɹnʇ ǝןıɥM",
   "createaviation.ponder.barrier_post.header": "sʇsoԀ ɹǝıɹɹɐᗺ buıʇɔǝuuoƆ",
   "createaviation.ponder.barrier_post.text_1": "ɯǝɥʇ ʇɔǝuuoɔ oʇ ɥɔuǝɹM ɐ ɥʇıʍ sʇsoԀ ɹǝıɹɹɐᗺ oʍʇ ʞɔıןɔ-ʇɥbıᴚ",
   "createaviation.ponder.barrier_post.text_2": "pǝʇıɯıן sı sʇsod oʍʇ uǝǝʍʇǝq ǝɔuɐʇsıp ǝɥ⟘",

@@ -11,12 +11,14 @@ import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 import java.util.List;
 
 import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlock;
+import com.piissedpanda.createaviation.block.AirportBeacon.AirportBeaconBlock;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlock;
 import com.piissedpanda.createaviation.block.EdgeLight.EdgeLightBlock;
 import com.piissedpanda.createaviation.block.TerminalSeat.TerminalSeatBlock;
 import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
 import com.piissedpanda.createaviation.block.Windsock.WindsockBlock;
 import com.simibubi.create.AllTags.AllBlockTags;
+import com.simibubi.create.api.stress.BlockStressValues;
 import com.simibubi.create.content.contraptions.actors.seat.SeatInteractionBehaviour;
 import com.simibubi.create.content.contraptions.actors.seat.SeatMovementBehaviour;
 import com.simibubi.create.foundation.block.DyedBlockList;
@@ -148,6 +150,19 @@ public class CABlocks {
 			.properties(p -> p.noOcclusion()
 					.mapColor(MapColor.COLOR_ORANGE))
 			.transform(pickaxeOnly())
+			.blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.partialBaseModel(c, p)))
+			.item()
+			.transform(customItemModel())
+			.register();
+
+	public static final BlockEntry<AirportBeaconBlock> AIRPORT_BEACON = REGISTRATE
+			.block("airport_beacon", AirportBeaconBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.TERRACOTTA_BROWN)
+					.lightLevel(s -> s.getValue(AirportBeaconBlock.LIT) ? 15 : 0))
+			.transform(pickaxeOnly())
+			.onRegister(b -> BlockStressValues.IMPACTS.register(b, () -> 2.0))
 			.blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.partialBaseModel(c, p)))
 			.item()
 			.transform(customItemModel())

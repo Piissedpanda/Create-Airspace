@@ -2,6 +2,8 @@ package com.piissedpanda.createaviation;
 
 import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlockEntity;
 import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignRenderer;
+import com.piissedpanda.createaviation.block.AirportBeacon.AirportBeaconBlockEntity;
+import com.piissedpanda.createaviation.block.AirportBeacon.AirportBeaconRenderer;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlockEntity;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostRenderer;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostVisual;
@@ -32,6 +34,12 @@ public class CABlockEntities {
 			.blockEntity("windsock", WindsockBlockEntity::new)
 			.validBlocks(CABlocks.WINDSOCK)
 			.renderer(() -> WindsockRenderer::new)
+			.register();
+
+	public static final BlockEntityEntry<AirportBeaconBlockEntity> AIRPORT_BEACON = REGISTRATE
+			.blockEntity("airport_beacon", AirportBeaconBlockEntity::new)
+			.validBlocks(CABlocks.AIRPORT_BEACON)
+			.renderer(() -> AirportBeaconRenderer::new)
 			.register();
 
 	public static void register() {

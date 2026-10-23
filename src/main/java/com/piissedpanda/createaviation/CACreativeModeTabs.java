@@ -29,6 +29,7 @@ public class CACreativeModeTabs {
 		ITEMS.add(CABlocks.AIRFIELD_SIGN);
 		ITEMS.add(CABlocks.EDGE_LIGHT);
 		ITEMS.add(CABlocks.WINDSOCK);
+		ITEMS.add(CABlocks.AIRPORT_BEACON);
 	}
 
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BASE_TAB = REGISTER.register("base",
