@@ -214,6 +214,14 @@ dependencies {
     devMods("maven.modrinth:iris:${iris_version}")
 }
 
+// Ship the license inside the jar
+def licenseFileName = "LICENSE_${mod_id}"
+tasks.named('jar', Jar) {
+    from('LICENSE') {
+        rename { licenseFileName }
+    }
+}
+
 // Sodium and Iris keep their code in nested jars, which only load from a mods folder.
 // Run "gradlew installDevMods" once, then start the client as usual.
 tasks.register('installDevModsClient2', Copy) {
