@@ -42,7 +42,7 @@ public class CABlocks {
 			.properties(p -> p.noOcclusion()
 					.mapColor(MapColor.COLOR_ORANGE)
 					.strength(0.5f)
-					.sound(SoundType.WOOL))
+					.sound(SoundType.BAMBOO_WOOD))
 			.blockstate((c, p) -> p.horizontalBlock(c.get(), AssetLookup.partialBaseModel(c, p)))
 			.item()
 			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/traffic_cone/block")))
