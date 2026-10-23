@@ -28,6 +28,7 @@ public class CACreativeModeTabs {
 		CABlocks.TERMINAL_SEATS.forEach(ITEMS::add);
 		ITEMS.add(CABlocks.AIRFIELD_SIGN);
 		ITEMS.add(CABlocks.EDGE_LIGHT);
+		ITEMS.add(CABlocks.WINDSOCK);
 	}
 
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BASE_TAB = REGISTER.register("base",

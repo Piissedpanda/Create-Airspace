@@ -35,7 +35,8 @@ public class CAPonderTags {
 				.add(CABlocks.TRAFFIC_CONE)
 				.add(CABlocks.TERMINAL_SEATS.get(DyeColor.WHITE))
 				.add(CABlocks.AIRFIELD_SIGN)
-				.add(CABlocks.EDGE_LIGHT);
+				.add(CABlocks.EDGE_LIGHT)
+				.add(CABlocks.WINDSOCK);
 	}
 
 }

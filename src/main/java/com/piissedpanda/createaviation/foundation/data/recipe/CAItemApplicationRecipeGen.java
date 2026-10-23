@@ -12,6 +12,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
 @SuppressWarnings("unused")
@@ -23,7 +24,12 @@ public class CAItemApplicationRecipeGen extends ItemApplicationRecipeGen {
 			ANDESITE_BARRIER_POST = barrierPost(CABlocks.ANDESITE_BARRIER_POST, AllBlocks.ANDESITE_CASING),
 			BRASS_BARRIER_POST = barrierPost(CABlocks.BRASS_BARRIER_POST, AllBlocks.BRASS_CASING),
 			COPPER_BARRIER_POST = barrierPost(CABlocks.COPPER_BARRIER_POST, AllBlocks.COPPER_CASING),
-			TRAIN_BARRIER_POST = barrierPost(CABlocks.TRAIN_BARRIER_POST, AllBlocks.RAILWAY_CASING);
+			TRAIN_BARRIER_POST = barrierPost(CABlocks.TRAIN_BARRIER_POST, AllBlocks.RAILWAY_CASING),
+
+			// Orange wool onto a placed lightning rod
+			WINDSOCK = create("windsock", b -> b.require(Items.LIGHTNING_ROD)
+					.require(Items.ORANGE_WOOL)
+					.output(CABlocks.WINDSOCK.get()));
 
 	// Apply a belt to the casing block, by hand or with a Deployer
 	private GeneratedRecipe barrierPost(BlockEntry<?> post, BlockEntry<?> casing) {

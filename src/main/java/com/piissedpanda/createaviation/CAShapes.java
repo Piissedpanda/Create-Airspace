@@ -21,6 +21,10 @@ public class CAShapes {
 
 			EDGE_LIGHT = cuboid(5, 0, 5, 11, 9, 11),
 
+			WINDSOCK = shape(5, 0, 5, 11, 1, 11)
+					.add(7, 1, 7, 9, 24, 9)
+					.build(),
+
 			TERMINAL_SEAT_COLLISION = cuboid(0, 0, 0, 16, 6, 16),
 			TERMINAL_SEAT_COLLISION_PLAYERS = cuboid(0, 0, 0, 16, 3, 16);
 

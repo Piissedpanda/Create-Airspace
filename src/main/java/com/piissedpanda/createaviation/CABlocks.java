@@ -3,6 +3,7 @@ package com.piissedpanda.createaviation;
 import static com.simibubi.create.api.behaviour.display.DisplayTarget.displayTarget;
 import static com.simibubi.create.api.behaviour.interaction.MovingInteractionBehaviour.interactionBehaviour;
 import static com.simibubi.create.api.behaviour.movement.MovementBehaviour.movementBehaviour;
+import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.axeOnly;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
@@ -14,6 +15,7 @@ import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlock;
 import com.piissedpanda.createaviation.block.EdgeLight.EdgeLightBlock;
 import com.piissedpanda.createaviation.block.TerminalSeat.TerminalSeatBlock;
 import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
+import com.piissedpanda.createaviation.block.Windsock.WindsockBlock;
 import com.simibubi.create.AllTags.AllBlockTags;
 import com.simibubi.create.content.contraptions.actors.seat.SeatInteractionBehaviour;
 import com.simibubi.create.content.contraptions.actors.seat.SeatMovementBehaviour;
@@ -139,6 +141,16 @@ public class CABlocks {
 			.item()
 			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/edge_light/white_off")))
 			.build()
+			.register();
+
+	public static final BlockEntry<WindsockBlock> WINDSOCK = REGISTRATE.block("windsock", WindsockBlock::new)
+			.initialProperties(SharedProperties::copperMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.COLOR_ORANGE))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.partialBaseModel(c, p)))
+			.item()
+			.transform(customItemModel())
 			.register();
 
 	public static boolean isBarrierPost(BlockState state) {

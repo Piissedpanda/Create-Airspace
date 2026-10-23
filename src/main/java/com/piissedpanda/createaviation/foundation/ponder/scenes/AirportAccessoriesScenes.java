@@ -387,6 +387,42 @@ public class AirportAccessoriesScenes {
 		scene.markAsFinished();
 	}
 
+	public static void windsock(SceneBuilder builder, SceneBuildingUtil util) {
+		CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+		scene.title("windsock", "Reading the Wind");
+		scene.configureBasePlate(0, 0, 5);
+		scene.world()
+				.showSection(util.select()
+						.layer(0), Direction.UP);
+		scene.idle(10);
+
+		BlockPos windsock = util.grid()
+				.at(2, 1, 2);
+		scene.world()
+				.showSection(util.select()
+						.position(windsock), Direction.DOWN);
+		scene.idle(20);
+
+		scene.overlay()
+				.showText(90)
+				.text("Windsocks always point in the direction the wind is blowing")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.of(2.5, 2.7, 2.5));
+		scene.idle(100);
+
+		scene.overlay()
+				.showText(100)
+				.text("The stronger the wind, the higher the sock flies. Rain, thunderstorms and height make it stronger")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.of(2.5, 2.7, 2.5));
+		scene.idle(110);
+		scene.markAsFinished();
+	}
+
 	private static void selectPost(CreateSceneBuilder scene, SceneBuildingUtil util, BlockPos pos, ItemStack wrench,
 			int duration) {
 		scene.overlay()

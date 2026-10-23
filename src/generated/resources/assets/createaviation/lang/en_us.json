@@ -22,6 +22,7 @@
   "block.createaviation.traffic_cone": "Traffic Cone",
   "block.createaviation.train_barrier_post": "Train Barrier Post",
   "block.createaviation.white_terminal_seat": "White Terminal Seat",
+  "block.createaviation.windsock": "Windsock",
   "block.createaviation.yellow_terminal_seat": "Yellow Terminal Seat",
   "createaviation.barrier_post.already_connected": "Barrier Posts are already connected",
   "createaviation.barrier_post.blocks_invalid": "Barrier Post blocks invalid, Sneak-click to reset",
@@ -56,5 +57,8 @@
   "createaviation.ponder.traffic_cone.header": "Placing Traffic Cones",
   "createaviation.ponder.traffic_cone.text_1": "Traffic Cones mark closed-off parts of taxiways and aprons",
   "createaviation.ponder.traffic_cone.text_2": "Use a Wrench to turn them, or Sneak-click to pick them up",
+  "createaviation.ponder.windsock.header": "Reading the Wind",
+  "createaviation.ponder.windsock.text_1": "Windsocks always point in the direction the wind is blowing",
+  "createaviation.ponder.windsock.text_2": "The stronger the wind, the higher the sock flies. Rain, thunderstorms and height make it stronger",
   "itemGroup.createaviation.base": "Create Aviation"
 }

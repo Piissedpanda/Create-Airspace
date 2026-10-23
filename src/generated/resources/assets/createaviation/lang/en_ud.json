@@ -22,6 +22,7 @@
   "block.createaviation.traffic_cone": "ǝuoƆ ɔıɟɟɐɹ⟘",
   "block.createaviation.train_barrier_post": "ʇsoԀ ɹǝıɹɹɐᗺ uıɐɹ⟘",
   "block.createaviation.white_terminal_seat": "ʇɐǝS ןɐuıɯɹǝ⟘ ǝʇıɥM",
+  "block.createaviation.windsock": "ʞɔospuıM",
   "block.createaviation.yellow_terminal_seat": "ʇɐǝS ןɐuıɯɹǝ⟘ ʍoןןǝʎ",
   "createaviation.barrier_post.already_connected": "pǝʇɔǝuuoɔ ʎpɐǝɹןɐ ǝɹɐ sʇsoԀ ɹǝıɹɹɐᗺ",
   "createaviation.barrier_post.blocks_invalid": "ʇǝsǝɹ oʇ ʞɔıןɔ-ʞɐǝuS 'pıןɐʌuı sʞɔoןq ʇsoԀ ɹǝıɹɹɐᗺ",
@@ -56,5 +57,8 @@
   "createaviation.ponder.traffic_cone.header": "sǝuoƆ ɔıɟɟɐɹ⟘ buıɔɐןԀ",
   "createaviation.ponder.traffic_cone.text_1": "suoɹdɐ puɐ sʎɐʍıxɐʇ ɟo sʇɹɐd ɟɟo-pǝsoןɔ ʞɹɐɯ sǝuoƆ ɔıɟɟɐɹ⟘",
   "createaviation.ponder.traffic_cone.text_2": "dn ɯǝɥʇ ʞɔıd oʇ ʞɔıןɔ-ʞɐǝuS ɹo 'ɯǝɥʇ uɹnʇ oʇ ɥɔuǝɹM ɐ ǝs∩",
+  "createaviation.ponder.windsock.header": "puıM ǝɥʇ buıpɐǝᴚ",
+  "createaviation.ponder.windsock.text_1": "buıʍoןq sı puıʍ ǝɥʇ uoıʇɔǝɹıp ǝɥʇ uı ʇuıod sʎɐʍןɐ sʞɔospuıM",
+  "createaviation.ponder.windsock.text_2": "ɹǝbuoɹʇs ʇı ǝʞɐɯ ʇɥbıǝɥ puɐ sɯɹoʇsɹǝpunɥʇ 'uıɐᴚ ˙sǝıןɟ ʞɔos ǝɥʇ ɹǝɥbıɥ ǝɥʇ 'puıʍ ǝɥʇ ɹǝbuoɹʇs ǝɥ⟘",
   "itemGroup.createaviation.base": "uoıʇɐıʌⱯ ǝʇɐǝɹƆ"
 }

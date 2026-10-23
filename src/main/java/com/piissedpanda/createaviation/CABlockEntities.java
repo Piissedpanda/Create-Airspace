@@ -5,6 +5,8 @@ import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignRenderer;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlockEntity;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostRenderer;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostVisual;
+import com.piissedpanda.createaviation.block.Windsock.WindsockBlockEntity;
+import com.piissedpanda.createaviation.block.Windsock.WindsockRenderer;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 
@@ -24,6 +26,12 @@ public class CABlockEntities {
 			.blockEntity("airfield_sign", AirfieldSignBlockEntity::new)
 			.validBlocks(CABlocks.AIRFIELD_SIGN)
 			.renderer(() -> AirfieldSignRenderer::new)
+			.register();
+
+	public static final BlockEntityEntry<WindsockBlockEntity> WINDSOCK = REGISTRATE
+			.blockEntity("windsock", WindsockBlockEntity::new)
+			.validBlocks(CABlocks.WINDSOCK)
+			.renderer(() -> WindsockRenderer::new)
 			.register();
 
 	public static void register() {
