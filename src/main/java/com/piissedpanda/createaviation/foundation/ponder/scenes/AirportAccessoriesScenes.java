@@ -4,6 +4,7 @@ import com.piissedpanda.createaviation.CABlocks;
 import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlock;
 import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlockEntity;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlockEntity;
+import com.piissedpanda.createaviation.block.EdgeLight.EdgeLightBlock;
 import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.foundation.ponder.CreateSceneBuilder;
@@ -313,6 +314,76 @@ public class AirportAccessoriesScenes {
 				.pointAt(util.vector()
 						.topOf(middle));
 		scene.idle(90);
+		scene.markAsFinished();
+	}
+
+	public static void edgeLight(SceneBuilder builder, SceneBuildingUtil util) {
+		CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+		scene.title("edge_light", "Powering Edge Lights");
+		scene.configureBasePlate(0, 0, 5);
+		scene.world()
+				.showSection(util.select()
+						.layer(0), Direction.UP);
+		scene.idle(10);
+		scene.world()
+				.showSection(util.select()
+						.fromTo(0, 1, 1, 4, 1, 1), Direction.DOWN);
+		scene.idle(20);
+		scene.world()
+				.showSection(util.select()
+						.fromTo(0, 1, 2, 4, 1, 3), Direction.DOWN);
+		scene.idle(20);
+
+		BlockPos lever = util.grid()
+				.at(2, 1, 3);
+		BlockPos middle = util.grid()
+				.at(2, 1, 1);
+
+		scene.overlay()
+				.showControls(util.vector()
+						.topOf(lever), Pointing.DOWN, 30)
+				.rightClick();
+		scene.idle(10);
+		scene.world()
+				.toggleRedstonePower(util.select()
+						.fromTo(0, 1, 1, 4, 1, 3));
+		scene.effects()
+				.indicateRedstone(lever);
+
+		scene.overlay()
+				.showText(80)
+				.text("Edge Lights light up when they receive a redstone signal")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(middle));
+		scene.idle(90);
+
+		scene.overlay()
+				.showText(70)
+				.text("Redstone dust connects to them, so one line can power a whole row")
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(1, 1, 2));
+		scene.idle(80);
+
+		scene.overlay()
+				.showControls(util.vector()
+						.topOf(middle), Pointing.DOWN, 40)
+				.rightClick()
+				.withItem(new ItemStack(Items.GREEN_DYE));
+		scene.idle(10);
+		scene.world()
+				.modifyBlock(middle, s -> s.setValue(EdgeLightBlock.COLOR, EdgeLightBlock.LightColor.GREEN), false);
+
+		scene.overlay()
+				.showText(90)
+				.text("Use dye to change the colour: white, blue, green, red or yellow")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(middle));
+		scene.idle(100);
 		scene.markAsFinished();
 	}
 

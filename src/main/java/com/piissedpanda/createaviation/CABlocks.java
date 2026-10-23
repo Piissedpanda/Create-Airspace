@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlock;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlock;
+import com.piissedpanda.createaviation.block.EdgeLight.EdgeLightBlock;
 import com.piissedpanda.createaviation.block.TerminalSeat.TerminalSeatBlock;
 import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
 import com.simibubi.create.AllTags.AllBlockTags;
@@ -113,6 +114,30 @@ public class CABlocks {
 					}))
 			.item()
 			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/airfield_sign/location")))
+			.build()
+			.register();
+
+	public static final BlockEntry<EdgeLightBlock> EDGE_LIGHT = REGISTRATE.block("edge_light", EdgeLightBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.METAL)
+					.lightLevel(s -> s.getValue(EdgeLightBlock.POWERED) ? 12 : 0))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> p.getVariantBuilder(c.get())
+					.forAllStatesExcept(state -> {
+						String color = state.getValue(EdgeLightBlock.COLOR)
+								.getSerializedName();
+						boolean lit = state.getValue(EdgeLightBlock.POWERED);
+						String lens = "minecraft:block/" + color + (lit ? "_concrete" : "_terracotta");
+						return ConfiguredModel.builder()
+								.modelFile(p.models()
+										.withExistingParent("block/edge_light/" + color + (lit ? "_on" : "_off"),
+												p.modLoc("block/edge_light/" + (lit ? "lit" : "base")))
+										.texture("lens", lens))
+								.build();
+					}, EdgeLightBlock.WATERLOGGED))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/edge_light/white_off")))
 			.build()
 			.register();
 

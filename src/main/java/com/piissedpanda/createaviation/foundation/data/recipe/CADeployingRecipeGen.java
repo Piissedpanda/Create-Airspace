@@ -18,7 +18,11 @@ public class CADeployingRecipeGen extends DeployingRecipeGen {
 
 	AIRFIELD_SIGN = create("airfield_sign", b -> b.require(AllItems.IRON_SHEET)
 			.require(ItemTags.SIGNS)
-			.output(CABlocks.AIRFIELD_SIGN.get()));
+			.output(CABlocks.AIRFIELD_SIGN.get())),
+
+			EDGE_LIGHT = create("edge_light", b -> b.require(AllItems.IRON_SHEET)
+					.require(AllItems.ELECTRON_TUBE)
+					.output(CABlocks.EDGE_LIGHT.get(), 2));
 
 	public CADeployingRecipeGen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries, CreateAviation.MODID);

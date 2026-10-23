@@ -19,6 +19,8 @@ public class CAShapes {
 					.add(6, 8, 6, 10, 14, 10)
 					.build(),
 
+			EDGE_LIGHT = cuboid(5, 0, 5, 11, 9, 11),
+
 			TERMINAL_SEAT_COLLISION = cuboid(0, 0, 0, 16, 6, 16),
 			TERMINAL_SEAT_COLLISION_PLAYERS = cuboid(0, 0, 0, 16, 3, 16);
 

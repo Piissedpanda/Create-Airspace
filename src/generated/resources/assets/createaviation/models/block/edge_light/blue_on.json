@@ -1,0 +1,6 @@
+{
+  "parent": "createaviation:block/edge_light/lit",
+  "textures": {
+    "lens": "minecraft:block/blue_concrete"
+  }
+}
