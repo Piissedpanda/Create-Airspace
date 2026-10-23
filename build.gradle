@@ -3,6 +3,7 @@ plugins {
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.143'
     id 'idea'
+    id 'me.modmuss50.mod-publish-plugin' version '2.2.1'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -281,5 +282,48 @@ idea {
     module {
         downloadSources = true
         downloadJavadoc = true
+    }
+}
+
+// Upload to Modrinth and CurseForge, see .github/workflows/publish.yml.
+// Without tokens or project ids this only does a dry run into build/publishMods.
+def releaseVersion = mod_version
+def modrinthToken = providers.environmentVariable('MODRINTH_TOKEN')
+def curseforgeToken = providers.environmentVariable('CURSEFORGE_TOKEN')
+def modrinthId = providers.gradleProperty('modrinth_project_id').getOrElse('')
+def curseforgeId = providers.gradleProperty('curseforge_project_id').getOrElse('')
+
+publishMods {
+    file = tasks.named('jar', Jar).flatMap { it.archiveFile }
+    // The section of CHANGELOG.md that belongs to this version
+    changelog = providers.fileContents(layout.projectDirectory.file('CHANGELOG.md')).asText.map { text ->
+        def start = text.indexOf("## ${releaseVersion}")
+        if (start < 0)
+            return text
+        def end = text.indexOf('\n## ', start + 3)
+        return (end < 0 ? text.substring(start) : text.substring(start, end)).trim()
+    }
+    type = STABLE
+    displayName = "Create: Aviation ${releaseVersion}"
+    version = releaseVersion
+    modLoaders.add('neoforge')
+    dryRun = !modrinthToken.isPresent() || !curseforgeToken.isPresent() || modrinthId.isEmpty() || curseforgeId.isEmpty()
+
+    modrinth {
+        accessToken = modrinthToken
+        projectId = modrinthId
+        minecraftVersions.add(minecraft_version)
+        environment = CLIENT_AND_SERVER
+        requires('create')
+    }
+
+    curseforge {
+        accessToken = curseforgeToken
+        projectId = curseforgeId
+        minecraftVersions.add(minecraft_version)
+        javaVersions.add(JavaVersion.VERSION_21)
+        client = true
+        server = true
+        requires('create')
     }
 }
