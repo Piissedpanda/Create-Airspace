@@ -46,6 +46,7 @@ public class CreateAviation {
 		CACreativeModeTabs.register(modEventBus);
 		CADisplayTargets.register();
 		CABlocks.register();
+		CAItems.register();
 		CABlockEntities.register();
 
 		CAConfigs.register(modLoadingContext, modContainer);

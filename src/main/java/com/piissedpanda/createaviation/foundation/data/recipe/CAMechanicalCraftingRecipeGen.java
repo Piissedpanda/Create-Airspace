@@ -17,12 +17,16 @@ public class CAMechanicalCraftingRecipeGen extends MechanicalCraftingRecipeGen {
 
 	GeneratedRecipe
 
+	// One glass per lens colour of the beacon patterns
 	AIRPORT_BEACON = create(CABlocks.AIRPORT_BEACON::get).recipe(b -> b.key('G', Items.LIME_STAINED_GLASS)
-			.key('T', AllItems.ELECTRON_TUBE)
+			.key('Y', Items.YELLOW_STAINED_GLASS)
 			.key('W', Items.WHITE_STAINED_GLASS)
+			.key('T', AllItems.ELECTRON_TUBE)
+			.key('P', AllItems.PRECISION_MECHANISM)
 			.key('C', AllBlocks.BRASS_CASING)
 			.key('S', AllBlocks.SHAFT)
-			.patternLine("GTW")
+			.patternLine("GYW")
+			.patternLine("TPT")
 			.patternLine(" C ")
 			.patternLine(" S "));
 

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dyes/black"
+    },
+    {
+      "tag": "createaviation:terminal_seats"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createaviation:black_terminal_seat"
+  }
+}

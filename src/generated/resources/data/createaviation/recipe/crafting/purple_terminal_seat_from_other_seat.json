@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dyes/purple"
+    },
+    {
+      "tag": "createaviation:terminal_seats"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createaviation:purple_terminal_seat"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "create:iron_sheet"
+  },
+  "results": [
+    {
+      "id": "createaviation:airfield_sign"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createaviation:incomplete_airfield_sign"
+        },
+        {
+          "tag": "minecraft:signs"
+        }
+      ],
+      "results": [
+        {
+          "id": "createaviation:incomplete_airfield_sign"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createaviation:incomplete_airfield_sign"
+        },
+        {
+          "item": "minecraft:glowstone_dust"
+        }
+      ],
+      "results": [
+        {
+          "id": "createaviation:incomplete_airfield_sign"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createaviation:incomplete_airfield_sign"
+        },
+        {
+          "tag": "c:dyes/yellow"
+        }
+      ],
+      "results": [
+        {
+          "id": "createaviation:incomplete_airfield_sign"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createaviation:incomplete_airfield_sign"
+        },
+        {
+          "tag": "c:dyes/black"
+        }
+      ],
+      "results": [
+        {
+          "id": "createaviation:incomplete_airfield_sign"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "createaviation:incomplete_airfield_sign"
+        }
+      ],
+      "results": [
+        {
+          "id": "createaviation:incomplete_airfield_sign"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "createaviation:incomplete_airfield_sign"
+  }
+}

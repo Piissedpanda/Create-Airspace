@@ -13,23 +13,10 @@ public class AirportBeaconBlockEntity extends KineticBlockEntity {
 		super(type, pos, state);
 	}
 
-	@Override
-	public void onSpeedChanged(float previousSpeed) {
-		super.onSpeedChanged(previousSpeed);
-		if (level == null || level.isClientSide)
-			return;
-
-		boolean lit = getSpeed() != 0;
-		BlockState state = getBlockState();
-		if (state.getValue(AirportBeaconBlock.LIT) == lit)
-			return;
-		level.setBlock(worldPosition, state.setValue(AirportBeaconBlock.LIT, lit), 3);
-	}
-
 	// The light beams reach far beyond the block
 	@Override
 	protected AABB createRenderBoundingBox() {
-		return new AABB(worldPosition).inflate(AirportBeaconRenderer.BEAM_LENGTH);
+		return new AABB(worldPosition).inflate(AirportBeaconRenderer.MAX_BEAM_LENGTH);
 	}
 
 }

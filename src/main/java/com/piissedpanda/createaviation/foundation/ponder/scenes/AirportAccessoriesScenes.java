@@ -1,15 +1,15 @@
 package com.piissedpanda.createaviation.foundation.ponder.scenes;
 
+import java.util.List;
+
 import com.piissedpanda.createaviation.CABlocks;
 import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlock;
 import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlockEntity;
 import com.piissedpanda.createaviation.block.AirportBeacon.AirportBeaconBlock;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlockEntity;
 import com.piissedpanda.createaviation.block.EdgeLight.EdgeLightBlock;
-import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.foundation.ponder.CreateSceneBuilder;
-import com.simibubi.create.foundation.utility.BlockHelper;
 
 import net.createmod.catnip.math.Pointing;
 import net.createmod.ponder.api.PonderPalette;
@@ -22,7 +22,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
@@ -128,121 +127,6 @@ public class AirportAccessoriesScenes {
 				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(belt2);
-		scene.idle(80);
-		scene.markAsFinished();
-	}
-
-	public static void trafficCone(SceneBuilder builder, SceneBuildingUtil util) {
-		CreateSceneBuilder scene = new CreateSceneBuilder(builder);
-		scene.title("traffic_cone", "Placing Traffic Cones");
-		scene.configureBasePlate(0, 0, 5);
-		scene.world()
-				.showSection(util.select()
-						.layer(0), Direction.UP);
-		scene.idle(10);
-
-		for (int z = 0; z < 5; z++) {
-			scene.world()
-					.showSection(util.select()
-							.position(3, 1, z), Direction.DOWN);
-			scene.idle(4);
-		}
-		scene.idle(10);
-
-		BlockPos cone = util.grid()
-				.at(3, 1, 2);
-
-		scene.overlay()
-				.showText(80)
-				.text("Traffic Cones mark closed-off parts of taxiways and aprons")
-				.attachKeyFrame()
-				.placeNearTarget()
-				.pointAt(util.vector()
-						.topOf(cone));
-		scene.idle(90);
-
-		scene.overlay()
-				.showControls(util.vector()
-						.topOf(cone), Pointing.DOWN, 40)
-				.rightClick()
-				.withItem(AllItems.WRENCH.asStack());
-		scene.idle(10);
-		scene.world()
-				.modifyBlock(cone, s -> s.setValue(TrafficConeBlock.FACING, s.getValue(TrafficConeBlock.FACING)
-						.getClockWise()), false);
-
-		scene.overlay()
-				.showText(70)
-				.text("Use a Wrench to turn them, or Sneak-click to pick them up")
-				.attachKeyFrame()
-				.placeNearTarget()
-				.pointAt(util.vector()
-						.topOf(cone));
-		scene.idle(80);
-		scene.markAsFinished();
-	}
-
-	public static void terminalSeat(SceneBuilder builder, SceneBuildingUtil util) {
-		CreateSceneBuilder scene = new CreateSceneBuilder(builder);
-		scene.title("terminal_seat", "Using Terminal Seats");
-		scene.configureBasePlate(0, 0, 5);
-		scene.world()
-				.showSection(util.select()
-						.layer(0), Direction.UP);
-		scene.idle(10);
-		scene.world()
-				.showSection(util.select()
-						.fromTo(1, 1, 2, 3, 1, 2), Direction.DOWN);
-		scene.idle(20);
-
-		BlockPos middle = util.grid()
-				.at(2, 1, 2);
-
-		scene.overlay()
-				.showText(70)
-				.text("Terminal Seats placed next to each other form a row")
-				.attachKeyFrame()
-				.placeNearTarget()
-				.pointAt(util.vector()
-						.topOf(middle));
-		scene.idle(80);
-
-		scene.overlay()
-				.showControls(util.vector()
-						.topOf(middle), Pointing.DOWN, 40)
-				.rightClick();
-		scene.idle(10);
-		scene.overlay()
-				.showText(70)
-				.text("Right-click a seat to sit down, just like on Create's seats")
-				.attachKeyFrame()
-				.placeNearTarget()
-				.pointAt(util.vector()
-						.topOf(middle));
-		scene.idle(80);
-
-		scene.overlay()
-				.showControls(util.vector()
-						.topOf(middle), Pointing.DOWN, 40)
-				.rightClick()
-				.withItem(new ItemStack(Items.BLUE_DYE));
-		scene.idle(10);
-		BlockState blueSeat = CABlocks.TERMINAL_SEATS.get(DyeColor.BLUE)
-				.getDefaultState();
-		for (int x = 1; x <= 3; x++) {
-			BlockPos seat = util.grid()
-					.at(x, 1, 2);
-			scene.world()
-					.modifyBlock(seat, s -> BlockHelper.copyProperties(s, blueSeat), false);
-		}
-
-		scene.overlay()
-				.showText(70)
-				.text("Use dye to change their colour")
-				.attachKeyFrame()
-				.placeNearTarget()
-				.pointAt(util.vector()
-						.topOf(middle));
 		scene.idle(80);
 		scene.markAsFinished();
 	}
@@ -437,6 +321,8 @@ public class AirportAccessoriesScenes {
 				.at(2, 1, 2);
 		BlockPos beacon = util.grid()
 				.at(2, 2, 2);
+		BlockPos lever = util.grid()
+				.at(3, 2, 2);
 		scene.world()
 				.showSection(util.select()
 						.position(motor), Direction.DOWN);
@@ -446,9 +332,14 @@ public class AirportAccessoriesScenes {
 						.position(beacon), Direction.DOWN);
 		scene.idle(20);
 
+		scene.world()
+				.setKineticSpeed(util.select()
+						.fromTo(2, 1, 2, 2, 2, 2), 16);
+		scene.effects()
+				.rotationSpeedIndicator(motor);
 		scene.overlay()
 				.showText(70)
-				.text("Airport Beacons are powered by rotational force from below")
+				.text("Rotational force from below turns the head of the beacon")
 				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(util.vector()
@@ -456,22 +347,47 @@ public class AirportAccessoriesScenes {
 		scene.idle(80);
 
 		scene.world()
-				.setKineticSpeed(util.select()
-						.fromTo(2, 1, 2, 2, 2, 2), 16);
+				.showSection(util.select()
+						.fromTo(3, 1, 2, 3, 2, 2), Direction.DOWN);
+		scene.idle(15);
+		scene.overlay()
+				.showControls(util.vector()
+						.topOf(lever), Pointing.DOWN, 30)
+				.rightClick();
+		scene.idle(10);
 		scene.world()
-				.modifyBlock(beacon, s -> s.setValue(AirportBeaconBlock.LIT, true), false);
+				.toggleRedstonePower(util.select()
+						.fromTo(2, 2, 2, 3, 2, 2));
 		scene.effects()
-				.rotationSpeedIndicator(motor);
-		scene.idle(20);
-
+				.indicateRedstone(lever);
 		scene.overlay()
 				.showText(90)
-				.text("While turning, they light up and sweep green and white light across the airfield")
+				.text("The light is controlled by redstone from the sides. Stronger signals make it brighter and reach further")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.blockSurface(beacon, Direction.EAST));
+		scene.idle(100);
+
+		scene.overlay()
+				.showText(110)
+				.text("Use a Wrench to switch between the patterns of land airports, water airports, heliports and military airports")
 				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(util.vector()
 						.topOf(beacon));
-		scene.idle(100);
+		for (AirportBeaconBlock.Mode mode : List.of(AirportBeaconBlock.Mode.WATER, AirportBeaconBlock.Mode.HELIPORT,
+				AirportBeaconBlock.Mode.MILITARY, AirportBeaconBlock.Mode.LAND)) {
+			scene.overlay()
+					.showControls(util.vector()
+							.topOf(beacon), Pointing.DOWN, 20)
+					.rightClick()
+					.withItem(AllItems.WRENCH.asStack());
+			scene.idle(5);
+			scene.world()
+					.modifyBlock(beacon, s -> s.setValue(AirportBeaconBlock.MODE, mode), false);
+			scene.idle(35);
+		}
 		scene.markAsFinished();
 	}
 

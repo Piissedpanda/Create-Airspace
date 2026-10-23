@@ -1,7 +1,6 @@
 package com.piissedpanda.createaviation.block.TrafficCone;
 
 import com.piissedpanda.createaviation.CAShapes;
-import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.ProperWaterloggedBlock;
 
 import net.minecraft.core.BlockPos;
@@ -21,7 +20,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class TrafficConeBlock extends Block implements IWrenchable, ProperWaterloggedBlock {
+public class TrafficConeBlock extends Block implements ProperWaterloggedBlock {
 
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 

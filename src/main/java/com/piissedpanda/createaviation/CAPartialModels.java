@@ -9,7 +9,7 @@ public class CAPartialModels {
 	BARRIER_POST = block("barrier_post/block"), BARRIER_POST_GUARD = block("barrier_post/guard"),
 			WINDSOCK_SOCK = block("windsock/sock"),
 			AIRPORT_BEACON_HEAD = block("airport_beacon/head"),
-			AIRPORT_BEACON_LENSES = block("airport_beacon/lenses");
+			AIRPORT_BEACON_LENS = block("airport_beacon/lens");
 
 	private static PartialModel block(String path) {
 		return PartialModel.of(CreateAviation.asResource("block/" + path));

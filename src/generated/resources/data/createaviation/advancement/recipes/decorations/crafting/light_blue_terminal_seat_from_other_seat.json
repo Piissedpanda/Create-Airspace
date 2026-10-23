@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_terminal_seat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#createaviation:terminal_seats"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "createaviation:crafting/light_blue_terminal_seat_from_other_seat"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_terminal_seat"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "createaviation:crafting/light_blue_terminal_seat_from_other_seat"
+    ]
+  }
+}

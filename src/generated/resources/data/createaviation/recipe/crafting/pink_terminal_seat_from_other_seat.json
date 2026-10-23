@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dyes/pink"
+    },
+    {
+      "tag": "createaviation:terminal_seats"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createaviation:pink_terminal_seat"
+  }
+}

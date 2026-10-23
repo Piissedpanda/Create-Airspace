@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dyes/cyan"
+    },
+    {
+      "tag": "createaviation:terminal_seats"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createaviation:cyan_terminal_seat"
+  }
+}

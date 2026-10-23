@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "create:belt_connector"
+    },
+    "C": {
+      "item": "create:copper_casing"
+    }
+  },
+  "pattern": [
+    "B",
+    "C",
+    "C"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createaviation:copper_barrier_post"
+  }
+}

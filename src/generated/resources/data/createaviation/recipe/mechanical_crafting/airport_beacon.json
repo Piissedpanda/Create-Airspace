@@ -9,6 +9,9 @@
     "G": {
       "item": "minecraft:lime_stained_glass"
     },
+    "P": {
+      "item": "create:precision_mechanism"
+    },
     "S": {
       "item": "create:shaft"
     },
@@ -17,10 +20,14 @@
     },
     "W": {
       "item": "minecraft:white_stained_glass"
+    },
+    "Y": {
+      "item": "minecraft:yellow_stained_glass"
     }
   },
   "pattern": [
-    "GTW",
+    "GYW",
+    "TPT",
     " C ",
     " S "
   ],

@@ -17,6 +17,8 @@ import com.piissedpanda.createaviation.block.EdgeLight.EdgeLightBlock;
 import com.piissedpanda.createaviation.block.TerminalSeat.TerminalSeatBlock;
 import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
 import com.piissedpanda.createaviation.block.Windsock.WindsockBlock;
+import com.simibubi.create.AllBlocks;
+import com.simibubi.create.AllItems;
 import com.simibubi.create.AllTags.AllBlockTags;
 import com.simibubi.create.api.stress.BlockStressValues;
 import com.simibubi.create.content.contraptions.actors.seat.SeatInteractionBehaviour;
@@ -25,12 +27,19 @@ import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
+import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.common.Tags;
 
 public class CABlocks {
 	private static final CreateRegistrate REGISTRATE = CreateAviation.REGISTRATE;
@@ -41,15 +50,16 @@ public class CABlocks {
 
 	public static final BlockEntry<BarrierPostBlock>
 
-	BARRIER_POST = barrierPost("barrier_post", "create:block/industrial_iron_block", MapColor.PODZOL),
+	BARRIER_POST = barrierPost("barrier_post", "create:block/industrial_iron_block", MapColor.PODZOL,
+			AllBlocks.INDUSTRIAL_IRON_BLOCK),
 			ANDESITE_BARRIER_POST = barrierPost("andesite_barrier_post", "create:block/andesite_casing",
-					MapColor.STONE),
+					MapColor.STONE, AllBlocks.ANDESITE_CASING),
 			BRASS_BARRIER_POST = barrierPost("brass_barrier_post", "create:block/brass_casing",
-					MapColor.TERRACOTTA_BROWN),
+					MapColor.TERRACOTTA_BROWN, AllBlocks.BRASS_CASING),
 			COPPER_BARRIER_POST = barrierPost("copper_barrier_post", "create:block/copper_casing",
-					MapColor.COLOR_LIGHT_GRAY),
+					MapColor.COLOR_LIGHT_GRAY, AllBlocks.COPPER_CASING),
 			TRAIN_BARRIER_POST = barrierPost("train_barrier_post", "create:block/railway_casing",
-					MapColor.TERRACOTTA_CYAN);
+					MapColor.TERRACOTTA_CYAN, AllBlocks.RAILWAY_CASING);
 
 	public static final List<BlockEntry<BarrierPostBlock>> BARRIER_POSTS = List.of(BARRIER_POST,
 			ANDESITE_BARRIER_POST, BRASS_BARRIER_POST, COPPER_BARRIER_POST, TRAIN_BARRIER_POST);
@@ -61,6 +71,16 @@ public class CABlocks {
 					.strength(0.5f)
 					.sound(SoundType.BAMBOO_WOOD))
 			.blockstate((c, p) -> p.horizontalBlock(c.get(), AssetLookup.partialBaseModel(c, p)))
+			// Dried kelp works as rubber, like in Create's belts
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, c.get(), 2)
+					.define('O', Tags.Items.DYES_ORANGE)
+					.define('W', Tags.Items.DYES_WHITE)
+					.define('K', Items.DRIED_KELP)
+					.pattern(" O ")
+					.pattern(" W ")
+					.pattern("K K")
+					.unlockedBy("has_dried_kelp", RegistrateRecipeProvider.has(Items.DRIED_KELP))
+					.save(p, CreateAviation.asResource("crafting/" + c.getName())))
 			.item()
 			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/traffic_cone/block")))
 			.build()
@@ -91,7 +111,14 @@ public class CABlocks {
 											.toYRot() + 180) % 360)
 									.build();
 						}, TerminalSeatBlock.WATERLOGGED))
+				// Recolour any terminal seat, like Create's seats
+				.recipe((c, p) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, c.get())
+						.requires(colour.getTag())
+						.requires(CATags.TERMINAL_SEATS)
+						.unlockedBy("has_terminal_seat", RegistrateRecipeProvider.has(CATags.TERMINAL_SEATS))
+						.save(p, CreateAviation.asResource("crafting/" + c.getName() + "_from_other_seat")))
 				.item()
+				.tag(CATags.TERMINAL_SEATS)
 				.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/" + c.getName() + "/single")))
 				.build()
 				.register();
@@ -131,13 +158,19 @@ public class CABlocks {
 					.forAllStatesExcept(state -> {
 						String color = state.getValue(EdgeLightBlock.COLOR)
 								.getSerializedName();
-						boolean lit = state.getValue(EdgeLightBlock.POWERED);
-						String lens = "minecraft:block/" + color + (lit ? "_concrete" : "_terracotta");
+						if (!state.getValue(EdgeLightBlock.POWERED))
+							return ConfiguredModel.builder()
+									.modelFile(p.models()
+											.withExistingParent("block/edge_light/" + color + "_off",
+													p.modLoc("block/edge_light/base"))
+											.texture("lens", "minecraft:block/" + color + "_terracotta"))
+									.build();
 						return ConfiguredModel.builder()
 								.modelFile(p.models()
-										.withExistingParent("block/edge_light/" + color + (lit ? "_on" : "_off"),
-												p.modLoc("block/edge_light/" + (lit ? "lit" : "base")))
-										.texture("lens", lens))
+										.withExistingParent("block/edge_light/" + color + "_on",
+												p.modLoc("block/edge_light/lit"))
+										.texture("lens", "minecraft:block/" + color + "_concrete")
+										.texture("glow", "createaviation:block/edge_light/glow_" + color))
 								.build();
 					}, EdgeLightBlock.WATERLOGGED))
 			.item()
@@ -151,6 +184,13 @@ public class CABlocks {
 					.mapColor(MapColor.COLOR_ORANGE))
 			.transform(pickaxeOnly())
 			.blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.partialBaseModel(c, p)))
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, c.get())
+					.define('R', Items.LIGHTNING_ROD)
+					.define('W', Items.ORANGE_WOOL)
+					.pattern("RW")
+					.pattern("R ")
+					.unlockedBy("has_lightning_rod", RegistrateRecipeProvider.has(Items.LIGHTNING_ROD))
+					.save(p, CreateAviation.asResource("crafting/" + c.getName())))
 			.item()
 			.transform(customItemModel())
 			.register();
@@ -160,7 +200,7 @@ public class CABlocks {
 			.initialProperties(SharedProperties::softMetal)
 			.properties(p -> p.noOcclusion()
 					.mapColor(MapColor.TERRACOTTA_BROWN)
-					.lightLevel(s -> s.getValue(AirportBeaconBlock.LIT) ? 15 : 0))
+					.lightLevel(s -> s.getValue(AirportBeaconBlock.POWER)))
 			.transform(pickaxeOnly())
 			.onRegister(b -> BlockStressValues.IMPACTS.register(b, () -> 2.0))
 			.blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.partialBaseModel(c, p)))
@@ -173,7 +213,8 @@ public class CABlocks {
 	}
 
 	// All posts share block/barrier_post/*, only the "material" texture changes
-	private static BlockEntry<BarrierPostBlock> barrierPost(String name, String material, MapColor color) {
+	private static BlockEntry<BarrierPostBlock> barrierPost(String name, String material, MapColor color,
+			ItemLike casing) {
 		return REGISTRATE.block(name, BarrierPostBlock::new)
 				.initialProperties(SharedProperties::stone)
 				.properties(p -> p.noOcclusion()
@@ -183,6 +224,14 @@ public class CABlocks {
 						.withExistingParent("block/" + c.getName() + "/block", p.modLoc("block/barrier_post/base"))
 						.texture("material", material)
 						.texture("particle", material)))
+				.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, c.get())
+						.define('B', AllItems.BELT_CONNECTOR)
+						.define('C', casing)
+						.pattern("B")
+						.pattern("C")
+						.pattern("C")
+						.unlockedBy("has_casing", RegistrateRecipeProvider.has(casing))
+						.save(p, CreateAviation.asResource("crafting/" + c.getName())))
 				.item()
 				.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/barrier_post/item_base"))
 						.texture("material", material)

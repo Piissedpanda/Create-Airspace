@@ -1,0 +1,80 @@
+{
+  "textures": {
+    "particle": "create:block/brass_casing",
+    "casing": "create:block/brass_casing",
+    "frame": "create:block/industrial_iron_block",
+    "redstone": "minecraft:block/redstone_block",
+    "lens": "minecraft:block/white_concrete"
+  },
+  "elements": [
+    {
+      "name": "lens",
+      "from": [
+        5.5,
+        9,
+        3
+      ],
+      "to": [
+        10.5,
+        13,
+        4
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            5.5,
+            3,
+            10.5,
+            7
+          ],
+          "texture": "#lens"
+        },
+        "south": {
+          "uv": [
+            5.5,
+            3,
+            10.5,
+            7
+          ],
+          "texture": "#lens"
+        },
+        "west": {
+          "uv": [
+            3,
+            3,
+            4,
+            7
+          ],
+          "texture": "#lens"
+        },
+        "east": {
+          "uv": [
+            3,
+            3,
+            4,
+            7
+          ],
+          "texture": "#lens"
+        },
+        "up": {
+          "uv": [
+            5.5,
+            3,
+            10.5,
+            4
+          ],
+          "texture": "#lens"
+        },
+        "down": {
+          "uv": [
+            5.5,
+            3,
+            10.5,
+            4
+          ],
+          "texture": "#lens"
+        }
+      }
+    }
+  ]
+}

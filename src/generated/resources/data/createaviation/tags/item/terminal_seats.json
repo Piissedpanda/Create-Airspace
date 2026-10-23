@@ -1,0 +1,20 @@
+{
+  "values": [
+    "createaviation:white_terminal_seat",
+    "createaviation:orange_terminal_seat",
+    "createaviation:magenta_terminal_seat",
+    "createaviation:light_blue_terminal_seat",
+    "createaviation:yellow_terminal_seat",
+    "createaviation:lime_terminal_seat",
+    "createaviation:pink_terminal_seat",
+    "createaviation:gray_terminal_seat",
+    "createaviation:light_gray_terminal_seat",
+    "createaviation:cyan_terminal_seat",
+    "createaviation:purple_terminal_seat",
+    "createaviation:blue_terminal_seat",
+    "createaviation:brown_terminal_seat",
+    "createaviation:green_terminal_seat",
+    "createaviation:red_terminal_seat",
+    "createaviation:black_terminal_seat"
+  ]
+}

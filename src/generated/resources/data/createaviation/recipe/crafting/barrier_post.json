@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "create:belt_connector"
+    },
+    "C": {
+      "item": "create:industrial_iron_block"
+    }
+  },
+  "pattern": [
+    "B",
+    "C",
+    "C"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createaviation:barrier_post"
+  }
+}
