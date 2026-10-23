@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "createairspace:block/barrier_post/block"
+    }
+  }
+}

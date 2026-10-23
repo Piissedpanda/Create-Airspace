@@ -1,0 +1,7 @@
+{
+  "parent": "createairspace:block/barrier_post/item_base",
+  "textures": {
+    "material": "create:block/railway_casing",
+    "particle": "create:block/railway_casing"
+  }
+}

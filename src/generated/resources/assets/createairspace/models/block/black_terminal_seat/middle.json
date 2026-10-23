@@ -1,0 +1,8 @@
+{
+  "parent": "createairspace:block/terminal_seat/middle",
+  "textures": {
+    "cushion_side": "create:block/seat/side_black",
+    "cushion_top": "create:block/seat/top_black",
+    "particle": "create:block/seat/top_black"
+  }
+}

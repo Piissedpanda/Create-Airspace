@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,shape=left": {
+      "model": "createairspace:block/green_terminal_seat/left",
+      "y": 90
+    },
+    "facing=east,shape=middle": {
+      "model": "createairspace:block/green_terminal_seat/middle",
+      "y": 90
+    },
+    "facing=east,shape=right": {
+      "model": "createairspace:block/green_terminal_seat/right",
+      "y": 90
+    },
+    "facing=east,shape=single": {
+      "model": "createairspace:block/green_terminal_seat/single",
+      "y": 90
+    },
+    "facing=north,shape=left": {
+      "model": "createairspace:block/green_terminal_seat/left"
+    },
+    "facing=north,shape=middle": {
+      "model": "createairspace:block/green_terminal_seat/middle"
+    },
+    "facing=north,shape=right": {
+      "model": "createairspace:block/green_terminal_seat/right"
+    },
+    "facing=north,shape=single": {
+      "model": "createairspace:block/green_terminal_seat/single"
+    },
+    "facing=south,shape=left": {
+      "model": "createairspace:block/green_terminal_seat/left",
+      "y": 180
+    },
+    "facing=south,shape=middle": {
+      "model": "createairspace:block/green_terminal_seat/middle",
+      "y": 180
+    },
+    "facing=south,shape=right": {
+      "model": "createairspace:block/green_terminal_seat/right",
+      "y": 180
+    },
+    "facing=south,shape=single": {
+      "model": "createairspace:block/green_terminal_seat/single",
+      "y": 180
+    },
+    "facing=west,shape=left": {
+      "model": "createairspace:block/green_terminal_seat/left",
+      "y": 270
+    },
+    "facing=west,shape=middle": {
+      "model": "createairspace:block/green_terminal_seat/middle",
+      "y": 270
+    },
+    "facing=west,shape=right": {
+      "model": "createairspace:block/green_terminal_seat/right",
+      "y": 270
+    },
+    "facing=west,shape=single": {
+      "model": "createairspace:block/green_terminal_seat/single",
+      "y": 270
+    }
+  }
+}

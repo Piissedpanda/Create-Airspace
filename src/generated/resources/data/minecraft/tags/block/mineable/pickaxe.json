@@ -1,13 +1,13 @@
 {
   "values": [
-    "createaviation:barrier_post",
-    "createaviation:andesite_barrier_post",
-    "createaviation:brass_barrier_post",
-    "createaviation:copper_barrier_post",
-    "createaviation:train_barrier_post",
-    "createaviation:airfield_sign",
-    "createaviation:edge_light",
-    "createaviation:windsock",
-    "createaviation:airport_beacon"
+    "createairspace:barrier_post",
+    "createairspace:andesite_barrier_post",
+    "createairspace:brass_barrier_post",
+    "createairspace:copper_barrier_post",
+    "createairspace:train_barrier_post",
+    "createairspace:airfield_sign",
+    "createairspace:edge_light",
+    "createairspace:windsock",
+    "createairspace:airport_beacon"
   ]
 }

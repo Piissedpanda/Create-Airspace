@@ -1,0 +1,6 @@
+{
+  "parent": "createairspace:block/airfield_sign/base",
+  "textures": {
+    "face": "minecraft:block/yellow_concrete"
+  }
+}

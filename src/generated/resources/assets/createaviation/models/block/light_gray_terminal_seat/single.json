@@ -1,8 +1,0 @@
-{
-  "parent": "createaviation:block/terminal_seat/single",
-  "textures": {
-    "cushion_side": "create:block/seat/side_light_gray",
-    "cushion_top": "create:block/seat/top_light_gray",
-    "particle": "create:block/seat/top_light_gray"
-  }
-}

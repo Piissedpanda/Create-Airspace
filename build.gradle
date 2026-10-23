@@ -304,7 +304,7 @@ publishMods {
         return (end < 0 ? text.substring(start) : text.substring(start, end)).trim()
     }
     type = STABLE
-    displayName = "Create: Aviation ${releaseVersion}"
+    displayName = "Create: Airspace ${releaseVersion}"
     version = releaseVersion
     modLoaders.add('neoforge')
     dryRun = !modrinthToken.isPresent() || !curseforgeToken.isPresent() || modrinthId.isEmpty() || curseforgeId.isEmpty()

@@ -1,0 +1,20 @@
+{
+    "itemGroup.createairspace.base": "Create Airspace",
+
+    "createairspace.barrier_post.select_second": "Select a second Barrier Post to connect",
+    "createairspace.barrier_post.selection_cleared": "Selection Cleared",
+    "createairspace.barrier_post.too_far": "Too far apart",
+    "createairspace.barrier_post.too_close": "Too close together",
+    "createairspace.barrier_post.cannot_connect_vertically": "Cannot connect vertically",
+    "createairspace.barrier_post.too_steep": "Slope too steep",
+    "createairspace.barrier_post.blocks_invalid": "Barrier Post blocks invalid, Sneak-click to reset",
+    "createairspace.barrier_post.already_connected": "Barrier Posts are already connected",
+    "createairspace.barrier_post.valid_connection": "Can Connect \u2714",
+    "createairspace.barrier_post.cannot_add_more_connections": "Cannot add more connections to this Barrier Post",
+
+    "createairspace.airport_beacon.mode": "Beacon pattern: %1$s",
+    "createairspace.airport_beacon.mode.land": "Land Airport (white, green)",
+    "createairspace.airport_beacon.mode.water": "Water Airport (white, yellow)",
+    "createairspace.airport_beacon.mode.heliport": "Heliport (green, yellow, white)",
+    "createairspace.airport_beacon.mode.military": "Military Airport (double white, green)"
+}

@@ -1,0 +1,93 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "create:iron_sheet"
+  },
+  "results": [
+    {
+      "id": "createairspace:airfield_sign"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_airfield_sign"
+        },
+        {
+          "item": "create:nixie_tube"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_airfield_sign"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_airfield_sign"
+        },
+        {
+          "tag": "c:dyes/yellow"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_airfield_sign"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_airfield_sign"
+        },
+        {
+          "tag": "c:dyes/black"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_airfield_sign"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_airfield_sign"
+        },
+        {
+          "item": "minecraft:glass"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_airfield_sign"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_airfield_sign"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_airfield_sign"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "createairspace:incomplete_airfield_sign"
+  }
+}

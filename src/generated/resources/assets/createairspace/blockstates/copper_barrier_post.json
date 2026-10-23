@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "createairspace:block/copper_barrier_post/block"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "createairspace:block/airport_beacon/block"
+    }
+  }
+}

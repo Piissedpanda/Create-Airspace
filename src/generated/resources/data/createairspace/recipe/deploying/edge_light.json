@@ -1,0 +1,17 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create:iron_sheet"
+    },
+    {
+      "item": "create:electron_tube"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "createairspace:edge_light"
+    }
+  ]
+}

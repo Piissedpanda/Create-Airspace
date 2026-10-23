@@ -1,6 +1,0 @@
-{
-  "parent": "createaviation:block/edge_light/base",
-  "textures": {
-    "lens": "minecraft:block/white_terracotta"
-  }
-}

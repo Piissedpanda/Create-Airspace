@@ -1,0 +1,6 @@
+{
+  "parent": "createairspace:block/edge_light/base",
+  "textures": {
+    "lens": "minecraft:block/blue_terracotta"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "values": [
+    "createairspace:white_terminal_seat",
+    "createairspace:orange_terminal_seat",
+    "createairspace:magenta_terminal_seat",
+    "createairspace:light_blue_terminal_seat",
+    "createairspace:yellow_terminal_seat",
+    "createairspace:lime_terminal_seat",
+    "createairspace:pink_terminal_seat",
+    "createairspace:gray_terminal_seat",
+    "createairspace:light_gray_terminal_seat",
+    "createairspace:cyan_terminal_seat",
+    "createairspace:purple_terminal_seat",
+    "createairspace:blue_terminal_seat",
+    "createairspace:brown_terminal_seat",
+    "createairspace:green_terminal_seat",
+    "createairspace:red_terminal_seat",
+    "createairspace:black_terminal_seat"
+  ]
+}

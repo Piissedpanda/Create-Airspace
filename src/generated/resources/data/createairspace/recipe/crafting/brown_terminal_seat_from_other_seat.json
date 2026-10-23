@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dyes/brown"
+    },
+    {
+      "tag": "createairspace:terminal_seats"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createairspace:brown_terminal_seat"
+  }
+}

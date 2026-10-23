@@ -1,0 +1,7 @@
+{
+  "parent": "createairspace:block/barrier_post/base",
+  "textures": {
+    "material": "create:block/brass_casing",
+    "particle": "create:block/brass_casing"
+  }
+}

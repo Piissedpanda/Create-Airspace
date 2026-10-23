@@ -1,7 +1,0 @@
-{
-  "parent": "createaviation:block/barrier_post/item_base",
-  "textures": {
-    "material": "create:block/copper_casing",
-    "particle": "create:block/copper_casing"
-  }
-}

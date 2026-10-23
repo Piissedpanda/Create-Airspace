@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "color=blue,powered=false": {
+      "model": "createairspace:block/edge_light/blue_off"
+    },
+    "color=blue,powered=true": {
+      "model": "createairspace:block/edge_light/blue_on"
+    },
+    "color=green,powered=false": {
+      "model": "createairspace:block/edge_light/green_off"
+    },
+    "color=green,powered=true": {
+      "model": "createairspace:block/edge_light/green_on"
+    },
+    "color=red,powered=false": {
+      "model": "createairspace:block/edge_light/red_off"
+    },
+    "color=red,powered=true": {
+      "model": "createairspace:block/edge_light/red_on"
+    },
+    "color=white,powered=false": {
+      "model": "createairspace:block/edge_light/white_off"
+    },
+    "color=white,powered=true": {
+      "model": "createairspace:block/edge_light/white_on"
+    },
+    "color=yellow,powered=false": {
+      "model": "createairspace:block/edge_light/yellow_off"
+    },
+    "color=yellow,powered=true": {
+      "model": "createairspace:block/edge_light/yellow_on"
+    }
+  }
+}

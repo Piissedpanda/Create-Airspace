@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "create:belt_connector"
+    },
+    "C": {
+      "item": "create:brass_casing"
+    }
+  },
+  "pattern": [
+    "B",
+    "C",
+    "C"
+  ],
+  "result": {
+    "count": 4,
+    "id": "createairspace:brass_barrier_post"
+  }
+}

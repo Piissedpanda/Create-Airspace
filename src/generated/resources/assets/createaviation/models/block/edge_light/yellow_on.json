@@ -1,7 +1,0 @@
-{
-  "parent": "createaviation:block/edge_light/lit",
-  "textures": {
-    "glow": "createaviation:block/edge_light/glow_yellow",
-    "lens": "minecraft:block/yellow_concrete"
-  }
-}
