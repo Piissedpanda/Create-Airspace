@@ -14,8 +14,7 @@
   },
   "pattern": [
     " O ",
-    " W ",
-    "K K"
+    "KWK"
   ],
   "result": {
     "count": 2,

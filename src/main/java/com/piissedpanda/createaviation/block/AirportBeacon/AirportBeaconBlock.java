@@ -129,16 +129,21 @@ public class AirportBeaconBlock extends KineticBlock implements IBE<AirportBeaco
 		return CABlockEntities.AIRPORT_BEACON.get();
 	}
 
-	public record Beam(float angle, int color) {
+	// split: one lens sends two narrow beams that flash shortly after another
+	public record Beam(float angle, int color, float split) {
+
+		Beam(float angle, int color) {
+			this(angle, color, 0);
+		}
+
 	}
 
-	// Real beacon patterns: land airport, water airport, heliport and military
-	// airport
+	// Real beacon patterns, military: two quick whites between greens
 	public enum Mode implements StringRepresentable {
 		LAND(List.of(new Beam(0, Colors.WHITE), new Beam(180, Colors.GREEN))),
 		WATER(List.of(new Beam(0, Colors.WHITE), new Beam(180, Colors.YELLOW))),
 		HELIPORT(List.of(new Beam(0, Colors.GREEN), new Beam(120, Colors.YELLOW), new Beam(240, Colors.WHITE))),
-		MILITARY(List.of(new Beam(-12, Colors.WHITE), new Beam(12, Colors.WHITE), new Beam(180, Colors.GREEN)));
+		MILITARY(List.of(new Beam(0, Colors.GREEN), new Beam(180, Colors.WHITE, 7)));
 
 		public final List<Beam> beams;
 

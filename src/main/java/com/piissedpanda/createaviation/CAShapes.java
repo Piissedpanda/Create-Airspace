@@ -19,7 +19,7 @@ public class CAShapes {
 					.add(6, 8, 6, 10, 14, 10)
 					.build(),
 
-			EDGE_LIGHT = cuboid(5, 0, 5, 11, 9, 11),
+			EDGE_LIGHT = cuboid(5, 0, 5, 11, 11, 11),
 
 			AIRPORT_BEACON = shape(1, 0, 1, 15, 3, 15)
 					.add(5, 3, 5, 11, 8, 11)

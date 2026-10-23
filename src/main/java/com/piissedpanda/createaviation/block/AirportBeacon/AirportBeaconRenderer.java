@@ -7,6 +7,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import com.piissedpanda.createaviation.CAPartialModels;
 import com.piissedpanda.createaviation.block.AirportBeacon.AirportBeaconBlock.Beam;
+import com.piissedpanda.createaviation.foundation.render.RenderTypes;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import com.simibubi.create.foundation.blockEntity.renderer.SafeBlockEntityRenderer;
 
@@ -57,26 +58,36 @@ public class AirportBeaconRenderer extends SafeBlockEntityRenderer<AirportBeacon
 
 		float length = 2 + power / 15f * (MAX_BEAM_LENGTH - 2);
 		float alpha = 0.08f + power / 15f * 0.3f;
-		VertexConsumer vc = buffer.getBuffer(RenderType.lightning());
+		VertexConsumer vc = buffer.getBuffer(RenderTypes.beaconBeam());
 		for (Beam beam : mode.beams) {
-			ms.pushPose();
-			ms.translate(.5, LENS_Y, .5);
-			ms.mulPose(Axis.YP.rotation(angle + beam.angle() * (float) Math.PI / 180));
-			renderBeam(ms, vc, length, alpha, beam.color());
-			ms.popPose();
+			if (beam.split() == 0) {
+				renderBeam(ms, vc, angle, beam.angle(), length, 1, alpha, beam.color());
+				continue;
+			}
+			renderBeam(ms, vc, angle, beam.angle() - beam.split(), length, 0.5f, alpha, beam.color());
+			renderBeam(ms, vc, angle, beam.angle() + beam.split(), length, 0.5f, alpha, beam.color());
 		}
+	}
+
+	private static void renderBeam(PoseStack ms, VertexConsumer vc, float headAngle, float beamAngle, float length,
+			float width, float alpha, int rgb) {
+		ms.pushPose();
+		ms.translate(.5, LENS_Y, .5);
+		ms.mulPose(Axis.YP.rotation(headAngle + beamAngle * (float) Math.PI / 180));
+		renderCone(ms, vc, length, width, alpha, rgb);
+		ms.popPose();
 	}
 
 	private static int darken(int rgb) {
 		return (rgb >> 1) & 0x7F7F7F;
 	}
 
-	// A fading cone pointing north (-z), drawn from both sides
-	private static void renderBeam(PoseStack ms, VertexConsumer vc, float length, float alpha, int rgb) {
+	// A fading cone pointing north (-z)
+	private static void renderCone(PoseStack ms, VertexConsumer vc, float length, float width, float alpha, int rgb) {
 		Matrix4f pose = ms.last()
 				.pose();
-		float near = 1.5f / 16f;
-		float far = 0.12f * length;
+		float near = 1.5f / 16f * width;
+		float far = 0.12f * length * width;
 		float z0 = -LENS_Z;
 		float z1 = -(LENS_Z + length);
 		float[][] corners = { { -1, -1 }, { 1, -1 }, { 1, 1 }, { -1, 1 } };
@@ -84,14 +95,10 @@ public class AirportBeaconRenderer extends SafeBlockEntityRenderer<AirportBeacon
 		for (int i = 0; i < 4; i++) {
 			float[] a = corners[i];
 			float[] b = corners[(i + 1) % 4];
-			for (int pass = 0; pass < 2; pass++) {
-				float[] first = pass == 0 ? a : b;
-				float[] second = pass == 0 ? b : a;
-				vertex(vc, pose, first[0] * near, first[1] * near, z0, rgb, alpha);
-				vertex(vc, pose, second[0] * near, second[1] * near, z0, rgb, alpha);
-				vertex(vc, pose, second[0] * far, second[1] * far, z1, rgb, 0);
-				vertex(vc, pose, first[0] * far, first[1] * far, z1, rgb, 0);
-			}
+			vertex(vc, pose, a[0] * near, a[1] * near, z0, rgb, alpha);
+			vertex(vc, pose, b[0] * near, b[1] * near, z0, rgb, alpha);
+			vertex(vc, pose, b[0] * far, b[1] * far, z1, rgb, 0);
+			vertex(vc, pose, a[0] * far, a[1] * far, z1, rgb, 0);
 		}
 	}
 

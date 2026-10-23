@@ -16,23 +16,7 @@
           "item": "createaviation:incomplete_airfield_sign"
         },
         {
-          "tag": "minecraft:signs"
-        }
-      ],
-      "results": [
-        {
-          "id": "createaviation:incomplete_airfield_sign"
-        }
-      ]
-    },
-    {
-      "type": "create:deploying",
-      "ingredients": [
-        {
-          "item": "createaviation:incomplete_airfield_sign"
-        },
-        {
-          "item": "minecraft:glowstone_dust"
+          "item": "create:nixie_tube"
         }
       ],
       "results": [
@@ -65,6 +49,22 @@
         },
         {
           "tag": "c:dyes/black"
+        }
+      ],
+      "results": [
+        {
+          "id": "createaviation:incomplete_airfield_sign"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createaviation:incomplete_airfield_sign"
+        },
+        {
+          "item": "minecraft:glass"
         }
       ],
       "results": [
