@@ -1,5 +1,8 @@
 package com.piissedpanda.createaviation;
 
+import com.piissedpanda.createaviation.foundation.ponder.CAPonderPlugin;
+
+import net.createmod.ponder.foundation.PonderIndex;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -26,6 +29,6 @@ public class CreateAviationClient {
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
-
+        PonderIndex.addPlugin(new CAPonderPlugin());
     }
 }

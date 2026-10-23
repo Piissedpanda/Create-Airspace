@@ -97,7 +97,7 @@ config="${mod_id}.mixins.json"
 
 [[dependencies.${mod_id}]]
     modId = "sable"
-    type = "required"
+    type = "optional"
     versionRange = "[2.0.3,)"
     ordering = "NONE"
     side = "BOTH"

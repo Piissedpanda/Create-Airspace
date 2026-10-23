@@ -1,8 +1,8 @@
 package com.piissedpanda.createaviation;
 
-import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostBlockEntity;
-import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostRenderer;
-import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostVisual;
+import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlockEntity;
+import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostRenderer;
+import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostVisual;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 

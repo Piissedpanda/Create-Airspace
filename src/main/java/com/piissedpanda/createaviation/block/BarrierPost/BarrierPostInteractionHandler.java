@@ -1,4 +1,4 @@
-package com.piissedpanda.createaviation.Block.BarrierPost;
+package com.piissedpanda.createaviation.block.BarrierPost;
 
 import java.util.List;
 import java.util.Map.Entry;

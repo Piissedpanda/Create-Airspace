@@ -1,4 +1,5 @@
 {
+  "ambientocclusion": false,
   "textures": {
     "particle": "create:block/industrial_iron_block",
     "material": "create:block/industrial_iron_block"

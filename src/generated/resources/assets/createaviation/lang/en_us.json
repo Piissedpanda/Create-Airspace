@@ -10,5 +10,13 @@
   "createaviation.barrier_post.too_far": "Too far apart",
   "createaviation.barrier_post.too_steep": "Slope too steep",
   "createaviation.barrier_post.valid_connection": "Can Connect ✔",
+  "createaviation.ponder.barrier_post.header": "Connecting Barrier Posts",
+  "createaviation.ponder.barrier_post.text_1": "Right-click two Barrier Posts with a Wrench to connect them",
+  "createaviation.ponder.barrier_post.text_2": "The distance between two posts is limited",
+  "createaviation.ponder.barrier_post.text_3": "A post can hold multiple connections, which is great for queue lines",
+  "createaviation.ponder.barrier_post.text_4": "Right-click a belt with a dye to change its colour",
+  "createaviation.ponder.barrier_post.text_5": "Sneak-right-click a belt with a Wrench to remove it",
+  "createaviation.ponder.tag.airport_accessories": "Airport Accessories",
+  "createaviation.ponder.tag.airport_accessories.description": "Blocks to build and decorate your airport",
   "itemGroup.createaviation.base": "Create Aviation"
 }

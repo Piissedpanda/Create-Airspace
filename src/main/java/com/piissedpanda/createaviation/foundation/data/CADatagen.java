@@ -6,8 +6,11 @@ import java.util.function.BiConsumer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.piissedpanda.createaviation.CreateAviation;
+import com.piissedpanda.createaviation.foundation.ponder.CAPonderPlugin;
 import com.simibubi.create.foundation.utility.FilesHelper;
 import com.tterrag.registrate.providers.ProviderType;
+
+import net.createmod.ponder.foundation.PonderIndex;
 
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
@@ -23,7 +26,15 @@ public class CADatagen {
             BiConsumer<String, String> langConsumer = provider::add;
 
             provideDefaultLang("default", langConsumer);
+            providePonderLang(langConsumer);
         });
+    }
+
+    private static void providePonderLang(BiConsumer<String, String> consumer) {
+        // FMLClientSetupEvent does not run during datagen
+        PonderIndex.addPlugin(new CAPonderPlugin());
+
+        PonderIndex.getLangAccess().provideLang(CreateAviation.MODID, consumer);
     }
 
     private static void provideDefaultLang(String fileName, BiConsumer<String, String> consumer) {

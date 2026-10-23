@@ -1,7 +1,7 @@
-package com.piissedpanda.createaviation.Events;
+package com.piissedpanda.createaviation.events;
 
-import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostConnectionHandler;
-import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostInteractionHandler;
+import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostConnectionHandler;
+import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostInteractionHandler;
 
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;

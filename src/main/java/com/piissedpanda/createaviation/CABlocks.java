@@ -6,7 +6,7 @@ import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 
-import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostBlock;
+import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlock;
 
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 

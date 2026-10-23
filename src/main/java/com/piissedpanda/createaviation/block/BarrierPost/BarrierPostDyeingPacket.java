@@ -1,4 +1,4 @@
-package com.piissedpanda.createaviation.Block.BarrierPost;
+package com.piissedpanda.createaviation.block.BarrierPost;
 
 import com.piissedpanda.createaviation.CAPackets;
 import com.piissedpanda.createaviation.foundation.config.CAConfigs;

@@ -1,4 +1,4 @@
-package com.piissedpanda.createaviation.Block.BarrierPost;
+package com.piissedpanda.createaviation.block.BarrierPost;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,8 +11,8 @@ import java.util.function.Consumer;
 
 import org.joml.Vector3f;
 
-import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostShape.BarrierPostBB;
-import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostShape.BarrierPostOBB;
+import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostShape.BarrierPostBB;
+import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostShape.BarrierPostOBB;
 import com.simibubi.create.api.contraption.transformable.TransformableBlockEntity;
 import com.simibubi.create.content.contraptions.StructureTransform;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
@@ -23,16 +23,12 @@ import net.createmod.catnip.codecs.CatnipCodecs;
 import net.createmod.catnip.nbt.NBTHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.particles.BlockParticleOption;
-import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.DustParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Clearable;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;

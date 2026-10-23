@@ -1,4 +1,4 @@
-package com.piissedpanda.createaviation.Block.BarrierPost;
+package com.piissedpanda.createaviation.block.BarrierPost;
 
 import org.joml.Matrix4f;
 
@@ -6,7 +6,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.piissedpanda.createaviation.CAPartialModels;
 import com.piissedpanda.createaviation.CreateAviation;
-import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostBlockEntity.ConnectionStats;
+import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlockEntity.ConnectionStats;
 import com.piissedpanda.createaviation.foundation.render.RenderTypes;
 import com.simibubi.create.foundation.blockEntity.renderer.SafeBlockEntityRenderer;
 
@@ -41,15 +41,8 @@ public class BarrierPostRenderer extends SafeBlockEntityRenderer<BarrierPostBloc
 	protected void renderSafe(BarrierPostBlockEntity be, float partialTicks, PoseStack ms,
 			MultiBufferSource buffer,
 			int light, int overlay) {
+		// The post itself is drawn by the block model
 		renderBelts(be, ms, buffer, light, overlay);
-
-		if (VisualizationManager.supportsVisualization(be.getLevel()))
-			return;
-
-		CachedBuffers.partial(CAPartialModels.BARRIER_POST, be.getBlockState())
-				.light(light)
-				.overlay(overlay)
-				.renderInto(ms, buffer.getBuffer(RenderType.cutoutMipped()));
 	}
 
 	private void renderBelts(BarrierPostBlockEntity be, PoseStack ms, MultiBufferSource buffer, int light,

@@ -2,8 +2,8 @@ package com.piissedpanda.createaviation;
 
 import java.util.Locale;
 
-import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostConnectionPacket;
-import com.piissedpanda.createaviation.Block.BarrierPost.BarrierPostDyeingPacket;
+import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostConnectionPacket;
+import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostDyeingPacket;
 
 import net.createmod.catnip.net.base.BasePacketPayload;
 import net.createmod.catnip.net.base.CatnipPacketRegistry;

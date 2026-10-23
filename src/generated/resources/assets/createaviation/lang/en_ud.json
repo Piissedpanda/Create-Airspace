@@ -10,5 +10,13 @@
   "createaviation.barrier_post.too_far": "ʇɹɐdɐ ɹɐɟ oo⟘",
   "createaviation.barrier_post.too_steep": "dǝǝʇs ooʇ ǝdoןS",
   "createaviation.barrier_post.valid_connection": "✔ ʇɔǝuuoƆ uɐƆ",
+  "createaviation.ponder.barrier_post.header": "sʇsoԀ ɹǝıɹɹɐᗺ buıʇɔǝuuoƆ",
+  "createaviation.ponder.barrier_post.text_1": "ɯǝɥʇ ʇɔǝuuoɔ oʇ ɥɔuǝɹM ɐ ɥʇıʍ sʇsoԀ ɹǝıɹɹɐᗺ oʍʇ ʞɔıןɔ-ʇɥbıᴚ",
+  "createaviation.ponder.barrier_post.text_2": "pǝʇıɯıן sı sʇsod oʍʇ uǝǝʍʇǝq ǝɔuɐʇsıp ǝɥ⟘",
+  "createaviation.ponder.barrier_post.text_3": "sǝuıן ǝnǝnb ɹoɟ ʇɐǝɹb sı ɥɔıɥʍ 'suoıʇɔǝuuoɔ ǝןdıʇןnɯ pןoɥ uɐɔ ʇsod Ɐ",
+  "createaviation.ponder.barrier_post.text_4": "ɹnoןoɔ sʇı ǝbuɐɥɔ oʇ ǝʎp ɐ ɥʇıʍ ʇןǝq ɐ ʞɔıןɔ-ʇɥbıᴚ",
+  "createaviation.ponder.barrier_post.text_5": "ʇı ǝʌoɯǝɹ oʇ ɥɔuǝɹM ɐ ɥʇıʍ ʇןǝq ɐ ʞɔıןɔ-ʇɥbıɹ-ʞɐǝuS",
+  "createaviation.ponder.tag.airport_accessories": "sǝıɹossǝɔɔⱯ ʇɹodɹıⱯ",
+  "createaviation.ponder.tag.airport_accessories.description": "ʇɹodɹıɐ ɹnoʎ ǝʇɐɹoɔǝp puɐ pןınq oʇ sʞɔoןᗺ",
   "itemGroup.createaviation.base": "uoıʇɐıʌⱯ ǝʇɐǝɹƆ"
 }
