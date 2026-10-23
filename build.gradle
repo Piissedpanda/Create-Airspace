@@ -109,8 +109,8 @@ neoForge {
 
         data {
             data()
-            // example of overriding the workingDirectory set in configureEach above, uncomment if you want to use it
-            // gameDirectory = project.file('run-data')
+            // Own folder, so the shader mods in run/mods stay out of datagen
+            gameDirectory = project.file('run-data')
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath(), '--existing-mod', 'create'
@@ -148,6 +148,9 @@ neoForge {
 // "optional", meaning it will not be pulled by dependents of this mod.
 configurations {
     runtimeClasspath.extendsFrom localRuntime
+    devMods {
+        transitive = false
+    }
 }
 
 dependencies {
@@ -174,6 +177,8 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
+    // Full JEI only in the dev client, not published as a dependency
+    localRuntime("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
 
     // Create (Slim) without transitive dependencies
     implementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") {
@@ -203,6 +208,22 @@ dependencies {
     implementation("dev.ryanhcode.offroad:offroad-neoforge-${minecraft_version}:${aeronautics_version}") {
         transitive = false
     }
+
+    // Shaders for the dev client, see installDevMods
+    devMods("maven.modrinth:sodium:${sodium_version}")
+    devMods("maven.modrinth:iris:${iris_version}")
+}
+
+// Sodium and Iris keep their code in nested jars, which only load from a mods folder.
+// Run "gradlew installDevMods" once, then start the client as usual.
+tasks.register('installDevModsClient2', Copy) {
+    from configurations.devMods
+    into 'run2/mods'
+}
+tasks.register('installDevMods', Copy) {
+    dependsOn 'installDevModsClient2'
+    from configurations.devMods
+    into 'run/mods'
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
