@@ -20,50 +20,50 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 public class CADatagen {
 
-    public static void gatherDataHighPriority(GatherDataEvent event) {
-        if (event.getMods().contains(CreateAviation.MODID))
-            addExtraRegistrateData();
-    }
+	public static void gatherDataHighPriority(GatherDataEvent event) {
+		if (event.getMods().contains(CreateAviation.MODID))
+			addExtraRegistrateData();
+	}
 
-    public static void gatherData(GatherDataEvent event) {
-        if (!event.getMods().contains(CreateAviation.MODID))
-            return;
+	public static void gatherData(GatherDataEvent event) {
+		if (!event.getMods().contains(CreateAviation.MODID))
+			return;
 
-        DataGenerator generator = event.getGenerator();
-        PackOutput output = generator.getPackOutput();
-        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+		DataGenerator generator = event.getGenerator();
+		PackOutput output = generator.getPackOutput();
+		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new CAItemApplicationRecipeGen(output, lookupProvider));
-    }
+		generator.addProvider(event.includeServer(), new CAItemApplicationRecipeGen(output, lookupProvider));
+	}
 
-    private static void addExtraRegistrateData() {
-        CreateAviation.REGISTRATE.addDataGenerator(ProviderType.LANG, provider -> {
-            BiConsumer<String, String> langConsumer = provider::add;
+	private static void addExtraRegistrateData() {
+		CreateAviation.REGISTRATE.addDataGenerator(ProviderType.LANG, provider -> {
+			BiConsumer<String, String> langConsumer = provider::add;
 
-            provideDefaultLang("default", langConsumer);
-            providePonderLang(langConsumer);
-        });
-    }
+			provideDefaultLang("default", langConsumer);
+			providePonderLang(langConsumer);
+		});
+	}
 
-    private static void providePonderLang(BiConsumer<String, String> consumer) {
-        // FMLClientSetupEvent does not run during datagen
-        PonderIndex.addPlugin(new CAPonderPlugin());
+	private static void providePonderLang(BiConsumer<String, String> consumer) {
+		// FMLClientSetupEvent does not run during datagen
+		PonderIndex.addPlugin(new CAPonderPlugin());
 
-        PonderIndex.getLangAccess().provideLang(CreateAviation.MODID, consumer);
-    }
+		PonderIndex.getLangAccess().provideLang(CreateAviation.MODID, consumer);
+	}
 
-    private static void provideDefaultLang(String fileName, BiConsumer<String, String> consumer) {
-        String path = "assets/createaviation/lang/default/" + fileName + ".json";
-        JsonElement jsonElement = FilesHelper.loadJsonResource(path);
-        if (jsonElement == null) {
-            throw new IllegalStateException(String.format("Could not find default lang file: %s", path));
-        }
-        JsonObject jsonObject = jsonElement.getAsJsonObject();
-        for (Entry<String, JsonElement> entry : jsonObject.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue().getAsString();
-            consumer.accept(key, value);
-        }
-    }
+	private static void provideDefaultLang(String fileName, BiConsumer<String, String> consumer) {
+		String path = "assets/createaviation/lang/default/" + fileName + ".json";
+		JsonElement jsonElement = FilesHelper.loadJsonResource(path);
+		if (jsonElement == null) {
+			throw new IllegalStateException(String.format("Could not find default lang file: %s", path));
+		}
+		JsonObject jsonObject = jsonElement.getAsJsonObject();
+		for (Entry<String, JsonElement> entry : jsonObject.entrySet()) {
+			String key = entry.getKey();
+			String value = entry.getValue().getAsString();
+			consumer.accept(key, value);
+		}
+	}
 
 }

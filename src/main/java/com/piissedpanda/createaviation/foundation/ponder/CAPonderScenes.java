@@ -15,7 +15,7 @@ public class CAPonderScenes {
 
 		HELPER.forComponents(CABlocks.BARRIER_POSTS)
 				.addStoryBoard("barrier_post", AirportAccessoriesScenes::barrierPost,
-				CAPonderTags.AIRPORT_ACCESSORIES);
+						CAPonderTags.AIRPORT_ACCESSORIES);
 	}
 
 }

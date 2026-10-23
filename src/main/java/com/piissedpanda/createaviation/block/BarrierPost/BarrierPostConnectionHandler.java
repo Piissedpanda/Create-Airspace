@@ -245,12 +245,12 @@ public class BarrierPostConnectionHandler {
 		BarrierPostBlockEntity sourcePost = barrierPostBlock.getBlockEntity(level, firstPos);
 		BarrierPostBlockEntity targetPost = barrierPostBlock.getBlockEntity(level, pos);
 
+		if (sourcePost == null || targetPost == null)
+			return fail("barrier_post.blocks_invalid");
 		if (targetPost.connections.size() >= CAConfigs.server().maxBarrierPostConnections.get())
 			return fail("barrier_post.cannot_add_more_connections");
 		if (targetPost.connections.contains(firstPos.subtract(pos)))
 			return fail("barrier_post.already_connected");
-		if (sourcePost == null || targetPost == null)
-			return fail("barrier_post.blocks_invalid");
 
 		if (simulate)
 			return true;

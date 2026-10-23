@@ -23,46 +23,46 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 @Mod(CreateAviation.MODID)
 public class CreateAviation {
 
-    public static final String MODID = "createaviation";
+	public static final String MODID = "createaviation";
 
-    public static final String VERSION = "1.0.0";
+	public static final String VERSION = "1.0.0";
 
-    public static final Logger LOGGER = LogUtils.getLogger();
+	public static final Logger LOGGER = LogUtils.getLogger();
 
-    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MODID)
-            .defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
+	public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MODID)
+			.defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
 
-    public CreateAviation(IEventBus modEventBus, ModContainer modContainer) {
-        ModLoadingContext modLoadingContext = ModLoadingContext.get();
+	public CreateAviation(IEventBus modEventBus, ModContainer modContainer) {
+		ModLoadingContext modLoadingContext = ModLoadingContext.get();
 
-        modEventBus.addListener(this::commonSetup);
+		modEventBus.addListener(this::commonSetup);
 
-        NeoForge.EVENT_BUS.register(this);
+		NeoForge.EVENT_BUS.register(this);
 
-        REGISTRATE.registerEventListeners(modEventBus);
+		REGISTRATE.registerEventListeners(modEventBus);
 
-        CAPackets.register();
-        CAPartialModels.init();
-        CACreativeModeTabs.register(modEventBus);
-        CABlocks.register();
-        CABlockEntities.register();
+		CAPackets.register();
+		CAPartialModels.init();
+		CACreativeModeTabs.register(modEventBus);
+		CABlocks.register();
+		CABlockEntities.register();
 
-        CAConfigs.register(modLoadingContext, modContainer);
+		CAConfigs.register(modLoadingContext, modContainer);
 
-        modEventBus.addListener(EventPriority.HIGHEST, CADatagen::gatherDataHighPriority);
-        modEventBus.addListener(EventPriority.LOWEST, CADatagen::gatherData);
-    }
+		modEventBus.addListener(EventPriority.HIGHEST, CADatagen::gatherDataHighPriority);
+		modEventBus.addListener(EventPriority.LOWEST, CADatagen::gatherData);
+	}
 
-    private void commonSetup(FMLCommonSetupEvent event) {
+	private void commonSetup(FMLCommonSetupEvent event) {
 
-    }
+	}
 
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
+	@SubscribeEvent
+	public void onServerStarting(ServerStartingEvent event) {
 
-    }
+	}
 
-    public static ResourceLocation asResource(String path) {
-        return ResourceLocation.fromNamespaceAndPath(MODID, path);
-    }
+	public static ResourceLocation asResource(String path) {
+		return ResourceLocation.fromNamespaceAndPath(MODID, path);
+	}
 }

@@ -17,36 +17,36 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class CACreativeModeTabs {
 
-    private static final DeferredRegister<CreativeModeTab> REGISTER = DeferredRegister
-            .create(Registries.CREATIVE_MODE_TAB, CreateAviation.MODID);
+	private static final DeferredRegister<CreativeModeTab> REGISTER = DeferredRegister
+			.create(Registries.CREATIVE_MODE_TAB, CreateAviation.MODID);
 
-    public static final List<ItemProviderEntry<?, ?>> ITEMS = new ArrayList<>();
+	public static final List<ItemProviderEntry<?, ?>> ITEMS = new ArrayList<>();
 
-    static {
-        ITEMS.addAll(CABlocks.BARRIER_POSTS);
-    }
+	static {
+		ITEMS.addAll(CABlocks.BARRIER_POSTS);
+	}
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BASE_TAB = REGISTER.register("base",
-            () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup." + CreateAviation.MODID + ".base"))
-                    .withTabsBefore(AllCreativeModeTabs.BASE_CREATIVE_TAB.getId())
-                    .icon(() -> CABlocks.BARRIER_POST.asStack())
-                    .displayItems(new DisplayItemsGenerator(CACreativeModeTabs.ITEMS))
-                    .build());
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BASE_TAB = REGISTER.register("base",
+			() -> CreativeModeTab.builder()
+					.title(Component.translatable("itemGroup." + CreateAviation.MODID + ".base"))
+					.withTabsBefore(AllCreativeModeTabs.BASE_CREATIVE_TAB.getId())
+					.icon(() -> CABlocks.BARRIER_POST.asStack())
+					.displayItems(new DisplayItemsGenerator(CACreativeModeTabs.ITEMS))
+					.build());
 
-    public static void register(IEventBus modEventBus) {
-        REGISTER.register(modEventBus);
-    }
+	public static void register(IEventBus modEventBus) {
+		REGISTER.register(modEventBus);
+	}
 
-    private record DisplayItemsGenerator(
-            List<ItemProviderEntry<?, ?>> items) implements CreativeModeTab.DisplayItemsGenerator {
-        @Override
-        public void accept(@NotNull CreativeModeTab.ItemDisplayParameters params,
-                @NotNull CreativeModeTab.Output output) {
-            for (ItemProviderEntry<?, ?> item : items) {
-                output.accept(item);
-            }
-        }
-    }
+	private record DisplayItemsGenerator(
+			List<ItemProviderEntry<?, ?>> items) implements CreativeModeTab.DisplayItemsGenerator {
+		@Override
+		public void accept(@NotNull CreativeModeTab.ItemDisplayParameters params,
+				@NotNull CreativeModeTab.Output output) {
+			for (ItemProviderEntry<?, ?> item : items) {
+				output.accept(item);
+			}
+		}
+	}
 
 }

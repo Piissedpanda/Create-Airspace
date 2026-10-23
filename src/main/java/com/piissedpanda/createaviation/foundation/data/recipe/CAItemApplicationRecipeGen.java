@@ -26,10 +26,11 @@ public class CAItemApplicationRecipeGen extends ItemApplicationRecipeGen {
 
 	// Apply a belt to the casing block, by hand or with a Deployer
 	private GeneratedRecipe barrierPost(BlockEntry<?> post, BlockEntry<?> casing) {
-		return create(post.getId()
-				.getPath(), b -> b.require((ItemLike) casing.get())
-						.require(AllItems.BELT_CONNECTOR)
-						.output(post.get()));
+		String name = post.getId()
+				.getPath();
+		return create(name, b -> b.require((ItemLike) casing.get())
+				.require(AllItems.BELT_CONNECTOR)
+				.output(post.get()));
 	}
 
 	public CAItemApplicationRecipeGen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
