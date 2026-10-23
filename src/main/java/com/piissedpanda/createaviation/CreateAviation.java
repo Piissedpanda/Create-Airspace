@@ -44,6 +44,7 @@ public class CreateAviation {
 		CAPackets.register();
 		CAPartialModels.init();
 		CACreativeModeTabs.register(modEventBus);
+		CADisplayTargets.register();
 		CABlocks.register();
 		CABlockEntities.register();
 

@@ -30,6 +30,9 @@ public class CAShapes {
 			.forHorizontal(Direction.NORTH),
 
 			TERMINAL_SEAT_BACK = shape(1, 8, 13, 15, 18, 15)
+					.forHorizontal(Direction.NORTH),
+
+			AIRFIELD_SIGN = shape(0, 0, 6, 16, 15, 10)
 					.forHorizontal(Direction.NORTH);
 
 	private static Builder shape(VoxelShape shape) {

@@ -1,4 +1,5 @@
 {
+  "block.createaviation.airfield_sign": "Airfield Sign",
   "block.createaviation.andesite_barrier_post": "Andesite Barrier Post",
   "block.createaviation.barrier_post": "Barrier Post",
   "block.createaviation.black_terminal_seat": "Black Terminal Seat",
@@ -31,6 +32,10 @@
   "createaviation.barrier_post.too_far": "Too far apart",
   "createaviation.barrier_post.too_steep": "Slope too steep",
   "createaviation.barrier_post.valid_connection": "Can Connect ✔",
+  "createaviation.ponder.airfield_sign.header": "Writing on Airfield Signs",
+  "createaviation.ponder.airfield_sign.text_1": "Right-click with a named Name Tag or a Clipboard to write on a row of signs",
+  "createaviation.ponder.airfield_sign.text_2": "Display Links can write on them as well",
+  "createaviation.ponder.airfield_sign.text_3": "Use a Wrench on the front to switch between location, direction and mandatory signs",
   "createaviation.ponder.barrier_post.header": "Connecting Barrier Posts",
   "createaviation.ponder.barrier_post.text_1": "Right-click two Barrier Posts with a Wrench to connect them",
   "createaviation.ponder.barrier_post.text_2": "The distance between two posts is limited",

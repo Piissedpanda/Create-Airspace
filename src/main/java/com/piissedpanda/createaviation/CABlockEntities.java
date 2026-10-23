@@ -1,5 +1,7 @@
 package com.piissedpanda.createaviation;
 
+import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlockEntity;
+import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignRenderer;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlockEntity;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostRenderer;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostVisual;
@@ -16,6 +18,12 @@ public class CABlockEntities {
 					CABlocks.BRASS_BARRIER_POST, CABlocks.COPPER_BARRIER_POST,
 					CABlocks.TRAIN_BARRIER_POST)
 			.renderer(() -> BarrierPostRenderer::new)
+			.register();
+
+	public static final BlockEntityEntry<AirfieldSignBlockEntity> AIRFIELD_SIGN = REGISTRATE
+			.blockEntity("airfield_sign", AirfieldSignBlockEntity::new)
+			.validBlocks(CABlocks.AIRFIELD_SIGN)
+			.renderer(() -> AirfieldSignRenderer::new)
 			.register();
 
 	public static void register() {

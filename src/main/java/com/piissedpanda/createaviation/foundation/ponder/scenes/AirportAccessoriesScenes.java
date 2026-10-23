@@ -1,6 +1,8 @@
 package com.piissedpanda.createaviation.foundation.ponder.scenes;
 
 import com.piissedpanda.createaviation.CABlocks;
+import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlock;
+import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlockEntity;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlockEntity;
 import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
 import com.simibubi.create.AllItems;
@@ -13,6 +15,8 @@ import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -238,6 +242,77 @@ public class AirportAccessoriesScenes {
 				.pointAt(util.vector()
 						.topOf(middle));
 		scene.idle(80);
+		scene.markAsFinished();
+	}
+
+	public static void airfieldSign(SceneBuilder builder, SceneBuildingUtil util) {
+		CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+		scene.title("airfield_sign", "Writing on Airfield Signs");
+		scene.configureBasePlate(0, 0, 5);
+		scene.world()
+				.showSection(util.select()
+						.layer(0), Direction.UP);
+		scene.idle(10);
+		scene.world()
+				.showSection(util.select()
+						.fromTo(1, 1, 3, 3, 1, 3), Direction.DOWN);
+		scene.idle(20);
+
+		BlockPos first = util.grid()
+				.at(1, 1, 3);
+		BlockPos middle = util.grid()
+				.at(2, 1, 3);
+
+		ItemStack nameTag = new ItemStack(Items.NAME_TAG);
+		nameTag.set(DataComponents.CUSTOM_NAME, Component.literal("A3"));
+		scene.overlay()
+				.showControls(util.vector()
+						.blockSurface(middle, Direction.SOUTH), Pointing.DOWN, 40)
+				.rightClick()
+				.withItem(nameTag);
+		scene.idle(10);
+		scene.world()
+				.modifyBlockEntity(first, AirfieldSignBlockEntity.class, be -> be.setText("A3"));
+
+		scene.overlay()
+				.showText(80)
+				.text("Right-click with a named Name Tag or a Clipboard to write on a row of signs")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(middle));
+		scene.idle(90);
+
+		scene.overlay()
+				.showText(70)
+				.text("Display Links can write on them as well")
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(middle));
+		scene.idle(80);
+
+		scene.overlay()
+				.showControls(util.vector()
+						.blockSurface(middle, Direction.SOUTH), Pointing.DOWN, 40)
+				.rightClick()
+				.withItem(AllItems.WRENCH.asStack());
+		scene.idle(10);
+		for (int x = 1; x <= 3; x++) {
+			BlockPos sign = util.grid()
+					.at(x, 1, 3);
+			scene.world()
+					.modifyBlock(sign, s -> s.setValue(AirfieldSignBlock.STYLE, AirfieldSignBlock.Style.DIRECTION),
+							false);
+		}
+
+		scene.overlay()
+				.showText(80)
+				.text("Use a Wrench on the front to switch between location, direction and mandatory signs")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(middle));
+		scene.idle(90);
 		scene.markAsFinished();
 	}
 

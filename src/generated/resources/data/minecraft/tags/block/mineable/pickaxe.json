@@ -4,6 +4,7 @@
     "createaviation:andesite_barrier_post",
     "createaviation:brass_barrier_post",
     "createaviation:copper_barrier_post",
-    "createaviation:train_barrier_post"
+    "createaviation:train_barrier_post",
+    "createaviation:airfield_sign"
   ]
 }

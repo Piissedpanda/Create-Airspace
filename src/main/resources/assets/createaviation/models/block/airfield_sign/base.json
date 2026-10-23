@@ -1,0 +1,142 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "#face",
+    "frame": "create:block/industrial_iron_block",
+    "face": "minecraft:block/black_concrete"
+  },
+  "elements": [
+    {
+      "name": "leg_left",
+      "from": [
+        2,
+        0,
+        7
+      ],
+      "to": [
+        4,
+        3,
+        9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#frame"
+        },
+        "south": {
+          "texture": "#frame"
+        },
+        "west": {
+          "texture": "#frame"
+        },
+        "east": {
+          "texture": "#frame"
+        },
+        "up": {
+          "texture": "#frame"
+        },
+        "down": {
+          "texture": "#frame"
+        }
+      }
+    },
+    {
+      "name": "leg_right",
+      "from": [
+        12,
+        0,
+        7
+      ],
+      "to": [
+        14,
+        3,
+        9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#frame"
+        },
+        "south": {
+          "texture": "#frame"
+        },
+        "west": {
+          "texture": "#frame"
+        },
+        "east": {
+          "texture": "#frame"
+        },
+        "up": {
+          "texture": "#frame"
+        },
+        "down": {
+          "texture": "#frame"
+        }
+      }
+    },
+    {
+      "name": "panel",
+      "from": [
+        0,
+        3,
+        6
+      ],
+      "to": [
+        16,
+        15,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "#face"
+        },
+        "south": {
+          "texture": "#face"
+        },
+        "west": {
+          "texture": "#frame"
+        },
+        "east": {
+          "texture": "#frame"
+        },
+        "up": {
+          "texture": "#frame"
+        },
+        "down": {
+          "texture": "#frame"
+        }
+      }
+    },
+    {
+      "name": "frame_top",
+      "from": [
+        0,
+        15,
+        6.5
+      ],
+      "to": [
+        16,
+        15.5,
+        9.5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#frame"
+        },
+        "south": {
+          "texture": "#frame"
+        },
+        "west": {
+          "texture": "#frame"
+        },
+        "east": {
+          "texture": "#frame"
+        },
+        "up": {
+          "texture": "#frame"
+        },
+        "down": {
+          "texture": "#frame"
+        }
+      }
+    }
+  ]
+}

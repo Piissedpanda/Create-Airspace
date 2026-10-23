@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create:iron_sheet"
+    },
+    {
+      "tag": "minecraft:signs"
+    }
+  ],
+  "results": [
+    {
+      "id": "createaviation:airfield_sign"
+    }
+  ]
+}

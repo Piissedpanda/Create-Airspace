@@ -1,12 +1,15 @@
 package com.piissedpanda.createaviation;
 
+import static com.simibubi.create.api.behaviour.display.DisplayTarget.displayTarget;
 import static com.simibubi.create.api.behaviour.interaction.MovingInteractionBehaviour.interactionBehaviour;
 import static com.simibubi.create.api.behaviour.movement.MovementBehaviour.movementBehaviour;
 import static com.simibubi.create.foundation.data.TagGen.axeOnly;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
+import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 
 import java.util.List;
 
+import com.piissedpanda.createaviation.block.AirfieldSign.AirfieldSignBlock;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlock;
 import com.piissedpanda.createaviation.block.TerminalSeat.TerminalSeatBlock;
 import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
@@ -88,6 +91,30 @@ public class CABlocks {
 				.build()
 				.register();
 	});
+
+	public static final BlockEntry<AirfieldSignBlock> AIRFIELD_SIGN = REGISTRATE
+			.block("airfield_sign", AirfieldSignBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.COLOR_YELLOW))
+			.transform(pickaxeOnly())
+			.transform(displayTarget(CADisplayTargets.AIRFIELD_SIGN))
+			.blockstate((c, p) -> p.getVariantBuilder(c.get())
+					.forAllStates(state -> {
+						AirfieldSignBlock.Style style = state.getValue(AirfieldSignBlock.STYLE);
+						return ConfiguredModel.builder()
+								.modelFile(p.models()
+										.withExistingParent("block/airfield_sign/" + style.getSerializedName(),
+												p.modLoc("block/airfield_sign/base"))
+										.texture("face", style.faceTexture))
+								.rotationY(((int) state.getValue(AirfieldSignBlock.FACING)
+										.toYRot() + 180) % 360)
+								.build();
+					}))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/airfield_sign/location")))
+			.build()
+			.register();
 
 	public static boolean isBarrierPost(BlockState state) {
 		return state.getBlock() instanceof BarrierPostBlock;
