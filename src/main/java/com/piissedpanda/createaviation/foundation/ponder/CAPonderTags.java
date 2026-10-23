@@ -6,6 +6,7 @@ import com.tterrag.registrate.util.entry.RegistryEntry;
 
 import net.createmod.ponder.api.registration.PonderTagRegistrationHelper;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.DyeColor;
 
 public class CAPonderTags {
 
@@ -31,7 +32,8 @@ public class CAPonderTags {
 				.add(CABlocks.BRASS_BARRIER_POST)
 				.add(CABlocks.COPPER_BARRIER_POST)
 				.add(CABlocks.TRAIN_BARRIER_POST)
-				.add(CABlocks.TRAFFIC_CONE);
+				.add(CABlocks.TRAFFIC_CONE)
+				.add(CABlocks.TERMINAL_SEATS.get(DyeColor.WHITE));
 	}
 
 }

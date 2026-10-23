@@ -25,6 +25,7 @@ public class CACreativeModeTabs {
 	static {
 		ITEMS.addAll(CABlocks.BARRIER_POSTS);
 		ITEMS.add(CABlocks.TRAFFIC_CONE);
+		CABlocks.TERMINAL_SEATS.forEach(ITEMS::add);
 	}
 
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BASE_TAB = REGISTER.register("base",

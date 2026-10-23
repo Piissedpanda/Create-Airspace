@@ -1,11 +1,19 @@
 package com.piissedpanda.createaviation;
 
+import static com.simibubi.create.api.behaviour.interaction.MovingInteractionBehaviour.interactionBehaviour;
+import static com.simibubi.create.api.behaviour.movement.MovementBehaviour.movementBehaviour;
+import static com.simibubi.create.foundation.data.TagGen.axeOnly;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 
 import java.util.List;
 
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlock;
+import com.piissedpanda.createaviation.block.TerminalSeat.TerminalSeatBlock;
 import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
+import com.simibubi.create.AllTags.AllBlockTags;
+import com.simibubi.create.content.contraptions.actors.seat.SeatInteractionBehaviour;
+import com.simibubi.create.content.contraptions.actors.seat.SeatMovementBehaviour;
+import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
@@ -14,6 +22,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 
 public class CABlocks {
 	private static final CreateRegistrate REGISTRATE = CreateAviation.REGISTRATE;
@@ -48,6 +57,37 @@ public class CABlocks {
 			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/traffic_cone/block")))
 			.build()
 			.register();
+
+	public static final DyedBlockList<TerminalSeatBlock> TERMINAL_SEATS = new DyedBlockList<>(colour -> {
+		String colourName = colour.getSerializedName();
+		return REGISTRATE.block(colourName + "_terminal_seat", p -> new TerminalSeatBlock(p, colour))
+				.initialProperties(SharedProperties::wooden)
+				.properties(p -> p.noOcclusion()
+						.mapColor(colour))
+				.transform(axeOnly())
+				.onRegister(movementBehaviour(new SeatMovementBehaviour()))
+				.onRegister(interactionBehaviour(new SeatInteractionBehaviour()))
+				.tag(AllBlockTags.SEATS.tag)
+				.blockstate((c, p) -> p.getVariantBuilder(c.get())
+						.forAllStatesExcept(state -> {
+							String shape = state.getValue(TerminalSeatBlock.SHAPE)
+									.getSerializedName();
+							return ConfiguredModel.builder()
+									.modelFile(p.models()
+											.withExistingParent("block/" + c.getName() + "/" + shape,
+													p.modLoc("block/terminal_seat/" + shape))
+											.texture("cushion_top", "create:block/seat/top_" + colourName)
+											.texture("cushion_side", "create:block/seat/side_" + colourName)
+											.texture("particle", "create:block/seat/top_" + colourName))
+									.rotationY(((int) state.getValue(TerminalSeatBlock.FACING)
+											.toYRot() + 180) % 360)
+									.build();
+						}, TerminalSeatBlock.WATERLOGGED))
+				.item()
+				.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/" + c.getName() + "/single")))
+				.build()
+				.register();
+	});
 
 	public static boolean isBarrierPost(BlockState state) {
 		return state.getBlock() instanceof BarrierPostBlock;

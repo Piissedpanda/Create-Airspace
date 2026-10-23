@@ -1,9 +1,11 @@
 package com.piissedpanda.createaviation;
 
+import com.simibubi.create.AllShapes.Builder;
+
+import net.createmod.catnip.math.VoxelShaper;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import com.simibubi.create.AllShapes.Builder;;
 
 public class CAShapes {
 
@@ -15,7 +17,20 @@ public class CAShapes {
 			TRAFFIC_CONE = shape(2, 0, 2, 14, 1, 14)
 					.add(5, 1, 5, 11, 8, 11)
 					.add(6, 8, 6, 10, 14, 10)
-					.build();
+					.build(),
+
+			TERMINAL_SEAT_COLLISION = cuboid(0, 0, 0, 16, 6, 16),
+			TERMINAL_SEAT_COLLISION_PLAYERS = cuboid(0, 0, 0, 16, 3, 16);
+
+	// Facing north means sitting towards north, the backrest is in the south
+	public static final VoxelShaper
+
+	TERMINAL_SEAT = shape(0, 0, 0, 16, 8, 15)
+			.add(1, 8, 13, 15, 18, 15)
+			.forHorizontal(Direction.NORTH),
+
+			TERMINAL_SEAT_BACK = shape(1, 8, 13, 15, 18, 15)
+					.forHorizontal(Direction.NORTH);
 
 	private static Builder shape(VoxelShape shape) {
 		return new Builder(shape);

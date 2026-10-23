@@ -1,9 +1,11 @@
 package com.piissedpanda.createaviation.foundation.ponder.scenes;
 
+import com.piissedpanda.createaviation.CABlocks;
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlockEntity;
 import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.foundation.ponder.CreateSceneBuilder;
+import com.simibubi.create.foundation.utility.BlockHelper;
 
 import net.createmod.catnip.math.Pointing;
 import net.createmod.ponder.api.PonderPalette;
@@ -14,6 +16,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
@@ -169,6 +172,71 @@ public class AirportAccessoriesScenes {
 				.placeNearTarget()
 				.pointAt(util.vector()
 						.topOf(cone));
+		scene.idle(80);
+		scene.markAsFinished();
+	}
+
+	public static void terminalSeat(SceneBuilder builder, SceneBuildingUtil util) {
+		CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+		scene.title("terminal_seat", "Using Terminal Seats");
+		scene.configureBasePlate(0, 0, 5);
+		scene.world()
+				.showSection(util.select()
+						.layer(0), Direction.UP);
+		scene.idle(10);
+		scene.world()
+				.showSection(util.select()
+						.fromTo(1, 1, 2, 3, 1, 2), Direction.DOWN);
+		scene.idle(20);
+
+		BlockPos middle = util.grid()
+				.at(2, 1, 2);
+
+		scene.overlay()
+				.showText(70)
+				.text("Terminal Seats placed next to each other form a row")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(middle));
+		scene.idle(80);
+
+		scene.overlay()
+				.showControls(util.vector()
+						.topOf(middle), Pointing.DOWN, 40)
+				.rightClick();
+		scene.idle(10);
+		scene.overlay()
+				.showText(70)
+				.text("Right-click a seat to sit down, just like on Create's seats")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(middle));
+		scene.idle(80);
+
+		scene.overlay()
+				.showControls(util.vector()
+						.topOf(middle), Pointing.DOWN, 40)
+				.rightClick()
+				.withItem(new ItemStack(Items.BLUE_DYE));
+		scene.idle(10);
+		BlockState blueSeat = CABlocks.TERMINAL_SEATS.get(DyeColor.BLUE)
+				.getDefaultState();
+		for (int x = 1; x <= 3; x++) {
+			BlockPos seat = util.grid()
+					.at(x, 1, 2);
+			scene.world()
+					.modifyBlock(seat, s -> BlockHelper.copyProperties(s, blueSeat), false);
+		}
+
+		scene.overlay()
+				.showText(70)
+				.text("Use dye to change their colour")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(middle));
 		scene.idle(80);
 		scene.markAsFinished();
 	}
