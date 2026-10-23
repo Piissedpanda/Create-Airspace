@@ -1,0 +1,7 @@
+{
+  "parent": "createaviation:block/barrier_post/base",
+  "textures": {
+    "material": "create:block/andesite_casing",
+    "particle": "create:block/andesite_casing"
+  }
+}

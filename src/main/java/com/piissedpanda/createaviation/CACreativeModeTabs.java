@@ -23,9 +23,7 @@ public class CACreativeModeTabs {
     public static final List<ItemProviderEntry<?, ?>> ITEMS = new ArrayList<>();
 
     static {
-        ITEMS.add(CABlocks.BARRIER_POST);
-        // ITEMS.addAll(List.of(
-        // CABlocks.BARRIER_POST));
+        ITEMS.addAll(CABlocks.BARRIER_POSTS);
     }
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BASE_TAB = REGISTER.register("base",

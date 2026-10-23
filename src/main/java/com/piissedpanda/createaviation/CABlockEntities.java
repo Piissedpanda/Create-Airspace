@@ -12,7 +12,9 @@ public class CABlockEntities {
         public static final BlockEntityEntry<BarrierPostBlockEntity> BARRIER_POST = REGISTRATE
                         .blockEntity("barrier_post", BarrierPostBlockEntity::new)
                         .visual(() -> BarrierPostVisual::new)
-                        .validBlocks(CABlocks.BARRIER_POST)
+                        .validBlocks(CABlocks.BARRIER_POST, CABlocks.ANDESITE_BARRIER_POST,
+                                        CABlocks.BRASS_BARRIER_POST, CABlocks.COPPER_BARRIER_POST,
+                                        CABlocks.TRAIN_BARRIER_POST)
                         .renderer(() -> BarrierPostRenderer::new)
                         .register();
 

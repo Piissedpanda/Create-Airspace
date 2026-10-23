@@ -1,5 +1,9 @@
 {
+  "block.createaviation.andesite_barrier_post": "Andesite Barrier Post",
   "block.createaviation.barrier_post": "Barrier Post",
+  "block.createaviation.brass_barrier_post": "Brass Barrier Post",
+  "block.createaviation.copper_barrier_post": "Copper Barrier Post",
+  "block.createaviation.train_barrier_post": "Train Barrier Post",
   "createaviation.barrier_post.already_connected": "Barrier Posts are already connected",
   "createaviation.barrier_post.blocks_invalid": "Barrier Post blocks invalid, Sneak-click to reset",
   "createaviation.barrier_post.cannot_add_more_connections": "Cannot add more connections to this Barrier Post",

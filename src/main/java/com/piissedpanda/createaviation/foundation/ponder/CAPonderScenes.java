@@ -13,7 +13,8 @@ public class CAPonderScenes {
 	public static void register(PonderSceneRegistrationHelper<ResourceLocation> helper) {
 		PonderSceneRegistrationHelper<ItemProviderEntry<?, ?>> HELPER = helper.withKeyFunction(RegistryEntry::getId);
 
-		HELPER.addStoryBoard(CABlocks.BARRIER_POST, "barrier_post", AirportAccessoriesScenes::barrierPost,
+		HELPER.forComponents(CABlocks.BARRIER_POSTS)
+				.addStoryBoard("barrier_post", AirportAccessoriesScenes::barrierPost,
 				CAPonderTags.AIRPORT_ACCESSORIES);
 	}
 

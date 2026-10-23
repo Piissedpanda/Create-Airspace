@@ -70,7 +70,7 @@ public class BarrierPostConnectionHandler {
 		Player player = event.getEntity();
 		BlockState blockState = level.getBlockState(pos);
 
-		if (!CABlocks.BARRIER_POST.has(blockState))
+		if (!CABlocks.isBarrierPost(blockState))
 			return;
 		if (!isWrench(itemStack))
 			return;

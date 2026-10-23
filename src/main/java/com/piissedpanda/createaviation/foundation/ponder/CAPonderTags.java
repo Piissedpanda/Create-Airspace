@@ -26,7 +26,11 @@ public class CAPonderTags {
 				.register();
 
 		HELPER.addToTag(AIRPORT_ACCESSORIES)
-				.add(CABlocks.BARRIER_POST);
+				.add(CABlocks.BARRIER_POST)
+				.add(CABlocks.ANDESITE_BARRIER_POST)
+				.add(CABlocks.BRASS_BARRIER_POST)
+				.add(CABlocks.COPPER_BARRIER_POST)
+				.add(CABlocks.TRAIN_BARRIER_POST);
 	}
 
 }

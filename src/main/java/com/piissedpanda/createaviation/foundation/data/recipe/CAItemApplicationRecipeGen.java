@@ -1,0 +1,39 @@
+package com.piissedpanda.createaviation.foundation.data.recipe;
+
+import java.util.concurrent.CompletableFuture;
+
+import com.piissedpanda.createaviation.CABlocks;
+import com.piissedpanda.createaviation.CreateAviation;
+import com.simibubi.create.AllBlocks;
+import com.simibubi.create.AllItems;
+import com.simibubi.create.api.data.recipe.ItemApplicationRecipeGen;
+import com.tterrag.registrate.util.entry.BlockEntry;
+
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.ItemLike;
+
+@SuppressWarnings("unused")
+public class CAItemApplicationRecipeGen extends ItemApplicationRecipeGen {
+
+	GeneratedRecipe
+
+	BARRIER_POST = barrierPost(CABlocks.BARRIER_POST, AllBlocks.INDUSTRIAL_IRON_BLOCK),
+			ANDESITE_BARRIER_POST = barrierPost(CABlocks.ANDESITE_BARRIER_POST, AllBlocks.ANDESITE_CASING),
+			BRASS_BARRIER_POST = barrierPost(CABlocks.BRASS_BARRIER_POST, AllBlocks.BRASS_CASING),
+			COPPER_BARRIER_POST = barrierPost(CABlocks.COPPER_BARRIER_POST, AllBlocks.COPPER_CASING),
+			TRAIN_BARRIER_POST = barrierPost(CABlocks.TRAIN_BARRIER_POST, AllBlocks.RAILWAY_CASING);
+
+	// Apply a belt to the casing block, by hand or with a Deployer
+	private GeneratedRecipe barrierPost(BlockEntry<?> post, BlockEntry<?> casing) {
+		return create(post.getId()
+				.getPath(), b -> b.require((ItemLike) casing.get())
+						.require(AllItems.BELT_CONNECTOR)
+						.output(post.get()));
+	}
+
+	public CAItemApplicationRecipeGen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+		super(output, registries, CreateAviation.MODID);
+	}
+
+}

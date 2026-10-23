@@ -1,17 +1,21 @@
 package com.piissedpanda.createaviation.foundation.data;
 
 import java.util.Map.Entry;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.piissedpanda.createaviation.CreateAviation;
+import com.piissedpanda.createaviation.foundation.data.recipe.CAItemApplicationRecipeGen;
 import com.piissedpanda.createaviation.foundation.ponder.CAPonderPlugin;
 import com.simibubi.create.foundation.utility.FilesHelper;
 import com.tterrag.registrate.providers.ProviderType;
 
 import net.createmod.ponder.foundation.PonderIndex;
-
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 public class CADatagen {
@@ -19,6 +23,17 @@ public class CADatagen {
     public static void gatherDataHighPriority(GatherDataEvent event) {
         if (event.getMods().contains(CreateAviation.MODID))
             addExtraRegistrateData();
+    }
+
+    public static void gatherData(GatherDataEvent event) {
+        if (!event.getMods().contains(CreateAviation.MODID))
+            return;
+
+        DataGenerator generator = event.getGenerator();
+        PackOutput output = generator.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+
+        generator.addProvider(event.includeServer(), new CAItemApplicationRecipeGen(output, lookupProvider));
     }
 
     private static void addExtraRegistrateData() {

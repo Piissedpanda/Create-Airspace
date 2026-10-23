@@ -1,0 +1,7 @@
+{
+  "parent": "createaviation:block/barrier_post/base",
+  "textures": {
+    "material": "create:block/industrial_iron_block",
+    "particle": "create:block/industrial_iron_block"
+  }
+}

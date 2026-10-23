@@ -1,5 +1,9 @@
 {
   "values": [
-    "createaviation:barrier_post"
+    "createaviation:barrier_post",
+    "createaviation:andesite_barrier_post",
+    "createaviation:brass_barrier_post",
+    "createaviation:copper_barrier_post",
+    "createaviation:train_barrier_post"
   ]
 }

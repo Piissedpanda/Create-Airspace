@@ -50,6 +50,7 @@ public class CreateAviation {
         CAConfigs.register(modLoadingContext, modContainer);
 
         modEventBus.addListener(EventPriority.HIGHEST, CADatagen::gatherDataHighPriority);
+        modEventBus.addListener(EventPriority.LOWEST, CADatagen::gatherData);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
