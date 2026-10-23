@@ -1,0 +1,23 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "tag": "c:dyes/orange"
+    },
+    {
+      "tag": "c:dyes/white"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "createaviation:traffic_cone"
+    }
+  ]
+}

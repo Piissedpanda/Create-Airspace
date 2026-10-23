@@ -1,6 +1,7 @@
 package com.piissedpanda.createaviation.foundation.ponder.scenes;
 
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlockEntity;
+import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.foundation.ponder.CreateSceneBuilder;
 
@@ -118,6 +119,56 @@ public class AirportAccessoriesScenes {
 				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(belt2);
+		scene.idle(80);
+		scene.markAsFinished();
+	}
+
+	public static void trafficCone(SceneBuilder builder, SceneBuildingUtil util) {
+		CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+		scene.title("traffic_cone", "Placing Traffic Cones");
+		scene.configureBasePlate(0, 0, 5);
+		scene.world()
+				.showSection(util.select()
+						.layer(0), Direction.UP);
+		scene.idle(10);
+
+		for (int z = 0; z < 5; z++) {
+			scene.world()
+					.showSection(util.select()
+							.position(3, 1, z), Direction.DOWN);
+			scene.idle(4);
+		}
+		scene.idle(10);
+
+		BlockPos cone = util.grid()
+				.at(3, 1, 2);
+
+		scene.overlay()
+				.showText(80)
+				.text("Traffic Cones mark closed-off parts of taxiways and aprons")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(cone));
+		scene.idle(90);
+
+		scene.overlay()
+				.showControls(util.vector()
+						.topOf(cone), Pointing.DOWN, 40)
+				.rightClick()
+				.withItem(AllItems.WRENCH.asStack());
+		scene.idle(10);
+		scene.world()
+				.modifyBlock(cone, s -> s.setValue(TrafficConeBlock.FACING, s.getValue(TrafficConeBlock.FACING)
+						.getClockWise()), false);
+
+		scene.overlay()
+				.showText(70)
+				.text("Use a Wrench to turn them, or Sneak-click to pick them up")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(cone));
 		scene.idle(80);
 		scene.markAsFinished();
 	}

@@ -5,10 +5,13 @@ import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 import java.util.List;
 
 import com.piissedpanda.createaviation.block.BarrierPost.BarrierPostBlock;
+import com.piissedpanda.createaviation.block.TrafficCone.TrafficConeBlock;
+import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 
@@ -33,6 +36,18 @@ public class CABlocks {
 
 	public static final List<BlockEntry<BarrierPostBlock>> BARRIER_POSTS = List.of(BARRIER_POST,
 			ANDESITE_BARRIER_POST, BRASS_BARRIER_POST, COPPER_BARRIER_POST, TRAIN_BARRIER_POST);
+
+	public static final BlockEntry<TrafficConeBlock> TRAFFIC_CONE = REGISTRATE
+			.block("traffic_cone", TrafficConeBlock::new)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.COLOR_ORANGE)
+					.strength(0.5f)
+					.sound(SoundType.WOOL))
+			.blockstate((c, p) -> p.horizontalBlock(c.get(), AssetLookup.partialBaseModel(c, p)))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/traffic_cone/block")))
+			.build()
+			.register();
 
 	public static boolean isBarrierPost(BlockState state) {
 		return state.getBlock() instanceof BarrierPostBlock;

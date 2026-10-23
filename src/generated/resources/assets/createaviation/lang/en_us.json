@@ -3,6 +3,7 @@
   "block.createaviation.barrier_post": "Barrier Post",
   "block.createaviation.brass_barrier_post": "Brass Barrier Post",
   "block.createaviation.copper_barrier_post": "Copper Barrier Post",
+  "block.createaviation.traffic_cone": "Traffic Cone",
   "block.createaviation.train_barrier_post": "Train Barrier Post",
   "createaviation.barrier_post.already_connected": "Barrier Posts are already connected",
   "createaviation.barrier_post.blocks_invalid": "Barrier Post blocks invalid, Sneak-click to reset",
@@ -22,5 +23,8 @@
   "createaviation.ponder.barrier_post.text_5": "Sneak-right-click a belt with a Wrench to remove it",
   "createaviation.ponder.tag.airport_accessories": "Airport Accessories",
   "createaviation.ponder.tag.airport_accessories.description": "Blocks to build and decorate your airport",
+  "createaviation.ponder.traffic_cone.header": "Placing Traffic Cones",
+  "createaviation.ponder.traffic_cone.text_1": "Traffic Cones mark closed-off parts of taxiways and aprons",
+  "createaviation.ponder.traffic_cone.text_2": "Use a Wrench to turn them, or Sneak-click to pick them up",
   "itemGroup.createaviation.base": "Create Aviation"
 }

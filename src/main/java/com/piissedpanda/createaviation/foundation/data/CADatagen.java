@@ -7,6 +7,7 @@ import java.util.function.BiConsumer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.piissedpanda.createaviation.CreateAviation;
+import com.piissedpanda.createaviation.foundation.data.recipe.CACompactingRecipeGen;
 import com.piissedpanda.createaviation.foundation.data.recipe.CAItemApplicationRecipeGen;
 import com.piissedpanda.createaviation.foundation.ponder.CAPonderPlugin;
 import com.simibubi.create.foundation.utility.FilesHelper;
@@ -34,6 +35,7 @@ public class CADatagen {
 		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
 		generator.addProvider(event.includeServer(), new CAItemApplicationRecipeGen(output, lookupProvider));
+		generator.addProvider(event.includeServer(), new CACompactingRecipeGen(output, lookupProvider));
 	}
 
 	private static void addExtraRegistrateData() {

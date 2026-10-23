@@ -30,7 +30,8 @@ public class CAPonderTags {
 				.add(CABlocks.ANDESITE_BARRIER_POST)
 				.add(CABlocks.BRASS_BARRIER_POST)
 				.add(CABlocks.COPPER_BARRIER_POST)
-				.add(CABlocks.TRAIN_BARRIER_POST);
+				.add(CABlocks.TRAIN_BARRIER_POST)
+				.add(CABlocks.TRAFFIC_CONE);
 	}
 
 }

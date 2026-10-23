@@ -6,7 +6,6 @@ import com.piissedpanda.createaviation.foundation.config.CAConfigs;
 import com.simibubi.create.AllSoundEvents;
 
 import net.createmod.catnip.platform.CatnipServices;
-import com.simibubi.create.foundation.utility.CreateLang;
 
 import net.createmod.catnip.outliner.Outliner;
 import net.minecraft.ChatFormatting;
@@ -220,7 +219,7 @@ public class BarrierPostConnectionHandler {
 	public static boolean validateAndConnect(LevelAccessor level, BlockPos pos, Player player, ItemStack wrench,
 			boolean simulate) {
 		if (!simulate && player.isShiftKeyDown()) {
-			CreateLang.translate("barrier_post.selection_cleared")
+			CALang.translate("barrier_post.selection_cleared")
 					.sendStatus(player);
 			return false;
 		}

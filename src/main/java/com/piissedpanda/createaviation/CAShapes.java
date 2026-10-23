@@ -10,7 +10,12 @@ public class CAShapes {
 	public static final VoxelShape
 
 	BARRIER_POST_INTERACTION = shape(4, 0, 4, 12, 20, 12)
-			.build();
+			.build(),
+
+			TRAFFIC_CONE = shape(2, 0, 2, 14, 1, 14)
+					.add(5, 1, 5, 11, 8, 11)
+					.add(6, 8, 6, 10, 14, 10)
+					.build();
 
 	private static Builder shape(VoxelShape shape) {
 		return new Builder(shape);
