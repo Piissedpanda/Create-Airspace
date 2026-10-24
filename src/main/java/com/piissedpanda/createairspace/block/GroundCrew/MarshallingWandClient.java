@@ -3,11 +3,13 @@ package com.piissedpanda.createairspace.block.GroundCrew;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.piissedpanda.createairspace.CAItems;
+import com.piissedpanda.createairspace.CreateAirspace;
 
 import net.createmod.catnip.animation.AnimationTickHolder;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.HumanoidArm;
@@ -38,12 +40,29 @@ public class MarshallingWandClient {
 				.is(CAItems.MARSHALLING_WAND.get());
 	}
 
+	// Minecraft only poses the arm of the hand in use, so a wand in the other hand
+	// is posed here too
 	private static void wave(HumanoidModel<?> model, LivingEntity entity, HumanoidArm arm) {
+		poseArm(model, arm);
+		HumanoidArm other = arm.getOpposite();
+		InteractionHand otherHand = other == entity.getMainArm() ? InteractionHand.MAIN_HAND : InteractionHand.OFF_HAND;
+		if (entity.getItemInHand(otherHand)
+				.is(CAItems.MARSHALLING_WAND.get()))
+			poseArm(model, other);
+	}
+
+	private static void poseArm(HumanoidModel<?> model, HumanoidArm arm) {
 		ModelPart part = arm == HumanoidArm.RIGHT ? model.rightArm : model.leftArm;
 		float side = arm == HumanoidArm.RIGHT ? 1 : -1;
 		part.xRot = -Mth.PI + 0.15f + 0.8f * swing(AnimationTickHolder.getRenderTime());
 		part.yRot = 0;
-		part.zRot = side * 0.15f;
+		part.zRot = -side * 0.2f;
+	}
+
+	// Picks the item model that holds the wand along the arm while waving
+	public static void registerItemProperties() {
+		ItemProperties.register(CAItems.MARSHALLING_WAND.get(), CreateAirspace.asResource("waving"),
+				(stack, level, entity, seed) -> entity != null && isWaving(entity) ? 1 : 0);
 	}
 
 	private static class Extensions implements IClientItemExtensions {

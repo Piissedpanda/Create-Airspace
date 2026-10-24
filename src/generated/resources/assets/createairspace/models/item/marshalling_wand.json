@@ -1,3 +1,11 @@
 {
-  "parent": "createairspace:item/ground_crew/marshalling_wand"
+  "parent": "createairspace:item/ground_crew/marshalling_wand",
+  "overrides": [
+    {
+      "model": "createairspace:item/ground_crew/marshalling_wand_waving",
+      "predicate": {
+        "createairspace:waving": 1.0
+      }
+    }
+  ]
 }

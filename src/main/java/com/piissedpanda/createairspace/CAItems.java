@@ -74,7 +74,11 @@ public class CAItems {
 	public static final ItemEntry<MarshallingWandItem> MARSHALLING_WAND = REGISTRATE
 			.item("marshalling_wand", MarshallingWandItem::new)
 			.properties(p -> p.stacksTo(16))
-			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("item/ground_crew/" + c.getName())))
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("item/ground_crew/" + c.getName()))
+					.override()
+					.predicate(CreateAirspace.asResource("waving"), 1)
+					.model(p.getExistingFile(p.modLoc("item/ground_crew/" + c.getName() + "_waving")))
+					.end())
 			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, c.get())
 					.define('O', Items.ORANGE_STAINED_GLASS_PANE)
 					.define('L', Tags.Items.DUSTS_GLOWSTONE)

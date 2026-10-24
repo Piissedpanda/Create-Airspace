@@ -39,6 +39,7 @@ public class CreateAirspaceClient {
 	@SubscribeEvent
 	static void onClientSetup(FMLClientSetupEvent event) {
 		PonderIndex.addPlugin(new CAPonderPlugin());
+		event.enqueueWork(MarshallingWandClient::registerItemProperties);
 		event.enqueueWork(() -> ItemProperties.register(CAItems.PAINT_PAIL.get(), CreateAirspace.asResource("paint"),
 				(stack, level, entity, seed) -> PaintPailItem.getPaint(stack)
 						.isEmpty() ? 0 : 1));
