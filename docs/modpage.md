@@ -2,9 +2,9 @@
 
 ![Banner](https://raw.githubusercontent.com/Piissedpanda/Create-Airspace/mc1.21.1/dev/docs/images/banner.jpg)
 
-**Airport accessories for Create.** Build a proper airfield around your aircraft: barrier posts for queue lines, terminal seats, taxiway signs, edge lights, a windsock that follows the wind and a rotating airport beacon.
+**Aviation and airport accessories for Create.** Build a proper airfield around your aircraft: barrier posts for queue lines, terminal seats, taxiway signs, edge lights, a windsock that follows the wind and a rotating airport beacon.
 
-Create: Airspace sits right next to Create and Create Aeronautics. It uses Create's own processes, Ponder scenes and wrench handling, so everything feels like part of Create.
+Made for aviation builds, Create: Airspace sits right next to Create and Create Aeronautics. It uses Create's own processes, Ponder scenes and wrench handling, so everything feels like part of Create.
 
 ---
 

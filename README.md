@@ -1,6 +1,6 @@
 # Create: Airspace
 
-Airport accessories for [Create](https://github.com/Creators-of-Create/Create). Create: Airspace adds the things an airfield needs around your aircraft and fits right next to Create and Create Aeronautics: it builds on Create's own processes instead of duplicating them.
+Aviation and airport accessories for [Create](https://github.com/Creators-of-Create/Create). Create: Airspace adds the things an airfield needs around your aircraft and fits right next to Create and Create Aeronautics: it builds on Create's own processes instead of duplicating them.
 
 Minecraft 1.21.1 · NeoForge · Create 6.0.10 or newer
 
