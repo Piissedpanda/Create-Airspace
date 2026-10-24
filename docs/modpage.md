@@ -12,14 +12,14 @@ Made for aviation builds, Create: Airspace sits right next to Create and Create 
 
 ![Barrier Posts](https://raw.githubusercontent.com/Piissedpanda/Create-Airspace/mc1.21.1/dev/docs/images/barrier_posts.jpg)
 
-Connect two posts with a wrench and a retractable belt stretches between them. Each post holds several belts, perfect for queue lines. Recolour belts with dye.
+Connect two posts with a wrench and a retractable belt stretches between them. Each post holds several belts, perfect for queue lines. Recolor belts with dye.
 Available in **industrial iron, andesite, brass, copper and train casing**.
 
 ## Terminal Seats
 
 ![Terminal Seats](https://raw.githubusercontent.com/Piissedpanda/Create-Airspace/mc1.21.1/dev/docs/images/terminal_seats.jpg)
 
-Seats facing the same way join into rows, with armrests only at the ends. Sit down like on Create's seats, leashed mobs too, and they keep working on contraptions. 16 colours, recolour with dye.
+Seats facing the same way join into rows, with armrests only at the ends. Sit down like on Create's seats, leashed mobs too, and they keep working on contraptions. 16 colors, recolor with dye.
 
 ## Airfield Signs
 

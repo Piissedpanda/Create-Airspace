@@ -111,7 +111,7 @@ public class AirportAccessoriesScenes {
 
 		scene.overlay()
 				.showText(70)
-				.text("Right-click a belt with a dye to change its colour")
+				.text("Right-click a belt with a dye to change its color")
 				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(belt1);
@@ -267,7 +267,7 @@ public class AirportAccessoriesScenes {
 
 		scene.overlay()
 				.showText(90)
-				.text("Use dye to change the colour: white, blue, green, red or yellow")
+				.text("Use dye to change the color: white, blue, green, red or yellow")
 				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(util.vector()

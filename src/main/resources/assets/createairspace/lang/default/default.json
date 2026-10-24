@@ -19,7 +19,7 @@
     "createairspace.airport_beacon.mode.military": "Military Airport (double white, green)",
 
     "createairspace.runway_marking.pattern": "Marking: %1$s",
-    "createairspace.runway_marking.pattern.center_line": "Centre Line",
+    "createairspace.runway_marking.pattern.center_line": "Center Line",
     "createairspace.runway_marking.pattern.edge_line": "Edge Line",
     "createairspace.runway_marking.pattern.double_line": "Double Line",
     "createairspace.runway_marking.pattern.bar": "Bar",
@@ -28,6 +28,6 @@
     "createairspace.runway_marking.pattern.curve": "Curve",
     "createairspace.runway_marking.pattern.diagonal": "Diagonal",
 
-    "createairspace.suitcase_packager.color": "Luggage colour: %1$s",
-    "createairspace.suitcase_packager.random_color": "Luggage colour: random"
+    "createairspace.suitcase_packager.color": "Luggage color: %1$s",
+    "createairspace.suitcase_packager.random_color": "Luggage color: random"
 }

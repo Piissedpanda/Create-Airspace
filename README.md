@@ -8,9 +8,9 @@ Minecraft 1.21.1 · NeoForge · Create 6.0.10 or newer
 
 | Block | What it does |
 | --- | --- |
-| **Barrier Posts** | Connect posts with a wrench to stretch a belt between them, recolour belts with dye. Industrial iron, andesite, brass, copper and train casing variants. |
+| **Barrier Posts** | Connect posts with a wrench to stretch a belt between them, recolor belts with dye. Industrial iron, andesite, brass, copper and train casing variants. |
 | **Traffic Cone** | Marks closed areas. Can be placed underwater. |
-| **Terminal Seats** | Seats facing the same way join into rows. Sit down like on Create's seats, works on contraptions too. 16 colours, recolour with dye. |
+| **Terminal Seats** | Seats facing the same way join into rows. Sit down like on Create's seats, works on contraptions too. 16 colors, recolor with dye. |
 | **Airfield Signs** | Location, direction and mandatory signs (switch with a wrench). Write on a whole row with a named name tag, a clipboard or a Display Link. |
 | **Edge Lights** | Light up with redstone, redstone dust connects to them. White, blue, green, red and yellow. |
 | **Windsock** | Turns into the wind and rises with its strength. Rain, thunderstorms and height make the wind stronger. |
