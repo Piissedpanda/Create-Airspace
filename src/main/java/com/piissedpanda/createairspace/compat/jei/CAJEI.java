@@ -7,6 +7,7 @@ import com.piissedpanda.createairspace.CAFluids;
 import com.piissedpanda.createairspace.CAItems;
 import com.piissedpanda.createairspace.CreateAirspace;
 import com.piissedpanda.createairspace.block.RunwayMarking.PaintPailItem;
+import com.simibubi.create.content.fluids.transfer.EmptyingRecipe;
 import com.simibubi.create.content.fluids.transfer.FillingRecipe;
 import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
 import com.tterrag.registrate.util.entry.FluidEntry;
@@ -15,9 +16,11 @@ import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter;
 import mezz.jei.api.ingredients.subtypes.UidContext;
+import mezz.jei.api.recipe.IRecipeManager;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.registration.ISubtypeRegistration;
+import mezz.jei.api.runtime.IJeiRuntime;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -27,12 +30,15 @@ import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
-// Create's JEI plugin skips items that stay the same item when filled, so the paint pail is added here
+// Create's JEI plugin does not handle items that stay the same item when filled or drained,
+// so the paint pail recipes are added here
 @JeiPlugin
 public class CAJEI implements IModPlugin {
 
 	private static final RecipeType<RecipeHolder<FillingRecipe>> SPOUT_FILLING = RecipeType
 			.createRecipeHolderType(ResourceLocation.fromNamespaceAndPath("create", "spout_filling"));
+	private static final RecipeType<RecipeHolder<EmptyingRecipe>> DRAINING = RecipeType
+			.createRecipeHolderType(ResourceLocation.fromNamespaceAndPath("create", "draining"));
 
 	@Override
 	public ResourceLocation getPluginUid() {
@@ -75,6 +81,42 @@ public class CAJEI implements IModPlugin {
 			recipes.add(new RecipeHolder<>(id, recipe));
 		}
 		registration.addRecipes(SPOUT_FILLING, recipes);
+		registration.addRecipes(DRAINING, drainingRecipes());
+	}
+
+	// A full pail in the item drain gives an empty pail and its paint
+	private static List<RecipeHolder<EmptyingRecipe>> drainingRecipes() {
+		List<RecipeHolder<EmptyingRecipe>> recipes = new ArrayList<>();
+		for (FluidEntry<?> paint : List.of(CAFluids.WHITE_PAINT, CAFluids.YELLOW_PAINT)) {
+			FluidStack fluid = new FluidStack(paint.get()
+					.getSource(), PaintPailItem.CAPACITY);
+			ResourceLocation id = CreateAirspace.asResource("empty_paint_pail_of_" + paint.getId()
+					.getPath());
+			EmptyingRecipe recipe = new StandardProcessingRecipe.Builder<>(EmptyingRecipe::new, id)
+					.withItemIngredients(Ingredient.of(PaintPailItem.filled(fluid)))
+					.withFluidOutputs(fluid)
+					.withSingleItemOutput(CAItems.PAINT_PAIL.asStack())
+					.build();
+			recipes.add(new RecipeHolder<>(id, recipe));
+		}
+		return recipes;
+	}
+
+	// Create's generated draining recipes show the full pail as the result, they
+	// are replaced above
+	@Override
+	public void onRuntimeAvailable(IJeiRuntime runtime) {
+		IRecipeManager recipes = runtime.getRecipeManager();
+		List<RecipeHolder<EmptyingRecipe>> wrong = recipes.createRecipeLookup(DRAINING)
+				.get()
+				.filter(holder -> holder.id()
+						.getNamespace()
+						.equals("create")
+						&& holder.id()
+								.getPath()
+								.contains(CreateAirspace.MODID + "_paint_pail"))
+				.toList();
+		recipes.hideRecipes(DRAINING, wrong);
 	}
 
 }
