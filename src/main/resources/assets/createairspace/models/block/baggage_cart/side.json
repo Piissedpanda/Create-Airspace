@@ -4,7 +4,6 @@
   "textures": {
     "metal": "create:block/industrial_iron_block",
     "net": "minecraft:block/iron_bars",
-    "wheel": "minecraft:block/black_concrete",
     "deck": "create:block/industrial_iron_block",
     "particle": "create:block/industrial_iron_block"
   },
@@ -13,19 +12,19 @@
       "name": "net",
       "from": [
         0,
-        4,
+        1,
         0.5
       ],
       "to": [
         16,
-        19,
+        15,
         0.5
       ],
       "faces": {
         "north": {
           "uv": [
             0,
-            0,
+            1,
             16,
             15
           ],
@@ -34,7 +33,7 @@
         "south": {
           "uv": [
             0,
-            0,
+            1,
             16,
             15
           ],
@@ -46,12 +45,12 @@
       "name": "rail",
       "from": [
         0,
-        19,
+        15,
         0
       ],
       "to": [
         16,
-        20,
+        16,
         1
       ],
       "faces": {
@@ -115,19 +114,19 @@
       "name": "post",
       "from": [
         0,
-        4,
+        1,
         0
       ],
       "to": [
         1,
-        19,
+        15,
         1
       ],
       "faces": {
         "north": {
           "uv": [
             0,
-            0,
+            1,
             1,
             15
           ],
@@ -136,7 +135,7 @@
         "south": {
           "uv": [
             0,
-            0,
+            1,
             1,
             15
           ],
@@ -145,7 +144,7 @@
         "west": {
           "uv": [
             0,
-            0,
+            1,
             1,
             15
           ],
@@ -154,7 +153,7 @@
         "east": {
           "uv": [
             0,
-            0,
+            1,
             1,
             15
           ],
@@ -184,19 +183,19 @@
       "name": "post",
       "from": [
         15,
-        4,
+        1,
         0
       ],
       "to": [
         16,
-        19,
+        15,
         1
       ],
       "faces": {
         "north": {
           "uv": [
             15,
-            0,
+            1,
             16,
             15
           ],
@@ -205,7 +204,7 @@
         "south": {
           "uv": [
             15,
-            0,
+            1,
             16,
             15
           ],
@@ -214,7 +213,7 @@
         "west": {
           "uv": [
             0,
-            0,
+            1,
             1,
             15
           ],
@@ -223,7 +222,7 @@
         "east": {
           "uv": [
             0,
-            0,
+            1,
             1,
             15
           ],

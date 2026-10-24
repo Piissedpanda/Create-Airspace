@@ -305,7 +305,7 @@ public class CABlocks {
 								.getExistingFile(p.modLoc("block/baggage_cart/deck")))
 						.addModel()
 						.end();
-				// Net on every open side, wheels on the outer corners
+				// Net on every side without a cart of the same group
 				for (Direction side : Direction.Plane.HORIZONTAL) {
 					int rotation = ((int) side.toYRot() + 180) % 360;
 					builder.part()
@@ -314,14 +314,6 @@ public class CABlocks {
 							.rotationY(rotation)
 							.addModel()
 							.condition(BaggageCartBlock.CONNECTED.get(side), false)
-							.end();
-					builder.part()
-							.modelFile(p.models()
-									.getExistingFile(p.modLoc("block/baggage_cart/wheel")))
-							.rotationY(rotation)
-							.addModel()
-							.condition(BaggageCartBlock.CONNECTED.get(side), false)
-							.condition(BaggageCartBlock.CONNECTED.get(side.getCounterClockWise()), false)
 							.end();
 				}
 			})

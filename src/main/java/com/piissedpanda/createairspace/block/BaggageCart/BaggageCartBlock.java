@@ -18,7 +18,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -54,40 +53,25 @@ public class BaggageCartBlock extends Block implements IBE<BaggageCartBlockEntit
 				.toArray(BooleanProperty[]::new)));
 	}
 
-	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-		BlockState state = defaultBlockState();
-		for (Direction side : Direction.Plane.HORIZONTAL)
-			state = state.setValue(CONNECTED.get(side), pContext.getLevel()
-					.getBlockState(pContext.getClickedPos()
-							.relative(side))
-					.is(this));
-		return state;
-	}
-
+	// Connections come from the cart groups, see BaggageCartBlockEntity
 	@Override
 	public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState,
 			LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
-		if (!CONNECTED.containsKey(pDirection))
+		if (!CONNECTED.containsKey(pDirection) || pNeighborState.is(this))
 			return pState;
-		return pState.setValue(CONNECTED.get(pDirection), pNeighborState.is(this));
-	}
-
-	@Override
-	protected void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState,
-			boolean pMovedByPiston) {
-		if (!pOldState.is(this))
-			BaggageCartBlockEntity.invalidateCart(pLevel, pPos);
+		return pState.setValue(CONNECTED.get(pDirection), false);
 	}
 
 	@Override
 	public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
 		if (pState.is(pNewState.getBlock()))
 			return;
+		BlockPos controller = getBlockEntityOptional(pLevel, pPos).map(BaggageCartBlockEntity::getController)
+				.orElse(null);
 		withBlockEntityDo(pLevel, pPos, be -> ItemHelper.dropContents(pLevel, pPos, be.inventory));
 		IBE.onRemove(pState, pLevel, pPos, pNewState);
-		for (Direction side : Direction.Plane.HORIZONTAL)
-			BaggageCartBlockEntity.invalidateCart(pLevel, pPos.relative(side));
+		if (!pLevel.isClientSide && controller != null)
+			BaggageCartBlockEntity.reform(pLevel, controller);
 	}
 
 	// Right-click stacks luggage on this cart, or on another part when it is full

@@ -18,7 +18,7 @@ import net.minecraft.world.item.ItemStack;
 // Luggage lies on its back, one piece per layer, slightly turned for a loaded look
 public class BaggageCartRenderer extends SafeBlockEntityRenderer<BaggageCartBlockEntity> {
 
-	private static final float DECK = 4 / 16f, LAYER = 7 / 16f, BACK = 11.5f / 16f;
+	private static final float DECK = 1 / 16f, LAYER = 7 / 16f, BACK = 11.5f / 16f;
 
 	public BaggageCartRenderer(BlockEntityRendererProvider.Context context) {
 	}
