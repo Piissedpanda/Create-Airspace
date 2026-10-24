@@ -7,6 +7,7 @@ import com.piissedpanda.createairspace.block.GroundCrew.EarDefendersItem;
 import com.piissedpanda.createairspace.block.GroundCrew.MarshallingWandItem;
 import com.piissedpanda.createairspace.block.Luggage.LuggageItem;
 import com.piissedpanda.createairspace.block.Luggage.LuggageType;
+import com.piissedpanda.createairspace.block.RunwayMarking.PaintPailItem;
 import com.simibubi.create.AllTags.AllItemTags;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -15,6 +16,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
@@ -54,6 +56,20 @@ public class CAItems {
 			LUGGAGE.put(type, colors);
 		}
 	}
+
+	public static final ItemEntry<PaintPailItem> PAINT_PAIL = REGISTRATE.item("paint_pail", PaintPailItem::new)
+			.properties(p -> p.stacksTo(1))
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("item/paint_pail/empty"))
+					.override()
+					.predicate(CreateAirspace.asResource("paint"), 1)
+					.model(p.getExistingFile(p.modLoc("item/paint_pail/filled")))
+					.end())
+			.recipe((c, p) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, c.get())
+					.requires(Items.BUCKET)
+					.requires(Tags.Items.RODS_WOODEN)
+					.unlockedBy("has_bucket", RegistrateRecipeProvider.has(Items.BUCKET))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.register();
 
 	public static final ItemEntry<MarshallingWandItem> MARSHALLING_WAND = REGISTRATE
 			.item("marshalling_wand", MarshallingWandItem::new)

@@ -6,7 +6,9 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 
 import com.piissedpanda.createairspace.block.Luggage.LuggageType;
+import com.piissedpanda.createairspace.block.RunwayMarking.PaintPailItem;
 import com.simibubi.create.AllCreativeModeTabs;
+import com.tterrag.registrate.util.entry.FluidEntry;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
 
 import net.minecraft.core.registries.Registries;
@@ -14,6 +16,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DyeColor;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -32,9 +35,7 @@ public class CACreativeModeTabs {
 		ITEMS.add(CABlocks.EDGE_LIGHT);
 		ITEMS.add(CABlocks.WINDSOCK);
 		ITEMS.add(CABlocks.AIRPORT_BEACON);
-		ITEMS.add(CABlocks.WHITE_RUNWAY_MARKING);
-		ITEMS.add(CABlocks.YELLOW_RUNWAY_MARKING);
-		ITEMS.add(CABlocks.RUNWAY_NUMBER);
+		ITEMS.add(CAItems.PAINT_PAIL);
 		ITEMS.add(CABlocks.SUITCASE_PACKAGER);
 		ITEMS.add(CABlocks.BAGGAGE_CART);
 		ITEMS.add(CABlocks.WHEEL_CHOCK);
@@ -64,6 +65,17 @@ public class CACreativeModeTabs {
 				@NotNull CreativeModeTab.Output output) {
 			for (ItemProviderEntry<?, ?> item : items) {
 				output.accept(item);
+				if (item == CAItems.PAINT_PAIL)
+					addPaint(output);
+			}
+		}
+
+		// Full pails and paint buckets next to the empty pail
+		private static void addPaint(CreativeModeTab.Output output) {
+			for (FluidEntry<?> paint : List.of(CAFluids.WHITE_PAINT, CAFluids.YELLOW_PAINT)) {
+				output.accept(PaintPailItem.filled(new FluidStack(paint.get().getSource(), PaintPailItem.CAPACITY)));
+				output.accept(paint.get()
+						.getBucket());
 			}
 		}
 	}

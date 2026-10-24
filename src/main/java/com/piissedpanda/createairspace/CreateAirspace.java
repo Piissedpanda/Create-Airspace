@@ -6,6 +6,7 @@ import com.mojang.logging.LogUtils;
 import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartBlockEntity;
 import com.piissedpanda.createairspace.block.GroundCrew.EarDefendersCurios;
 import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlockEntity;
+import com.piissedpanda.createairspace.block.RunwayMarking.PaintPailItem;
 import com.piissedpanda.createairspace.foundation.config.CAConfigs;
 import com.piissedpanda.createairspace.foundation.data.CADatagen;
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -51,12 +52,15 @@ public class CreateAirspace {
 		CADisplayTargets.register();
 		CABlocks.register();
 		CAItems.register();
+		CAFluids.register();
+		CADataComponents.register(modEventBus);
 		CABlockEntities.register();
 
 		CAConfigs.register(modLoadingContext, modContainer);
 
 		modEventBus.addListener(SuitcasePackagerBlockEntity::registerCapabilities);
 		modEventBus.addListener(BaggageCartBlockEntity::registerCapabilities);
+		modEventBus.addListener(PaintPailItem::registerCapabilities);
 		if (ModList.get()
 				.isLoaded("curios"))
 			EarDefendersCurios.init(modEventBus);

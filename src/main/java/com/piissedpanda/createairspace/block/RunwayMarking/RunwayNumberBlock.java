@@ -1,19 +1,12 @@
 package com.piissedpanda.createairspace.block.RunwayMarking;
 
-import javax.annotation.Nullable;
-
 import com.piissedpanda.createairspace.CAShapes;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -32,7 +25,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-// One character is 2 x 3 blocks. FACING points to the top of the character.
+// One character is 2 x 3 blocks, painted with a paint pail, the wrench changes the character.
+// FACING points to the top of the character.
 // PART = row * 2 + column, part 0 is the bottom left block.
 public class RunwayNumberBlock extends Block implements IWrenchable {
 
@@ -53,27 +47,22 @@ public class RunwayNumberBlock extends Block implements IWrenchable {
 		super.createBlockStateDefinition(pBuilder.add(FACING, GLYPH, PART));
 	}
 
-	@Override
-	@Nullable
-	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-		BlockState state = defaultBlockState().setValue(FACING, pContext.getHorizontalDirection());
-		Level level = pContext.getLevel();
-		for (int part = 1; part < COLUMNS * ROWS; part++) {
-			BlockPos pos = partPos(pContext.getClickedPos(), state.getValue(FACING), part);
-			if (!level.getBlockState(pos)
-					.canBeReplaced(pContext))
-				return null;
+	// Paints a whole character at once, the top points away from the painter
+	public static boolean paint(Level level, BlockPos origin, Direction facing, Block block) {
+		BlockState state = block.defaultBlockState()
+				.setValue(FACING, facing);
+		for (int part = 0; part < COLUMNS * ROWS; part++) {
+			BlockPos pos = partPos(origin, facing, part);
+			BlockState existing = level.getBlockState(pos);
+			if (!existing.canBeReplaced() && !(existing.getBlock() instanceof RunwayMarkingBlock))
+				return false;
 			if (!state.canSurvive(level, pos))
-				return null;
+				return false;
 		}
-		return state;
-	}
-
-	@Override
-	public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer,
-			ItemStack pStack) {
-		for (int part = 1; part < COLUMNS * ROWS; part++)
-			pLevel.setBlock(partPos(pPos, pState.getValue(FACING), part), pState.setValue(PART, part), 3);
+		for (int part = 0; part < COLUMNS * ROWS; part++)
+			level.setBlock(partPos(origin, facing, part), state.setValue(PART, part),
+					Block.UPDATE_ALL | Block.UPDATE_KNOWN_SHAPE);
+		return true;
 	}
 
 	@Override
@@ -90,29 +79,6 @@ public class RunwayNumberBlock extends Block implements IWrenchable {
 						.setValue(PART, part), Block.UPDATE_CLIENTS | Block.UPDATE_KNOWN_SHAPE);
 		IWrenchable.playRotateSound(level, context.getClickedPos());
 		return InteractionResult.SUCCESS;
-	}
-
-	@Override
-	public InteractionResult onSneakWrenched(BlockState state, UseOnContext context) {
-		Level level = context.getLevel();
-		Player player = context.getPlayer();
-		if (!(level instanceof ServerLevel))
-			return InteractionResult.SUCCESS;
-
-		if (player != null && !player.isCreative())
-			player.getInventory()
-					.placeItemBackInInventory(new ItemStack(this));
-		level.destroyBlock(context.getClickedPos(), false);
-		IWrenchable.playRemoveSound(level, context.getClickedPos());
-		return InteractionResult.SUCCESS;
-	}
-
-	// Only part 0 drops the item, so break it first when another part is mined
-	@Override
-	public BlockState playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
-		if (!pLevel.isClientSide && !pPlayer.isCreative() && pState.getValue(PART) != 0)
-			pLevel.destroyBlock(origin(pPos, pState), true, pPlayer);
-		return super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
 	}
 
 	@Override

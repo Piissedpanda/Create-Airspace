@@ -18,7 +18,6 @@
     "createairspace.airport_beacon.mode.heliport": "Heliport (green, yellow, white)",
     "createairspace.airport_beacon.mode.military": "Military Airport (double white, green)",
 
-    "createairspace.runway_marking.pattern": "Marking: %1$s",
     "createairspace.runway_marking.pattern.center_line": "Center Line",
     "createairspace.runway_marking.pattern.edge_line": "Edge Line",
     "createairspace.runway_marking.pattern.double_line": "Double Line",
@@ -27,6 +26,11 @@
     "createairspace.runway_marking.pattern.holding_position": "Holding Position",
     "createairspace.runway_marking.pattern.curve": "Curve",
     "createairspace.runway_marking.pattern.diagonal": "Diagonal",
+
+    "createairspace.paint_pail.mode": "Painting: %1$s",
+    "createairspace.paint_pail.mode.number": "Number",
+    "createairspace.paint_pail.not_enough_paint": "Not enough paint",
+    "createairspace.paint_pail.empty": "Empty",
 
     "createairspace.suitcase_packager.color": "Luggage color: %1$s",
     "createairspace.suitcase_packager.random_color": "Luggage color: random"

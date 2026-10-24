@@ -1,0 +1,1174 @@
+{
+  "variants": {
+    "facing=east,glyph=0,part=0": {
+      "model": "createairspace:block/runway_number/0_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=0,part=1": {
+      "model": "createairspace:block/runway_number/0_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=0,part=2": {
+      "model": "createairspace:block/runway_number/0_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=0,part=3": {
+      "model": "createairspace:block/runway_number/0_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=0,part=4": {
+      "model": "createairspace:block/runway_number/0_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=0,part=5": {
+      "model": "createairspace:block/runway_number/0_yellow_5",
+      "y": 90
+    },
+    "facing=east,glyph=1,part=0": {
+      "model": "createairspace:block/runway_number/1_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=1,part=1": {
+      "model": "createairspace:block/runway_number/1_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=1,part=2": {
+      "model": "createairspace:block/runway_number/1_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=1,part=3": {
+      "model": "createairspace:block/runway_number/1_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=1,part=4": {
+      "model": "createairspace:block/runway_number/1_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=1,part=5": {
+      "model": "createairspace:block/runway_number/1_yellow_5",
+      "y": 90
+    },
+    "facing=east,glyph=2,part=0": {
+      "model": "createairspace:block/runway_number/2_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=2,part=1": {
+      "model": "createairspace:block/runway_number/2_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=2,part=2": {
+      "model": "createairspace:block/runway_number/2_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=2,part=3": {
+      "model": "createairspace:block/runway_number/2_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=2,part=4": {
+      "model": "createairspace:block/runway_number/2_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=2,part=5": {
+      "model": "createairspace:block/runway_number/2_yellow_5",
+      "y": 90
+    },
+    "facing=east,glyph=3,part=0": {
+      "model": "createairspace:block/runway_number/3_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=3,part=1": {
+      "model": "createairspace:block/runway_number/3_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=3,part=2": {
+      "model": "createairspace:block/runway_number/3_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=3,part=3": {
+      "model": "createairspace:block/runway_number/3_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=3,part=4": {
+      "model": "createairspace:block/runway_number/3_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=3,part=5": {
+      "model": "createairspace:block/runway_number/3_yellow_5",
+      "y": 90
+    },
+    "facing=east,glyph=4,part=0": {
+      "model": "createairspace:block/runway_number/4_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=4,part=1": {
+      "model": "createairspace:block/runway_number/4_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=4,part=2": {
+      "model": "createairspace:block/runway_number/4_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=4,part=3": {
+      "model": "createairspace:block/runway_number/4_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=4,part=4": {
+      "model": "createairspace:block/runway_number/4_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=4,part=5": {
+      "model": "createairspace:block/runway_number/4_yellow_5",
+      "y": 90
+    },
+    "facing=east,glyph=5,part=0": {
+      "model": "createairspace:block/runway_number/5_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=5,part=1": {
+      "model": "createairspace:block/runway_number/5_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=5,part=2": {
+      "model": "createairspace:block/runway_number/5_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=5,part=3": {
+      "model": "createairspace:block/runway_number/5_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=5,part=4": {
+      "model": "createairspace:block/runway_number/5_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=5,part=5": {
+      "model": "createairspace:block/runway_number/5_yellow_5",
+      "y": 90
+    },
+    "facing=east,glyph=6,part=0": {
+      "model": "createairspace:block/runway_number/6_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=6,part=1": {
+      "model": "createairspace:block/runway_number/6_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=6,part=2": {
+      "model": "createairspace:block/runway_number/6_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=6,part=3": {
+      "model": "createairspace:block/runway_number/6_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=6,part=4": {
+      "model": "createairspace:block/runway_number/6_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=6,part=5": {
+      "model": "createairspace:block/runway_number/6_yellow_5",
+      "y": 90
+    },
+    "facing=east,glyph=7,part=0": {
+      "model": "createairspace:block/runway_number/7_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=7,part=1": {
+      "model": "createairspace:block/runway_number/7_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=7,part=2": {
+      "model": "createairspace:block/runway_number/7_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=7,part=3": {
+      "model": "createairspace:block/runway_number/7_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=7,part=4": {
+      "model": "createairspace:block/runway_number/7_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=7,part=5": {
+      "model": "createairspace:block/runway_number/7_yellow_5",
+      "y": 90
+    },
+    "facing=east,glyph=8,part=0": {
+      "model": "createairspace:block/runway_number/8_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=8,part=1": {
+      "model": "createairspace:block/runway_number/8_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=8,part=2": {
+      "model": "createairspace:block/runway_number/8_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=8,part=3": {
+      "model": "createairspace:block/runway_number/8_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=8,part=4": {
+      "model": "createairspace:block/runway_number/8_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=8,part=5": {
+      "model": "createairspace:block/runway_number/8_yellow_5",
+      "y": 90
+    },
+    "facing=east,glyph=9,part=0": {
+      "model": "createairspace:block/runway_number/9_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=9,part=1": {
+      "model": "createairspace:block/runway_number/9_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=9,part=2": {
+      "model": "createairspace:block/runway_number/9_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=9,part=3": {
+      "model": "createairspace:block/runway_number/9_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=9,part=4": {
+      "model": "createairspace:block/runway_number/9_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=9,part=5": {
+      "model": "createairspace:block/runway_number/9_yellow_5",
+      "y": 90
+    },
+    "facing=east,glyph=c,part=0": {
+      "model": "createairspace:block/runway_number/c_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=c,part=1": {
+      "model": "createairspace:block/runway_number/c_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=c,part=2": {
+      "model": "createairspace:block/runway_number/c_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=c,part=3": {
+      "model": "createairspace:block/runway_number/c_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=c,part=4": {
+      "model": "createairspace:block/runway_number/c_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=c,part=5": {
+      "model": "createairspace:block/runway_number/c_yellow_5",
+      "y": 90
+    },
+    "facing=east,glyph=l,part=0": {
+      "model": "createairspace:block/runway_number/l_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=l,part=1": {
+      "model": "createairspace:block/runway_number/l_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=l,part=2": {
+      "model": "createairspace:block/runway_number/l_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=l,part=3": {
+      "model": "createairspace:block/runway_number/l_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=l,part=4": {
+      "model": "createairspace:block/runway_number/l_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=l,part=5": {
+      "model": "createairspace:block/runway_number/l_yellow_5",
+      "y": 90
+    },
+    "facing=east,glyph=r,part=0": {
+      "model": "createairspace:block/runway_number/r_yellow_0",
+      "y": 90
+    },
+    "facing=east,glyph=r,part=1": {
+      "model": "createairspace:block/runway_number/r_yellow_1",
+      "y": 90
+    },
+    "facing=east,glyph=r,part=2": {
+      "model": "createairspace:block/runway_number/r_yellow_2",
+      "y": 90
+    },
+    "facing=east,glyph=r,part=3": {
+      "model": "createairspace:block/runway_number/r_yellow_3",
+      "y": 90
+    },
+    "facing=east,glyph=r,part=4": {
+      "model": "createairspace:block/runway_number/r_yellow_4",
+      "y": 90
+    },
+    "facing=east,glyph=r,part=5": {
+      "model": "createairspace:block/runway_number/r_yellow_5",
+      "y": 90
+    },
+    "facing=north,glyph=0,part=0": {
+      "model": "createairspace:block/runway_number/0_yellow_0"
+    },
+    "facing=north,glyph=0,part=1": {
+      "model": "createairspace:block/runway_number/0_yellow_1"
+    },
+    "facing=north,glyph=0,part=2": {
+      "model": "createairspace:block/runway_number/0_yellow_2"
+    },
+    "facing=north,glyph=0,part=3": {
+      "model": "createairspace:block/runway_number/0_yellow_3"
+    },
+    "facing=north,glyph=0,part=4": {
+      "model": "createairspace:block/runway_number/0_yellow_4"
+    },
+    "facing=north,glyph=0,part=5": {
+      "model": "createairspace:block/runway_number/0_yellow_5"
+    },
+    "facing=north,glyph=1,part=0": {
+      "model": "createairspace:block/runway_number/1_yellow_0"
+    },
+    "facing=north,glyph=1,part=1": {
+      "model": "createairspace:block/runway_number/1_yellow_1"
+    },
+    "facing=north,glyph=1,part=2": {
+      "model": "createairspace:block/runway_number/1_yellow_2"
+    },
+    "facing=north,glyph=1,part=3": {
+      "model": "createairspace:block/runway_number/1_yellow_3"
+    },
+    "facing=north,glyph=1,part=4": {
+      "model": "createairspace:block/runway_number/1_yellow_4"
+    },
+    "facing=north,glyph=1,part=5": {
+      "model": "createairspace:block/runway_number/1_yellow_5"
+    },
+    "facing=north,glyph=2,part=0": {
+      "model": "createairspace:block/runway_number/2_yellow_0"
+    },
+    "facing=north,glyph=2,part=1": {
+      "model": "createairspace:block/runway_number/2_yellow_1"
+    },
+    "facing=north,glyph=2,part=2": {
+      "model": "createairspace:block/runway_number/2_yellow_2"
+    },
+    "facing=north,glyph=2,part=3": {
+      "model": "createairspace:block/runway_number/2_yellow_3"
+    },
+    "facing=north,glyph=2,part=4": {
+      "model": "createairspace:block/runway_number/2_yellow_4"
+    },
+    "facing=north,glyph=2,part=5": {
+      "model": "createairspace:block/runway_number/2_yellow_5"
+    },
+    "facing=north,glyph=3,part=0": {
+      "model": "createairspace:block/runway_number/3_yellow_0"
+    },
+    "facing=north,glyph=3,part=1": {
+      "model": "createairspace:block/runway_number/3_yellow_1"
+    },
+    "facing=north,glyph=3,part=2": {
+      "model": "createairspace:block/runway_number/3_yellow_2"
+    },
+    "facing=north,glyph=3,part=3": {
+      "model": "createairspace:block/runway_number/3_yellow_3"
+    },
+    "facing=north,glyph=3,part=4": {
+      "model": "createairspace:block/runway_number/3_yellow_4"
+    },
+    "facing=north,glyph=3,part=5": {
+      "model": "createairspace:block/runway_number/3_yellow_5"
+    },
+    "facing=north,glyph=4,part=0": {
+      "model": "createairspace:block/runway_number/4_yellow_0"
+    },
+    "facing=north,glyph=4,part=1": {
+      "model": "createairspace:block/runway_number/4_yellow_1"
+    },
+    "facing=north,glyph=4,part=2": {
+      "model": "createairspace:block/runway_number/4_yellow_2"
+    },
+    "facing=north,glyph=4,part=3": {
+      "model": "createairspace:block/runway_number/4_yellow_3"
+    },
+    "facing=north,glyph=4,part=4": {
+      "model": "createairspace:block/runway_number/4_yellow_4"
+    },
+    "facing=north,glyph=4,part=5": {
+      "model": "createairspace:block/runway_number/4_yellow_5"
+    },
+    "facing=north,glyph=5,part=0": {
+      "model": "createairspace:block/runway_number/5_yellow_0"
+    },
+    "facing=north,glyph=5,part=1": {
+      "model": "createairspace:block/runway_number/5_yellow_1"
+    },
+    "facing=north,glyph=5,part=2": {
+      "model": "createairspace:block/runway_number/5_yellow_2"
+    },
+    "facing=north,glyph=5,part=3": {
+      "model": "createairspace:block/runway_number/5_yellow_3"
+    },
+    "facing=north,glyph=5,part=4": {
+      "model": "createairspace:block/runway_number/5_yellow_4"
+    },
+    "facing=north,glyph=5,part=5": {
+      "model": "createairspace:block/runway_number/5_yellow_5"
+    },
+    "facing=north,glyph=6,part=0": {
+      "model": "createairspace:block/runway_number/6_yellow_0"
+    },
+    "facing=north,glyph=6,part=1": {
+      "model": "createairspace:block/runway_number/6_yellow_1"
+    },
+    "facing=north,glyph=6,part=2": {
+      "model": "createairspace:block/runway_number/6_yellow_2"
+    },
+    "facing=north,glyph=6,part=3": {
+      "model": "createairspace:block/runway_number/6_yellow_3"
+    },
+    "facing=north,glyph=6,part=4": {
+      "model": "createairspace:block/runway_number/6_yellow_4"
+    },
+    "facing=north,glyph=6,part=5": {
+      "model": "createairspace:block/runway_number/6_yellow_5"
+    },
+    "facing=north,glyph=7,part=0": {
+      "model": "createairspace:block/runway_number/7_yellow_0"
+    },
+    "facing=north,glyph=7,part=1": {
+      "model": "createairspace:block/runway_number/7_yellow_1"
+    },
+    "facing=north,glyph=7,part=2": {
+      "model": "createairspace:block/runway_number/7_yellow_2"
+    },
+    "facing=north,glyph=7,part=3": {
+      "model": "createairspace:block/runway_number/7_yellow_3"
+    },
+    "facing=north,glyph=7,part=4": {
+      "model": "createairspace:block/runway_number/7_yellow_4"
+    },
+    "facing=north,glyph=7,part=5": {
+      "model": "createairspace:block/runway_number/7_yellow_5"
+    },
+    "facing=north,glyph=8,part=0": {
+      "model": "createairspace:block/runway_number/8_yellow_0"
+    },
+    "facing=north,glyph=8,part=1": {
+      "model": "createairspace:block/runway_number/8_yellow_1"
+    },
+    "facing=north,glyph=8,part=2": {
+      "model": "createairspace:block/runway_number/8_yellow_2"
+    },
+    "facing=north,glyph=8,part=3": {
+      "model": "createairspace:block/runway_number/8_yellow_3"
+    },
+    "facing=north,glyph=8,part=4": {
+      "model": "createairspace:block/runway_number/8_yellow_4"
+    },
+    "facing=north,glyph=8,part=5": {
+      "model": "createairspace:block/runway_number/8_yellow_5"
+    },
+    "facing=north,glyph=9,part=0": {
+      "model": "createairspace:block/runway_number/9_yellow_0"
+    },
+    "facing=north,glyph=9,part=1": {
+      "model": "createairspace:block/runway_number/9_yellow_1"
+    },
+    "facing=north,glyph=9,part=2": {
+      "model": "createairspace:block/runway_number/9_yellow_2"
+    },
+    "facing=north,glyph=9,part=3": {
+      "model": "createairspace:block/runway_number/9_yellow_3"
+    },
+    "facing=north,glyph=9,part=4": {
+      "model": "createairspace:block/runway_number/9_yellow_4"
+    },
+    "facing=north,glyph=9,part=5": {
+      "model": "createairspace:block/runway_number/9_yellow_5"
+    },
+    "facing=north,glyph=c,part=0": {
+      "model": "createairspace:block/runway_number/c_yellow_0"
+    },
+    "facing=north,glyph=c,part=1": {
+      "model": "createairspace:block/runway_number/c_yellow_1"
+    },
+    "facing=north,glyph=c,part=2": {
+      "model": "createairspace:block/runway_number/c_yellow_2"
+    },
+    "facing=north,glyph=c,part=3": {
+      "model": "createairspace:block/runway_number/c_yellow_3"
+    },
+    "facing=north,glyph=c,part=4": {
+      "model": "createairspace:block/runway_number/c_yellow_4"
+    },
+    "facing=north,glyph=c,part=5": {
+      "model": "createairspace:block/runway_number/c_yellow_5"
+    },
+    "facing=north,glyph=l,part=0": {
+      "model": "createairspace:block/runway_number/l_yellow_0"
+    },
+    "facing=north,glyph=l,part=1": {
+      "model": "createairspace:block/runway_number/l_yellow_1"
+    },
+    "facing=north,glyph=l,part=2": {
+      "model": "createairspace:block/runway_number/l_yellow_2"
+    },
+    "facing=north,glyph=l,part=3": {
+      "model": "createairspace:block/runway_number/l_yellow_3"
+    },
+    "facing=north,glyph=l,part=4": {
+      "model": "createairspace:block/runway_number/l_yellow_4"
+    },
+    "facing=north,glyph=l,part=5": {
+      "model": "createairspace:block/runway_number/l_yellow_5"
+    },
+    "facing=north,glyph=r,part=0": {
+      "model": "createairspace:block/runway_number/r_yellow_0"
+    },
+    "facing=north,glyph=r,part=1": {
+      "model": "createairspace:block/runway_number/r_yellow_1"
+    },
+    "facing=north,glyph=r,part=2": {
+      "model": "createairspace:block/runway_number/r_yellow_2"
+    },
+    "facing=north,glyph=r,part=3": {
+      "model": "createairspace:block/runway_number/r_yellow_3"
+    },
+    "facing=north,glyph=r,part=4": {
+      "model": "createairspace:block/runway_number/r_yellow_4"
+    },
+    "facing=north,glyph=r,part=5": {
+      "model": "createairspace:block/runway_number/r_yellow_5"
+    },
+    "facing=south,glyph=0,part=0": {
+      "model": "createairspace:block/runway_number/0_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=0,part=1": {
+      "model": "createairspace:block/runway_number/0_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=0,part=2": {
+      "model": "createairspace:block/runway_number/0_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=0,part=3": {
+      "model": "createairspace:block/runway_number/0_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=0,part=4": {
+      "model": "createairspace:block/runway_number/0_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=0,part=5": {
+      "model": "createairspace:block/runway_number/0_yellow_5",
+      "y": 180
+    },
+    "facing=south,glyph=1,part=0": {
+      "model": "createairspace:block/runway_number/1_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=1,part=1": {
+      "model": "createairspace:block/runway_number/1_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=1,part=2": {
+      "model": "createairspace:block/runway_number/1_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=1,part=3": {
+      "model": "createairspace:block/runway_number/1_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=1,part=4": {
+      "model": "createairspace:block/runway_number/1_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=1,part=5": {
+      "model": "createairspace:block/runway_number/1_yellow_5",
+      "y": 180
+    },
+    "facing=south,glyph=2,part=0": {
+      "model": "createairspace:block/runway_number/2_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=2,part=1": {
+      "model": "createairspace:block/runway_number/2_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=2,part=2": {
+      "model": "createairspace:block/runway_number/2_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=2,part=3": {
+      "model": "createairspace:block/runway_number/2_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=2,part=4": {
+      "model": "createairspace:block/runway_number/2_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=2,part=5": {
+      "model": "createairspace:block/runway_number/2_yellow_5",
+      "y": 180
+    },
+    "facing=south,glyph=3,part=0": {
+      "model": "createairspace:block/runway_number/3_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=3,part=1": {
+      "model": "createairspace:block/runway_number/3_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=3,part=2": {
+      "model": "createairspace:block/runway_number/3_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=3,part=3": {
+      "model": "createairspace:block/runway_number/3_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=3,part=4": {
+      "model": "createairspace:block/runway_number/3_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=3,part=5": {
+      "model": "createairspace:block/runway_number/3_yellow_5",
+      "y": 180
+    },
+    "facing=south,glyph=4,part=0": {
+      "model": "createairspace:block/runway_number/4_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=4,part=1": {
+      "model": "createairspace:block/runway_number/4_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=4,part=2": {
+      "model": "createairspace:block/runway_number/4_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=4,part=3": {
+      "model": "createairspace:block/runway_number/4_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=4,part=4": {
+      "model": "createairspace:block/runway_number/4_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=4,part=5": {
+      "model": "createairspace:block/runway_number/4_yellow_5",
+      "y": 180
+    },
+    "facing=south,glyph=5,part=0": {
+      "model": "createairspace:block/runway_number/5_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=5,part=1": {
+      "model": "createairspace:block/runway_number/5_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=5,part=2": {
+      "model": "createairspace:block/runway_number/5_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=5,part=3": {
+      "model": "createairspace:block/runway_number/5_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=5,part=4": {
+      "model": "createairspace:block/runway_number/5_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=5,part=5": {
+      "model": "createairspace:block/runway_number/5_yellow_5",
+      "y": 180
+    },
+    "facing=south,glyph=6,part=0": {
+      "model": "createairspace:block/runway_number/6_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=6,part=1": {
+      "model": "createairspace:block/runway_number/6_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=6,part=2": {
+      "model": "createairspace:block/runway_number/6_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=6,part=3": {
+      "model": "createairspace:block/runway_number/6_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=6,part=4": {
+      "model": "createairspace:block/runway_number/6_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=6,part=5": {
+      "model": "createairspace:block/runway_number/6_yellow_5",
+      "y": 180
+    },
+    "facing=south,glyph=7,part=0": {
+      "model": "createairspace:block/runway_number/7_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=7,part=1": {
+      "model": "createairspace:block/runway_number/7_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=7,part=2": {
+      "model": "createairspace:block/runway_number/7_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=7,part=3": {
+      "model": "createairspace:block/runway_number/7_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=7,part=4": {
+      "model": "createairspace:block/runway_number/7_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=7,part=5": {
+      "model": "createairspace:block/runway_number/7_yellow_5",
+      "y": 180
+    },
+    "facing=south,glyph=8,part=0": {
+      "model": "createairspace:block/runway_number/8_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=8,part=1": {
+      "model": "createairspace:block/runway_number/8_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=8,part=2": {
+      "model": "createairspace:block/runway_number/8_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=8,part=3": {
+      "model": "createairspace:block/runway_number/8_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=8,part=4": {
+      "model": "createairspace:block/runway_number/8_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=8,part=5": {
+      "model": "createairspace:block/runway_number/8_yellow_5",
+      "y": 180
+    },
+    "facing=south,glyph=9,part=0": {
+      "model": "createairspace:block/runway_number/9_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=9,part=1": {
+      "model": "createairspace:block/runway_number/9_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=9,part=2": {
+      "model": "createairspace:block/runway_number/9_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=9,part=3": {
+      "model": "createairspace:block/runway_number/9_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=9,part=4": {
+      "model": "createairspace:block/runway_number/9_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=9,part=5": {
+      "model": "createairspace:block/runway_number/9_yellow_5",
+      "y": 180
+    },
+    "facing=south,glyph=c,part=0": {
+      "model": "createairspace:block/runway_number/c_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=c,part=1": {
+      "model": "createairspace:block/runway_number/c_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=c,part=2": {
+      "model": "createairspace:block/runway_number/c_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=c,part=3": {
+      "model": "createairspace:block/runway_number/c_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=c,part=4": {
+      "model": "createairspace:block/runway_number/c_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=c,part=5": {
+      "model": "createairspace:block/runway_number/c_yellow_5",
+      "y": 180
+    },
+    "facing=south,glyph=l,part=0": {
+      "model": "createairspace:block/runway_number/l_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=l,part=1": {
+      "model": "createairspace:block/runway_number/l_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=l,part=2": {
+      "model": "createairspace:block/runway_number/l_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=l,part=3": {
+      "model": "createairspace:block/runway_number/l_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=l,part=4": {
+      "model": "createairspace:block/runway_number/l_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=l,part=5": {
+      "model": "createairspace:block/runway_number/l_yellow_5",
+      "y": 180
+    },
+    "facing=south,glyph=r,part=0": {
+      "model": "createairspace:block/runway_number/r_yellow_0",
+      "y": 180
+    },
+    "facing=south,glyph=r,part=1": {
+      "model": "createairspace:block/runway_number/r_yellow_1",
+      "y": 180
+    },
+    "facing=south,glyph=r,part=2": {
+      "model": "createairspace:block/runway_number/r_yellow_2",
+      "y": 180
+    },
+    "facing=south,glyph=r,part=3": {
+      "model": "createairspace:block/runway_number/r_yellow_3",
+      "y": 180
+    },
+    "facing=south,glyph=r,part=4": {
+      "model": "createairspace:block/runway_number/r_yellow_4",
+      "y": 180
+    },
+    "facing=south,glyph=r,part=5": {
+      "model": "createairspace:block/runway_number/r_yellow_5",
+      "y": 180
+    },
+    "facing=west,glyph=0,part=0": {
+      "model": "createairspace:block/runway_number/0_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=0,part=1": {
+      "model": "createairspace:block/runway_number/0_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=0,part=2": {
+      "model": "createairspace:block/runway_number/0_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=0,part=3": {
+      "model": "createairspace:block/runway_number/0_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=0,part=4": {
+      "model": "createairspace:block/runway_number/0_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=0,part=5": {
+      "model": "createairspace:block/runway_number/0_yellow_5",
+      "y": 270
+    },
+    "facing=west,glyph=1,part=0": {
+      "model": "createairspace:block/runway_number/1_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=1,part=1": {
+      "model": "createairspace:block/runway_number/1_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=1,part=2": {
+      "model": "createairspace:block/runway_number/1_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=1,part=3": {
+      "model": "createairspace:block/runway_number/1_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=1,part=4": {
+      "model": "createairspace:block/runway_number/1_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=1,part=5": {
+      "model": "createairspace:block/runway_number/1_yellow_5",
+      "y": 270
+    },
+    "facing=west,glyph=2,part=0": {
+      "model": "createairspace:block/runway_number/2_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=2,part=1": {
+      "model": "createairspace:block/runway_number/2_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=2,part=2": {
+      "model": "createairspace:block/runway_number/2_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=2,part=3": {
+      "model": "createairspace:block/runway_number/2_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=2,part=4": {
+      "model": "createairspace:block/runway_number/2_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=2,part=5": {
+      "model": "createairspace:block/runway_number/2_yellow_5",
+      "y": 270
+    },
+    "facing=west,glyph=3,part=0": {
+      "model": "createairspace:block/runway_number/3_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=3,part=1": {
+      "model": "createairspace:block/runway_number/3_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=3,part=2": {
+      "model": "createairspace:block/runway_number/3_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=3,part=3": {
+      "model": "createairspace:block/runway_number/3_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=3,part=4": {
+      "model": "createairspace:block/runway_number/3_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=3,part=5": {
+      "model": "createairspace:block/runway_number/3_yellow_5",
+      "y": 270
+    },
+    "facing=west,glyph=4,part=0": {
+      "model": "createairspace:block/runway_number/4_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=4,part=1": {
+      "model": "createairspace:block/runway_number/4_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=4,part=2": {
+      "model": "createairspace:block/runway_number/4_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=4,part=3": {
+      "model": "createairspace:block/runway_number/4_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=4,part=4": {
+      "model": "createairspace:block/runway_number/4_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=4,part=5": {
+      "model": "createairspace:block/runway_number/4_yellow_5",
+      "y": 270
+    },
+    "facing=west,glyph=5,part=0": {
+      "model": "createairspace:block/runway_number/5_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=5,part=1": {
+      "model": "createairspace:block/runway_number/5_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=5,part=2": {
+      "model": "createairspace:block/runway_number/5_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=5,part=3": {
+      "model": "createairspace:block/runway_number/5_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=5,part=4": {
+      "model": "createairspace:block/runway_number/5_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=5,part=5": {
+      "model": "createairspace:block/runway_number/5_yellow_5",
+      "y": 270
+    },
+    "facing=west,glyph=6,part=0": {
+      "model": "createairspace:block/runway_number/6_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=6,part=1": {
+      "model": "createairspace:block/runway_number/6_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=6,part=2": {
+      "model": "createairspace:block/runway_number/6_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=6,part=3": {
+      "model": "createairspace:block/runway_number/6_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=6,part=4": {
+      "model": "createairspace:block/runway_number/6_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=6,part=5": {
+      "model": "createairspace:block/runway_number/6_yellow_5",
+      "y": 270
+    },
+    "facing=west,glyph=7,part=0": {
+      "model": "createairspace:block/runway_number/7_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=7,part=1": {
+      "model": "createairspace:block/runway_number/7_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=7,part=2": {
+      "model": "createairspace:block/runway_number/7_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=7,part=3": {
+      "model": "createairspace:block/runway_number/7_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=7,part=4": {
+      "model": "createairspace:block/runway_number/7_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=7,part=5": {
+      "model": "createairspace:block/runway_number/7_yellow_5",
+      "y": 270
+    },
+    "facing=west,glyph=8,part=0": {
+      "model": "createairspace:block/runway_number/8_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=8,part=1": {
+      "model": "createairspace:block/runway_number/8_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=8,part=2": {
+      "model": "createairspace:block/runway_number/8_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=8,part=3": {
+      "model": "createairspace:block/runway_number/8_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=8,part=4": {
+      "model": "createairspace:block/runway_number/8_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=8,part=5": {
+      "model": "createairspace:block/runway_number/8_yellow_5",
+      "y": 270
+    },
+    "facing=west,glyph=9,part=0": {
+      "model": "createairspace:block/runway_number/9_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=9,part=1": {
+      "model": "createairspace:block/runway_number/9_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=9,part=2": {
+      "model": "createairspace:block/runway_number/9_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=9,part=3": {
+      "model": "createairspace:block/runway_number/9_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=9,part=4": {
+      "model": "createairspace:block/runway_number/9_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=9,part=5": {
+      "model": "createairspace:block/runway_number/9_yellow_5",
+      "y": 270
+    },
+    "facing=west,glyph=c,part=0": {
+      "model": "createairspace:block/runway_number/c_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=c,part=1": {
+      "model": "createairspace:block/runway_number/c_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=c,part=2": {
+      "model": "createairspace:block/runway_number/c_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=c,part=3": {
+      "model": "createairspace:block/runway_number/c_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=c,part=4": {
+      "model": "createairspace:block/runway_number/c_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=c,part=5": {
+      "model": "createairspace:block/runway_number/c_yellow_5",
+      "y": 270
+    },
+    "facing=west,glyph=l,part=0": {
+      "model": "createairspace:block/runway_number/l_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=l,part=1": {
+      "model": "createairspace:block/runway_number/l_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=l,part=2": {
+      "model": "createairspace:block/runway_number/l_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=l,part=3": {
+      "model": "createairspace:block/runway_number/l_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=l,part=4": {
+      "model": "createairspace:block/runway_number/l_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=l,part=5": {
+      "model": "createairspace:block/runway_number/l_yellow_5",
+      "y": 270
+    },
+    "facing=west,glyph=r,part=0": {
+      "model": "createairspace:block/runway_number/r_yellow_0",
+      "y": 270
+    },
+    "facing=west,glyph=r,part=1": {
+      "model": "createairspace:block/runway_number/r_yellow_1",
+      "y": 270
+    },
+    "facing=west,glyph=r,part=2": {
+      "model": "createairspace:block/runway_number/r_yellow_2",
+      "y": 270
+    },
+    "facing=west,glyph=r,part=3": {
+      "model": "createairspace:block/runway_number/r_yellow_3",
+      "y": 270
+    },
+    "facing=west,glyph=r,part=4": {
+      "model": "createairspace:block/runway_number/r_yellow_4",
+      "y": 270
+    },
+    "facing=west,glyph=r,part=5": {
+      "model": "createairspace:block/runway_number/r_yellow_5",
+      "y": 270
+    }
+  }
+}

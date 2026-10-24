@@ -1,6 +1,7 @@
 package com.piissedpanda.createairspace.foundation.ponder;
 
 import com.piissedpanda.createairspace.CABlocks;
+import com.piissedpanda.createairspace.CAItems;
 import com.piissedpanda.createairspace.foundation.ponder.scenes.AirportAccessoriesScenes;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
@@ -20,7 +21,7 @@ public class CAPonderScenes {
 				CAPonderTags.AIRPORT_ACCESSORIES);
 		HELPER.addStoryBoard(CABlocks.EDGE_LIGHT, "edge_light", AirportAccessoriesScenes::edgeLight,
 				CAPonderTags.AIRPORT_ACCESSORIES);
-		HELPER.forComponents(CABlocks.WHITE_RUNWAY_MARKING, CABlocks.YELLOW_RUNWAY_MARKING, CABlocks.RUNWAY_NUMBER)
+		HELPER.forComponents(CAItems.PAINT_PAIL)
 				.addStoryBoard("runway_marking", AirportAccessoriesScenes::runwayMarking,
 						CAPonderTags.AIRPORT_ACCESSORIES);
 		HELPER.addStoryBoard(CABlocks.WINDSOCK, "windsock", AirportAccessoriesScenes::windsock,

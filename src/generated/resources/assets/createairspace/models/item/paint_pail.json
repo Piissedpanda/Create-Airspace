@@ -1,0 +1,11 @@
+{
+  "parent": "createairspace:item/paint_pail/empty",
+  "overrides": [
+    {
+      "model": "createairspace:item/paint_pail/filled",
+      "predicate": {
+        "createairspace:paint": 1.0
+      }
+    }
+  ]
+}

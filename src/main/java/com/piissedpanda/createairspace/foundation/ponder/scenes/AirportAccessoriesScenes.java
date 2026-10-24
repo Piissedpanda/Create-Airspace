@@ -3,11 +3,13 @@ package com.piissedpanda.createairspace.foundation.ponder.scenes;
 import java.util.List;
 
 import com.piissedpanda.createairspace.CABlocks;
+import com.piissedpanda.createairspace.CAFluids;
 import com.piissedpanda.createairspace.block.AirfieldSign.AirfieldSignBlock;
 import com.piissedpanda.createairspace.block.AirfieldSign.AirfieldSignBlockEntity;
 import com.piissedpanda.createairspace.block.AirportBeacon.AirportBeaconBlock;
 import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostBlockEntity;
 import com.piissedpanda.createairspace.block.EdgeLight.EdgeLightBlock;
+import com.piissedpanda.createairspace.block.RunwayMarking.PaintPailItem;
 import com.piissedpanda.createairspace.block.RunwayMarking.RunwayMarkingBlock;
 import com.piissedpanda.createairspace.block.RunwayMarking.RunwayMarkingBlock.Pattern;
 import com.piissedpanda.createairspace.block.RunwayMarking.RunwayNumberBlock;
@@ -28,6 +30,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.fluids.FluidStack;
 
 public class AirportAccessoriesScenes {
 
@@ -404,17 +407,31 @@ public class AirportAccessoriesScenes {
 						.layer(0), Direction.UP);
 		scene.idle(10);
 
-		ItemStack wrench = AllItems.WRENCH.asStack();
+		ItemStack white = PaintPailItem.filled(new FluidStack(CAFluids.WHITE_PAINT.get().getSource(), 1000));
+		ItemStack yellow = PaintPailItem.filled(new FluidStack(CAFluids.YELLOW_PAINT.get().getSource(), 1000));
 		BlockPos hold = util.grid()
 				.at(2, 1, 0);
 
+		scene.overlay()
+				.showText(90)
+				.text("Paint Pails hold white or yellow paint. Fill them with a Spout or from a tank")
+				.attachKeyFrame()
+				.independent(20);
+		scene.idle(100);
+
+		scene.overlay()
+				.showControls(util.vector()
+						.topOf(2, 0, 4), Pointing.DOWN, 30)
+				.rightClick()
+				.withItem(white);
+		scene.idle(5);
 		scene.world()
 				.showSection(util.select()
 						.fromTo(2, 1, 0, 2, 1, 4), Direction.DOWN);
 		scene.idle(20);
 		scene.overlay()
 				.showText(80)
-				.text("Runway Markings are flat layers of paint. Lines run in the direction you look when placing them")
+				.text("Right-click the ground to paint. Lines run in the direction you look")
 				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(util.vector()
@@ -425,43 +442,34 @@ public class AirportAccessoriesScenes {
 				.showControls(util.vector()
 						.topOf(2, 0, 0), Pointing.DOWN, 30)
 				.rightClick()
-				.withItem(wrench);
-		scene.idle(5);
-		scene.world()
-				.modifyBlock(hold, s -> s.setValue(RunwayMarkingBlock.PATTERN, Pattern.HOLDING_POSITION), false);
-		scene.overlay()
-				.showText(80)
-				.text("Right-click with a Wrench to switch the pattern. New markings continue the pattern next to them")
-				.attachKeyFrame()
-				.placeNearTarget()
-				.pointAt(util.vector()
-						.topOf(2, 0, 0));
-		scene.idle(90);
-
-		scene.overlay()
-				.showControls(util.vector()
-						.topOf(2, 0, 0), Pointing.DOWN, 30)
-				.rightClick()
-				.withItem(new ItemStack(Items.YELLOW_DYE));
+				.whileSneaking()
+				.withItem(yellow);
 		scene.idle(5);
 		scene.world()
 				.setBlock(hold, CABlocks.YELLOW_RUNWAY_MARKING.getDefaultState()
 						.setValue(RunwayMarkingBlock.PATTERN, Pattern.HOLDING_POSITION), false);
 		scene.overlay()
-				.showText(60)
-				.text("White or yellow dye repaints them")
+				.showText(90)
+				.text("Sneak and right-click to switch the pattern. Painting over a marking replaces it")
+				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(util.vector()
 						.topOf(2, 0, 0));
-		scene.idle(70);
+		scene.idle(100);
 
+		scene.overlay()
+				.showControls(util.vector()
+						.topOf(0, 0, 3), Pointing.DOWN, 30)
+				.rightClick()
+				.withItem(white);
+		scene.idle(5);
 		scene.world()
 				.showSection(util.select()
 						.fromTo(0, 1, 1, 1, 1, 3), Direction.DOWN);
 		scene.idle(20);
 		scene.overlay()
 				.showText(90)
-				.text("Runway Numbers cover 2 x 3 blocks and are placed at once. Their top points where you look")
+				.text("The Number pattern paints a whole 2 x 3 character at once")
 				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(util.vector()
@@ -477,17 +485,23 @@ public class AirportAccessoriesScenes {
 				.showControls(util.vector()
 						.topOf(3, 0, 2), Pointing.DOWN, 30)
 				.rightClick()
-				.withItem(wrench);
+				.withItem(AllItems.WRENCH.asStack());
 		scene.idle(5);
 		scene.world()
 				.modifyBlocks(seven, s -> s.setValue(RunwayNumberBlock.GLYPH, RunwayNumberBlock.Glyph.SEVEN), false);
 		scene.overlay()
 				.showText(80)
-				.text("Right-click with a Wrench to switch the character: 0 to 9, L, R and C")
+				.text("Right-click a number with a Wrench to switch the character: 0 to 9, L, R and C")
 				.placeNearTarget()
 				.pointAt(util.vector()
 						.topOf(3, 0, 2));
 		scene.idle(90);
+
+		scene.overlay()
+				.showText(70)
+				.text("Paint does not come back when a marking is removed")
+				.independent(20);
+		scene.idle(80);
 		scene.markAsFinished();
 	}
 

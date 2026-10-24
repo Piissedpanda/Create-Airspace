@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:dyes/yellow"
+    },
+    {
+      "item": "minecraft:clay_ball"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "createairspace:yellow_paint"
+    }
+  ]
+}

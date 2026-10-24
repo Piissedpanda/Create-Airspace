@@ -1,0 +1,6 @@
+{
+  "parent": "createairspace:block/runway_number/part_2",
+  "textures": {
+    "glyph": "createairspace:block/runway_number/6_yellow"
+  }
+}

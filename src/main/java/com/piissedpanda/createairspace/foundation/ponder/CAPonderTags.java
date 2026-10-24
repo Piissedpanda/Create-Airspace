@@ -1,6 +1,7 @@
 package com.piissedpanda.createairspace.foundation.ponder;
 
 import com.piissedpanda.createairspace.CABlocks;
+import com.piissedpanda.createairspace.CAItems;
 import com.piissedpanda.createairspace.CreateAirspace;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 
@@ -35,9 +36,7 @@ public class CAPonderTags {
 				.add(CABlocks.EDGE_LIGHT)
 				.add(CABlocks.WINDSOCK)
 				.add(CABlocks.AIRPORT_BEACON)
-				.add(CABlocks.WHITE_RUNWAY_MARKING)
-				.add(CABlocks.YELLOW_RUNWAY_MARKING)
-				.add(CABlocks.RUNWAY_NUMBER);
+				.add(CAItems.PAINT_PAIL);
 	}
 
 }
