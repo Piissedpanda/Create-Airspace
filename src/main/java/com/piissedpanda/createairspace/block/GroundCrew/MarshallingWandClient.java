@@ -28,8 +28,9 @@ public class MarshallingWandClient {
 		event.registerItem(new Extensions(), CAItems.MARSHALLING_WAND.get());
 	}
 
-	private static float waveAngle(float time) {
-		return 0.25f + 0.35f * (Mth.sin(time * 0.45f) + 1) / 2;
+	// 0 = arm up, 1 = arm swung forward
+	private static float swing(float time) {
+		return (Mth.sin(time * 0.45f) + 1) / 2;
 	}
 
 	private static boolean isWaving(LivingEntity entity) {
@@ -40,9 +41,9 @@ public class MarshallingWandClient {
 	private static void wave(HumanoidModel<?> model, LivingEntity entity, HumanoidArm arm) {
 		ModelPart part = arm == HumanoidArm.RIGHT ? model.rightArm : model.leftArm;
 		float side = arm == HumanoidArm.RIGHT ? 1 : -1;
-		part.xRot = -Mth.PI + 0.25f;
+		part.xRot = -Mth.PI + 0.15f + 0.8f * swing(AnimationTickHolder.getRenderTime());
 		part.yRot = 0;
-		part.zRot = side * waveAngle(AnimationTickHolder.getRenderTime());
+		part.zRot = side * 0.15f;
 	}
 
 	private static class Extensions implements IClientItemExtensions {
@@ -52,7 +53,7 @@ public class MarshallingWandClient {
 			return isWaving(entity) ? WAVE.getValue() : null;
 		}
 
-		// First person: the wand swings sideways in front of the camera
+		// First person: the wand swings forward and back in front of the camera
 		@Override
 		public boolean applyForgeHandTransform(PoseStack poseStack, LocalPlayer player, HumanoidArm arm,
 				ItemStack itemInHand, float partialTick, float equipProcess, float swingProcess) {
@@ -60,7 +61,7 @@ public class MarshallingWandClient {
 				return false;
 			float side = arm == HumanoidArm.RIGHT ? 1 : -1;
 			poseStack.translate(side * 0.56f, -0.52f, -0.72f);
-			poseStack.mulPose(Axis.ZP.rotation(-side * (waveAngle(AnimationTickHolder.getRenderTime()) - 0.4f)));
+			poseStack.mulPose(Axis.XP.rotation(-0.9f * swing(AnimationTickHolder.getRenderTime())));
 			return true;
 		}
 	}
