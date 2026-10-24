@@ -2,12 +2,14 @@ package com.piissedpanda.createairspace.block.GroundCrew;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
-// Right-click waves the wand, and the one in the other hand too
+// Holding right-click waves the wands, see MarshallingWandClient for the arm pose
 public class MarshallingWandItem extends Item {
 
 	public MarshallingWandItem(Properties properties) {
@@ -16,12 +18,18 @@ public class MarshallingWandItem extends Item {
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
-		InteractionHand other = pHand == InteractionHand.MAIN_HAND ? InteractionHand.OFF_HAND
-				: InteractionHand.MAIN_HAND;
-		if (pPlayer.getItemInHand(other)
-				.is(this))
-			pPlayer.swing(other);
-		return InteractionResultHolder.sidedSuccess(pPlayer.getItemInHand(pHand), pLevel.isClientSide);
+		pPlayer.startUsingItem(pHand);
+		return InteractionResultHolder.consume(pPlayer.getItemInHand(pHand));
+	}
+
+	@Override
+	public int getUseDuration(ItemStack pStack, LivingEntity pEntity) {
+		return 72000;
+	}
+
+	@Override
+	public UseAnim getUseAnimation(ItemStack pStack) {
+		return UseAnim.NONE;
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.piissedpanda.createairspace;
 
 import com.piissedpanda.createairspace.block.AirportBeacon.AirportBeaconGlare;
+import com.piissedpanda.createairspace.block.GroundCrew.MarshallingWandClient;
 import com.piissedpanda.createairspace.foundation.ponder.CAPonderPlugin;
 
 import net.createmod.ponder.foundation.PonderIndex;
@@ -11,6 +12,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
@@ -34,6 +36,11 @@ public class CreateAirspaceClient {
 	@SubscribeEvent
 	static void onClientSetup(FMLClientSetupEvent event) {
 		PonderIndex.addPlugin(new CAPonderPlugin());
+	}
+
+	@SubscribeEvent
+	static void onRegisterClientExtensions(RegisterClientExtensionsEvent event) {
+		MarshallingWandClient.register(event);
 	}
 
 	@SubscribeEvent

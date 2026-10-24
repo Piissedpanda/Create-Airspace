@@ -37,6 +37,8 @@ displayURL="https://github.com/Piissedpanda/Create-Airspace" #optional
 
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="createairspace_logo.png" #optional
+# Adds the arm pose of the marshalling wands
+enumExtensions="META-INF/enumextensions.json"
 
 # A text field displayed in the mod UI
 #credits="" #optional

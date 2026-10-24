@@ -1,0 +1,13 @@
+{
+    "entries": [
+        {
+            "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+            "name": "CREATEAIRSPACE_WAVE",
+            "constructor": "(ZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+            "parameters": {
+                "class": "com/piissedpanda/createairspace/block/GroundCrew/MarshallingWandClient",
+                "field": "WAVE"
+            }
+        }
+    ]
+}
