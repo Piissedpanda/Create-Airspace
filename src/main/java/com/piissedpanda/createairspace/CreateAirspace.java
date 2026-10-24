@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartBlockEntity;
+import com.piissedpanda.createairspace.block.GroundCrew.EarDefendersCurios;
 import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlockEntity;
 import com.piissedpanda.createairspace.foundation.config.CAConfigs;
 import com.piissedpanda.createairspace.foundation.data.CADatagen;
@@ -17,6 +18,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -55,6 +57,9 @@ public class CreateAirspace {
 
 		modEventBus.addListener(SuitcasePackagerBlockEntity::registerCapabilities);
 		modEventBus.addListener(BaggageCartBlockEntity::registerCapabilities);
+		if (ModList.get()
+				.isLoaded("curios"))
+			EarDefendersCurios.init(modEventBus);
 		modEventBus.addListener(EventPriority.HIGHEST, CADatagen::gatherDataHighPriority);
 		modEventBus.addListener(EventPriority.LOWEST, CADatagen::gatherData);
 	}

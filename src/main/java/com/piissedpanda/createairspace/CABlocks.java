@@ -15,6 +15,7 @@ import com.piissedpanda.createairspace.block.AirportBeacon.AirportBeaconBlock;
 import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostBlock;
 import com.piissedpanda.createairspace.block.EdgeLight.EdgeLightBlock;
 import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartBlock;
+import com.piissedpanda.createairspace.block.GroundCrew.WheelChockBlock;
 import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlock;
 import com.piissedpanda.createairspace.block.RunwayMarking.RunwayMarkingBlock;
 import com.piissedpanda.createairspace.block.RunwayMarking.RunwayNumberBlock;
@@ -335,6 +336,24 @@ public class CABlocks {
 					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
 			.item()
 			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/baggage_cart/item")))
+			.build()
+			.register();
+
+	public static final BlockEntry<WheelChockBlock> WHEEL_CHOCK = REGISTRATE
+			.block("wheel_chock", WheelChockBlock::new)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.COLOR_YELLOW)
+					.strength(0.5f)
+					.sound(SoundType.WOOL))
+			.blockstate((c, p) -> p.horizontalBlock(c.get(), AssetLookup.partialBaseModel(c, p)))
+			.recipe((c, p) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, c.get())
+					.requires(Items.DRIED_KELP, 2)
+					.requires(Tags.Items.STRINGS)
+					.requires(Tags.Items.DYES_YELLOW)
+					.unlockedBy("has_dried_kelp", RegistrateRecipeProvider.has(Items.DRIED_KELP))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/wheel_chock/block")))
 			.build()
 			.register();
 

@@ -47,6 +47,9 @@ public class CAShapes {
 					.forHorizontal(Direction.NORTH),
 
 			AIRFIELD_SIGN = shape(0, 0, 6, 16, 15, 10)
+					.forHorizontal(Direction.NORTH),
+
+			WHEEL_CHOCK = shape(4, 0, 1, 12, 4, 5).add(4, 0, 11, 12, 4, 15)
 					.forHorizontal(Direction.NORTH);
 
 	private static VoxelShape trafficCone(double lift) {

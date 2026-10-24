@@ -40,6 +40,10 @@ repositories {
         url = "https://maven.ryanhcode.dev/releases"
         name = "Sable Companion"
     }
+    maven {
+        url = "https://maven.theillusivec4.top/"
+        name = "Curios API"
+    }
 
     exclusiveContent {
         forRepository {
@@ -180,6 +184,10 @@ dependencies {
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
     // Full JEI only in the dev client, not published as a dependency
     localRuntime("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+
+    // Optional: ear defenders in the Curios head slot
+    compileOnly("top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}:api")
+    localRuntime("top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}")
 
     // Create (Slim) without transitive dependencies
     implementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") {

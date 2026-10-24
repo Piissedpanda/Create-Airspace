@@ -37,6 +37,9 @@ public class CACreativeModeTabs {
 		ITEMS.add(CABlocks.RUNWAY_NUMBER);
 		ITEMS.add(CABlocks.SUITCASE_PACKAGER);
 		ITEMS.add(CABlocks.BAGGAGE_CART);
+		ITEMS.add(CABlocks.WHEEL_CHOCK);
+		ITEMS.add(CAItems.MARSHALLING_WAND);
+		ITEMS.add(CAItems.EAR_DEFENDERS);
 		for (LuggageType type : LuggageType.values())
 			ITEMS.add(CAItems.LUGGAGE.get(type)
 					.get(DyeColor.BLUE));

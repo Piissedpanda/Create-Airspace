@@ -3,14 +3,23 @@ package com.piissedpanda.createairspace;
 import java.util.EnumMap;
 import java.util.Map;
 
+import com.piissedpanda.createairspace.block.GroundCrew.EarDefendersItem;
+import com.piissedpanda.createairspace.block.GroundCrew.MarshallingWandItem;
 import com.piissedpanda.createairspace.block.Luggage.LuggageItem;
 import com.piissedpanda.createairspace.block.Luggage.LuggageType;
 import com.simibubi.create.AllTags.AllItemTags;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
 
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Items;
+import net.neoforged.neoforge.common.Tags;
 
 public class CAItems {
 	private static final CreateRegistrate REGISTRATE = CreateAirspace.REGISTRATE;
@@ -45,6 +54,35 @@ public class CAItems {
 			LUGGAGE.put(type, colors);
 		}
 	}
+
+	public static final ItemEntry<MarshallingWandItem> MARSHALLING_WAND = REGISTRATE
+			.item("marshalling_wand", MarshallingWandItem::new)
+			.properties(p -> p.stacksTo(16))
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("item/ground_crew/" + c.getName())))
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, c.get())
+					.define('O', Items.ORANGE_STAINED_GLASS_PANE)
+					.define('L', Tags.Items.DUSTS_GLOWSTONE)
+					.define('S', Tags.Items.RODS_WOODEN)
+					.pattern("O")
+					.pattern("L")
+					.pattern("S")
+					.unlockedBy("has_glowstone_dust", RegistrateRecipeProvider.has(Tags.Items.DUSTS_GLOWSTONE))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.register();
+
+	public static final ItemEntry<EarDefendersItem> EAR_DEFENDERS = REGISTRATE
+			.item("ear_defenders", EarDefendersItem::new)
+			.properties(p -> p.stacksTo(1))
+			.tag(ItemTags.create(ResourceLocation.fromNamespaceAndPath("curios", "head")))
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("item/ground_crew/" + c.getName())))
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, c.get())
+					.define('I', Tags.Items.NUGGETS_IRON)
+					.define('W', Items.YELLOW_WOOL)
+					.pattern("III")
+					.pattern("W W")
+					.unlockedBy("has_yellow_wool", RegistrateRecipeProvider.has(Items.YELLOW_WOOL))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.register();
 
 	public static void register() {
 	}
