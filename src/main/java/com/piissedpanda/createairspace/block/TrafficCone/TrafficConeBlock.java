@@ -1,12 +1,18 @@
 package com.piissedpanda.createairspace.block.TrafficCone;
 
 import com.piissedpanda.createairspace.CAShapes;
+import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.ProperWaterloggedBlock;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Mirror;
@@ -18,10 +24,11 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class TrafficConeBlock extends Block implements ProperWaterloggedBlock {
+public class TrafficConeBlock extends Block implements IWrenchable, ProperWaterloggedBlock {
 
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final int MAX_CONES = 4;
@@ -58,6 +65,41 @@ public class TrafficConeBlock extends Block implements ProperWaterloggedBlock {
 				.is(asItem()))
 			return false;
 		return pState.getValue(CONES) < MAX_CONES;
+	}
+
+	// Sneaking with an empty hand or a wrench takes one cone off the stack
+	@Override
+	protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,
+			BlockHitResult pHitResult) {
+		if (!pPlayer.isShiftKeyDown())
+			return InteractionResult.PASS;
+		takeCone(pState, pLevel, pPos, pPlayer);
+		return InteractionResult.sidedSuccess(pLevel.isClientSide);
+	}
+
+	@Override
+	public InteractionResult onWrenched(BlockState state, UseOnContext context) {
+		return InteractionResult.PASS;
+	}
+
+	@Override
+	public InteractionResult onSneakWrenched(BlockState state, UseOnContext context) {
+		takeCone(state, context.getLevel(), context.getClickedPos(), context.getPlayer());
+		IWrenchable.playRemoveSound(context.getLevel(), context.getClickedPos());
+		return InteractionResult.SUCCESS;
+	}
+
+	private void takeCone(BlockState state, Level level, BlockPos pos, Player player) {
+		if (level.isClientSide)
+			return;
+		int cones = state.getValue(CONES);
+		if (cones > 1)
+			level.setBlockAndUpdate(pos, state.setValue(CONES, cones - 1));
+		else
+			level.removeBlock(pos, false);
+		if (player != null && !player.isCreative())
+			player.getInventory()
+					.placeItemBackInInventory(new ItemStack(this));
 	}
 
 	@Override
