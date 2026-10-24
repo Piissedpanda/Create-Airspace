@@ -1,0 +1,151 @@
+{
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "metal": "create:block/industrial_iron_block",
+    "net": "minecraft:block/iron_bars",
+    "wheel": "minecraft:block/black_concrete",
+    "deck": "create:block/industrial_iron_block",
+    "particle": "create:block/industrial_iron_block"
+  },
+  "elements": [
+    {
+      "name": "deck",
+      "from": [
+        0,
+        3,
+        0
+      ],
+      "to": [
+        16,
+        4,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            12,
+            16,
+            13
+          ],
+          "texture": "#deck"
+        },
+        "south": {
+          "uv": [
+            0,
+            12,
+            16,
+            13
+          ],
+          "texture": "#deck"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            16,
+            13
+          ],
+          "texture": "#deck"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            16,
+            13
+          ],
+          "texture": "#deck"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#deck"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#deck"
+        }
+      }
+    },
+    {
+      "name": "beam",
+      "from": [
+        6,
+        2,
+        0
+      ],
+      "to": [
+        10,
+        3,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            6,
+            13,
+            10,
+            14
+          ],
+          "texture": "#metal"
+        },
+        "south": {
+          "uv": [
+            6,
+            13,
+            10,
+            14
+          ],
+          "texture": "#metal"
+        },
+        "west": {
+          "uv": [
+            0,
+            13,
+            16,
+            14
+          ],
+          "texture": "#metal"
+        },
+        "east": {
+          "uv": [
+            0,
+            13,
+            16,
+            14
+          ],
+          "texture": "#metal"
+        },
+        "up": {
+          "uv": [
+            6,
+            0,
+            10,
+            16
+          ],
+          "texture": "#metal"
+        },
+        "down": {
+          "uv": [
+            6,
+            0,
+            10,
+            16
+          ],
+          "texture": "#metal"
+        }
+      }
+    }
+  ]
+}

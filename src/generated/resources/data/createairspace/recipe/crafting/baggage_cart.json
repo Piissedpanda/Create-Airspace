@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:iron_bars"
+    },
+    "N": {
+      "tag": "c:nuggets/iron"
+    },
+    "S": {
+      "item": "create:iron_sheet"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "SSS",
+    "N N"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createairspace:baggage_cart"
+  }
+}

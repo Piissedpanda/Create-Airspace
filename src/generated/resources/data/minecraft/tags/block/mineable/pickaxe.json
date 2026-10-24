@@ -9,6 +9,7 @@
     "createairspace:edge_light",
     "createairspace:windsock",
     "createairspace:airport_beacon",
-    "createairspace:suitcase_packager"
+    "createairspace:suitcase_packager",
+    "createairspace:baggage_cart"
   ]
 }

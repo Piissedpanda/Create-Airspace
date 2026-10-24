@@ -1,0 +1,253 @@
+{
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "metal": "create:block/industrial_iron_block",
+    "net": "minecraft:block/iron_bars",
+    "wheel": "minecraft:block/black_concrete",
+    "deck": "create:block/industrial_iron_block",
+    "particle": "create:block/industrial_iron_block"
+  },
+  "elements": [
+    {
+      "name": "net",
+      "from": [
+        0,
+        4,
+        0.5
+      ],
+      "to": [
+        16,
+        19,
+        0.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            15
+          ],
+          "texture": "#net"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            15
+          ],
+          "texture": "#net"
+        }
+      }
+    },
+    {
+      "name": "rail",
+      "from": [
+        0,
+        19,
+        0
+      ],
+      "to": [
+        16,
+        20,
+        1
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            1
+          ],
+          "texture": "#metal"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            1
+          ],
+          "texture": "#metal"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#metal"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#metal"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            1
+          ],
+          "texture": "#metal"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            1
+          ],
+          "texture": "#metal"
+        }
+      }
+    },
+    {
+      "name": "post",
+      "from": [
+        0,
+        4,
+        0
+      ],
+      "to": [
+        1,
+        19,
+        1
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            1,
+            15
+          ],
+          "texture": "#metal"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            1,
+            15
+          ],
+          "texture": "#metal"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            1,
+            15
+          ],
+          "texture": "#metal"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            1,
+            15
+          ],
+          "texture": "#metal"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#metal"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#metal"
+        }
+      }
+    },
+    {
+      "name": "post",
+      "from": [
+        15,
+        4,
+        0
+      ],
+      "to": [
+        16,
+        19,
+        1
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            15,
+            0,
+            16,
+            15
+          ],
+          "texture": "#metal"
+        },
+        "south": {
+          "uv": [
+            15,
+            0,
+            16,
+            15
+          ],
+          "texture": "#metal"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            1,
+            15
+          ],
+          "texture": "#metal"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            1,
+            15
+          ],
+          "texture": "#metal"
+        },
+        "up": {
+          "uv": [
+            15,
+            0,
+            16,
+            1
+          ],
+          "texture": "#metal"
+        },
+        "down": {
+          "uv": [
+            15,
+            0,
+            16,
+            1
+          ],
+          "texture": "#metal"
+        }
+      }
+    }
+  ]
+}

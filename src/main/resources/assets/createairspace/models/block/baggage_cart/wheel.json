@@ -1,0 +1,151 @@
+{
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "metal": "create:block/industrial_iron_block",
+    "net": "minecraft:block/iron_bars",
+    "wheel": "minecraft:block/black_concrete",
+    "deck": "create:block/industrial_iron_block",
+    "particle": "create:block/industrial_iron_block"
+  },
+  "elements": [
+    {
+      "name": "wheel",
+      "from": [
+        1.5,
+        0,
+        1.5
+      ],
+      "to": [
+        3,
+        3,
+        4.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            1.5,
+            13,
+            3,
+            16
+          ],
+          "texture": "#wheel"
+        },
+        "south": {
+          "uv": [
+            1.5,
+            13,
+            3,
+            16
+          ],
+          "texture": "#wheel"
+        },
+        "west": {
+          "uv": [
+            1.5,
+            13,
+            4.5,
+            16
+          ],
+          "texture": "#wheel"
+        },
+        "east": {
+          "uv": [
+            1.5,
+            13,
+            4.5,
+            16
+          ],
+          "texture": "#wheel"
+        },
+        "up": {
+          "uv": [
+            1.5,
+            1.5,
+            3,
+            4.5
+          ],
+          "texture": "#wheel"
+        },
+        "down": {
+          "uv": [
+            1.5,
+            1.5,
+            3,
+            4.5
+          ],
+          "texture": "#wheel"
+        }
+      }
+    },
+    {
+      "name": "axle",
+      "from": [
+        3,
+        1,
+        2.5
+      ],
+      "to": [
+        5,
+        2,
+        3.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3,
+            14,
+            5,
+            15
+          ],
+          "texture": "#metal"
+        },
+        "south": {
+          "uv": [
+            3,
+            14,
+            5,
+            15
+          ],
+          "texture": "#metal"
+        },
+        "west": {
+          "uv": [
+            2.5,
+            14,
+            3.5,
+            15
+          ],
+          "texture": "#metal"
+        },
+        "east": {
+          "uv": [
+            2.5,
+            14,
+            3.5,
+            15
+          ],
+          "texture": "#metal"
+        },
+        "up": {
+          "uv": [
+            3,
+            2.5,
+            5,
+            3.5
+          ],
+          "texture": "#metal"
+        },
+        "down": {
+          "uv": [
+            3,
+            2.5,
+            5,
+            3.5
+          ],
+          "texture": "#metal"
+        }
+      }
+    }
+  ]
+}

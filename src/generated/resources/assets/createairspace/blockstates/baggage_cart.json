@@ -1,0 +1,83 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "createairspace:block/baggage_cart/deck"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/baggage_cart/side"
+      },
+      "when": {
+        "north": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/baggage_cart/wheel"
+      },
+      "when": {
+        "north": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/baggage_cart/side",
+        "y": 90
+      },
+      "when": {
+        "east": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/baggage_cart/wheel",
+        "y": 90
+      },
+      "when": {
+        "east": "false",
+        "north": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/baggage_cart/side",
+        "y": 180
+      },
+      "when": {
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/baggage_cart/wheel",
+        "y": 180
+      },
+      "when": {
+        "east": "false",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/baggage_cart/side",
+        "y": 270
+      },
+      "when": {
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/baggage_cart/wheel",
+        "y": 270
+      },
+      "when": {
+        "south": "false",
+        "west": "false"
+      }
+    }
+  ]
+}

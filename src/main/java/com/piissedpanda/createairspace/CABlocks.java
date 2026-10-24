@@ -14,6 +14,7 @@ import com.piissedpanda.createairspace.block.AirfieldSign.AirfieldSignBlock;
 import com.piissedpanda.createairspace.block.AirportBeacon.AirportBeaconBlock;
 import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostBlock;
 import com.piissedpanda.createairspace.block.EdgeLight.EdgeLightBlock;
+import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartBlock;
 import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlock;
 import com.piissedpanda.createairspace.block.RunwayMarking.RunwayMarkingBlock;
 import com.piissedpanda.createairspace.block.RunwayMarking.RunwayNumberBlock;
@@ -35,6 +36,7 @@ import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.core.Direction;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
@@ -54,6 +56,7 @@ import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.neoforged.neoforge.common.Tags;
 
 public class CABlocks {
@@ -286,6 +289,53 @@ public class CABlocks {
 	public static final BlockEntry<SuitcasePackagerBlock> SUITCASE_PACKAGER = REGISTRATE
 			.block("suitcase_packager", SuitcasePackagerBlock::new)
 			.transform(BuilderTransformers.packager())
+			.register();
+
+	public static final BlockEntry<BaggageCartBlock> BAGGAGE_CART = REGISTRATE
+			.block("baggage_cart", BaggageCartBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.METAL))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> {
+				MultiPartBlockStateBuilder builder = p.getMultipartBuilder(c.get());
+				builder.part()
+						.modelFile(p.models()
+								.getExistingFile(p.modLoc("block/baggage_cart/deck")))
+						.addModel()
+						.end();
+				// Net on every open side, wheels on the outer corners
+				for (Direction side : Direction.Plane.HORIZONTAL) {
+					int rotation = ((int) side.toYRot() + 180) % 360;
+					builder.part()
+							.modelFile(p.models()
+									.getExistingFile(p.modLoc("block/baggage_cart/side")))
+							.rotationY(rotation)
+							.addModel()
+							.condition(BaggageCartBlock.CONNECTED.get(side), false)
+							.end();
+					builder.part()
+							.modelFile(p.models()
+									.getExistingFile(p.modLoc("block/baggage_cart/wheel")))
+							.rotationY(rotation)
+							.addModel()
+							.condition(BaggageCartBlock.CONNECTED.get(side), false)
+							.condition(BaggageCartBlock.CONNECTED.get(side.getCounterClockWise()), false)
+							.end();
+				}
+			})
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, c.get())
+					.define('B', Items.IRON_BARS)
+					.define('S', AllItems.IRON_SHEET)
+					.define('N', Tags.Items.NUGGETS_IRON)
+					.pattern("BBB")
+					.pattern("SSS")
+					.pattern("N N")
+					.unlockedBy("has_iron_sheet", RegistrateRecipeProvider.has(AllItems.IRON_SHEET))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/baggage_cart/item")))
+			.build()
 			.register();
 
 	public static boolean isBarrierPost(BlockState state) {
