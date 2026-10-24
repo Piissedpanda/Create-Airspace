@@ -323,6 +323,7 @@ publishMods {
         minecraftVersions.add(minecraft_version)
         environment = CLIENT_AND_SERVER
         requires('create')
+        optional('curios')
     }
 
     curseforge {
@@ -333,5 +334,6 @@ publishMods {
         client = true
         server = true
         requires('create')
+        optional('curios')
     }
 }

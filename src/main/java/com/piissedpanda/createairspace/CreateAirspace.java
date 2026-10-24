@@ -30,7 +30,7 @@ public class CreateAirspace {
 
 	public static final String MODID = "createairspace";
 
-	public static final String VERSION = "1.0.0";
+	public static final String VERSION = "1.1.0";
 
 	public static final Logger LOGGER = LogUtils.getLogger();
 

@@ -48,7 +48,7 @@ authors="Piissedpanda"
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Aviation and airport accessories for Create: barrier posts with retractable belts, traffic cones, terminal seats, taxiway and runway signs, edge lights, a windsock that follows the wind and a rotating airport beacon.
+Aviation and airport accessories for Create: runway paint, luggage for Create's logistics, baggage carts, ground crew gear, barrier posts with retractable belts, traffic cones, terminal seats, taxiway and runway signs, edge lights, a windsock and a rotating airport beacon.
 
 Made to sit next to Create and Create Aeronautics, built with Create's own processes.
 '''
@@ -98,6 +98,14 @@ config="${mod_id}.mixins.json"
     versionRange="[6.0.10,)"
     ordering="NONE"
     side="BOTH"
+
+# Ear defenders can be worn in the Curios head slot
+[[dependencies.${mod_id}]]
+    modId = "curios"
+    type = "optional"
+    versionRange = "[9.2.2,)"
+    ordering = "NONE"
+    side = "BOTH"
 
 [[dependencies.${mod_id}]]
     modId = "sable"

@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.1.0 – Ground Handling
+
+### Added
+- **Paint Pail** with **White Paint** and **Yellow Paint**: paint runway markings (center line, edge line, double line, bar, full, holding position, curve, diagonal) and 2x3 runway numbers (0-9, L, R, C). Sneak-right-click switches the pattern, a wrench changes the character of a number. Fill the pail with a spout or from a tank; paint is mixed from dye, a clay ball and water.
+- **Suitcase Packager**: a packager that wraps items into suitcases, trolleys, duffel bags and backpacks instead of cardboard boxes. Luggage works like Create's packages and hangs from chain conveyors by its handle. Dye fixes the luggage color.
+- **Baggage Cart**: luggage storage for vehicles. Carts join into groups of up to 3x3 with one shared inventory; right-click to load, empty hand to take the top piece, funnels and chutes work too.
+- **Wheel Chocks**, **Marshalling Wands** (hold right-click to wave) and **Ear Defenders** (muffle loud sounds while worn, also in the Curios head slot; volume in the client config).
+- Traffic cones stack up to four per block. Sneak-right-click with an empty hand takes one off.
+
+### Changed
+- Texts use American English.
+- Optional: Curios for the ear defenders.
+
 ## 1.0.0 – Airport Accessories
 
 First release.

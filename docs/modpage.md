@@ -2,7 +2,7 @@
 
 ![Banner](https://raw.githubusercontent.com/Piissedpanda/Create-Airspace/mc1.21.1/dev/docs/images/banner.jpg)
 
-**Aviation and airport accessories for Create.** Build a proper airfield around your aircraft: barrier posts for queue lines, terminal seats, taxiway signs, edge lights, a windsock that follows the wind and a rotating airport beacon.
+**Aviation and airport accessories for Create.** Build a proper airfield around your aircraft: paint runway markings, handle luggage with Create's logistics, set up barrier posts, terminal seats, taxiway signs, edge lights, a windsock that follows the wind and a rotating airport beacon.
 
 Made for aviation builds, Create: Airspace sits right next to Create and Create Aeronautics. It uses Create's own processes, Ponder scenes and wrench handling, so everything feels like part of Create.
 
@@ -45,23 +45,42 @@ Turns into the wind and rises with its strength. The wind is the same for every 
 
 Rotational force turns the head, redstone from the sides controls brightness and range of the light. Switch between the patterns of **land airports, water airports, heliports and military airports** with a wrench. Looking straight into a beam dazzles you for a moment (can be turned off in the client config).
 
+## Runway Paint
+
+<!-- Screenshot: painted runway with center line, threshold bars, numbers and a yellow holding position line -->
+
+Fill a **Paint Pail** with white or yellow paint from a spout or a tank and paint center lines, edge lines, threshold bars, holding position lines, curves and **2x3 runway numbers** (0-9, L, R, C). Sneak-right-click switches the pattern. Paint is mixed from dye, a clay ball and water.
+
+## Luggage
+
+<!-- Screenshot: suitcase packager sending suitcases along a chain conveyor, baggage cart loaded with luggage -->
+
+The **Suitcase Packager** works like Create's packager, but packs **suitcases, trolleys, duffel bags and backpacks**. Luggage has addresses, rides frogports and hangs from chain conveyors by its handle. Load it onto a **Baggage Cart**: carts join into groups of up to 3x3 with one shared inventory and fit on your vehicles.
+
+## Ground Crew
+
+<!-- Screenshot: player waving marshalling wands next to wheel chocks, wearing ear defenders -->
+
+**Marshalling wands** wave while you hold right-click, **ear defenders** muffle loud sounds (also in the Curios head slot) and **wheel chocks** sit in front of the wheels.
+
 ## Traffic Cones
 
 ![Traffic Cones](https://raw.githubusercontent.com/Piissedpanda/Create-Airspace/mc1.21.1/dev/docs/images/traffic_cones.jpg)
 
-Mark closed areas. They can be placed underwater too.
+Mark closed areas. Stack up to four per block, and they can be placed underwater too.
 
 ---
 
 ## Recipes
 
-Simple blocks are crafted, everything else goes through Create: deploying, item application, sequenced assembly and mechanical crafting. All recipes show up in JEI, and most blocks have a **Ponder** scene (hold `W` over the item).
+Simple blocks are crafted, everything else goes through Create: deploying, item application, mixing, sequenced assembly and mechanical crafting. All recipes show up in JEI, and most blocks have a **Ponder** scene (hold `W` over the item).
 
 ## Requirements
 
 - Minecraft **1.21.1**, **NeoForge**
 - **Create 6.0.10** or newer
 - Needed on both client and server
+- Optional: **Curios** for wearing ear defenders in the head slot
 
 Works alongside **Create Aeronautics**.
 
