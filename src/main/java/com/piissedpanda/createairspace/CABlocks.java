@@ -47,6 +47,7 @@ import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -82,7 +83,21 @@ public class CABlocks {
 					.mapColor(MapColor.COLOR_ORANGE)
 					.strength(0.5f)
 					.sound(SoundType.BAMBOO_WOOD))
-			.blockstate((c, p) -> p.horizontalBlock(c.get(), AssetLookup.partialBaseModel(c, p)))
+			.blockstate((c, p) -> p.horizontalBlock(c.get(), state -> {
+				int cones = state.getValue(TrafficConeBlock.CONES);
+				return p.models()
+						.getExistingFile(p.modLoc("block/traffic_cone/" + (cones == 1 ? "block" : "stack_" + cones)));
+			}))
+			// A stack drops all of its cones
+			.loot((lt, b) -> lt.add(b, LootTable.lootTable()
+					.withPool(LootPool.lootPool()
+							.setRolls(ConstantValue.exactly(1))
+							.add(lt.applyExplosionDecay(b, LootItem.lootTableItem(b)
+									.apply(List.of(2, 3, 4), cones -> SetItemCountFunction
+											.setCount(ConstantValue.exactly(cones))
+											.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
+													.setProperties(StatePropertiesPredicate.Builder.properties()
+															.hasProperty(TrafficConeBlock.CONES, cones)))))))))
 			// Dried kelp works as rubber, like in Create's belts
 			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, c.get(), 2)
 					.define('O', Tags.Items.DYES_ORANGE)

@@ -14,11 +14,6 @@ public class CAShapes {
 	BARRIER_POST_INTERACTION = shape(4, 0, 4, 12, 20, 12)
 			.build(),
 
-			TRAFFIC_CONE = shape(2, 0, 2, 14, 1, 14)
-					.add(5, 1, 5, 11, 8, 11)
-					.add(6, 8, 6, 10, 14, 10)
-					.build(),
-
 			EDGE_LIGHT = cuboid(5, 0, 5, 11, 11, 11),
 
 			RUNWAY_MARKING = cuboid(0, 0, 0, 16, 1, 16),
@@ -35,6 +30,10 @@ public class CAShapes {
 			TERMINAL_SEAT_COLLISION = cuboid(0, 0, 0, 16, 6, 16),
 			TERMINAL_SEAT_COLLISION_PLAYERS = cuboid(0, 0, 0, 16, 3, 16);
 
+	// Each stacked cone lifts the stack by 1.5 px
+	public static final VoxelShape[] TRAFFIC_CONES = { trafficCone(0), trafficCone(1.5), trafficCone(3),
+			trafficCone(4.5) };
+
 	// Facing north means sitting towards north, the backrest is in the south
 	public static final VoxelShaper
 
@@ -47,6 +46,12 @@ public class CAShapes {
 
 			AIRFIELD_SIGN = shape(0, 0, 6, 16, 15, 10)
 					.forHorizontal(Direction.NORTH);
+
+	private static VoxelShape trafficCone(double lift) {
+		return shape(2, 0, 2, 14, 1 + lift, 14).add(5, 1 + lift, 5, 11, 8 + lift, 11)
+				.add(6, 8 + lift, 6, 10, 14 + lift, 10)
+				.build();
+	}
 
 	private static Builder shape(VoxelShape shape) {
 		return new Builder(shape);
