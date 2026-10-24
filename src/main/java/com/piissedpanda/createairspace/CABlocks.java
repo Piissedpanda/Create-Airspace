@@ -14,6 +14,8 @@ import com.piissedpanda.createairspace.block.AirfieldSign.AirfieldSignBlock;
 import com.piissedpanda.createairspace.block.AirportBeacon.AirportBeaconBlock;
 import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostBlock;
 import com.piissedpanda.createairspace.block.EdgeLight.EdgeLightBlock;
+import com.piissedpanda.createairspace.block.RunwayMarking.RunwayMarkingBlock;
+import com.piissedpanda.createairspace.block.RunwayMarking.RunwayNumberBlock;
 import com.piissedpanda.createairspace.block.TerminalSeat.TerminalSeatBlock;
 import com.piissedpanda.createairspace.block.TrafficCone.TrafficConeBlock;
 import com.piissedpanda.createairspace.block.Windsock.WindsockBlock;
@@ -30,14 +32,24 @@ import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.Tags;
 
@@ -207,6 +219,53 @@ public class CABlocks {
 			.transform(customItemModel())
 			.register();
 
+	public static final BlockEntry<RunwayMarkingBlock>
+
+	WHITE_RUNWAY_MARKING = runwayMarking("white", MapColor.SNOW, Tags.Items.DYES_WHITE),
+			YELLOW_RUNWAY_MARKING = runwayMarking("yellow", MapColor.COLOR_YELLOW, Tags.Items.DYES_YELLOW);
+
+	public static final BlockEntry<RunwayNumberBlock> RUNWAY_NUMBER = REGISTRATE
+			.block("runway_number", RunwayNumberBlock::new)
+			.properties(p -> p.noCollission()
+					.mapColor(MapColor.SNOW)
+					.strength(0.1f)
+					.sound(SoundType.STONE)
+					.pushReaction(PushReaction.DESTROY))
+			.blockstate((c, p) -> p.getVariantBuilder(c.get())
+					.forAllStates(state -> {
+						String glyph = state.getValue(RunwayNumberBlock.GLYPH)
+								.getSerializedName();
+						int part = state.getValue(RunwayNumberBlock.PART);
+						return ConfiguredModel.builder()
+								.modelFile(p.models()
+										.withExistingParent("block/runway_number/" + glyph + "_" + part,
+												p.modLoc("block/runway_number/part_" + part))
+										.texture("glyph", p.modLoc("block/runway_number/" + glyph)))
+								.rotationY(((int) state.getValue(RunwayNumberBlock.FACING)
+										.toYRot() + 180) % 360)
+								.build();
+					}))
+			// Only part 0 drops the item
+			.loot((lt, b) -> lt.add(b, LootTable.lootTable()
+					.withPool(LootPool.lootPool()
+							.setRolls(ConstantValue.exactly(1))
+							.add(LootItem.lootTableItem(b)
+									.when(ExplosionCondition.survivesExplosion())
+									.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
+											.setProperties(StatePropertiesPredicate.Builder.properties()
+													.hasProperty(RunwayNumberBlock.PART, 0)))))))
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, c.get())
+					.define('M', WHITE_RUNWAY_MARKING.get())
+					.pattern("MM")
+					.pattern("MM")
+					.pattern("MM")
+					.unlockedBy("has_runway_marking", RegistrateRecipeProvider.has(WHITE_RUNWAY_MARKING.get()))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.generated(c, p.modLoc("block/runway_number/1")))
+			.build()
+			.register();
+
 	public static boolean isBarrierPost(BlockState state) {
 		return state.getBlock() instanceof BarrierPostBlock;
 	}
@@ -235,6 +294,39 @@ public class CABlocks {
 				.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/barrier_post/item_base"))
 						.texture("material", material)
 						.texture("particle", material))
+				.build()
+				.register();
+	}
+
+	// Flat paint layer, the pattern comes from the blockstate
+	private static BlockEntry<RunwayMarkingBlock> runwayMarking(String colour, MapColor mapColor, TagKey<Item> dye) {
+		return REGISTRATE.block(colour + "_runway_marking", RunwayMarkingBlock::new)
+				.properties(p -> p.noCollission()
+						.mapColor(mapColor)
+						.strength(0.1f)
+						.sound(SoundType.STONE)
+						.pushReaction(PushReaction.DESTROY))
+				.blockstate((c, p) -> p.getVariantBuilder(c.get())
+						.forAllStates(state -> {
+							String name = state.getValue(RunwayMarkingBlock.PATTERN)
+									.getSerializedName() + "_" + colour;
+							return ConfiguredModel.builder()
+									.modelFile(p.models()
+											.withExistingParent("block/runway_marking/" + name,
+													p.modLoc("block/runway_marking/base"))
+											.texture("marking", p.modLoc("block/runway_marking/" + name)))
+									.rotationY(((int) state.getValue(RunwayMarkingBlock.FACING)
+											.toYRot() + 180) % 360)
+									.build();
+						}))
+				// Clay works as the binder of the paint
+				.recipe((c, p) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, c.get(), 4)
+						.requires(dye)
+						.requires(Items.CLAY_BALL)
+						.unlockedBy("has_clay_ball", RegistrateRecipeProvider.has(Items.CLAY_BALL))
+						.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+				.item()
+				.model((c, p) -> p.generated(c, p.modLoc("block/runway_marking/holding_position_" + colour)))
 				.build()
 				.register();
 	}

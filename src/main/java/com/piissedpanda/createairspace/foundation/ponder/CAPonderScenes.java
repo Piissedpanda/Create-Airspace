@@ -20,6 +20,9 @@ public class CAPonderScenes {
 				CAPonderTags.AIRPORT_ACCESSORIES);
 		HELPER.addStoryBoard(CABlocks.EDGE_LIGHT, "edge_light", AirportAccessoriesScenes::edgeLight,
 				CAPonderTags.AIRPORT_ACCESSORIES);
+		HELPER.forComponents(CABlocks.WHITE_RUNWAY_MARKING, CABlocks.YELLOW_RUNWAY_MARKING, CABlocks.RUNWAY_NUMBER)
+				.addStoryBoard("runway_marking", AirportAccessoriesScenes::runwayMarking,
+						CAPonderTags.AIRPORT_ACCESSORIES);
 		HELPER.addStoryBoard(CABlocks.WINDSOCK, "windsock", AirportAccessoriesScenes::windsock,
 				CAPonderTags.AIRPORT_ACCESSORIES);
 		HELPER.addStoryBoard(CABlocks.AIRPORT_BEACON, "airport_beacon", AirportAccessoriesScenes::airportBeacon,

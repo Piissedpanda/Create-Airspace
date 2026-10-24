@@ -1,0 +1,6 @@
+{
+  "parent": "createairspace:block/runway_marking/base",
+  "textures": {
+    "marking": "createairspace:block/runway_marking/bar_yellow"
+  }
+}

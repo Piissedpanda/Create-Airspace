@@ -8,6 +8,9 @@ import com.piissedpanda.createairspace.block.AirfieldSign.AirfieldSignBlockEntit
 import com.piissedpanda.createairspace.block.AirportBeacon.AirportBeaconBlock;
 import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostBlockEntity;
 import com.piissedpanda.createairspace.block.EdgeLight.EdgeLightBlock;
+import com.piissedpanda.createairspace.block.RunwayMarking.RunwayMarkingBlock;
+import com.piissedpanda.createairspace.block.RunwayMarking.RunwayMarkingBlock.Pattern;
+import com.piissedpanda.createairspace.block.RunwayMarking.RunwayNumberBlock;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.foundation.ponder.CreateSceneBuilder;
 
@@ -15,6 +18,7 @@ import net.createmod.catnip.math.Pointing;
 import net.createmod.ponder.api.PonderPalette;
 import net.createmod.ponder.api.scene.SceneBuilder;
 import net.createmod.ponder.api.scene.SceneBuildingUtil;
+import net.createmod.ponder.api.scene.Selection;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
@@ -388,6 +392,102 @@ public class AirportAccessoriesScenes {
 					.modifyBlock(beacon, s -> s.setValue(AirportBeaconBlock.MODE, mode), false);
 			scene.idle(35);
 		}
+		scene.markAsFinished();
+	}
+
+	public static void runwayMarking(SceneBuilder builder, SceneBuildingUtil util) {
+		CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+		scene.title("runway_marking", "Painting Runways");
+		scene.configureBasePlate(0, 0, 5);
+		scene.world()
+				.showSection(util.select()
+						.layer(0), Direction.UP);
+		scene.idle(10);
+
+		ItemStack wrench = AllItems.WRENCH.asStack();
+		BlockPos hold = util.grid()
+				.at(2, 1, 0);
+
+		scene.world()
+				.showSection(util.select()
+						.fromTo(2, 1, 0, 2, 1, 4), Direction.DOWN);
+		scene.idle(20);
+		scene.overlay()
+				.showText(80)
+				.text("Runway Markings are flat layers of paint. Lines run in the direction you look when placing them")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(2, 0, 2));
+		scene.idle(90);
+
+		scene.overlay()
+				.showControls(util.vector()
+						.topOf(2, 0, 0), Pointing.DOWN, 30)
+				.rightClick()
+				.withItem(wrench);
+		scene.idle(5);
+		scene.world()
+				.modifyBlock(hold, s -> s.setValue(RunwayMarkingBlock.PATTERN, Pattern.HOLDING_POSITION), false);
+		scene.overlay()
+				.showText(80)
+				.text("Right-click with a Wrench to switch the pattern. New markings continue the pattern next to them")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(2, 0, 0));
+		scene.idle(90);
+
+		scene.overlay()
+				.showControls(util.vector()
+						.topOf(2, 0, 0), Pointing.DOWN, 30)
+				.rightClick()
+				.withItem(new ItemStack(Items.YELLOW_DYE));
+		scene.idle(5);
+		scene.world()
+				.setBlock(hold, CABlocks.YELLOW_RUNWAY_MARKING.getDefaultState()
+						.setValue(RunwayMarkingBlock.PATTERN, Pattern.HOLDING_POSITION), false);
+		scene.overlay()
+				.showText(60)
+				.text("White or yellow dye repaints them")
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(2, 0, 0));
+		scene.idle(70);
+
+		scene.world()
+				.showSection(util.select()
+						.fromTo(0, 1, 1, 1, 1, 3), Direction.DOWN);
+		scene.idle(20);
+		scene.overlay()
+				.showText(90)
+				.text("Runway Numbers cover 2 x 3 blocks and are placed at once. Their top points where you look")
+				.attachKeyFrame()
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(1, 0, 2));
+		scene.idle(100);
+
+		Selection seven = util.select()
+				.fromTo(3, 1, 1, 4, 1, 3);
+		scene.world()
+				.showSection(seven, Direction.DOWN);
+		scene.idle(20);
+		scene.overlay()
+				.showControls(util.vector()
+						.topOf(3, 0, 2), Pointing.DOWN, 30)
+				.rightClick()
+				.withItem(wrench);
+		scene.idle(5);
+		scene.world()
+				.modifyBlocks(seven, s -> s.setValue(RunwayNumberBlock.GLYPH, RunwayNumberBlock.Glyph.SEVEN), false);
+		scene.overlay()
+				.showText(80)
+				.text("Right-click with a Wrench to switch the character: 0 to 9, L, R and C")
+				.placeNearTarget()
+				.pointAt(util.vector()
+						.topOf(3, 0, 2));
+		scene.idle(90);
 		scene.markAsFinished();
 	}
 

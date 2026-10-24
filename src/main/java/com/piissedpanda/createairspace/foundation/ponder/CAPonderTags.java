@@ -34,7 +34,10 @@ public class CAPonderTags {
 				.add(CABlocks.AIRFIELD_SIGN)
 				.add(CABlocks.EDGE_LIGHT)
 				.add(CABlocks.WINDSOCK)
-				.add(CABlocks.AIRPORT_BEACON);
+				.add(CABlocks.AIRPORT_BEACON)
+				.add(CABlocks.WHITE_RUNWAY_MARKING)
+				.add(CABlocks.YELLOW_RUNWAY_MARKING)
+				.add(CABlocks.RUNWAY_NUMBER);
 	}
 
 }

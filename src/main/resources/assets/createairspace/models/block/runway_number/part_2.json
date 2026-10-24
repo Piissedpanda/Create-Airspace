@@ -1,0 +1,32 @@
+{
+  "parent": "block/block",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "#glyph"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0.25,
+        0
+      ],
+      "to": [
+        16,
+        0.25,
+        16
+      ],
+      "faces": {
+        "up": {
+          "uv": [
+            2.6667,
+            5.3333,
+            8.0,
+            10.6667
+          ],
+          "texture": "#glyph"
+        }
+      }
+    }
+  ]
+}

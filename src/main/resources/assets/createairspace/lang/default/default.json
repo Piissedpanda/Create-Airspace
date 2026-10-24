@@ -16,5 +16,15 @@
     "createairspace.airport_beacon.mode.land": "Land Airport (white, green)",
     "createairspace.airport_beacon.mode.water": "Water Airport (white, yellow)",
     "createairspace.airport_beacon.mode.heliport": "Heliport (green, yellow, white)",
-    "createairspace.airport_beacon.mode.military": "Military Airport (double white, green)"
+    "createairspace.airport_beacon.mode.military": "Military Airport (double white, green)",
+
+    "createairspace.runway_marking.pattern": "Marking: %1$s",
+    "createairspace.runway_marking.pattern.center_line": "Centre Line",
+    "createairspace.runway_marking.pattern.edge_line": "Edge Line",
+    "createairspace.runway_marking.pattern.double_line": "Double Line",
+    "createairspace.runway_marking.pattern.bar": "Bar",
+    "createairspace.runway_marking.pattern.full": "Full",
+    "createairspace.runway_marking.pattern.holding_position": "Holding Position",
+    "createairspace.runway_marking.pattern.curve": "Curve",
+    "createairspace.runway_marking.pattern.diagonal": "Diagonal"
 }

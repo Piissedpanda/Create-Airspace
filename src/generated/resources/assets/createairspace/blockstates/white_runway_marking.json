@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "facing=east,pattern=bar": {
+      "model": "createairspace:block/runway_marking/bar_white",
+      "y": 90
+    },
+    "facing=east,pattern=center_line": {
+      "model": "createairspace:block/runway_marking/center_line_white",
+      "y": 90
+    },
+    "facing=east,pattern=curve": {
+      "model": "createairspace:block/runway_marking/curve_white",
+      "y": 90
+    },
+    "facing=east,pattern=diagonal": {
+      "model": "createairspace:block/runway_marking/diagonal_white",
+      "y": 90
+    },
+    "facing=east,pattern=double_line": {
+      "model": "createairspace:block/runway_marking/double_line_white",
+      "y": 90
+    },
+    "facing=east,pattern=edge_line": {
+      "model": "createairspace:block/runway_marking/edge_line_white",
+      "y": 90
+    },
+    "facing=east,pattern=full": {
+      "model": "createairspace:block/runway_marking/full_white",
+      "y": 90
+    },
+    "facing=east,pattern=holding_position": {
+      "model": "createairspace:block/runway_marking/holding_position_white",
+      "y": 90
+    },
+    "facing=north,pattern=bar": {
+      "model": "createairspace:block/runway_marking/bar_white"
+    },
+    "facing=north,pattern=center_line": {
+      "model": "createairspace:block/runway_marking/center_line_white"
+    },
+    "facing=north,pattern=curve": {
+      "model": "createairspace:block/runway_marking/curve_white"
+    },
+    "facing=north,pattern=diagonal": {
+      "model": "createairspace:block/runway_marking/diagonal_white"
+    },
+    "facing=north,pattern=double_line": {
+      "model": "createairspace:block/runway_marking/double_line_white"
+    },
+    "facing=north,pattern=edge_line": {
+      "model": "createairspace:block/runway_marking/edge_line_white"
+    },
+    "facing=north,pattern=full": {
+      "model": "createairspace:block/runway_marking/full_white"
+    },
+    "facing=north,pattern=holding_position": {
+      "model": "createairspace:block/runway_marking/holding_position_white"
+    },
+    "facing=south,pattern=bar": {
+      "model": "createairspace:block/runway_marking/bar_white",
+      "y": 180
+    },
+    "facing=south,pattern=center_line": {
+      "model": "createairspace:block/runway_marking/center_line_white",
+      "y": 180
+    },
+    "facing=south,pattern=curve": {
+      "model": "createairspace:block/runway_marking/curve_white",
+      "y": 180
+    },
+    "facing=south,pattern=diagonal": {
+      "model": "createairspace:block/runway_marking/diagonal_white",
+      "y": 180
+    },
+    "facing=south,pattern=double_line": {
+      "model": "createairspace:block/runway_marking/double_line_white",
+      "y": 180
+    },
+    "facing=south,pattern=edge_line": {
+      "model": "createairspace:block/runway_marking/edge_line_white",
+      "y": 180
+    },
+    "facing=south,pattern=full": {
+      "model": "createairspace:block/runway_marking/full_white",
+      "y": 180
+    },
+    "facing=south,pattern=holding_position": {
+      "model": "createairspace:block/runway_marking/holding_position_white",
+      "y": 180
+    },
+    "facing=west,pattern=bar": {
+      "model": "createairspace:block/runway_marking/bar_white",
+      "y": 270
+    },
+    "facing=west,pattern=center_line": {
+      "model": "createairspace:block/runway_marking/center_line_white",
+      "y": 270
+    },
+    "facing=west,pattern=curve": {
+      "model": "createairspace:block/runway_marking/curve_white",
+      "y": 270
+    },
+    "facing=west,pattern=diagonal": {
+      "model": "createairspace:block/runway_marking/diagonal_white",
+      "y": 270
+    },
+    "facing=west,pattern=double_line": {
+      "model": "createairspace:block/runway_marking/double_line_white",
+      "y": 270
+    },
+    "facing=west,pattern=edge_line": {
+      "model": "createairspace:block/runway_marking/edge_line_white",
+      "y": 270
+    },
+    "facing=west,pattern=full": {
+      "model": "createairspace:block/runway_marking/full_white",
+      "y": 270
+    },
+    "facing=west,pattern=holding_position": {
+      "model": "createairspace:block/runway_marking/holding_position_white",
+      "y": 270
+    }
+  }
+}
