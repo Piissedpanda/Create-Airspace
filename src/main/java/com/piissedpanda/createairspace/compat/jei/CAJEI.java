@@ -13,9 +13,14 @@ import com.tterrag.registrate.util.entry.FluidEntry;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter;
+import mezz.jei.api.ingredients.subtypes.UidContext;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.ISubtypeRegistration;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.material.Fluid;
@@ -32,6 +37,26 @@ public class CAJEI implements IModPlugin {
 	@Override
 	public ResourceLocation getPluginUid() {
 		return CreateAirspace.asResource("jei_plugin");
+	}
+
+	// Empty, white and yellow pails are separate entries, the amount and mode do
+	// not count
+	@Override
+	public void registerItemSubtypes(ISubtypeRegistration registration) {
+		registration.registerSubtypeInterpreter(CAItems.PAINT_PAIL.get(), new ISubtypeInterpreter<ItemStack>() {
+			@Override
+			public Object getSubtypeData(ItemStack stack, UidContext context) {
+				return getLegacyStringSubtypeInfo(stack, context);
+			}
+
+			@Override
+			public String getLegacyStringSubtypeInfo(ItemStack stack, UidContext context) {
+				FluidStack paint = PaintPailItem.getPaint(stack);
+				return paint.isEmpty() ? "empty"
+						: BuiltInRegistries.FLUID.getKey(paint.getFluid())
+								.toString();
+			}
+		});
 	}
 
 	@Override
