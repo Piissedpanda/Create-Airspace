@@ -1,0 +1,93 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "create:packager"
+  },
+  "results": [
+    {
+      "id": "createairspace:suitcase_packager"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_suitcase_packager"
+        },
+        {
+          "tag": "c:leathers"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_suitcase_packager"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_suitcase_packager"
+        },
+        {
+          "tag": "c:leathers"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_suitcase_packager"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_suitcase_packager"
+        },
+        {
+          "item": "create:brass_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_suitcase_packager"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_suitcase_packager"
+        },
+        {
+          "tag": "c:strings"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_suitcase_packager"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_suitcase_packager"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_suitcase_packager"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "createairspace:incomplete_suitcase_packager"
+  }
+}

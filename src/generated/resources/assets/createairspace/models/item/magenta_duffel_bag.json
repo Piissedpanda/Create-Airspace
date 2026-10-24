@@ -1,0 +1,7 @@
+{
+  "parent": "createairspace:item/luggage/duffel_bag",
+  "textures": {
+    "body": "minecraft:block/magenta_wool",
+    "particle": "minecraft:block/magenta_wool"
+  }
+}

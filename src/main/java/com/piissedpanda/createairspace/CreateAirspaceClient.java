@@ -28,6 +28,7 @@ public class CreateAirspaceClient {
 		// Do not forget to add translations for your config options to the en_us.json
 		// file.
 		container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+		CAPartialModels.initLuggage();
 	}
 
 	@SubscribeEvent

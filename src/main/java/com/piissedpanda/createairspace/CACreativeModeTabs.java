@@ -5,12 +5,14 @@ import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
 
+import com.piissedpanda.createairspace.block.Luggage.LuggageType;
 import com.simibubi.create.AllCreativeModeTabs;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.DyeColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -33,6 +35,10 @@ public class CACreativeModeTabs {
 		ITEMS.add(CABlocks.WHITE_RUNWAY_MARKING);
 		ITEMS.add(CABlocks.YELLOW_RUNWAY_MARKING);
 		ITEMS.add(CABlocks.RUNWAY_NUMBER);
+		ITEMS.add(CABlocks.SUITCASE_PACKAGER);
+		for (LuggageType type : LuggageType.values())
+			ITEMS.add(CAItems.LUGGAGE.get(type)
+					.get(DyeColor.BLUE));
 	}
 
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BASE_TAB = REGISTER.register("base",

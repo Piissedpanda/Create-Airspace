@@ -1,0 +1,7 @@
+{
+  "parent": "createairspace:item/luggage/backpack",
+  "textures": {
+    "body": "minecraft:block/pink_wool",
+    "particle": "minecraft:block/pink_wool"
+  }
+}

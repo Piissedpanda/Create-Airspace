@@ -7,5 +7,6 @@ import net.minecraft.world.item.Item;
 public class CATags {
 
 	public static final TagKey<Item> TERMINAL_SEATS = ItemTags.create(CreateAirspace.asResource("terminal_seats"));
+	public static final TagKey<Item> LUGGAGE = ItemTags.create(CreateAirspace.asResource("luggage"));
 
 }

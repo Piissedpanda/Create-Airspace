@@ -29,7 +29,17 @@ public class CASequencedAssemblyRecipeGen extends SequencedAssemblyRecipeGen {
 			.addStep(DeployerApplicationRecipe::new, rb -> rb.require(Tags.Items.DYES_YELLOW))
 			.addStep(DeployerApplicationRecipe::new, rb -> rb.require(Tags.Items.DYES_BLACK))
 			.addStep(DeployerApplicationRecipe::new, rb -> rb.require(Items.GLASS))
-			.addStep(PressingRecipe::new, rb -> rb));
+			.addStep(PressingRecipe::new, rb -> rb)),
+
+			SUITCASE_PACKAGER = create("suitcase_packager", b -> b.require(AllBlocks.PACKAGER.get())
+					.transitionTo(CAItems.INCOMPLETE_SUITCASE_PACKAGER.get())
+					.addOutput(CABlocks.SUITCASE_PACKAGER.get(), 1)
+					.loops(1)
+					.addStep(DeployerApplicationRecipe::new, rb -> rb.require(Tags.Items.LEATHERS))
+					.addStep(DeployerApplicationRecipe::new, rb -> rb.require(Tags.Items.LEATHERS))
+					.addStep(DeployerApplicationRecipe::new, rb -> rb.require(AllItems.BRASS_SHEET.get()))
+					.addStep(DeployerApplicationRecipe::new, rb -> rb.require(Tags.Items.STRINGS))
+					.addStep(PressingRecipe::new, rb -> rb));
 
 	public CASequencedAssemblyRecipeGen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries, CreateAirspace.MODID);

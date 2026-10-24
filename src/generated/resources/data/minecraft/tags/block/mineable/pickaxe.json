@@ -8,6 +8,7 @@
     "createairspace:airfield_sign",
     "createairspace:edge_light",
     "createairspace:windsock",
-    "createairspace:airport_beacon"
+    "createairspace:airport_beacon",
+    "createairspace:suitcase_packager"
   ]
 }

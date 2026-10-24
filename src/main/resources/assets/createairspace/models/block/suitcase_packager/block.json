@@ -1,0 +1,7 @@
+{
+  "parent": "create:block/packager/block",
+  "textures": {
+    "0": "createairspace:block/suitcase_packager_frame",
+    "particle": "createairspace:block/suitcase_packager_particle"
+  }
+}

@@ -1,0 +1,683 @@
+{
+  "parent": "create:item/package_transforms",
+  "textures": {
+    "body": "minecraft:block/white_wool",
+    "trim": "minecraft:block/black_concrete",
+    "metal": "create:block/industrial_iron_block",
+    "particle": "#body"
+  },
+  "elements": [
+    {
+      "name": "wheel",
+      "from": [
+        3.5,
+        0,
+        9
+      ],
+      "to": [
+        5,
+        1.5,
+        10.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3.5,
+            14.5,
+            5,
+            16
+          ],
+          "texture": "#metal"
+        },
+        "south": {
+          "uv": [
+            3.5,
+            14.5,
+            5,
+            16
+          ],
+          "texture": "#metal"
+        },
+        "west": {
+          "uv": [
+            9,
+            14.5,
+            10.5,
+            16
+          ],
+          "texture": "#metal"
+        },
+        "east": {
+          "uv": [
+            9,
+            14.5,
+            10.5,
+            16
+          ],
+          "texture": "#metal"
+        },
+        "up": {
+          "uv": [
+            3.5,
+            9,
+            5,
+            10.5
+          ],
+          "texture": "#metal"
+        },
+        "down": {
+          "uv": [
+            3.5,
+            9,
+            5,
+            10.5
+          ],
+          "texture": "#metal"
+        }
+      }
+    },
+    {
+      "name": "wheel",
+      "from": [
+        11,
+        0,
+        9
+      ],
+      "to": [
+        12.5,
+        1.5,
+        10.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            11,
+            14.5,
+            12.5,
+            16
+          ],
+          "texture": "#metal"
+        },
+        "south": {
+          "uv": [
+            11,
+            14.5,
+            12.5,
+            16
+          ],
+          "texture": "#metal"
+        },
+        "west": {
+          "uv": [
+            9,
+            14.5,
+            10.5,
+            16
+          ],
+          "texture": "#metal"
+        },
+        "east": {
+          "uv": [
+            9,
+            14.5,
+            10.5,
+            16
+          ],
+          "texture": "#metal"
+        },
+        "up": {
+          "uv": [
+            11,
+            9,
+            12.5,
+            10.5
+          ],
+          "texture": "#metal"
+        },
+        "down": {
+          "uv": [
+            11,
+            9,
+            12.5,
+            10.5
+          ],
+          "texture": "#metal"
+        }
+      }
+    },
+    {
+      "name": "body",
+      "from": [
+        3,
+        1,
+        5
+      ],
+      "to": [
+        13,
+        13,
+        11
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3,
+            3,
+            13,
+            15
+          ],
+          "texture": "#body"
+        },
+        "south": {
+          "uv": [
+            3,
+            3,
+            13,
+            15
+          ],
+          "texture": "#body"
+        },
+        "west": {
+          "uv": [
+            5,
+            3,
+            11,
+            15
+          ],
+          "texture": "#body"
+        },
+        "east": {
+          "uv": [
+            5,
+            3,
+            11,
+            15
+          ],
+          "texture": "#body"
+        },
+        "up": {
+          "uv": [
+            3,
+            5,
+            13,
+            11
+          ],
+          "texture": "#body"
+        },
+        "down": {
+          "uv": [
+            3,
+            5,
+            13,
+            11
+          ],
+          "texture": "#body"
+        }
+      }
+    },
+    {
+      "name": "pocket",
+      "from": [
+        4,
+        3,
+        4.5
+      ],
+      "to": [
+        12,
+        10,
+        5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            6,
+            12,
+            13
+          ],
+          "texture": "#body"
+        },
+        "west": {
+          "uv": [
+            4.5,
+            6,
+            5,
+            13
+          ],
+          "texture": "#body"
+        },
+        "east": {
+          "uv": [
+            4.5,
+            6,
+            5,
+            13
+          ],
+          "texture": "#body"
+        },
+        "up": {
+          "uv": [
+            4,
+            4.5,
+            12,
+            5
+          ],
+          "texture": "#body"
+        },
+        "down": {
+          "uv": [
+            4,
+            4.5,
+            12,
+            5
+          ],
+          "texture": "#body"
+        }
+      }
+    },
+    {
+      "name": "pocket_zip",
+      "from": [
+        4,
+        9.5,
+        4.4
+      ],
+      "to": [
+        12,
+        10,
+        5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            6,
+            12,
+            6.5
+          ],
+          "texture": "#trim"
+        },
+        "west": {
+          "uv": [
+            4.4,
+            6,
+            5,
+            6.5
+          ],
+          "texture": "#trim"
+        },
+        "east": {
+          "uv": [
+            4.4,
+            6,
+            5,
+            6.5
+          ],
+          "texture": "#trim"
+        },
+        "up": {
+          "uv": [
+            4,
+            4.4,
+            12,
+            5
+          ],
+          "texture": "#trim"
+        },
+        "down": {
+          "uv": [
+            4,
+            4.4,
+            12,
+            5
+          ],
+          "texture": "#trim"
+        }
+      }
+    },
+    {
+      "name": "trolley_cap",
+      "from": [
+        4,
+        13,
+        9.5
+      ],
+      "to": [
+        5.5,
+        13.5,
+        10.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            2.5,
+            5.5,
+            3
+          ],
+          "texture": "#metal"
+        },
+        "south": {
+          "uv": [
+            4,
+            2.5,
+            5.5,
+            3
+          ],
+          "texture": "#metal"
+        },
+        "west": {
+          "uv": [
+            9.5,
+            2.5,
+            10.5,
+            3
+          ],
+          "texture": "#metal"
+        },
+        "east": {
+          "uv": [
+            9.5,
+            2.5,
+            10.5,
+            3
+          ],
+          "texture": "#metal"
+        },
+        "up": {
+          "uv": [
+            4,
+            9.5,
+            5.5,
+            10.5
+          ],
+          "texture": "#metal"
+        },
+        "down": {
+          "uv": [
+            4,
+            9.5,
+            5.5,
+            10.5
+          ],
+          "texture": "#metal"
+        }
+      }
+    },
+    {
+      "name": "trolley_cap",
+      "from": [
+        10.5,
+        13,
+        9.5
+      ],
+      "to": [
+        12,
+        13.5,
+        10.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            10.5,
+            2.5,
+            12,
+            3
+          ],
+          "texture": "#metal"
+        },
+        "south": {
+          "uv": [
+            10.5,
+            2.5,
+            12,
+            3
+          ],
+          "texture": "#metal"
+        },
+        "west": {
+          "uv": [
+            9.5,
+            2.5,
+            10.5,
+            3
+          ],
+          "texture": "#metal"
+        },
+        "east": {
+          "uv": [
+            9.5,
+            2.5,
+            10.5,
+            3
+          ],
+          "texture": "#metal"
+        },
+        "up": {
+          "uv": [
+            10.5,
+            9.5,
+            12,
+            10.5
+          ],
+          "texture": "#metal"
+        },
+        "down": {
+          "uv": [
+            10.5,
+            9.5,
+            12,
+            10.5
+          ],
+          "texture": "#metal"
+        }
+      }
+    },
+    {
+      "name": "handle_post",
+      "from": [
+        6,
+        13,
+        7.5
+      ],
+      "to": [
+        7,
+        14.5,
+        8.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            6,
+            1.5,
+            7,
+            3
+          ],
+          "texture": "#trim"
+        },
+        "south": {
+          "uv": [
+            6,
+            1.5,
+            7,
+            3
+          ],
+          "texture": "#trim"
+        },
+        "west": {
+          "uv": [
+            7.5,
+            1.5,
+            8.5,
+            3
+          ],
+          "texture": "#trim"
+        },
+        "east": {
+          "uv": [
+            7.5,
+            1.5,
+            8.5,
+            3
+          ],
+          "texture": "#trim"
+        },
+        "up": {
+          "uv": [
+            6,
+            7.5,
+            7,
+            8.5
+          ],
+          "texture": "#trim"
+        },
+        "down": {
+          "uv": [
+            6,
+            7.5,
+            7,
+            8.5
+          ],
+          "texture": "#trim"
+        }
+      }
+    },
+    {
+      "name": "handle_post",
+      "from": [
+        9,
+        13,
+        7.5
+      ],
+      "to": [
+        10,
+        14.5,
+        8.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            9,
+            1.5,
+            10,
+            3
+          ],
+          "texture": "#trim"
+        },
+        "south": {
+          "uv": [
+            9,
+            1.5,
+            10,
+            3
+          ],
+          "texture": "#trim"
+        },
+        "west": {
+          "uv": [
+            7.5,
+            1.5,
+            8.5,
+            3
+          ],
+          "texture": "#trim"
+        },
+        "east": {
+          "uv": [
+            7.5,
+            1.5,
+            8.5,
+            3
+          ],
+          "texture": "#trim"
+        },
+        "up": {
+          "uv": [
+            9,
+            7.5,
+            10,
+            8.5
+          ],
+          "texture": "#trim"
+        },
+        "down": {
+          "uv": [
+            9,
+            7.5,
+            10,
+            8.5
+          ],
+          "texture": "#trim"
+        }
+      }
+    },
+    {
+      "name": "handle_grip",
+      "from": [
+        6,
+        14.5,
+        7.5
+      ],
+      "to": [
+        10,
+        15.5,
+        8.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            6,
+            0.5,
+            10,
+            1.5
+          ],
+          "texture": "#trim"
+        },
+        "south": {
+          "uv": [
+            6,
+            0.5,
+            10,
+            1.5
+          ],
+          "texture": "#trim"
+        },
+        "west": {
+          "uv": [
+            7.5,
+            0.5,
+            8.5,
+            1.5
+          ],
+          "texture": "#trim"
+        },
+        "east": {
+          "uv": [
+            7.5,
+            0.5,
+            8.5,
+            1.5
+          ],
+          "texture": "#trim"
+        },
+        "up": {
+          "uv": [
+            6,
+            7.5,
+            10,
+            8.5
+          ],
+          "texture": "#trim"
+        },
+        "down": {
+          "uv": [
+            6,
+            7.5,
+            10,
+            8.5
+          ],
+          "texture": "#trim"
+        }
+      }
+    }
+  ]
+}

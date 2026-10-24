@@ -1,0 +1,41 @@
+{
+  "textures": {
+    "0": "create:item/package/cardboard",
+    "particle": "create:item/package/cardboard_particle"
+  },
+  "elements": [
+    {
+      "name": "hook",
+      "from": [
+        8,
+        12,
+        6
+      ],
+      "to": [
+        8,
+        19,
+        10
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            14.5,
+            11,
+            13.5,
+            12.75
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            13.5,
+            11,
+            14.5,
+            12.75
+          ],
+          "texture": "#0"
+        }
+      }
+    }
+  ]
+}

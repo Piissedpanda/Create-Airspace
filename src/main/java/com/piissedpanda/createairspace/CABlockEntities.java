@@ -7,8 +7,11 @@ import com.piissedpanda.createairspace.block.AirportBeacon.AirportBeaconRenderer
 import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostBlockEntity;
 import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostRenderer;
 import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostVisual;
+import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlockEntity;
 import com.piissedpanda.createairspace.block.Windsock.WindsockBlockEntity;
 import com.piissedpanda.createairspace.block.Windsock.WindsockRenderer;
+import com.simibubi.create.content.logistics.packager.PackagerRenderer;
+import com.simibubi.create.content.logistics.packager.PackagerVisual;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 
@@ -40,6 +43,13 @@ public class CABlockEntities {
 			.blockEntity("airport_beacon", AirportBeaconBlockEntity::new)
 			.validBlocks(CABlocks.AIRPORT_BEACON)
 			.renderer(() -> AirportBeaconRenderer::new)
+			.register();
+
+	public static final BlockEntityEntry<SuitcasePackagerBlockEntity> SUITCASE_PACKAGER = REGISTRATE
+			.blockEntity("suitcase_packager", SuitcasePackagerBlockEntity::new)
+			.visual(() -> PackagerVisual::new, true)
+			.validBlocks(CABlocks.SUITCASE_PACKAGER)
+			.renderer(() -> PackagerRenderer::new)
 			.register();
 
 	public static void register() {

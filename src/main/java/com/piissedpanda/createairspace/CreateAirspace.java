@@ -3,6 +3,7 @@ package com.piissedpanda.createairspace;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
+import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlockEntity;
 import com.piissedpanda.createairspace.foundation.config.CAConfigs;
 import com.piissedpanda.createairspace.foundation.data.CADatagen;
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -51,6 +52,7 @@ public class CreateAirspace {
 
 		CAConfigs.register(modLoadingContext, modContainer);
 
+		modEventBus.addListener(SuitcasePackagerBlockEntity::registerCapabilities);
 		modEventBus.addListener(EventPriority.HIGHEST, CADatagen::gatherDataHighPriority);
 		modEventBus.addListener(EventPriority.LOWEST, CADatagen::gatherData);
 	}

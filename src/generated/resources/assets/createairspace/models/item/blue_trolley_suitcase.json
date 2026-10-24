@@ -1,0 +1,7 @@
+{
+  "parent": "createairspace:item/luggage/trolley_suitcase",
+  "textures": {
+    "body": "minecraft:block/blue_wool",
+    "particle": "minecraft:block/blue_wool"
+  }
+}

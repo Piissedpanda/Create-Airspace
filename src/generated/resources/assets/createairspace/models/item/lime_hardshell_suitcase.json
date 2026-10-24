@@ -1,0 +1,7 @@
+{
+  "parent": "createairspace:item/luggage/hardshell_suitcase",
+  "textures": {
+    "body": "minecraft:block/lime_concrete",
+    "particle": "minecraft:block/lime_concrete"
+  }
+}

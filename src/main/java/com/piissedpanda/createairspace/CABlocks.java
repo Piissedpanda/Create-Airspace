@@ -14,6 +14,7 @@ import com.piissedpanda.createairspace.block.AirfieldSign.AirfieldSignBlock;
 import com.piissedpanda.createairspace.block.AirportBeacon.AirportBeaconBlock;
 import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostBlock;
 import com.piissedpanda.createairspace.block.EdgeLight.EdgeLightBlock;
+import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlock;
 import com.piissedpanda.createairspace.block.RunwayMarking.RunwayMarkingBlock;
 import com.piissedpanda.createairspace.block.RunwayMarking.RunwayNumberBlock;
 import com.piissedpanda.createairspace.block.TerminalSeat.TerminalSeatBlock;
@@ -27,6 +28,7 @@ import com.simibubi.create.content.contraptions.actors.seat.SeatInteractionBehav
 import com.simibubi.create.content.contraptions.actors.seat.SeatMovementBehaviour;
 import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.data.AssetLookup;
+import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
@@ -279,6 +281,11 @@ public class CABlocks {
 			.item()
 			.model((c, p) -> p.generated(c, p.modLoc("block/runway_number/1")))
 			.build()
+			.register();
+
+	public static final BlockEntry<SuitcasePackagerBlock> SUITCASE_PACKAGER = REGISTRATE
+			.block("suitcase_packager", SuitcasePackagerBlock::new)
+			.transform(BuilderTransformers.packager())
 			.register();
 
 	public static boolean isBarrierPost(BlockState state) {
