@@ -1,0 +1,20 @@
+{
+  "sources": [
+    {
+      "type": "single",
+      "resource": "createairspace:fluid/white_paint_still"
+    },
+    {
+      "type": "single",
+      "resource": "createairspace:fluid/white_paint_flow"
+    },
+    {
+      "type": "single",
+      "resource": "createairspace:fluid/yellow_paint_still"
+    },
+    {
+      "type": "single",
+      "resource": "createairspace:fluid/yellow_paint_flow"
+    }
+  ]
+}
