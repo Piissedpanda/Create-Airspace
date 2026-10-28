@@ -65,6 +65,8 @@
     "createairspace:hangar_light",
     "createairspace:tool_wall",
     "createairspace:maintenance_stairs",
-    "createairspace:maintenance_platform"
+    "createairspace:maintenance_platform",
+    "createairspace:check_in_desk",
+    "createairspace:luggage_scale"
   ]
 }

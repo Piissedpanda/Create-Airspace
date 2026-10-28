@@ -1,0 +1,80 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "body": "minecraft:block/white_concrete",
+    "top": "minecraft:block/smooth_stone",
+    "stripe": "minecraft:block/blue_concrete",
+    "panel": "minecraft:block/light_gray_concrete",
+    "particle": "minecraft:block/white_concrete"
+  },
+  "elements": [
+    {
+      "from": [
+        15,
+        0,
+        2.5
+      ],
+      "to": [
+        16,
+        14.2,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            15,
+            1.8000000000000007,
+            16,
+            16
+          ],
+          "texture": "#panel"
+        },
+        "south": {
+          "uv": [
+            15,
+            1.8000000000000007,
+            16,
+            16
+          ],
+          "texture": "#panel"
+        },
+        "west": {
+          "uv": [
+            2.5,
+            1.8000000000000007,
+            16,
+            16
+          ],
+          "texture": "#panel"
+        },
+        "east": {
+          "uv": [
+            2.5,
+            1.8000000000000007,
+            16,
+            16
+          ],
+          "texture": "#panel"
+        },
+        "up": {
+          "uv": [
+            15,
+            2.5,
+            16,
+            16
+          ],
+          "texture": "#panel"
+        },
+        "down": {
+          "uv": [
+            15,
+            2.5,
+            16,
+            16
+          ],
+          "texture": "#panel"
+        }
+      }
+    }
+  ]
+}

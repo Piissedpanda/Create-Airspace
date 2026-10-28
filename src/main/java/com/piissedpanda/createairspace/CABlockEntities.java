@@ -9,6 +9,8 @@ import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostRenderer;
 import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostVisual;
 import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartBlockEntity;
 import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartRenderer;
+import com.piissedpanda.createairspace.block.CheckIn.LuggageScaleBlockEntity;
+import com.piissedpanda.createairspace.block.CheckIn.LuggageScaleRenderer;
 import com.piissedpanda.createairspace.block.Hangar.HangarLightBlockEntity;
 import com.piissedpanda.createairspace.block.Hangar.HangarLightRenderer;
 import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlockEntity;
@@ -66,6 +68,12 @@ public class CABlockEntities {
 			.blockEntity("hangar_light", HangarLightBlockEntity::new)
 			.validBlocks(CABlocks.HANGAR_LIGHT)
 			.renderer(() -> HangarLightRenderer::new)
+			.register();
+
+	public static final BlockEntityEntry<LuggageScaleBlockEntity> LUGGAGE_SCALE = REGISTRATE
+			.blockEntity("luggage_scale", LuggageScaleBlockEntity::new)
+			.validBlocks(CABlocks.LUGGAGE_SCALE)
+			.renderer(() -> LuggageScaleRenderer::new)
 			.register();
 
 	public static void register() {

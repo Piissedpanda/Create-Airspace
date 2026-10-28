@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartBlockEntity;
+import com.piissedpanda.createairspace.block.CheckIn.LuggageScaleBlockEntity;
 import com.piissedpanda.createairspace.block.GroundCrew.EarDefendersCurios;
 import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlockEntity;
 import com.piissedpanda.createairspace.block.RunwayMarking.PaintPailItem;
@@ -61,6 +62,7 @@ public class CreateAirspace {
 		modEventBus.addListener(SuitcasePackagerBlockEntity::registerCapabilities);
 		modEventBus.addListener(BaggageCartBlockEntity::registerCapabilities);
 		modEventBus.addListener(PaintPailItem::registerCapabilities);
+		modEventBus.addListener(LuggageScaleBlockEntity::registerCapabilities);
 		if (ModList.get()
 				.isLoaded("curios"))
 			EarDefendersCurios.init(modEventBus);

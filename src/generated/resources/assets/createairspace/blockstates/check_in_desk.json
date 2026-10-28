@@ -1,0 +1,117 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "createairspace:block/check_in_desk/body"
+      },
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/check_in_desk/end_left"
+      },
+      "when": {
+        "facing": "north",
+        "left": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/check_in_desk/end_right"
+      },
+      "when": {
+        "facing": "north",
+        "right": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/check_in_desk/body",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/check_in_desk/end_left",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "left": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/check_in_desk/end_right",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "right": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/check_in_desk/body",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/check_in_desk/end_left",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "left": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/check_in_desk/end_right",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "right": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/check_in_desk/body",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/check_in_desk/end_left",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "left": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/check_in_desk/end_right",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "right": "false"
+      }
+    }
+  ]
+}

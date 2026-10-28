@@ -46,6 +46,8 @@ public class CACreativeModeTabs {
 		ITEMS.add(CABlocks.TOOL_WALL);
 		ITEMS.add(CABlocks.MAINTENANCE_STAIRS);
 		ITEMS.add(CABlocks.MAINTENANCE_PLATFORM);
+		ITEMS.add(CABlocks.CHECK_IN_DESK);
+		ITEMS.add(CABlocks.LUGGAGE_SCALE);
 		CABlocks.LIGHT_PANELS.forEach(ITEMS::add);
 		CABlocks.LIGHT_STRIPS.forEach(ITEMS::add);
 		CABlocks.FLOOR_LIGHTS.forEach(ITEMS::add);

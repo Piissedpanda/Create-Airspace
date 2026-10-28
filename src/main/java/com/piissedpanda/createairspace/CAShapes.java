@@ -66,6 +66,11 @@ public class CAShapes {
 					.add(14, 4, 0, 15, 24, 16)
 					.forHorizontal(Direction.NORTH),
 
+			CHECK_IN_DESK = shape(0, 0, 2.5, 16, 14, 16).forHorizontal(Direction.NORTH),
+
+			LUGGAGE_SCALE = shape(1, 0, 1, 15, 4, 15).add(3, 4, 12, 13, 16, 15)
+					.forHorizontal(Direction.NORTH),
+
 			LIGHT_PANEL = shape(0, 14.5, 0, 16, 16, 16).forDirectional(Direction.DOWN),
 
 			WHEEL_CHOCK = shape(4, 0, 1, 12, 4, 5).add(4, 0, 11, 12, 4, 15)

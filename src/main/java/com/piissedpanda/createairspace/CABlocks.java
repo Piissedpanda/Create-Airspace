@@ -17,6 +17,8 @@ import com.piissedpanda.createairspace.block.AirportBeacon.AirportBeaconBlock;
 import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostBlock;
 import com.piissedpanda.createairspace.block.EdgeLight.EdgeLightBlock;
 import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartBlock;
+import com.piissedpanda.createairspace.block.CheckIn.CheckInDeskBlock;
+import com.piissedpanda.createairspace.block.CheckIn.LuggageScaleBlock;
 import com.piissedpanda.createairspace.block.GroundCrew.WheelChockBlock;
 import com.piissedpanda.createairspace.block.Hangar.HangarDoorBlock;
 import com.piissedpanda.createairspace.block.Hangar.HangarLightBlock;
@@ -506,6 +508,60 @@ public class CABlocks {
 			.build()
 			.register();
 
+	public static final BlockEntry<CheckInDeskBlock> CHECK_IN_DESK = REGISTRATE
+			.block("check_in_desk", CheckInDeskBlock::new)
+			.initialProperties(SharedProperties::stone)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.SNOW))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> {
+				MultiPartBlockStateBuilder builder = p.getMultipartBuilder(c.get());
+				for (Direction facing : Direction.Plane.HORIZONTAL) {
+					int y = ((int) facing.toYRot() + 180) % 360;
+					deskPart(builder, p, "body", y).condition(CheckInDeskBlock.FACING, facing)
+							.end();
+					deskPart(builder, p, "end_left", y).condition(CheckInDeskBlock.FACING, facing)
+							.condition(CheckInDeskBlock.LEFT, false)
+							.end();
+					deskPart(builder, p, "end_right", y).condition(CheckInDeskBlock.FACING, facing)
+							.condition(CheckInDeskBlock.RIGHT, false)
+							.end();
+				}
+			})
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, c.get(), 2)
+					.define('S', Items.SMOOTH_STONE_SLAB)
+					.define('W', Items.WHITE_CONCRETE)
+					.pattern("SSS")
+					.pattern("W W")
+					.unlockedBy("has_white_concrete", RegistrateRecipeProvider.has(Items.WHITE_CONCRETE))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/check_in_desk/item")))
+			.build()
+			.register();
+
+	public static final BlockEntry<LuggageScaleBlock> LUGGAGE_SCALE = REGISTRATE
+			.block("luggage_scale", LuggageScaleBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.METAL))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> p.horizontalBlock(c.get(), p.models()
+					.getExistingFile(p.modLoc("block/luggage_scale/block"))))
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, c.get())
+					.define('E', AllItems.ELECTRON_TUBE)
+					.define('S', AllItems.IRON_SHEET)
+					.define('P', Items.HEAVY_WEIGHTED_PRESSURE_PLATE)
+					.pattern("E")
+					.pattern("S")
+					.pattern("P")
+					.unlockedBy("has_electron_tube", RegistrateRecipeProvider.has(AllItems.ELECTRON_TUBE))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/luggage_scale/block")))
+			.build()
+			.register();
+
 	public static boolean isBarrierPost(BlockState state) {
 		return state.getBlock() instanceof BarrierPostBlock;
 	}
@@ -634,6 +690,15 @@ public class CABlocks {
 				.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/hangar_door/" + body + "_item")))
 				.build()
 				.register();
+	}
+
+	private static MultiPartBlockStateBuilder.PartBuilder deskPart(MultiPartBlockStateBuilder builder,
+			RegistrateBlockstateProvider p, String name, int y) {
+		return builder.part()
+				.modelFile(p.models()
+						.getExistingFile(p.modLoc("block/check_in_desk/" + name)))
+				.rotationY(y)
+				.addModel();
 	}
 
 	private static ModelFile platformModel(RegistrateBlockstateProvider p, String name) {

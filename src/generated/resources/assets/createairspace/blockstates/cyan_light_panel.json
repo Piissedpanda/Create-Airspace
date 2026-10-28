@@ -29,6 +29,15 @@
     },
     {
       "apply": {
+        "model": "createairspace:block/terminal_light/panel_edge_south"
+      },
+      "when": {
+        "bottom": "false",
+        "facing": "down"
+      }
+    },
+    {
+      "apply": {
         "model": "createairspace:block/terminal_light/panel_edge_east"
       },
       "when": {
@@ -47,15 +56,6 @@
     },
     {
       "apply": {
-        "model": "createairspace:block/terminal_light/panel_edge_south"
-      },
-      "when": {
-        "bottom": "false",
-        "facing": "down"
-      }
-    },
-    {
-      "apply": {
         "model": "createairspace:block/terminal_light/panel",
         "x": 180,
         "y": 180
@@ -85,28 +85,6 @@
       "when": {
         "facing": "up",
         "left": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/terminal_light/panel_edge_east",
-        "x": 180,
-        "y": 180
-      },
-      "when": {
-        "facing": "up",
-        "right": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/terminal_light/panel_edge_north",
-        "x": 180,
-        "y": 180
-      },
-      "when": {
-        "facing": "up",
-        "top": "false"
       }
     },
     {
@@ -122,6 +100,28 @@
     },
     {
       "apply": {
+        "model": "createairspace:block/terminal_light/panel_edge_east",
+        "x": 180,
+        "y": 180
+      },
+      "when": {
+        "facing": "up",
+        "right": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/terminal_light/panel_edge_north",
+        "x": 180,
+        "y": 180
+      },
+      "when": {
+        "facing": "up",
+        "top": "false"
+      }
+    },
+    {
+      "apply": {
         "model": "createairspace:block/terminal_light/panel",
         "x": 270
       },
@@ -148,26 +148,6 @@
       "when": {
         "facing": "north",
         "left": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/terminal_light/panel_edge_east",
-        "x": 270
-      },
-      "when": {
-        "facing": "north",
-        "right": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/terminal_light/panel_edge_north",
-        "x": 270
-      },
-      "when": {
-        "facing": "north",
-        "top": "false"
       }
     },
     {
@@ -182,6 +162,26 @@
     },
     {
       "apply": {
+        "model": "createairspace:block/terminal_light/panel_edge_east",
+        "x": 270
+      },
+      "when": {
+        "facing": "north",
+        "right": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/terminal_light/panel_edge_north",
+        "x": 270
+      },
+      "when": {
+        "facing": "north",
+        "top": "false"
+      }
+    },
+    {
+      "apply": {
         "model": "createairspace:block/terminal_light/panel",
         "x": 270,
         "y": 180
@@ -211,28 +211,6 @@
       "when": {
         "facing": "south",
         "left": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/terminal_light/panel_edge_east",
-        "x": 270,
-        "y": 180
-      },
-      "when": {
-        "facing": "south",
-        "right": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/terminal_light/panel_edge_north",
-        "x": 270,
-        "y": 180
-      },
-      "when": {
-        "facing": "south",
-        "top": "false"
       }
     },
     {
@@ -248,6 +226,28 @@
     },
     {
       "apply": {
+        "model": "createairspace:block/terminal_light/panel_edge_east",
+        "x": 270,
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "right": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/terminal_light/panel_edge_north",
+        "x": 270,
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "top": "false"
+      }
+    },
+    {
+      "apply": {
         "model": "createairspace:block/terminal_light/panel",
         "x": 270,
         "y": 270
@@ -277,28 +277,6 @@
       "when": {
         "facing": "west",
         "left": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/terminal_light/panel_edge_east",
-        "x": 270,
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "right": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/terminal_light/panel_edge_north",
-        "x": 270,
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "top": "false"
       }
     },
     {
@@ -314,6 +292,28 @@
     },
     {
       "apply": {
+        "model": "createairspace:block/terminal_light/panel_edge_east",
+        "x": 270,
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "right": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/terminal_light/panel_edge_north",
+        "x": 270,
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "top": "false"
+      }
+    },
+    {
+      "apply": {
         "model": "createairspace:block/terminal_light/panel",
         "x": 270,
         "y": 90
@@ -347,6 +347,17 @@
     },
     {
       "apply": {
+        "model": "createairspace:block/terminal_light/panel_edge_south",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "bottom": "false",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
         "model": "createairspace:block/terminal_light/panel_edge_east",
         "x": 270,
         "y": 90
@@ -365,17 +376,6 @@
       "when": {
         "facing": "east",
         "top": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/terminal_light/panel_edge_south",
-        "x": 270,
-        "y": 90
-      },
-      "when": {
-        "bottom": "false",
-        "facing": "east"
       }
     }
   ]
