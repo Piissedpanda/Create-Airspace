@@ -62,6 +62,9 @@
     "createairspace:black_floor_light",
     "createairspace:hangar_door_panel",
     "createairspace:hangar_door_window",
-    "createairspace:hangar_light"
+    "createairspace:hangar_light",
+    "createairspace:tool_wall",
+    "createairspace:maintenance_stairs",
+    "createairspace:maintenance_platform"
   ]
 }

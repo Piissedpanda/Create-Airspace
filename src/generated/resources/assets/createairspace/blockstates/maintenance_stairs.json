@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "createairspace:block/maintenance_stairs/block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "createairspace:block/maintenance_stairs/block"
+    },
+    "facing=south": {
+      "model": "createairspace:block/maintenance_stairs/block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "createairspace:block/maintenance_stairs/block",
+      "y": 270
+    }
+  }
+}

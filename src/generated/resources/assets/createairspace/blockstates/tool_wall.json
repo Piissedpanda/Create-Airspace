@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "createairspace:block/tool_wall/block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "createairspace:block/tool_wall/block"
+    },
+    "facing=south": {
+      "model": "createairspace:block/tool_wall/block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "createairspace:block/tool_wall/block",
+      "y": 270
+    }
+  }
+}

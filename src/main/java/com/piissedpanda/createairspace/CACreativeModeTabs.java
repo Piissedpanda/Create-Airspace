@@ -43,6 +43,9 @@ public class CACreativeModeTabs {
 		ITEMS.add(CABlocks.HANGAR_DOOR_PANEL);
 		ITEMS.add(CABlocks.HANGAR_DOOR_WINDOW);
 		ITEMS.add(CABlocks.HANGAR_LIGHT);
+		ITEMS.add(CABlocks.TOOL_WALL);
+		ITEMS.add(CABlocks.MAINTENANCE_STAIRS);
+		ITEMS.add(CABlocks.MAINTENANCE_PLATFORM);
 		CABlocks.LIGHT_PANELS.forEach(ITEMS::add);
 		CABlocks.LIGHT_STRIPS.forEach(ITEMS::add);
 		CABlocks.FLOOR_LIGHTS.forEach(ITEMS::add);

@@ -20,6 +20,9 @@ import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartBlock;
 import com.piissedpanda.createairspace.block.GroundCrew.WheelChockBlock;
 import com.piissedpanda.createairspace.block.Hangar.HangarDoorBlock;
 import com.piissedpanda.createairspace.block.Hangar.HangarLightBlock;
+import com.piissedpanda.createairspace.block.Hangar.MaintenancePlatformBlock;
+import com.piissedpanda.createairspace.block.Hangar.MaintenanceStairsBlock;
+import com.piissedpanda.createairspace.block.Hangar.ToolWallBlock;
 import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlock;
 import com.piissedpanda.createairspace.block.TerminalLight.FloorLightBlock;
 import com.piissedpanda.createairspace.block.TerminalLight.LightPanelBlock;
@@ -52,6 +55,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Items;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -421,6 +425,87 @@ public class CABlocks {
 			.build()
 			.register();
 
+	public static final BlockEntry<ToolWallBlock> TOOL_WALL = REGISTRATE.block("tool_wall", ToolWallBlock::new)
+			.initialProperties(SharedProperties::wooden)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.WOOD))
+			.transform(axeOrPickaxe())
+			.blockstate((c, p) -> p.horizontalBlock(c.get(), p.models()
+					.getExistingFile(p.modLoc("block/tool_wall/block"))))
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, c.get(), 2)
+					.define('N', Tags.Items.NUGGETS_IRON)
+					.define('P', ItemTags.PLANKS)
+					.pattern("NNN")
+					.pattern("PPP")
+					.unlockedBy("has_iron_nugget", RegistrateRecipeProvider.has(Tags.Items.NUGGETS_IRON))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/tool_wall/block")))
+			.build()
+			.register();
+
+	public static final BlockEntry<MaintenanceStairsBlock> MAINTENANCE_STAIRS = REGISTRATE
+			.block("maintenance_stairs", MaintenanceStairsBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.COLOR_YELLOW))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> p.horizontalBlock(c.get(), p.models()
+					.getExistingFile(p.modLoc("block/maintenance_stairs/block"))))
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, c.get(), 4)
+					.define('S', AllItems.IRON_SHEET)
+					.pattern("  S")
+					.pattern(" SS")
+					.pattern("SSS")
+					.unlockedBy("has_iron_sheet", RegistrateRecipeProvider.has(AllItems.IRON_SHEET))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/maintenance_stairs/block")))
+			.build()
+			.register();
+
+	public static final BlockEntry<MaintenancePlatformBlock> MAINTENANCE_PLATFORM = REGISTRATE
+			.block("maintenance_platform", MaintenancePlatformBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.COLOR_YELLOW))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> {
+				MultiPartBlockStateBuilder builder = p.getMultipartBuilder(c.get());
+				builder.part()
+						.modelFile(platformModel(p, "deck"))
+						.addModel()
+						.end();
+				// Rails on open sides, legs on outer corners
+				for (Direction side : Direction.Plane.HORIZONTAL) {
+					int rotation = ((int) side.toYRot() + 180) % 360;
+					builder.part()
+							.modelFile(platformModel(p, "rail"))
+							.rotationY(rotation)
+							.addModel()
+							.condition(MaintenancePlatformBlock.CONNECTED.get(side), false)
+							.end();
+					builder.part()
+							.modelFile(platformModel(p, "leg"))
+							.rotationY(rotation)
+							.addModel()
+							.condition(MaintenancePlatformBlock.CONNECTED.get(side), false)
+							.condition(MaintenancePlatformBlock.CONNECTED.get(side.getCounterClockWise()), false)
+							.end();
+				}
+			})
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, c.get(), 4)
+					.define('B', Items.IRON_BARS)
+					.define('S', AllItems.IRON_SHEET)
+					.pattern("B B")
+					.pattern("SSS")
+					.unlockedBy("has_iron_sheet", RegistrateRecipeProvider.has(AllItems.IRON_SHEET))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/maintenance_platform/item")))
+			.build()
+			.register();
+
 	public static boolean isBarrierPost(BlockState state) {
 		return state.getBlock() instanceof BarrierPostBlock;
 	}
@@ -549,6 +634,11 @@ public class CABlocks {
 				.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/hangar_door/" + body + "_item")))
 				.build()
 				.register();
+	}
+
+	private static ModelFile platformModel(RegistrateBlockstateProvider p, String name) {
+		return p.models()
+				.getExistingFile(p.modLoc("block/maintenance_platform/" + name));
 	}
 
 	private static ModelFile hangarModel(RegistrateBlockstateProvider p, String name) {
