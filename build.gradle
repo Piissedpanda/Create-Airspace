@@ -199,7 +199,7 @@ dependencies {
 
     // Registrate
     implementation("com.tterrag.registrate:Registrate:MC${minecraft_version_short}-${registrate_version}")
-    jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: "[MC${minecraft_version},MC${minecraft_version_short}.2)")
+    // Not embedded: Create ships Registrate itself. An own range here broke loading in 1.0.0
 
     
     implementation("dev.ryanhcode.sable:sable-neoforge-${minecraft_version}:${sable_version}")

@@ -13,6 +13,9 @@
 - Texts use American English.
 - Optional: Curios for the ear defenders.
 
+### Fixed
+- 1.0.0 did not start together with Create ("no jar was provided which matched the range" for Registrate). Registrate is no longer embedded, Create already ships it.
+
 ## 1.0.0 – Airport Accessories
 
 First release.
