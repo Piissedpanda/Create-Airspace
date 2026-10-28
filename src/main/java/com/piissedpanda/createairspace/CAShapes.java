@@ -57,15 +57,6 @@ public class CAShapes {
 
 			HANGAR_DOOR = shape(0, 0, 6, 16, 16, 10).forHorizontal(Direction.NORTH),
 
-			TOOL_WALL = shape(0, 0, 14, 16, 16, 16).forHorizontal(Direction.NORTH),
-
-			MAINTENANCE_STAIRS = shape(0, 0, 12, 16, 4, 16).add(0, 0, 8, 16, 8, 12)
-					.add(0, 0, 4, 16, 12, 8)
-					.add(0, 0, 0, 16, 16, 4)
-					.add(1, 4, 0, 2, 24, 16)
-					.add(14, 4, 0, 15, 24, 16)
-					.forHorizontal(Direction.NORTH),
-
 			CHECK_IN_DESK = shape(0, 0, 2.5, 16, 14, 16).forHorizontal(Direction.NORTH),
 
 			LUGGAGE_SCALE = shape(1, 0, 1, 15, 4, 15).add(3, 4, 12, 13, 16, 15)

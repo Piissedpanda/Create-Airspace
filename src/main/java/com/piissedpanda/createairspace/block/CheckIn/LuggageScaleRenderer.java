@@ -63,9 +63,9 @@ public class LuggageScaleRenderer extends SafeBlockEntityRenderer<LuggageScaleBl
 
 		ms.pushPose();
 		ms.translate(.5, 14 / 16f, .5);
-		// Just in front of the screen, which sits 4 px behind the centre
+		// Just in front of the screen face at z = 11.9 px
 		ms.mulPose(Axis.YP.rotationDegrees(-facing.toYRot()));
-		ms.translate(0, 0, -(4 / 16f - 0.005f));
+		ms.translate(0, 0, -(3.9f / 16 - 0.01f));
 		ms.scale(scale, -scale, scale);
 		font.drawInBatch(text, -font.width(text) / 2f, -4, color, false, ms.last()
 				.pose(), buffer, Font.DisplayMode.POLYGON_OFFSET, 0, LightTexture.FULL_BRIGHT);

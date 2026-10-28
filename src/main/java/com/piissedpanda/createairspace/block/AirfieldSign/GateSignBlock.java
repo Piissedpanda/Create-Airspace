@@ -16,6 +16,11 @@ public class GateSignBlock extends AirfieldSignBlock {
 	}
 
 	@Override
+	protected Style nextStyle(Style style) {
+		return style.next();
+	}
+
+	@Override
 	public float textCenter() {
 		return 5.5f;
 	}

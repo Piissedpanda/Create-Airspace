@@ -108,8 +108,7 @@ public class AirfieldSignBlock extends Block implements IWrenchable, IBE<Airfiel
 
 		// Wrenching the front or back switches the sign type of the whole row
 		Level level = context.getLevel();
-		Style next = state.getValue(STYLE)
-				.next();
+		Style next = nextStyle(state.getValue(STYLE));
 		for (BlockPos pos : getRow(level, context.getClickedPos()))
 			level.setBlock(pos, level.getBlockState(pos)
 					.setValue(STYLE, next), 3);
@@ -154,6 +153,17 @@ public class AirfieldSignBlock extends Block implements IWrenchable, IBE<Airfiel
 		return other.getValue(FACING) == state.getValue(FACING) && other.getValue(STYLE) == state.getValue(STYLE);
 	}
 
+	// Runway signs have no information style, gate signs cycle through all
+	protected Style nextStyle(Style style) {
+		Style next = style.next();
+		return next == Style.INFORMATION ? next.next() : next;
+	}
+
+	// Black signs only light their text, the others glow a little
+	public static int lightLevel(BlockState state) {
+		return state.getValue(STYLE) == Style.LOCATION ? 0 : 4;
+	}
+
 	// Height of the text centre in pixels
 	public float textCenter() {
 		return 9;
@@ -190,11 +200,13 @@ public class AirfieldSignBlock extends Block implements IWrenchable, IBE<Airfiel
 	}
 
 	// Location: yellow on black, Direction: black on yellow, Mandatory: white on
-	// red
+	// red,
+	// Information (gate signs): white on blue
 	public enum Style implements StringRepresentable {
 		LOCATION(0xFFD21F, "minecraft:block/black_concrete"),
 		DIRECTION(0x111111, "minecraft:block/yellow_concrete"),
-		MANDATORY(0xFFFFFF, "minecraft:block/red_concrete");
+		MANDATORY(0xFFFFFF, "minecraft:block/red_concrete"),
+		INFORMATION(0xFFFFFF, "minecraft:block/blue_concrete");
 
 		public final int textColor;
 		public final String faceTexture;

@@ -36,42 +36,6 @@
             16
           ],
           "texture": "#metal"
-        },
-        "west": {
-          "uv": [
-            6.5,
-            0,
-            9.5,
-            16
-          ],
-          "texture": "#metal"
-        },
-        "east": {
-          "uv": [
-            6.5,
-            0,
-            9.5,
-            16
-          ],
-          "texture": "#metal"
-        },
-        "up": {
-          "uv": [
-            0,
-            6.5,
-            16,
-            9.5
-          ],
-          "texture": "#metal"
-        },
-        "down": {
-          "uv": [
-            0,
-            6.5,
-            16,
-            9.5
-          ],
-          "texture": "#metal"
         }
       }
     }

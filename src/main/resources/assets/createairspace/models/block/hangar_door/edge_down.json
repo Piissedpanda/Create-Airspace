@@ -37,24 +37,6 @@
           ],
           "texture": "#frame"
         },
-        "west": {
-          "uv": [
-            6,
-            15,
-            10,
-            16
-          ],
-          "texture": "#frame"
-        },
-        "east": {
-          "uv": [
-            6,
-            15,
-            10,
-            16
-          ],
-          "texture": "#frame"
-        },
         "up": {
           "uv": [
             0,

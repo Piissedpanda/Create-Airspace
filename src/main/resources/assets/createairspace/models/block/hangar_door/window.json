@@ -36,42 +36,6 @@
             16
           ],
           "texture": "#metal"
-        },
-        "west": {
-          "uv": [
-            6.5,
-            11,
-            9.5,
-            16
-          ],
-          "texture": "#metal"
-        },
-        "east": {
-          "uv": [
-            6.5,
-            11,
-            9.5,
-            16
-          ],
-          "texture": "#metal"
-        },
-        "up": {
-          "uv": [
-            0,
-            6.5,
-            16,
-            9.5
-          ],
-          "texture": "#metal"
-        },
-        "down": {
-          "uv": [
-            0,
-            6.5,
-            16,
-            9.5
-          ],
-          "texture": "#metal"
         }
       }
     },
@@ -102,42 +66,6 @@
             0,
             16,
             5
-          ],
-          "texture": "#metal"
-        },
-        "west": {
-          "uv": [
-            6.5,
-            0,
-            9.5,
-            5
-          ],
-          "texture": "#metal"
-        },
-        "east": {
-          "uv": [
-            6.5,
-            0,
-            9.5,
-            5
-          ],
-          "texture": "#metal"
-        },
-        "up": {
-          "uv": [
-            0,
-            6.5,
-            16,
-            9.5
-          ],
-          "texture": "#metal"
-        },
-        "down": {
-          "uv": [
-            0,
-            6.5,
-            16,
-            9.5
           ],
           "texture": "#metal"
         }
@@ -205,24 +133,6 @@
           ],
           "texture": "#frame"
         },
-        "west": {
-          "uv": [
-            6.5,
-            10.5,
-            9.5,
-            11
-          ],
-          "texture": "#frame"
-        },
-        "east": {
-          "uv": [
-            6.5,
-            10.5,
-            9.5,
-            11
-          ],
-          "texture": "#frame"
-        },
         "up": {
           "uv": [
             0,
@@ -269,24 +179,6 @@
             0,
             5,
             16,
-            5.5
-          ],
-          "texture": "#frame"
-        },
-        "west": {
-          "uv": [
-            6.5,
-            5,
-            9.5,
-            5.5
-          ],
-          "texture": "#frame"
-        },
-        "east": {
-          "uv": [
-            6.5,
-            5,
-            9.5,
             5.5
           ],
           "texture": "#frame"

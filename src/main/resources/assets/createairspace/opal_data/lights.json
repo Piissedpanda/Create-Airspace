@@ -304,16 +304,6 @@
         0.15
       ],
       "state": {
-        "style": "location"
-      }
-    },
-    {
-      "color": [
-        1.0,
-        0.82,
-        0.15
-      ],
-      "state": {
         "style": "direction"
       }
     },
@@ -336,16 +326,6 @@
         0.15
       ],
       "state": {
-        "style": "location"
-      }
-    },
-    {
-      "color": [
-        1.0,
-        0.82,
-        0.15
-      ],
-      "state": {
         "style": "direction"
       }
     },
@@ -357,6 +337,16 @@
       ],
       "state": {
         "style": "mandatory"
+      }
+    },
+    {
+      "color": [
+        0.3,
+        0.45,
+        1.0
+      ],
+      "state": {
+        "style": "information"
       }
     }
   ]

@@ -20,7 +20,6 @@
     "createairspace:brown_terminal_seat",
     "createairspace:green_terminal_seat",
     "createairspace:red_terminal_seat",
-    "createairspace:black_terminal_seat",
-    "createairspace:tool_wall"
+    "createairspace:black_terminal_seat"
   ]
 }

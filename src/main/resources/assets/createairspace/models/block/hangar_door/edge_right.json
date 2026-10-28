@@ -54,24 +54,6 @@
             16
           ],
           "texture": "#frame"
-        },
-        "up": {
-          "uv": [
-            15,
-            6,
-            16,
-            10
-          ],
-          "texture": "#frame"
-        },
-        "down": {
-          "uv": [
-            15,
-            6,
-            16,
-            10
-          ],
-          "texture": "#frame"
         }
       }
     }
