@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dyes/purple"
+    },
+    {
+      "tag": "createairspace:floor_lights"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createairspace:purple_floor_light"
+  }
+}

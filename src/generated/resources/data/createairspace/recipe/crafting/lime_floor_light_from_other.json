@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dyes/lime"
+    },
+    {
+      "tag": "createairspace:floor_lights"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createairspace:lime_floor_light"
+  }
+}

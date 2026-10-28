@@ -1,0 +1,20 @@
+{
+  "values": [
+    "createairspace:white_light_panel",
+    "createairspace:orange_light_panel",
+    "createairspace:magenta_light_panel",
+    "createairspace:light_blue_light_panel",
+    "createairspace:yellow_light_panel",
+    "createairspace:lime_light_panel",
+    "createairspace:pink_light_panel",
+    "createairspace:gray_light_panel",
+    "createairspace:light_gray_light_panel",
+    "createairspace:cyan_light_panel",
+    "createairspace:purple_light_panel",
+    "createairspace:blue_light_panel",
+    "createairspace:brown_light_panel",
+    "createairspace:green_light_panel",
+    "createairspace:red_light_panel",
+    "createairspace:black_light_panel"
+  ]
+}

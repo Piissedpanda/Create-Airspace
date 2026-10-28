@@ -1,0 +1,326 @@
+{
+  "createairspace:edge_light": [
+    {
+      "color": [
+        1.0,
+        0.97,
+        0.9
+      ],
+      "state": {
+        "color": "white"
+      }
+    },
+    {
+      "color": [
+        0.25,
+        0.45,
+        1.0
+      ],
+      "state": {
+        "color": "blue"
+      }
+    },
+    {
+      "color": [
+        0.2,
+        1.0,
+        0.35
+      ],
+      "state": {
+        "color": "green"
+      }
+    },
+    {
+      "color": [
+        1.0,
+        0.15,
+        0.1
+      ],
+      "state": {
+        "color": "red"
+      }
+    },
+    {
+      "color": [
+        1.0,
+        0.8,
+        0.2
+      ],
+      "state": {
+        "color": "yellow"
+      }
+    }
+  ],
+  "createairspace:white_light_panel": [
+    0.984,
+    1.0,
+    0.996
+  ],
+  "createairspace:white_light_strip": [
+    0.984,
+    1.0,
+    0.996
+  ],
+  "createairspace:white_floor_light": [
+    0.984,
+    1.0,
+    0.996
+  ],
+  "createairspace:orange_light_panel": [
+    0.984,
+    0.667,
+    0.408
+  ],
+  "createairspace:orange_light_strip": [
+    0.984,
+    0.667,
+    0.408
+  ],
+  "createairspace:orange_floor_light": [
+    0.984,
+    0.667,
+    0.408
+  ],
+  "createairspace:magenta_light_panel": [
+    0.851,
+    0.537,
+    0.827
+  ],
+  "createairspace:magenta_light_strip": [
+    0.851,
+    0.537,
+    0.827
+  ],
+  "createairspace:magenta_floor_light": [
+    0.851,
+    0.537,
+    0.827
+  ],
+  "createairspace:light_blue_light_panel": [
+    0.482,
+    0.8,
+    0.902
+  ],
+  "createairspace:light_blue_light_strip": [
+    0.482,
+    0.8,
+    0.902
+  ],
+  "createairspace:light_blue_floor_light": [
+    0.482,
+    0.8,
+    0.902
+  ],
+  "createairspace:yellow_light_panel": [
+    0.996,
+    0.898,
+    0.49
+  ],
+  "createairspace:yellow_light_strip": [
+    0.996,
+    0.898,
+    0.49
+  ],
+  "createairspace:yellow_floor_light": [
+    0.996,
+    0.898,
+    0.49
+  ],
+  "createairspace:lime_light_panel": [
+    0.667,
+    0.851,
+    0.412
+  ],
+  "createairspace:lime_light_strip": [
+    0.667,
+    0.851,
+    0.412
+  ],
+  "createairspace:lime_floor_light": [
+    0.667,
+    0.851,
+    0.412
+  ],
+  "createairspace:pink_light_panel": [
+    0.969,
+    0.694,
+    0.776
+  ],
+  "createairspace:pink_light_strip": [
+    0.969,
+    0.694,
+    0.776
+  ],
+  "createairspace:pink_floor_light": [
+    0.969,
+    0.694,
+    0.776
+  ],
+  "createairspace:gray_light_panel": [
+    0.518,
+    0.537,
+    0.545
+  ],
+  "createairspace:gray_light_strip": [
+    0.518,
+    0.537,
+    0.545
+  ],
+  "createairspace:gray_floor_light": [
+    0.518,
+    0.537,
+    0.545
+  ],
+  "createairspace:light_gray_light_panel": [
+    0.741,
+    0.741,
+    0.725
+  ],
+  "createairspace:light_gray_light_strip": [
+    0.741,
+    0.741,
+    0.725
+  ],
+  "createairspace:light_gray_floor_light": [
+    0.741,
+    0.741,
+    0.725
+  ],
+  "createairspace:cyan_light_panel": [
+    0.388,
+    0.741,
+    0.741
+  ],
+  "createairspace:cyan_light_strip": [
+    0.388,
+    0.741,
+    0.741
+  ],
+  "createairspace:cyan_floor_light": [
+    0.388,
+    0.741,
+    0.741
+  ],
+  "createairspace:purple_light_panel": [
+    0.69,
+    0.463,
+    0.812
+  ],
+  "createairspace:purple_light_strip": [
+    0.69,
+    0.463,
+    0.812
+  ],
+  "createairspace:purple_floor_light": [
+    0.69,
+    0.463,
+    0.812
+  ],
+  "createairspace:blue_light_panel": [
+    0.49,
+    0.51,
+    0.776
+  ],
+  "createairspace:blue_light_strip": [
+    0.49,
+    0.51,
+    0.776
+  ],
+  "createairspace:blue_floor_light": [
+    0.49,
+    0.51,
+    0.776
+  ],
+  "createairspace:brown_light_panel": [
+    0.675,
+    0.553,
+    0.463
+  ],
+  "createairspace:brown_light_strip": [
+    0.675,
+    0.553,
+    0.463
+  ],
+  "createairspace:brown_floor_light": [
+    0.675,
+    0.553,
+    0.463
+  ],
+  "createairspace:green_light_panel": [
+    0.576,
+    0.655,
+    0.388
+  ],
+  "createairspace:green_light_strip": [
+    0.576,
+    0.655,
+    0.388
+  ],
+  "createairspace:green_floor_light": [
+    0.576,
+    0.655,
+    0.388
+  ],
+  "createairspace:red_light_panel": [
+    0.792,
+    0.451,
+    0.431
+  ],
+  "createairspace:red_light_strip": [
+    0.792,
+    0.451,
+    0.431
+  ],
+  "createairspace:red_floor_light": [
+    0.792,
+    0.451,
+    0.431
+  ],
+  "createairspace:black_light_panel": [
+    0.408,
+    0.408,
+    0.42
+  ],
+  "createairspace:black_light_strip": [
+    0.408,
+    0.408,
+    0.42
+  ],
+  "createairspace:black_floor_light": [
+    0.408,
+    0.408,
+    0.42
+  ],
+  "createairspace:airfield_sign": [
+    {
+      "color": [
+        1.0,
+        0.82,
+        0.15
+      ],
+      "state": {
+        "style": "location"
+      }
+    },
+    {
+      "color": [
+        1.0,
+        0.82,
+        0.15
+      ],
+      "state": {
+        "style": "direction"
+      }
+    },
+    {
+      "color": [
+        1.0,
+        0.2,
+        0.15
+      ],
+      "state": {
+        "style": "mandatory"
+      }
+    }
+  ]
+}

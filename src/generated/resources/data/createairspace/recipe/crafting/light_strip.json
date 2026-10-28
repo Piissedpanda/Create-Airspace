@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "tag": "c:glass_panes"
+    },
+    "L": {
+      "tag": "c:dusts/glowstone"
+    },
+    "N": {
+      "tag": "c:nuggets/iron"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "NLN"
+  ],
+  "result": {
+    "count": 6,
+    "id": "createairspace:white_light_strip"
+  }
+}

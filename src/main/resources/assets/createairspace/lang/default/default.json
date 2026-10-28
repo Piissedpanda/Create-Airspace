@@ -32,6 +32,9 @@
     "createairspace.paint_pail.not_enough_paint": "Not enough paint",
     "createairspace.paint_pail.empty": "Empty",
 
+    "createairspace.terminal_light.always_on": "Always on",
+    "createairspace.terminal_light.redstone": "Brightness from redstone",
+
     "createairspace.suitcase_packager.color": "Luggage color: %1$s",
     "createairspace.suitcase_packager.random_color": "Luggage color: random"
 }

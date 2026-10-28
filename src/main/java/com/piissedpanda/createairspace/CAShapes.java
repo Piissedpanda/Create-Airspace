@@ -20,6 +20,8 @@ public class CAShapes {
 
 			BAGGAGE_CART = cuboid(0, 0, 0, 16, 16, 16),
 
+			FLOOR_LIGHT = cuboid(4, 0, 4, 12, 2, 12),
+
 			AIRPORT_BEACON = shape(1, 0, 1, 15, 3, 15)
 					.add(5, 3, 5, 11, 8, 11)
 					.add(4, 8, 4, 12, 15, 12)
@@ -48,6 +50,8 @@ public class CAShapes {
 
 			AIRFIELD_SIGN = shape(0, 0, 6, 16, 15, 10)
 					.forHorizontal(Direction.NORTH),
+
+			LIGHT_PANEL = shape(0, 14.5, 0, 16, 16, 16).forDirectional(Direction.DOWN),
 
 			WHEEL_CHOCK = shape(4, 0, 1, 12, 4, 5).add(4, 0, 11, 12, 4, 15)
 					.forHorizontal(Direction.NORTH);

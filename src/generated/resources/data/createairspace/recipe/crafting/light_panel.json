@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "tag": "c:glass_panes"
+    },
+    "L": {
+      "tag": "c:dusts/glowstone"
+    },
+    "S": {
+      "item": "create:iron_sheet"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "SLS"
+  ],
+  "result": {
+    "count": 4,
+    "id": "createairspace:white_light_panel"
+  }
+}

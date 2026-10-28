@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dyes/blue"
+    },
+    {
+      "tag": "createairspace:light_panels"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createairspace:blue_light_panel"
+  }
+}

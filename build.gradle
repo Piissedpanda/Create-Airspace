@@ -56,6 +56,17 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+    exclusiveContent {
+        forRepository {
+            maven {
+                url = "https://cursemaven.com"
+                name = "CurseMaven"
+            }
+        }
+        filter {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 base {
@@ -188,6 +199,9 @@ dependencies {
     // Optional: ear defenders in the Curios head slot
     compileOnly("top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}:api")
     localRuntime("top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}")
+
+    // Optional: coloured light under shaders, only in the dev client (data files in assets/createairspace/opal_data)
+    localRuntime("curse.maven:opal-light-1608590:8970302")
 
     // Create (Slim) without transitive dependencies
     implementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") {

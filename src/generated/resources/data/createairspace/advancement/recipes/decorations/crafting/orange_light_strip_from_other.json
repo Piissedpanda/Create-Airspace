@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_light_strip": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#createairspace:light_strips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "createairspace:crafting/orange_light_strip_from_other"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_light_strip"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "createairspace:crafting/orange_light_strip_from_other"
+    ]
+  }
+}

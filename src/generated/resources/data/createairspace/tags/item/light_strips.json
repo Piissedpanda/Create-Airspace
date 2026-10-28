@@ -1,0 +1,20 @@
+{
+  "values": [
+    "createairspace:white_light_strip",
+    "createairspace:orange_light_strip",
+    "createairspace:magenta_light_strip",
+    "createairspace:light_blue_light_strip",
+    "createairspace:yellow_light_strip",
+    "createairspace:lime_light_strip",
+    "createairspace:pink_light_strip",
+    "createairspace:gray_light_strip",
+    "createairspace:light_gray_light_strip",
+    "createairspace:cyan_light_strip",
+    "createairspace:purple_light_strip",
+    "createairspace:blue_light_strip",
+    "createairspace:brown_light_strip",
+    "createairspace:green_light_strip",
+    "createairspace:red_light_strip",
+    "createairspace:black_light_strip"
+  ]
+}

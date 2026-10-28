@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dyes/white"
+    },
+    {
+      "tag": "createairspace:light_strips"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createairspace:white_light_strip"
+  }
+}

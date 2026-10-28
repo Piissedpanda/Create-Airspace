@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_light_panel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#createairspace:light_panels"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "createairspace:crafting/pink_light_panel_from_other"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_light_panel"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "createairspace:crafting/pink_light_panel_from_other"
+    ]
+  }
+}

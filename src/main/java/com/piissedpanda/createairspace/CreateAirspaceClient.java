@@ -1,9 +1,13 @@
 package com.piissedpanda.createairspace;
 
+import java.util.List;
+
 import com.piissedpanda.createairspace.block.AirportBeacon.AirportBeaconGlare;
 import com.piissedpanda.createairspace.block.GroundCrew.MarshallingWandClient;
 import com.piissedpanda.createairspace.block.RunwayMarking.PaintPailItem;
+import com.piissedpanda.createairspace.block.TerminalLight.TerminalLightBlock;
 import com.piissedpanda.createairspace.foundation.ponder.CAPonderPlugin;
+import com.simibubi.create.foundation.block.DyedBlockList;
 
 import net.createmod.ponder.foundation.PonderIndex;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -45,12 +49,25 @@ public class CreateAirspaceClient {
 						.isEmpty() ? 0 : 1));
 	}
 
+	// Terminal lights: the light face takes the colour of the block
+	@SubscribeEvent
+	static void onRegisterBlockColors(RegisterColorHandlersEvent.Block event) {
+		for (DyedBlockList<? extends TerminalLightBlock> lights : List.of(CABlocks.LIGHT_PANELS, CABlocks.LIGHT_STRIPS,
+				CABlocks.FLOOR_LIGHTS))
+			lights.forEach(light -> event.register((state, level, pos, tintIndex) -> TerminalLightBlock
+					.tint(((TerminalLightBlock) state.getBlock()).color), light.get()));
+	}
+
 	// The paint layer of the pail takes the colour of its paint
 	@SubscribeEvent
 	static void onRegisterItemColors(RegisterColorHandlersEvent.Item event) {
 		event.register((stack, tintIndex) -> tintIndex != 1 ? -1
 				: PaintPailItem.isYellow(PaintPailItem.getPaint(stack)) ? 0xFFECB81A : 0xFFF0F0EA,
 				CAItems.PAINT_PAIL.get());
+		for (DyedBlockList<? extends TerminalLightBlock> lights : List.of(CABlocks.LIGHT_PANELS, CABlocks.LIGHT_STRIPS,
+				CABlocks.FLOOR_LIGHTS))
+			lights.forEach(light -> event.register((stack, tintIndex) -> TerminalLightBlock.tint(light.get().color),
+					light.get()));
 	}
 
 	@SubscribeEvent

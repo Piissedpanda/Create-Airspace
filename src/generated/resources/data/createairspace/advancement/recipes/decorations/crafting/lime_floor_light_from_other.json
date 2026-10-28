@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_floor_light": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#createairspace:floor_lights"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "createairspace:crafting/lime_floor_light_from_other"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_floor_light"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "createairspace:crafting/lime_floor_light_from_other"
+    ]
+  }
+}
