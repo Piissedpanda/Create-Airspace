@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_airfield_sign": {
+      "conditions": {
+        "items": [
+          {
+            "items": "createairspace:airfield_sign"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "createairspace:crafting/gate_sign"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_airfield_sign"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "createairspace:crafting/gate_sign"
+    ]
+  }
+}

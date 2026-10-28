@@ -1,0 +1,6 @@
+{
+  "parent": "createairspace:block/gate_sign/base",
+  "textures": {
+    "face": "minecraft:block/black_concrete"
+  }
+}

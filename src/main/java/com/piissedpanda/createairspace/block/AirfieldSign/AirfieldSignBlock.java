@@ -68,7 +68,7 @@ public class AirfieldSignBlock extends Block implements IWrenchable, IBE<Airfiel
 			BlockState neighbour = pContext.getLevel()
 					.getBlockState(pContext.getClickedPos()
 							.relative(side));
-			if (neighbour.getBlock() instanceof AirfieldSignBlock && neighbour.getValue(FACING) == facing)
+			if (neighbour.is(this) && neighbour.getValue(FACING) == facing)
 				return state.setValue(STYLE, neighbour.getValue(STYLE));
 		}
 		return state;
@@ -149,9 +149,14 @@ public class AirfieldSignBlock extends Block implements IWrenchable, IBE<Airfiel
 	}
 
 	public static boolean belongsToRow(BlockState other, BlockState state) {
-		if (!(other.getBlock() instanceof AirfieldSignBlock))
+		if (!other.is(state.getBlock()))
 			return false;
 		return other.getValue(FACING) == state.getValue(FACING) && other.getValue(STYLE) == state.getValue(STYLE);
+	}
+
+	// Height of the text centre in pixels
+	public float textCenter() {
+		return 9;
 	}
 
 	@Override

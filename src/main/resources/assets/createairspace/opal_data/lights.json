@@ -322,5 +322,37 @@
         "style": "mandatory"
       }
     }
+  ],
+  "createairspace:gate_sign": [
+    {
+      "color": [
+        1.0,
+        0.82,
+        0.15
+      ],
+      "state": {
+        "style": "location"
+      }
+    },
+    {
+      "color": [
+        1.0,
+        0.82,
+        0.15
+      ],
+      "state": {
+        "style": "direction"
+      }
+    },
+    {
+      "color": [
+        1.0,
+        0.2,
+        0.15
+      ],
+      "state": {
+        "style": "mandatory"
+      }
+    }
   ]
 }

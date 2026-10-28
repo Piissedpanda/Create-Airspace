@@ -33,6 +33,7 @@ public class CAPonderTags {
 				.add(CABlocks.COPPER_BARRIER_POST)
 				.add(CABlocks.TRAIN_BARRIER_POST)
 				.add(CABlocks.AIRFIELD_SIGN)
+				.add(CABlocks.GATE_SIGN)
 				.add(CABlocks.EDGE_LIGHT)
 				.add(CABlocks.WINDSOCK)
 				.add(CABlocks.AIRPORT_BEACON)

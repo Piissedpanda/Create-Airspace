@@ -21,7 +21,6 @@ public class AirfieldSignRenderer extends SafeBlockEntityRenderer<AirfieldSignBl
 
 	private static final float TEXT_HEIGHT = 7 / 16f;
 	private static final float FACE_OFFSET = 2 / 16f + 0.005f; // panel is 4 pixels thick
-	private static final float FACE_CENTER = 9 / 16f - 0.5f;
 
 	public AirfieldSignRenderer(Context context) {
 	}
@@ -31,7 +30,7 @@ public class AirfieldSignRenderer extends SafeBlockEntityRenderer<AirfieldSignBl
 			int light, int overlay) {
 		Level level = be.getLevel();
 		BlockState state = be.getBlockState();
-		if (level == null || !(state.getBlock() instanceof AirfieldSignBlock))
+		if (level == null || !(state.getBlock() instanceof AirfieldSignBlock sign))
 			return;
 
 		List<BlockPos> row = AirfieldSignBlock.getRow(level, be.getBlockPos());
@@ -57,7 +56,7 @@ public class AirfieldSignRenderer extends SafeBlockEntityRenderer<AirfieldSignBl
 		ms.pushPose();
 		ms.translate(.5, .5, .5);
 		ms.mulPose(Axis.YP.rotationDegrees(-facing.toYRot()));
-		ms.translate((rowLength - 1) / 2f, FACE_CENTER, 0);
+		ms.translate((rowLength - 1) / 2f, sign.textCenter() / 16f - 0.5f, 0);
 
 		// Front, then the back side turned around
 		for (int side = 0; side < 2; side++) {

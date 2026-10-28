@@ -31,7 +31,7 @@ public class CABlockEntities {
 
 	public static final BlockEntityEntry<AirfieldSignBlockEntity> AIRFIELD_SIGN = REGISTRATE
 			.blockEntity("airfield_sign", AirfieldSignBlockEntity::new)
-			.validBlocks(CABlocks.AIRFIELD_SIGN)
+			.validBlocks(CABlocks.AIRFIELD_SIGN, CABlocks.GATE_SIGN)
 			.renderer(() -> AirfieldSignRenderer::new)
 			.register();
 

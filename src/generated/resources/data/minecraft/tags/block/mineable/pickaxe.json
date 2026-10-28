@@ -6,6 +6,7 @@
     "createairspace:copper_barrier_post",
     "createairspace:train_barrier_post",
     "createairspace:airfield_sign",
+    "createairspace:gate_sign",
     "createairspace:edge_light",
     "createairspace:windsock",
     "createairspace:airport_beacon",

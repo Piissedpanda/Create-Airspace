@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.function.BiFunction;
 
 import com.piissedpanda.createairspace.block.AirfieldSign.AirfieldSignBlock;
+import com.piissedpanda.createairspace.block.AirfieldSign.GateSignBlock;
 import com.piissedpanda.createairspace.block.AirportBeacon.AirportBeaconBlock;
 import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostBlock;
 import com.piissedpanda.createairspace.block.EdgeLight.EdgeLightBlock;
@@ -189,6 +190,35 @@ public class CABlocks {
 					}))
 			.item()
 			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/airfield_sign/location")))
+			.build()
+			.register();
+
+	public static final BlockEntry<GateSignBlock> GATE_SIGN = REGISTRATE.block("gate_sign", GateSignBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.COLOR_BLACK)
+					.lightLevel(s -> 4))
+			.transform(pickaxeOnly())
+			.transform(displayTarget(CADisplayTargets.AIRFIELD_SIGN))
+			.blockstate((c, p) -> p.getVariantBuilder(c.get())
+					.forAllStates(state -> {
+						AirfieldSignBlock.Style style = state.getValue(AirfieldSignBlock.STYLE);
+						return ConfiguredModel.builder()
+								.modelFile(p.models()
+										.withExistingParent("block/gate_sign/" + style.getSerializedName(),
+												p.modLoc("block/gate_sign/base"))
+										.texture("face", style.faceTexture))
+								.rotationY(((int) state.getValue(AirfieldSignBlock.FACING)
+										.toYRot() + 180) % 360)
+								.build();
+					}))
+			.recipe((c, p) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, c.get())
+					.requires(AIRFIELD_SIGN.get())
+					.requires(Items.CHAIN)
+					.unlockedBy("has_airfield_sign", RegistrateRecipeProvider.has(AIRFIELD_SIGN.get()))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/gate_sign/location")))
 			.build()
 			.register();
 

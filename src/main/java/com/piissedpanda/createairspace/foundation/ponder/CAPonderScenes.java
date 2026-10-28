@@ -17,8 +17,9 @@ public class CAPonderScenes {
 		HELPER.forComponents(CABlocks.BARRIER_POSTS)
 				.addStoryBoard("barrier_post", AirportAccessoriesScenes::barrierPost,
 						CAPonderTags.AIRPORT_ACCESSORIES);
-		HELPER.addStoryBoard(CABlocks.AIRFIELD_SIGN, "airfield_sign", AirportAccessoriesScenes::airfieldSign,
-				CAPonderTags.AIRPORT_ACCESSORIES);
+		HELPER.forComponents(CABlocks.AIRFIELD_SIGN, CABlocks.GATE_SIGN)
+				.addStoryBoard("airfield_sign", AirportAccessoriesScenes::airfieldSign,
+						CAPonderTags.AIRPORT_ACCESSORIES);
 		HELPER.addStoryBoard(CABlocks.EDGE_LIGHT, "edge_light", AirportAccessoriesScenes::edgeLight,
 				CAPonderTags.AIRPORT_ACCESSORIES);
 		HELPER.forComponents(CAItems.PAINT_PAIL)
