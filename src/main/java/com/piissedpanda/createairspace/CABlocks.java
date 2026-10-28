@@ -18,6 +18,7 @@ import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostBlock;
 import com.piissedpanda.createairspace.block.EdgeLight.EdgeLightBlock;
 import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartBlock;
 import com.piissedpanda.createairspace.block.GroundCrew.WheelChockBlock;
+import com.piissedpanda.createairspace.block.Hangar.HangarDoorBlock;
 import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlock;
 import com.piissedpanda.createairspace.block.TerminalLight.FloorLightBlock;
 import com.piissedpanda.createairspace.block.TerminalLight.LightPanelBlock;
@@ -387,6 +388,11 @@ public class CABlocks {
 					.build()
 					.register());
 
+	public static final BlockEntry<HangarDoorBlock>
+
+	HANGAR_DOOR_PANEL = hangarDoor("hangar_door_panel", "panel"),
+			HANGAR_DOOR_WINDOW = hangarDoor("hangar_door_window", "window");
+
 	public static boolean isBarrierPost(BlockState state) {
 		return state.getBlock() instanceof BarrierPostBlock;
 	}
@@ -467,6 +473,59 @@ public class CABlocks {
 				.strength(0.1f)
 				.sound(SoundType.STONE)
 				.pushReaction(PushReaction.DESTROY);
+	}
+
+	// Body turned by facing, a frame edge on every open side
+	private static BlockEntry<HangarDoorBlock> hangarDoor(String name, String body) {
+		return REGISTRATE.block(name, HangarDoorBlock::new)
+				.initialProperties(SharedProperties::softMetal)
+				.properties(p -> p.noOcclusion()
+						.mapColor(MapColor.COLOR_LIGHT_GRAY))
+				.transform(pickaxeOnly())
+				.blockstate((c, p) -> {
+					MultiPartBlockStateBuilder builder = p.getMultipartBuilder(c.get());
+					for (Direction facing : Direction.Plane.HORIZONTAL) {
+						int y = ((int) facing.toYRot() + 180) % 360;
+						builder.part()
+								.modelFile(hangarModel(p, body))
+								.rotationY(y)
+								.addModel()
+								.condition(HangarDoorBlock.FACING, facing)
+								.end();
+						HangarDoorBlock.SIDES.forEach((side, property) -> builder.part()
+								.modelFile(hangarModel(p, "edge_" + side))
+								.rotationY(y)
+								.addModel()
+								.condition(HangarDoorBlock.FACING, facing)
+								.condition(property, false)
+								.end());
+					}
+				})
+				.recipe((c, p) -> {
+					if (body.equals("panel"))
+						ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, c.get(), 4)
+								.define('S', AllItems.IRON_SHEET)
+								.pattern("SS")
+								.pattern("SS")
+								.unlockedBy("has_iron_sheet", RegistrateRecipeProvider.has(AllItems.IRON_SHEET))
+								.save(p, CreateAirspace.asResource("crafting/" + c.getName()));
+					else
+						ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, c.get())
+								.requires(HANGAR_DOOR_PANEL.get())
+								.requires(Tags.Items.GLASS_PANES)
+								.unlockedBy("has_hangar_door_panel",
+										RegistrateRecipeProvider.has(HANGAR_DOOR_PANEL.get()))
+								.save(p, CreateAirspace.asResource("crafting/" + c.getName()));
+				})
+				.item()
+				.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/hangar_door/" + body + "_item")))
+				.build()
+				.register();
+	}
+
+	private static ModelFile hangarModel(RegistrateBlockstateProvider p, String name) {
+		return p.models()
+				.getExistingFile(p.modLoc("block/hangar_door/" + name));
 	}
 
 	private static <T extends TerminalLightBlock> BlockBuilder<T, CreateRegistrate> terminalLight(DyeColor colour,
