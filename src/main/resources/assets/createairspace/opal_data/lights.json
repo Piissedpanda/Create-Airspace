@@ -291,6 +291,11 @@
     0.408,
     0.42
   ],
+  "createairspace:hangar_light": [
+    1.0,
+    0.96,
+    0.85
+  ],
   "createairspace:airfield_sign": [
     {
       "color": [

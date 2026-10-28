@@ -22,6 +22,8 @@ public class CAShapes {
 
 			FLOOR_LIGHT = cuboid(4, 0, 4, 12, 2, 12),
 
+			HANGAR_LIGHT = cuboid(3, 9.5, 3, 13, 16, 13),
+
 			AIRPORT_BEACON = shape(1, 0, 1, 15, 3, 15)
 					.add(5, 3, 5, 11, 8, 11)
 					.add(4, 8, 4, 12, 15, 12)

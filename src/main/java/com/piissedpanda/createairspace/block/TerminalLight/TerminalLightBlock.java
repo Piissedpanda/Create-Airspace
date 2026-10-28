@@ -1,5 +1,7 @@
 package com.piissedpanda.createairspace.block.TerminalLight;
 
+import javax.annotation.Nullable;
+
 import com.piissedpanda.createairspace.CALang;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.DyedBlockList;
@@ -38,7 +40,9 @@ public abstract class TerminalLightBlock extends Block implements IWrenchable {
 				.setValue(ALWAYS_ON, false));
 	}
 
-	// The same kind of light in all 16 colours, for dyeing
+	// The same kind of light in all 16 colours for dyeing, null if it cannot be
+	// dyed
+	@Nullable
 	protected abstract DyedBlockList<? extends TerminalLightBlock> variants();
 
 	@Override
@@ -94,7 +98,7 @@ public abstract class TerminalLightBlock extends Block implements IWrenchable {
 	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
 			Player player, InteractionHand hand, BlockHitResult hitResult) {
 		DyeColor dye = DyeColor.getColor(stack);
-		if (dye == null || dye == color)
+		if (dye == null || dye == color || variants() == null)
 			return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		if (!level.isClientSide)
 			level.setBlockAndUpdate(pos, BlockHelper.copyProperties(state, variants().get(dye)

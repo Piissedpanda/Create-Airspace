@@ -19,6 +19,7 @@ import com.piissedpanda.createairspace.block.EdgeLight.EdgeLightBlock;
 import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartBlock;
 import com.piissedpanda.createairspace.block.GroundCrew.WheelChockBlock;
 import com.piissedpanda.createairspace.block.Hangar.HangarDoorBlock;
+import com.piissedpanda.createairspace.block.Hangar.HangarLightBlock;
 import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlock;
 import com.piissedpanda.createairspace.block.TerminalLight.FloorLightBlock;
 import com.piissedpanda.createairspace.block.TerminalLight.LightPanelBlock;
@@ -392,6 +393,33 @@ public class CABlocks {
 
 	HANGAR_DOOR_PANEL = hangarDoor("hangar_door_panel", "panel"),
 			HANGAR_DOOR_WINDOW = hangarDoor("hangar_door_window", "window");
+
+	public static final BlockEntry<HangarLightBlock> HANGAR_LIGHT = REGISTRATE.block("hangar_light",
+			HangarLightBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.METAL)
+					.lightLevel(s -> s.getValue(TerminalLightBlock.LEVEL)))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> p.getVariantBuilder(c.get())
+					.forAllStates(state -> ConfiguredModel.builder()
+							.modelFile(p.models()
+									.getExistingFile(p.modLoc("block/hangar_light/"
+											+ (state.getValue(TerminalLightBlock.LEVEL) > 0 ? "on" : "off"))))
+							.build()))
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, c.get())
+					.define('S', AllItems.IRON_SHEET)
+					.define('L', Items.GLOWSTONE)
+					.define('G', Tags.Items.GLASS_PANES)
+					.pattern("SSS")
+					.pattern("SLS")
+					.pattern(" G ")
+					.unlockedBy("has_glowstone", RegistrateRecipeProvider.has(Items.GLOWSTONE))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/hangar_light/on")))
+			.build()
+			.register();
 
 	public static boolean isBarrierPost(BlockState state) {
 		return state.getBlock() instanceof BarrierPostBlock;
