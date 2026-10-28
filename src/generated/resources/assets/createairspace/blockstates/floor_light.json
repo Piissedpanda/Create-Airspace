@@ -1,0 +1,1540 @@
+{
+  "variants": {
+    "always_on=false,color=black,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=black,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=black,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=blue,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=blue,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=brown,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=brown,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=cyan,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=cyan,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=gray,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=gray,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=green,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=green,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=light_blue,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_blue,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=light_gray,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=light_gray,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=lime,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=lime,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=magenta,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=magenta,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=orange,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=orange,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=pink,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=pink,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=purple,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=purple,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=red,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=red,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=white,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=white,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=false,color=yellow,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=false,color=yellow,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=black,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=black,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=blue,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=blue,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=brown,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=brown,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=cyan,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=cyan,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=gray,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=gray,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=green,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=green,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=light_blue,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_blue,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=light_gray,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=light_gray,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=lime,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=lime,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=magenta,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=magenta,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=orange,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=orange,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=pink,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=pink,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=purple,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=purple,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=red,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=red,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=white,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=white,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=0": {
+      "model": "createairspace:block/terminal_light/floor"
+    },
+    "always_on=true,color=yellow,level=1": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=10": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=11": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=12": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=13": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=14": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=15": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=2": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=3": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=4": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=5": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=6": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=7": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=8": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    },
+    "always_on=true,color=yellow,level=9": {
+      "model": "createairspace:block/terminal_light/floor_on"
+    }
+  }
+}

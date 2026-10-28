@@ -3,11 +3,9 @@ package com.piissedpanda.createairspace.block.Hangar;
 import com.piissedpanda.createairspace.CABlockEntities;
 import com.piissedpanda.createairspace.CAShapes;
 import com.piissedpanda.createairspace.block.TerminalLight.TerminalLightBlock;
-import com.simibubi.create.foundation.block.DyedBlockList;
 import com.simibubi.create.foundation.block.IBE;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -19,12 +17,12 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class HangarLightBlock extends TerminalLightBlock implements IBE<HangarLightBlockEntity> {
 
 	public HangarLightBlock(Properties properties) {
-		super(properties, DyeColor.WHITE);
+		super(properties);
 	}
 
 	@Override
-	protected DyedBlockList<? extends TerminalLightBlock> variants() {
-		return null;
+	protected boolean dyeable() {
+		return false;
 	}
 
 	@Override

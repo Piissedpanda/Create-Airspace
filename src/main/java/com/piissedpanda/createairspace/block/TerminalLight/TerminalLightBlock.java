@@ -1,11 +1,7 @@
 package com.piissedpanda.createairspace.block.TerminalLight;
 
-import javax.annotation.Nullable;
-
 import com.piissedpanda.createairspace.CALang;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
-import com.simibubi.create.foundation.block.DyedBlockList;
-import com.simibubi.create.foundation.utility.BlockHelper;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,6 +18,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
@@ -30,24 +27,28 @@ public abstract class TerminalLightBlock extends Block implements IWrenchable {
 
 	public static final IntegerProperty LEVEL = IntegerProperty.create("level", 0, 15);
 	public static final BooleanProperty ALWAYS_ON = BooleanProperty.create("always_on");
+	public static final EnumProperty<DyeColor> COLOR = EnumProperty.create("color", DyeColor.class);
 
-	public final DyeColor color;
-
-	public TerminalLightBlock(Properties properties, DyeColor color) {
+	public TerminalLightBlock(Properties properties) {
 		super(properties);
-		this.color = color;
-		registerDefaultState(defaultBlockState().setValue(LEVEL, 0)
-				.setValue(ALWAYS_ON, false));
+		BlockState state = defaultBlockState().setValue(LEVEL, 0)
+				.setValue(ALWAYS_ON, false);
+		if (dyeable())
+			state = state.setValue(COLOR, DyeColor.WHITE);
+		registerDefaultState(state);
 	}
 
-	// The same kind of light in all 16 colours for dyeing, null if it cannot be
-	// dyed
-	@Nullable
-	protected abstract DyedBlockList<? extends TerminalLightBlock> variants();
+	// Colour lives in the blockstate, Opal Light reads it from there
+	protected boolean dyeable() {
+		return true;
+	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-		super.createBlockStateDefinition(pBuilder.add(LEVEL, ALWAYS_ON));
+		pBuilder.add(LEVEL, ALWAYS_ON);
+		if (dyeable())
+			pBuilder.add(COLOR);
+		super.createBlockStateDefinition(pBuilder);
 	}
 
 	protected BlockState withLevel(BlockState state, BlockPlaceContext context) {
@@ -97,13 +98,17 @@ public abstract class TerminalLightBlock extends Block implements IWrenchable {
 	@Override
 	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
 			Player player, InteractionHand hand, BlockHitResult hitResult) {
+		// Dye is not used up
 		DyeColor dye = DyeColor.getColor(stack);
-		if (dye == null || dye == color || variants() == null)
+		if (dye == null || !dyeable() || state.getValue(COLOR) == dye)
 			return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		if (!level.isClientSide)
-			level.setBlockAndUpdate(pos, BlockHelper.copyProperties(state, variants().get(dye)
-					.getDefaultState()));
+			level.setBlockAndUpdate(pos, state.setValue(COLOR, dye));
 		return ItemInteractionResult.SUCCESS;
+	}
+
+	public static int tint(BlockState state) {
+		return tint(state.hasProperty(COLOR) ? state.getValue(COLOR) : DyeColor.WHITE);
 	}
 
 	// Light colour, a bit brighter than the dye so it reads as light

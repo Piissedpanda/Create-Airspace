@@ -45,9 +45,9 @@ public class CACreativeModeTabs {
 		ITEMS.add(CABlocks.HANGAR_LIGHT);
 		ITEMS.add(CABlocks.CHECK_IN_DESK);
 		ITEMS.add(CABlocks.LUGGAGE_SCALE);
-		CABlocks.LIGHT_PANELS.forEach(ITEMS::add);
-		CABlocks.LIGHT_STRIPS.forEach(ITEMS::add);
-		CABlocks.FLOOR_LIGHTS.forEach(ITEMS::add);
+		ITEMS.add(CABlocks.LIGHT_PANEL);
+		ITEMS.add(CABlocks.LIGHT_STRIP);
+		ITEMS.add(CABlocks.FLOOR_LIGHT);
 		ITEMS.add(CAItems.MARSHALLING_WAND);
 		ITEMS.add(CAItems.EAR_DEFENDERS);
 		for (LuggageType type : LuggageType.values())

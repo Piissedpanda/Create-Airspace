@@ -1,11 +1,8 @@
 package com.piissedpanda.createairspace.block.TerminalLight;
 
-import com.piissedpanda.createairspace.CABlocks;
 import com.piissedpanda.createairspace.CAShapes;
-import com.simibubi.create.foundation.block.DyedBlockList;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockState;
@@ -16,13 +13,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 // Small light set into the floor, can be walked over
 public class FloorLightBlock extends TerminalLightBlock {
 
-	public FloorLightBlock(Properties properties, DyeColor color) {
-		super(properties, color);
-	}
-
-	@Override
-	protected DyedBlockList<FloorLightBlock> variants() {
-		return CABlocks.FLOOR_LIGHTS;
+	public FloorLightBlock(Properties properties) {
+		super(properties);
 	}
 
 	@Override

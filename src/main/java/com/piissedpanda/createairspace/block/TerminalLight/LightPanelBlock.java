@@ -2,13 +2,10 @@ package com.piissedpanda.createairspace.block.TerminalLight;
 
 import java.util.Map;
 
-import com.piissedpanda.createairspace.CABlocks;
 import com.piissedpanda.createairspace.CAShapes;
-import com.simibubi.create.foundation.block.DyedBlockList;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
@@ -30,17 +27,12 @@ public class LightPanelBlock extends TerminalLightBlock {
 			BooleanProperty.create("top"), Direction.EAST, BooleanProperty.create("right"), Direction.SOUTH,
 			BooleanProperty.create("bottom"), Direction.WEST, BooleanProperty.create("left"));
 
-	public LightPanelBlock(Properties properties, DyeColor color) {
-		super(properties, color);
+	public LightPanelBlock(Properties properties) {
+		super(properties);
 		BlockState state = defaultBlockState().setValue(FACING, Direction.DOWN);
 		for (BooleanProperty property : CONNECTED.values())
 			state = state.setValue(property, false);
 		registerDefaultState(state);
-	}
-
-	@Override
-	protected DyedBlockList<LightPanelBlock> variants() {
-		return CABlocks.LIGHT_PANELS;
 	}
 
 	@Override

@@ -9,7 +9,6 @@ import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 
 import java.util.List;
-import java.util.function.BiFunction;
 
 import com.piissedpanda.createairspace.block.AirfieldSign.AirfieldSignBlock;
 import com.piissedpanda.createairspace.block.AirfieldSign.GateSignBlock;
@@ -45,6 +44,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.builders.BlockBuilder;
 import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
+import com.tterrag.registrate.util.nullness.NonNullFunction;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
@@ -359,37 +359,32 @@ public class CABlocks {
 			.build()
 			.register();
 
-	// Terminal lights, one block per colour like Create's seats, light face tinted
-	public static final DyedBlockList<LightPanelBlock> LIGHT_PANELS = new DyedBlockList<>(
-			colour -> terminalLight(colour, "light_panel", LightPanelBlock::new, CATags.LIGHT_PANELS)
-					.blockstate((c, p) -> lightPanelState(c.get(), p))
-					.item()
-					.tag(CATags.LIGHT_PANELS)
-					.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/terminal_light/panel_item")))
-					.build()
-					.register());
+	// Terminal lights, white by default, dye recolours them (blockstate colour,
+	// tinted light face)
+	public static final BlockEntry<LightPanelBlock> LIGHT_PANEL = terminalLight("light_panel", LightPanelBlock::new)
+			.blockstate((c, p) -> lightPanelState(c.get(), p))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/terminal_light/panel_item")))
+			.build()
+			.register();
 
-	public static final DyedBlockList<LightStripBlock> LIGHT_STRIPS = new DyedBlockList<>(
-			colour -> terminalLight(colour, "light_strip", LightStripBlock::new, CATags.LIGHT_STRIPS)
-					.blockstate((c, p) -> lightStripState(c.get(), p))
-					.item()
-					.tag(CATags.LIGHT_STRIPS)
-					.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/terminal_light/strip_item")))
-					.build()
-					.register());
+	public static final BlockEntry<LightStripBlock> LIGHT_STRIP = terminalLight("light_strip", LightStripBlock::new)
+			.blockstate((c, p) -> lightStripState(c.get(), p))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/terminal_light/strip_item")))
+			.build()
+			.register();
 
-	public static final DyedBlockList<FloorLightBlock> FLOOR_LIGHTS = new DyedBlockList<>(
-			colour -> terminalLight(colour, "floor_light", FloorLightBlock::new, CATags.FLOOR_LIGHTS)
-					.blockstate((c, p) -> p.getVariantBuilder(c.get())
-							.forAllStates(state -> ConfiguredModel.builder()
-									.modelFile(lightModel(p, state.getValue(TerminalLightBlock.LEVEL) > 0 ? "floor_on"
-											: "floor"))
-									.build()))
-					.item()
-					.tag(CATags.FLOOR_LIGHTS)
-					.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/terminal_light/floor_on")))
-					.build()
-					.register());
+	public static final BlockEntry<FloorLightBlock> FLOOR_LIGHT = terminalLight("floor_light", FloorLightBlock::new)
+			.blockstate((c, p) -> p.getVariantBuilder(c.get())
+					.forAllStates(state -> ConfiguredModel.builder()
+							.modelFile(
+									lightModel(p, state.getValue(TerminalLightBlock.LEVEL) > 0 ? "floor_on" : "floor"))
+							.build()))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/terminal_light/floor_on")))
+			.build()
+			.register();
 
 	public static final BlockEntry<HangarDoorBlock>
 
@@ -621,26 +616,18 @@ public class CABlocks {
 				.getExistingFile(p.modLoc("block/hangar_door/" + name));
 	}
 
-	private static <T extends TerminalLightBlock> BlockBuilder<T, CreateRegistrate> terminalLight(DyeColor colour,
-			String name, BiFunction<BlockBehaviour.Properties, DyeColor, T> factory, TagKey<Item> tag) {
-		return REGISTRATE.block(colour.getSerializedName() + "_" + name, p -> factory.apply(p, colour))
+	private static <T extends TerminalLightBlock> BlockBuilder<T, CreateRegistrate> terminalLight(String name,
+			NonNullFunction<BlockBehaviour.Properties, T> factory) {
+		return REGISTRATE.block(name, factory)
 				.initialProperties(SharedProperties::softMetal)
 				.properties(p -> p.noOcclusion()
-						.mapColor(colour)
+						.mapColor(s -> s.getValue(TerminalLightBlock.COLOR)
+								.getMapColor())
 						.strength(0.3f)
 						.sound(SoundType.GLASS)
 						.lightLevel(s -> s.getValue(TerminalLightBlock.LEVEL)))
 				.transform(pickaxeOnly())
-				.recipe((c, p) -> {
-					// White ones are crafted, the others dyed like Create's seats
-					if (colour == DyeColor.WHITE)
-						terminalLightRecipe(name, c.get(), p);
-					ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, c.get())
-							.requires(colour.getTag())
-							.requires(tag)
-							.unlockedBy("has_" + name, RegistrateRecipeProvider.has(tag))
-							.save(p, CreateAirspace.asResource("crafting/" + c.getName() + "_from_other"));
-				});
+				.recipe((c, p) -> terminalLightRecipe(name, c.get(), p));
 	}
 
 	private static void terminalLightRecipe(String name, ItemLike light, RegistrateRecipeProvider p) {
