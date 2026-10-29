@@ -6,10 +6,11 @@ import com.piissedpanda.createairspace.CATags;
 import com.simibubi.create.AllSoundEvents;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.IBE;
-import com.simibubi.create.foundation.item.ItemHelper;
 
+import net.createmod.catnip.platform.CatnipServices;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
@@ -30,7 +31,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-// Weighs one piece of luggage: the display faces the passenger, comparators read the weight
+// Weighs luggage passing over it on belts, or put on by hand. The display faces the passenger,
+// right-click opens the range for the comparator signal, sneak-right-click takes the luggage off.
 public class LuggageScaleBlock extends Block implements IBE<LuggageScaleBlockEntity>, IWrenchable {
 
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -62,7 +64,7 @@ public class LuggageScaleBlock extends Block implements IBE<LuggageScaleBlockEnt
 		if (level.isClientSide)
 			return ItemInteractionResult.SUCCESS;
 
-		be.inventory.setStackInSlot(0, stack.copyWithCount(1));
+		be.placeByHand(stack, state.getValue(FACING));
 		if (!player.isCreative())
 			stack.shrink(1);
 		AllSoundEvents.DEPOT_PLOP.playOnServer(level, pos);
@@ -72,22 +74,30 @@ public class LuggageScaleBlock extends Block implements IBE<LuggageScaleBlockEnt
 	@Override
 	protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,
 			BlockHitResult pHitResult) {
-		if (!(pLevel.getBlockEntity(pPos) instanceof LuggageScaleBlockEntity be) || be.getLuggage()
-				.isEmpty())
+		if (!(pLevel.getBlockEntity(pPos) instanceof LuggageScaleBlockEntity be))
 			return InteractionResult.PASS;
-		if (pLevel.isClientSide)
-			return InteractionResult.SUCCESS;
 
-		pPlayer.getInventory()
-				.placeItemBackInInventory(be.inventory.extractItem(0, 1, false));
-		AllSoundEvents.DEPOT_PLOP.playOnServer(pLevel, pPos);
+		if (pPlayer.isShiftKeyDown()) {
+			if (be.getLuggage()
+					.isEmpty())
+				return InteractionResult.PASS;
+			if (!pLevel.isClientSide) {
+				pPlayer.getInventory()
+						.placeItemBackInInventory(be.takeLuggage());
+				AllSoundEvents.DEPOT_PLOP.playOnServer(pLevel, pPos);
+			}
+			return InteractionResult.SUCCESS;
+		}
+
+		CatnipServices.PLATFORM.executeOnClientOnly(() -> () -> LuggageScaleScreen.open(be));
 		return InteractionResult.SUCCESS;
 	}
 
 	@Override
 	public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
 		if (!pState.is(pNewState.getBlock()))
-			withBlockEntityDo(pLevel, pPos, be -> ItemHelper.dropContents(pLevel, pPos, be.inventory));
+			withBlockEntityDo(pLevel, pPos, be -> Containers.dropItemStack(pLevel, pPos.getX(), pPos.getY(),
+					pPos.getZ(), be.getLuggage()));
 		IBE.onRemove(pState, pLevel, pPos, pNewState);
 	}
 
@@ -96,16 +106,15 @@ public class LuggageScaleBlock extends Block implements IBE<LuggageScaleBlockEnt
 		return true;
 	}
 
-	// 2 kg per signal level, full signal from 30 kg
 	@Override
 	public int getAnalogOutputSignal(BlockState pState, Level pLevel, BlockPos pPos) {
-		return getBlockEntityOptional(pLevel, pPos).map(be -> (int) Math.min(15, Math.round(be.getWeight() / 2)))
+		return getBlockEntityOptional(pLevel, pPos).map(LuggageScaleBlockEntity::getSignal)
 				.orElse(0);
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-		return CAShapes.LUGGAGE_SCALE.get(pState.getValue(FACING));
+		return CAShapes.LUGGAGE_SCALE;
 	}
 
 	@Override

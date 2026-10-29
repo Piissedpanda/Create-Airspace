@@ -35,6 +35,14 @@
     "createairspace.terminal_light.always_on": "Always on",
     "createairspace.terminal_light.redstone": "Brightness from redstone",
 
+    "createairspace.luggage_scale.title": "Luggage Scale",
+    "createairspace.luggage_scale.min": "Minimum weight",
+    "createairspace.luggage_scale.max": "Maximum weight",
+    "createairspace.luggage_scale.kg": "%1$s kg",
+    "createairspace.luggage_scale.signal_min": "Signal 0",
+    "createairspace.luggage_scale.signal_max": "Signal 15",
+    "createairspace.luggage_scale.hint": "Comparator signal by weight",
+
     "createairspace.suitcase_packager.color": "Luggage color: %1$s",
     "createairspace.suitcase_packager.random_color": "Luggage color: random"
 }
