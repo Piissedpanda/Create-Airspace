@@ -674,6 +674,14 @@ public class CABlocks {
 						.condition(LightPanelBlock.FACING, facing)
 						.condition(LightPanelBlock.CONNECTED.get(side), false)
 						.end();
+			// Side edges stop before the corners, these fill the gap next to connected panels
+			for (Direction side : new Direction[] { Direction.WEST, Direction.EAST })
+				for (Direction end : new Direction[] { Direction.NORTH, Direction.SOUTH })
+					lightPart(builder, lightModel(p, "panel_corner_" + side.getSerializedName() + "_"
+							+ end.getSerializedName()), x, y).condition(LightPanelBlock.FACING, facing)
+							.condition(LightPanelBlock.CONNECTED.get(side), false)
+							.condition(LightPanelBlock.CONNECTED.get(end), true)
+							.end();
 		}
 	}
 

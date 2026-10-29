@@ -37,6 +37,7 @@ public class CAPonderTags {
 				.add(CABlocks.EDGE_LIGHT)
 				.add(CABlocks.WINDSOCK)
 				.add(CABlocks.AIRPORT_BEACON)
+				.add(CABlocks.LUGGAGE_SCALE)
 				.add(CAItems.PAINT_PAIL);
 	}
 
