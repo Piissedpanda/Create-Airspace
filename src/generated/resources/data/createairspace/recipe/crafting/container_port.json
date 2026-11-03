@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "create:chute"
+    },
+    {
+      "item": "create:andesite_casing"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createairspace:container_port"
+  }
+}

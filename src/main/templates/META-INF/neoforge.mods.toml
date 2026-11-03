@@ -107,10 +107,25 @@ config="${mod_id}.mixins.json"
     ordering = "NONE"
     side = "BOTH"
 
+# From 1.3 on: cargo containers are Sable physics objects, assembled with Simulated
 [[dependencies.${mod_id}]]
     modId = "sable"
-    type = "optional"
+    type = "required"
     versionRange = "[2.0.3,)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "simulated"
+    type = "required"
+    versionRange = "[1.3.0,)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "aeronautics"
+    type = "required"
+    versionRange = "[1.3.0,)"
     ordering = "NONE"
     side = "BOTH"
 

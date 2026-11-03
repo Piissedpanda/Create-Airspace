@@ -337,6 +337,9 @@ publishMods {
         minecraftVersions.add(minecraft_version)
         environment = CLIENT_AND_SERVER
         requires('create')
+        // Cargo containers need Aeronautics, Simulated has no project page of its own
+        requires('create-aeronautics')
+        requires('sable')
         optional('curios')
     }
 
@@ -348,6 +351,9 @@ publishMods {
         client = true
         server = true
         requires('create')
+        // Cargo containers need Aeronautics, Simulated has no project page of its own
+        requires('create-aeronautics')
+        requires('sable')
         optional('curios')
         // Coloured light under shaders via data files only, Opal Light is not on Modrinth
         optional('opal-light')

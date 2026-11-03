@@ -1,0 +1,9 @@
+{
+	"parent": "block/orientable_with_bottom",
+	"textures": {
+		"front": "createairspace:block/cargo/container_port_in",
+		"side": "createairspace:block/cargo/cargo_casing",
+		"top": "createairspace:block/cargo/cargo_casing",
+		"bottom": "createairspace:block/cargo/cargo_casing"
+	}
+}

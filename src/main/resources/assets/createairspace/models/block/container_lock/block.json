@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube",
+	"textures": {
+		"particle": "createairspace:block/cargo/cargo_casing",
+		"up": "createairspace:block/cargo/container_lock_front",
+		"down": "createairspace:block/cargo/cargo_casing",
+		"north": "createairspace:block/cargo/cargo_casing",
+		"south": "createairspace:block/cargo/cargo_casing",
+		"east": "createairspace:block/cargo/cargo_casing",
+		"west": "createairspace:block/cargo/cargo_casing"
+	}
+}

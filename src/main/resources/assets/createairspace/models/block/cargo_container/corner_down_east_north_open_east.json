@@ -1,0 +1,40 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"particle": "createairspace:block/cargo/container_panel",
+		"panel": "createairspace:block/cargo/container_panel",
+		"roof": "createairspace:block/cargo/container_roof",
+		"base": "createairspace:block/cargo/container_base",
+		"frame": "createairspace:block/cargo/container_frame"
+	},
+	"elements": [
+		{
+			"from": [
+				14,
+				0,
+				0
+			],
+			"to": [
+				16,
+				2,
+				2
+			],
+			"faces": {
+				"down": {
+					"texture": "#frame",
+					"cullface": "down"
+				},
+				"up": {
+					"texture": "#frame"
+				},
+				"north": {
+					"texture": "#frame",
+					"cullface": "north"
+				},
+				"south": {
+					"texture": "#frame"
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,674 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/unformed"
+      },
+      "when": {
+        "formed": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/face_down"
+      },
+      "when": {
+        "down": "false",
+        "formed": "true",
+        "slope": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/face_up"
+      },
+      "when": {
+        "formed": "true",
+        "slope": "none",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/face_north"
+      },
+      "when": {
+        "formed": "true",
+        "north": "false",
+        "slope": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/face_south"
+      },
+      "when": {
+        "formed": "true",
+        "slope": "none",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/face_west"
+      },
+      "when": {
+        "formed": "true",
+        "slope": "none",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/face_east"
+      },
+      "when": {
+        "east": "false",
+        "formed": "true",
+        "slope": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/edge_down_north"
+      },
+      "when": {
+        "down": "false",
+        "formed": "true",
+        "north": "false",
+        "slope": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/edge_down_south"
+      },
+      "when": {
+        "down": "false",
+        "formed": "true",
+        "slope": "none",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/edge_north_up"
+      },
+      "when": {
+        "formed": "true",
+        "north": "false",
+        "slope": "none",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/edge_south_up"
+      },
+      "when": {
+        "formed": "true",
+        "slope": "none",
+        "south": "false",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/edge_north_west"
+      },
+      "when": {
+        "formed": "true",
+        "north": "false",
+        "slope": "none",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/edge_east_north"
+      },
+      "when": {
+        "east": "false",
+        "formed": "true",
+        "north": "false",
+        "slope": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/edge_south_west"
+      },
+      "when": {
+        "formed": "true",
+        "slope": "none",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/edge_east_south"
+      },
+      "when": {
+        "east": "false",
+        "formed": "true",
+        "slope": "none",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/edge_down_west"
+      },
+      "when": {
+        "down": "false",
+        "formed": "true",
+        "slope": "none",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/edge_down_east"
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "formed": "true",
+        "slope": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/edge_up_west"
+      },
+      "when": {
+        "formed": "true",
+        "slope": "none",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/edge_east_up"
+      },
+      "when": {
+        "east": "false",
+        "formed": "true",
+        "slope": "none",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_north_west_all"
+      },
+      "when": {
+        "down": "false",
+        "formed": "true",
+        "north": "false",
+        "slope": "none",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_north_west_open_west"
+      },
+      "when": {
+        "down": "false",
+        "formed": "true",
+        "north": "false",
+        "slope": "none",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_north_west_open_down"
+      },
+      "when": {
+        "down": "true",
+        "formed": "true",
+        "north": "false",
+        "slope": "none",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_north_west_open_north"
+      },
+      "when": {
+        "down": "false",
+        "formed": "true",
+        "north": "true",
+        "slope": "none",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_south_west_all"
+      },
+      "when": {
+        "down": "false",
+        "formed": "true",
+        "slope": "none",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_south_west_open_west"
+      },
+      "when": {
+        "down": "false",
+        "formed": "true",
+        "slope": "none",
+        "south": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_south_west_open_down"
+      },
+      "when": {
+        "down": "true",
+        "formed": "true",
+        "slope": "none",
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_south_west_open_south"
+      },
+      "when": {
+        "down": "false",
+        "formed": "true",
+        "slope": "none",
+        "south": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_north_up_west_all"
+      },
+      "when": {
+        "formed": "true",
+        "north": "false",
+        "slope": "none",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_north_up_west_open_west"
+      },
+      "when": {
+        "formed": "true",
+        "north": "false",
+        "slope": "none",
+        "up": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_north_up_west_open_up"
+      },
+      "when": {
+        "formed": "true",
+        "north": "false",
+        "slope": "none",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_north_up_west_open_north"
+      },
+      "when": {
+        "formed": "true",
+        "north": "true",
+        "slope": "none",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_south_up_west_all"
+      },
+      "when": {
+        "formed": "true",
+        "slope": "none",
+        "south": "false",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_south_up_west_open_west"
+      },
+      "when": {
+        "formed": "true",
+        "slope": "none",
+        "south": "false",
+        "up": "false",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_south_up_west_open_up"
+      },
+      "when": {
+        "formed": "true",
+        "slope": "none",
+        "south": "false",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_south_up_west_open_south"
+      },
+      "when": {
+        "formed": "true",
+        "slope": "none",
+        "south": "true",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_east_north_all"
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "formed": "true",
+        "north": "false",
+        "slope": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_east_north_open_east"
+      },
+      "when": {
+        "down": "false",
+        "east": "true",
+        "formed": "true",
+        "north": "false",
+        "slope": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_east_north_open_down"
+      },
+      "when": {
+        "down": "true",
+        "east": "false",
+        "formed": "true",
+        "north": "false",
+        "slope": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_east_north_open_north"
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "formed": "true",
+        "north": "true",
+        "slope": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_east_south_all"
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "formed": "true",
+        "slope": "none",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_east_south_open_east"
+      },
+      "when": {
+        "down": "false",
+        "east": "true",
+        "formed": "true",
+        "slope": "none",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_east_south_open_down"
+      },
+      "when": {
+        "down": "true",
+        "east": "false",
+        "formed": "true",
+        "slope": "none",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_down_east_south_open_south"
+      },
+      "when": {
+        "down": "false",
+        "east": "false",
+        "formed": "true",
+        "slope": "none",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_east_north_up_all"
+      },
+      "when": {
+        "east": "false",
+        "formed": "true",
+        "north": "false",
+        "slope": "none",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_east_north_up_open_east"
+      },
+      "when": {
+        "east": "true",
+        "formed": "true",
+        "north": "false",
+        "slope": "none",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_east_north_up_open_up"
+      },
+      "when": {
+        "east": "false",
+        "formed": "true",
+        "north": "false",
+        "slope": "none",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_east_north_up_open_north"
+      },
+      "when": {
+        "east": "false",
+        "formed": "true",
+        "north": "true",
+        "slope": "none",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_east_south_up_all"
+      },
+      "when": {
+        "east": "false",
+        "formed": "true",
+        "slope": "none",
+        "south": "false",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_east_south_up_open_east"
+      },
+      "when": {
+        "east": "true",
+        "formed": "true",
+        "slope": "none",
+        "south": "false",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_east_south_up_open_up"
+      },
+      "when": {
+        "east": "false",
+        "formed": "true",
+        "slope": "none",
+        "south": "false",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/corner_east_south_up_open_south"
+      },
+      "when": {
+        "east": "false",
+        "formed": "true",
+        "slope": "none",
+        "south": "true",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/slope_west"
+      },
+      "when": {
+        "formed": "true",
+        "slope": "north",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/slope_east"
+      },
+      "when": {
+        "east": "false",
+        "formed": "true",
+        "slope": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/slope_west",
+        "y": 90
+      },
+      "when": {
+        "formed": "true",
+        "north": "false",
+        "slope": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/slope_east",
+        "y": 90
+      },
+      "when": {
+        "formed": "true",
+        "slope": "east",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/slope_west",
+        "y": 180
+      },
+      "when": {
+        "east": "false",
+        "formed": "true",
+        "slope": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/slope_east",
+        "y": 180
+      },
+      "when": {
+        "formed": "true",
+        "slope": "south",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/slope_west",
+        "y": 270
+      },
+      "when": {
+        "formed": "true",
+        "slope": "west",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/slope_east",
+        "y": 270
+      },
+      "when": {
+        "formed": "true",
+        "north": "false",
+        "slope": "west"
+      }
+    }
+  ]
+}

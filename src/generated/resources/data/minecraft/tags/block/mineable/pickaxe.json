@@ -19,6 +19,10 @@
     "createairspace:hangar_door_window",
     "createairspace:hangar_light",
     "createairspace:check_in_desk",
-    "createairspace:luggage_scale"
+    "createairspace:luggage_scale",
+    "createairspace:roller_bed",
+    "createairspace:cargo_container",
+    "createairspace:container_lock",
+    "createairspace:container_port"
   ]
 }

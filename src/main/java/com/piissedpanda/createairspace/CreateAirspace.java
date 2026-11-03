@@ -1,5 +1,8 @@
 package com.piissedpanda.createairspace;
 
+import com.piissedpanda.createairspace.block.Cargo.CargoContainerBlockEntity;
+import com.piissedpanda.createairspace.block.Cargo.CargoContainers;
+import com.piissedpanda.createairspace.block.Cargo.ContainerPortBlockEntity;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -66,6 +69,8 @@ public class CreateAirspace {
 		modEventBus.addListener(BaggageCartBlockEntity::registerCapabilities);
 		modEventBus.addListener(PaintPailItem::registerCapabilities);
 		modEventBus.addListener(LuggageScaleBlockEntity::registerCapabilities);
+		modEventBus.addListener(CargoContainerBlockEntity::registerCapabilities);
+		modEventBus.addListener(ContainerPortBlockEntity::registerCapabilities);
 		if (ModList.get()
 				.isLoaded("curios"))
 			EarDefendersCurios.init(modEventBus);
@@ -74,7 +79,7 @@ public class CreateAirspace {
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {
-
+		event.enqueueWork(CargoContainers::registerMovementChecks);
 	}
 
 	@SubscribeEvent

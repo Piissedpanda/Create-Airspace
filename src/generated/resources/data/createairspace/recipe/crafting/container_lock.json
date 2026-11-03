@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "create:sticker"
+    },
+    {
+      "item": "create:andesite_casing"
+    },
+    {
+      "item": "create:iron_sheet"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createairspace:container_lock"
+  }
+}

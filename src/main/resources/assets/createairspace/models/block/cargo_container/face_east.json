@@ -1,0 +1,30 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"particle": "createairspace:block/cargo/container_panel",
+		"panel": "createairspace:block/cargo/container_panel",
+		"roof": "createairspace:block/cargo/container_roof",
+		"base": "createairspace:block/cargo/container_base",
+		"frame": "createairspace:block/cargo/container_frame"
+	},
+	"elements": [
+		{
+			"from": [
+				15,
+				0,
+				0
+			],
+			"to": [
+				15,
+				16,
+				16
+			],
+			"faces": {
+				"east": {
+					"texture": "#panel",
+					"cullface": "east"
+				}
+			}
+		}
+	]
+}
