@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.2.0 – Terminal & Hangar
+
+### Added
+- **Light Panels**, **Light Strips** and **Floor Lights** for terminals. Panels join into lit surfaces, strips into lines. Off without a signal, redstone dims them up to full brightness; right-click or a wrench keeps them always on. Dye recolors them without being used up (13 colors, white resets).
+- **Gate Signs**: hanging signs with the same styles and text as airfield signs (name tags, clipboards, Display Links), plus white on blue.
+- **Hangar Door Panels** and **Hangar Door Windows** in corrugated metal. They join into one door and can be moved with Create's gantries, pistons and pulleys.
+- **Hangar Lights**: ceiling floodlights with a soft light cone down to the floor, switched like the terminal lights.
+- **Check-in Desks** that join into one counter, and the **Luggage Scale**: put luggage on by hand, with funnels and chutes or let it roll through on belts. The weight comes from what is packed inside (block mass from Create Aeronautics when it is installed) and turns red above 23 kg. Comparators read it between a minimum and maximum weight set in the scale's window.
+- Ponder scene for the luggage scale, and Create-style item descriptions (hold Shift) for the terminal lights.
+- Colored light under shaders with **Opal Light** (optional): edge lights, terminal lights, hangar lights and signs glow in their own color.
+
+### Changed
+- Airfield signs give off a little light, black location signs only light up their text.
+
 ## 1.1.0 – Ground Handling
 
 ### Added

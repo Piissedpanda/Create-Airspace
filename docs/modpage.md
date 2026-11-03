@@ -2,7 +2,7 @@
 
 ![Banner](https://raw.githubusercontent.com/Piissedpanda/Create-Airspace/mc1.21.1/dev/docs/images/banner.jpg)
 
-**Aviation and airport accessories for Create.** Build a proper airfield around your aircraft: paint runway markings, handle luggage with Create's logistics, set up barrier posts, terminal seats, taxiway signs, edge lights, a windsock that follows the wind and a rotating airport beacon.
+**Aviation and airport accessories for Create.** Build a proper airfield around your aircraft: paint runway markings, handle luggage with Create's logistics, set up barrier posts, terminal seats, terminal lights, check-in desks with luggage scales, hangar doors, taxiway signs, edge lights, a windsock that follows the wind and a rotating airport beacon.
 
 Made for aviation builds, Create: Airspace sits right next to Create and Create Aeronautics. It uses Create's own processes, Ponder scenes and wrench handling, so everything feels like part of Create.
 
@@ -63,6 +63,24 @@ The **Suitcase Packager** works like Create's packager, but packs **suitcases, t
 
 **Marshalling wands** wave while you hold right-click, **ear defenders** muffle loud sounds (also in the Curios head slot) and **wheel chocks** sit in front of the wheels.
 
+## Terminal Lights
+
+<!-- Screenshot: terminal hall with colored light panels on the ceiling, light strips along the walls and floor lights -->
+
+**Light panels** join into lit ceilings and walls, **light strips** into lines, **floor lights** sit flat in the floor. Without a signal they stay off, redstone dims them up to full, and right-click keeps them always on. Dye recolors them without being used up. With **Opal Light** installed they glow in their own color under shaders, just like edge lights, hangar lights and signs.
+
+## Gates and Check-in
+
+<!-- Screenshot: check-in counter with a luggage scale on a belt line, gate sign hanging above -->
+
+**Gate signs** hang from the ceiling and take text like airfield signs. **Check-in desks** join into a counter, and the **luggage scale** weighs each piece by what is packed inside: put it on by hand or let luggage roll through on belts. Above 23 kg the weight turns red, and a comparator reads it between the minimum and maximum you set.
+
+## Hangar
+
+<!-- Screenshot: hangar with a door made of panels and windows, floodlights shining down -->
+
+**Hangar door panels** and **windows** join into one big door that you move with gantries, pistons or pulleys. **Hangar lights** throw a soft cone of light down to the floor.
+
 ## Traffic Cones
 
 ![Traffic Cones](https://raw.githubusercontent.com/Piissedpanda/Create-Airspace/mc1.21.1/dev/docs/images/traffic_cones.jpg)
@@ -81,6 +99,7 @@ Simple blocks are crafted, everything else goes through Create: deploying, item 
 - **Create 6.0.10** or newer
 - Needed on both client and server
 - Optional: **Curios** for wearing ear defenders in the head slot
+- Optional: **Opal Light** for colored light under shaders
 
 Works alongside **Create Aeronautics**.
 

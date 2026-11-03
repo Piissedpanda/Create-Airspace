@@ -2,7 +2,7 @@
 
 Aviation and airport accessories for [Create](https://github.com/Creators-of-Create/Create). Create: Airspace adds the things an airfield needs around your aircraft and fits right next to Create and Create Aeronautics: it builds on Create's own processes instead of duplicating them.
 
-Minecraft 1.21.1 · NeoForge · Create 6.0.10 or newer · Curios optional
+Minecraft 1.21.1 · NeoForge · Create 6.0.10 or newer · Curios and Opal Light optional
 
 ## Blocks
 
@@ -18,6 +18,11 @@ Minecraft 1.21.1 · NeoForge · Create 6.0.10 or newer · Curios optional
 | **Suitcase Packager** | Like Create's packager, but packs suitcases, trolleys, duffel bags and backpacks. Luggage travels like packages and hangs from chain conveyors by its handle. |
 | **Baggage Cart** | Luggage storage for vehicles, joins into carts of up to 3x3 with one inventory. |
 | **Wheel Chocks, Marshalling Wands, Ear Defenders** | Ground crew gear. Wands wave while right-click is held, ear defenders muffle sounds (also in the Curios head slot). |
+| **Light Panels, Light Strips, Floor Lights** | Terminal lighting. Panels join into lit surfaces, strips into lines. Redstone dims them, right-click keeps them always on, dye recolors them (13 colors). |
+| **Gate Signs** | Hanging signs with the airfield sign styles and text, plus white on blue. |
+| **Hangar Doors** | Corrugated panels and windows that join into one door, moved with gantries, pistons or pulleys. |
+| **Hangar Lights** | Ceiling floodlights with a light cone, switched like the terminal lights. |
+| **Check-in Desk, Luggage Scale** | Desks join into a counter. The scale weighs luggage by its contents, also inline on belts, and gives a comparator signal between a set minimum and maximum. |
 | **Airport Beacon** | Rotational force turns the head, redstone from the sides controls brightness and range of the light. Land airport, water airport, heliport and military patterns (wrench). Looking into a beam dazzles you (can be turned off in the client config). |
 
 Recipes show up in recipe viewers like JEI, and most blocks have a Ponder scene (hold `W` over the item).
