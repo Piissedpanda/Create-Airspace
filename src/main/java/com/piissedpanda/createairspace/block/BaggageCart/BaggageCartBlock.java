@@ -3,6 +3,7 @@ package com.piissedpanda.createairspace.block.BaggageCart;
 import java.util.List;
 import java.util.Map;
 
+import com.google.common.collect.ImmutableMap;
 import com.piissedpanda.createairspace.CABlockEntities;
 import com.piissedpanda.createairspace.CAShapes;
 import com.piissedpanda.createairspace.CATags;
@@ -36,7 +37,8 @@ import net.neoforged.neoforge.items.ItemHandlerHelper;
 // Neighbouring carts join into one bigger cart: the net and wheels only show on the outside
 public class BaggageCartBlock extends Block implements IBE<BaggageCartBlockEntity>, IWrenchable {
 
-	public static final Map<Direction, BooleanProperty> CONNECTED = Map.of(Direction.NORTH, PipeBlock.NORTH,
+	// Ordered, so datagen writes the blockstates the same way every run
+	public static final Map<Direction, BooleanProperty> CONNECTED = ImmutableMap.of(Direction.NORTH, PipeBlock.NORTH,
 			Direction.EAST, PipeBlock.EAST, Direction.SOUTH, PipeBlock.SOUTH, Direction.WEST, PipeBlock.WEST);
 
 	public BaggageCartBlock(Properties properties) {

@@ -2,6 +2,7 @@ package com.piissedpanda.createairspace.block.Hangar;
 
 import java.util.Map;
 
+import com.google.common.collect.ImmutableMap;
 import com.piissedpanda.createairspace.CAShapes;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 
@@ -28,7 +29,8 @@ public class HangarDoorBlock extends Block implements IWrenchable {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final BooleanProperty UP = BlockStateProperties.UP, DOWN = BlockStateProperties.DOWN,
 			LEFT = BooleanProperty.create("left"), RIGHT = BooleanProperty.create("right");
-	public static final Map<String, BooleanProperty> SIDES = Map.of("up", UP, "down", DOWN, "left", LEFT, "right",
+	// Ordered, so datagen writes the blockstates the same way every run
+	public static final Map<String, BooleanProperty> SIDES = ImmutableMap.of("up", UP, "down", DOWN, "left", LEFT, "right",
 			RIGHT);
 
 	public HangarDoorBlock(Properties properties) {

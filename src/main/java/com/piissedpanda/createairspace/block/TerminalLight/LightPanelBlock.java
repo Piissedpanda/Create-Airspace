@@ -2,6 +2,7 @@ package com.piissedpanda.createairspace.block.TerminalLight;
 
 import java.util.Map;
 
+import com.google.common.collect.ImmutableMap;
 import com.piissedpanda.createairspace.CAShapes;
 
 import net.minecraft.core.BlockPos;
@@ -23,7 +24,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class LightPanelBlock extends TerminalLightBlock {
 
 	public static final DirectionProperty FACING = BlockStateProperties.FACING;
-	public static final Map<Direction, BooleanProperty> CONNECTED = Map.of(Direction.NORTH,
+	// Ordered, so datagen writes the blockstates the same way every run
+	public static final Map<Direction, BooleanProperty> CONNECTED = ImmutableMap.of(Direction.NORTH,
 			BooleanProperty.create("top"), Direction.EAST, BooleanProperty.create("right"), Direction.SOUTH,
 			BooleanProperty.create("bottom"), Direction.WEST, BooleanProperty.create("left"));
 

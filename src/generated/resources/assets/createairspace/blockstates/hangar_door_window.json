@@ -10,24 +10,6 @@
     },
     {
       "apply": {
-        "model": "createairspace:block/hangar_door/edge_left"
-      },
-      "when": {
-        "facing": "north",
-        "left": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/hangar_door/edge_right"
-      },
-      "when": {
-        "facing": "north",
-        "right": "false"
-      }
-    },
-    {
-      "apply": {
         "model": "createairspace:block/hangar_door/edge_up"
       },
       "when": {
@@ -42,6 +24,24 @@
       "when": {
         "down": "false",
         "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/hangar_door/edge_left"
+      },
+      "when": {
+        "facing": "north",
+        "left": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/hangar_door/edge_right"
+      },
+      "when": {
+        "facing": "north",
+        "right": "false"
       }
     },
     {
@@ -95,26 +95,6 @@
     },
     {
       "apply": {
-        "model": "createairspace:block/hangar_door/edge_left",
-        "y": 90
-      },
-      "when": {
-        "facing": "east",
-        "left": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/hangar_door/edge_right",
-        "y": 90
-      },
-      "when": {
-        "facing": "east",
-        "right": "false"
-      }
-    },
-    {
-      "apply": {
         "model": "createairspace:block/hangar_door/edge_up",
         "y": 90
       },
@@ -135,6 +115,26 @@
     },
     {
       "apply": {
+        "model": "createairspace:block/hangar_door/edge_left",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "left": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/hangar_door/edge_right",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "right": "false"
+      }
+    },
+    {
+      "apply": {
         "model": "createairspace:block/hangar_door/corner_left_up",
         "y": 90
       },
@@ -188,26 +188,6 @@
     },
     {
       "apply": {
-        "model": "createairspace:block/hangar_door/edge_left",
-        "y": 180
-      },
-      "when": {
-        "facing": "south",
-        "left": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/hangar_door/edge_right",
-        "y": 180
-      },
-      "when": {
-        "facing": "south",
-        "right": "false"
-      }
-    },
-    {
-      "apply": {
         "model": "createairspace:block/hangar_door/edge_up",
         "y": 180
       },
@@ -224,6 +204,26 @@
       "when": {
         "down": "false",
         "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/hangar_door/edge_left",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "left": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/hangar_door/edge_right",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "right": "false"
       }
     },
     {
@@ -281,26 +281,6 @@
     },
     {
       "apply": {
-        "model": "createairspace:block/hangar_door/edge_left",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "left": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/hangar_door/edge_right",
-        "y": 270
-      },
-      "when": {
-        "facing": "west",
-        "right": "false"
-      }
-    },
-    {
-      "apply": {
         "model": "createairspace:block/hangar_door/edge_up",
         "y": 270
       },
@@ -317,6 +297,26 @@
       "when": {
         "down": "false",
         "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/hangar_door/edge_left",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "left": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/hangar_door/edge_right",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "right": "false"
       }
     },
     {
