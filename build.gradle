@@ -349,5 +349,7 @@ publishMods {
         server = true
         requires('create')
         optional('curios')
+        // Coloured light under shaders via data files only, Opal Light is not on Modrinth
+        optional('opal-light')
     }
 }
