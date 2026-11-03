@@ -1,0 +1,70 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "metal": "createairspace:block/hangar_door",
+    "frame": "create:block/industrial_iron_block",
+    "glass": "minecraft:block/glass",
+    "particle": "createairspace:block/hangar_door"
+  },
+  "elements": [
+    {
+      "from": [
+        15,
+        15,
+        6
+      ],
+      "to": [
+        16,
+        16,
+        10
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "texture": "#frame"
+        },
+        "south": {
+          "uv": [
+            15,
+            0,
+            16,
+            1
+          ],
+          "texture": "#frame"
+        },
+        "west": {
+          "uv": [
+            6,
+            0,
+            10,
+            1
+          ],
+          "texture": "#frame"
+        },
+        "east": {
+          "uv": [
+            6,
+            0,
+            10,
+            1
+          ],
+          "texture": "#frame"
+        },
+        "up": {
+          "uv": [
+            15,
+            6,
+            16,
+            10
+          ],
+          "texture": "#frame"
+        }
+      }
+    }
+  ]
+}

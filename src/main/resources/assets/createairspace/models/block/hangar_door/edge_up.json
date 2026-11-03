@@ -37,6 +37,24 @@
           ],
           "texture": "#frame"
         },
+        "west": {
+          "uv": [
+            6,
+            0,
+            10,
+            1
+          ],
+          "texture": "#frame"
+        },
+        "east": {
+          "uv": [
+            6,
+            0,
+            10,
+            1
+          ],
+          "texture": "#frame"
+        },
         "up": {
           "uv": [
             0,

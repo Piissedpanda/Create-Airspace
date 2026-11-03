@@ -143,7 +143,11 @@ public class TerminalScenes {
 				.modifyBlock(comparator, s -> s.setValue(BlockStateProperties.POWERED, true), false);
 		scene.world()
 				.modifyBlockEntity(util.grid()
-						.at(2, 1, 0), NixieTubeBlockEntity.class, be -> be.updateRedstoneStrength(signal));
+						.at(2, 1, 0), NixieTubeBlockEntity.class, be -> {
+							be.updateRedstoneStrength(signal);
+							// Ponder does not sync the block entity, so the digits are refreshed here
+							be.updateDisplayedStrings();
+						});
 		scene.overlay()
 				.showText(90)
 				.text("Comparators read the weight: 0 at the minimum, 15 at the maximum, evenly in between. A Nixie Tube shows the signal")

@@ -578,6 +578,17 @@ public class CABlocks {
 								.condition(HangarDoorBlock.FACING, facing)
 								.condition(property, false)
 								.end());
+						// Side edges stop before the corners, these fill the gap next to connected panels
+						for (String side : new String[] { "left", "right" })
+							for (String end : new String[] { "up", "down" })
+								builder.part()
+										.modelFile(hangarModel(p, "corner_" + side + "_" + end))
+										.rotationY(y)
+										.addModel()
+										.condition(HangarDoorBlock.FACING, facing)
+										.condition(HangarDoorBlock.SIDES.get(side), false)
+										.condition(HangarDoorBlock.SIDES.get(end), true)
+										.end();
 					}
 				})
 				.recipe((c, p) -> {

@@ -26,7 +26,8 @@ import net.minecraft.world.phys.Vec3;
 public class LuggageScaleRenderer extends SafeBlockEntityRenderer<LuggageScaleBlockEntity> {
 
 	private static final float PLATE = 14 / 16f, BACK = 11.5f / 16f;
-	private static final float SCREEN_HEIGHT = 6.5f / 16, SCREEN_FRONT = 0.5f + 0.2f / 16 + 0.002f;
+	private static final float SCREEN_HEIGHT = 6.5f / 16, SCREEN_FRONT = 0.5f + 0.2f / 16 + 0.002f,
+			SCREEN_TEXT_WIDTH = 9 / 16f;
 
 	public LuggageScaleRenderer(BlockEntityRendererProvider.Context context) {
 	}
@@ -69,7 +70,8 @@ public class LuggageScaleRenderer extends SafeBlockEntityRenderer<LuggageScaleBl
 		Font font = Minecraft.getInstance().font;
 		String text = String.format(Locale.ROOT, "%.1f kg", weight);
 		int color = weight > LuggageWeight.OVERWEIGHT ? 0xFFFF4030 : 0xFF40FF60;
-		float scale = 1 / 140f;
+		// As large as fits on the screen, with a small margin
+		float scale = Math.min(1 / 48f, SCREEN_TEXT_WIDTH / font.width(text));
 
 		ms.pushPose();
 		ms.translate(.5, SCREEN_HEIGHT, .5);
