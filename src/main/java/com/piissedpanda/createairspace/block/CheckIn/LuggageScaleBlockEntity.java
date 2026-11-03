@@ -40,7 +40,8 @@ public class LuggageScaleBlockEntity extends SmartBlockEntity {
 	private double weight = -1;
 
 	// Comparator signal: 0 at the minimum, 15 at the maximum
-	int minKg = 0, maxKg = 30;
+	public static final int DEFAULT_MIN_KG = 0, DEFAULT_MAX_KG = 30;
+	int minKg = DEFAULT_MIN_KG, maxKg = DEFAULT_MAX_KG;
 
 	public LuggageScaleBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
 		super(type, pos, state);
@@ -113,7 +114,11 @@ public class LuggageScaleBlockEntity extends SmartBlockEntity {
 	public int getSignal() {
 		if (heldItem == null)
 			return 0;
-		float share = (float) (getWeight() - minKg) / Math.max(1, maxKg - minKg);
+		return signal(getWeight(), minKg, maxKg);
+	}
+
+	public static int signal(double weight, int minKg, int maxKg) {
+		float share = (float) (weight - minKg) / Math.max(1, maxKg - minKg);
 		return Mth.clamp(Math.round(share * 15), 0, 15);
 	}
 

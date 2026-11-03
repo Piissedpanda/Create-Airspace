@@ -1,5 +1,6 @@
 {
   "parent": "block/block",
+  "render_type": "minecraft:cutout",
   "textures": {
     "frame": "create:block/industrial_iron_block",
     "particle": "create:block/industrial_iron_block",
@@ -27,7 +28,21 @@
           ],
           "texture": "#light",
           "tintindex": 0
-        },
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        15,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
         "up": {
           "uv": [
             0,
@@ -35,13 +50,8 @@
             16,
             16
           ],
-          "texture": "#light",
-          "tintindex": 0
+          "texture": "#frame"
         }
-      },
-      "neoforge_data": {
-        "block_light": 15,
-        "sky_light": 15
       }
     },
     {
@@ -74,6 +84,15 @@
           ],
           "texture": "#frame"
         },
+        "east": {
+          "uv": [
+            15,
+            0,
+            16,
+            1.5
+          ],
+          "texture": "#frame"
+        },
         "west": {
           "uv": [
             0,
@@ -83,30 +102,12 @@
           ],
           "texture": "#frame"
         },
-        "east": {
-          "uv": [
-            0,
-            0,
-            1,
-            1.5
-          ],
-          "texture": "#frame"
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            1
-          ],
-          "texture": "#frame"
-        },
         "down": {
           "uv": [
             0,
-            0,
+            15,
             16,
-            1
+            16
           ],
           "texture": "#frame"
         }
@@ -142,6 +143,15 @@
           ],
           "texture": "#frame"
         },
+        "east": {
+          "uv": [
+            0,
+            0,
+            1,
+            1.5
+          ],
+          "texture": "#frame"
+        },
         "west": {
           "uv": [
             15,
@@ -151,30 +161,12 @@
           ],
           "texture": "#frame"
         },
-        "east": {
-          "uv": [
-            15,
-            0,
-            16,
-            1.5
-          ],
-          "texture": "#frame"
-        },
-        "up": {
-          "uv": [
-            0,
-            15,
-            16,
-            16
-          ],
-          "texture": "#frame"
-        },
         "down": {
           "uv": [
             0,
-            15,
+            0,
             16,
-            16
+            1
           ],
           "texture": "#frame"
         }
@@ -192,24 +184,6 @@
         15
       ],
       "faces": {
-        "north": {
-          "uv": [
-            0,
-            0,
-            1,
-            1.5
-          ],
-          "texture": "#frame"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            1,
-            1.5
-          ],
-          "texture": "#frame"
-        },
         "west": {
           "uv": [
             1,
@@ -225,15 +199,6 @@
             0,
             15,
             1.5
-          ],
-          "texture": "#frame"
-        },
-        "up": {
-          "uv": [
-            0,
-            1,
-            1,
-            15
           ],
           "texture": "#frame"
         },
@@ -260,24 +225,6 @@
         15
       ],
       "faces": {
-        "north": {
-          "uv": [
-            15,
-            0,
-            16,
-            1.5
-          ],
-          "texture": "#frame"
-        },
-        "south": {
-          "uv": [
-            15,
-            0,
-            16,
-            1.5
-          ],
-          "texture": "#frame"
-        },
         "west": {
           "uv": [
             1,
@@ -296,15 +243,6 @@
           ],
           "texture": "#frame"
         },
-        "up": {
-          "uv": [
-            15,
-            1,
-            16,
-            15
-          ],
-          "texture": "#frame"
-        },
         "down": {
           "uv": [
             15,
@@ -317,7 +255,6 @@
       }
     }
   ],
-  "render_type": "minecraft:cutout",
   "display": {
     "gui": {
       "rotation": [

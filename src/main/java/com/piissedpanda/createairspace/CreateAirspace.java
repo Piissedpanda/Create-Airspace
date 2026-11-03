@@ -11,7 +11,9 @@ import com.piissedpanda.createairspace.block.RunwayMarking.PaintPailItem;
 import com.piissedpanda.createairspace.foundation.config.CAConfigs;
 import com.piissedpanda.createairspace.foundation.data.CADatagen;
 import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.item.ItemDescription;
 
+import net.createmod.catnip.lang.FontHelper;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
@@ -36,7 +38,8 @@ public class CreateAirspace {
 	public static final Logger LOGGER = LogUtils.getLogger();
 
 	public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MODID)
-			.defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
+			.defaultCreativeTab((ResourceKey<CreativeModeTab>) null)
+			.setTooltipModifierFactory(item -> new ItemDescription.Modifier(item, FontHelper.Palette.STANDARD_CREATE));
 
 	public CreateAirspace(IEventBus modEventBus, ModContainer modContainer) {
 		ModLoadingContext modLoadingContext = ModLoadingContext.get();

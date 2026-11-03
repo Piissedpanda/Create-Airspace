@@ -4,8 +4,10 @@ import java.util.List;
 
 import com.piissedpanda.createairspace.CAItems;
 import com.piissedpanda.createairspace.block.CheckIn.LuggageScaleBlockEntity;
+import com.piissedpanda.createairspace.block.CheckIn.LuggageWeight;
 import com.piissedpanda.createairspace.block.Luggage.LuggageType;
 import com.simibubi.create.AllDataComponents;
+import com.simibubi.create.content.redstone.nixieTube.NixieTubeBlockEntity;
 import com.simibubi.create.foundation.ponder.CreateSceneBuilder;
 
 import net.createmod.catnip.math.Pointing;
@@ -68,7 +70,7 @@ public class TerminalScenes {
 				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(util.vector()
-						.blockSurface(scale, Direction.SOUTH));
+						.blockSurface(scale, Direction.NORTH));
 		scene.idle(90);
 
 		scene.overlay()
@@ -124,34 +126,36 @@ public class TerminalScenes {
 				.text("Above 23 kg the weight turns red")
 				.placeNearTarget()
 				.pointAt(util.vector()
-						.blockSurface(scale, Direction.SOUTH));
+						.blockSurface(scale, Direction.NORTH));
 		scene.idle(80);
 
-		// Comparator reading a suitcase put on by hand
+		// Comparator reading a suitcase put on by hand, a Nixie Tube shows the signal
+		BlockPos comparator = util.grid()
+				.at(2, 1, 1);
+		int signal = LuggageScaleBlockEntity.signal(LuggageWeight.of(light), LuggageScaleBlockEntity.DEFAULT_MIN_KG,
+				LuggageScaleBlockEntity.DEFAULT_MAX_KG);
 		scene.world()
 				.showSection(redstone, Direction.DOWN);
 		scene.idle(15);
 		scene.world()
-				.modifyBlockEntity(scale, LuggageScaleBlockEntity.class, be -> be.placeByHand(heavy, Direction.SOUTH));
+				.modifyBlockEntity(scale, LuggageScaleBlockEntity.class, be -> be.placeByHand(light, Direction.SOUTH));
 		scene.world()
-				.modifyBlock(util.grid()
-						.at(2, 1, 1), s -> s.setValue(BlockStateProperties.POWERED, true), false);
+				.modifyBlock(comparator, s -> s.setValue(BlockStateProperties.POWERED, true), false);
 		scene.world()
-				.modifyBlock(util.grid()
-						.at(2, 1, 0), s -> s.setValue(BlockStateProperties.LIT, true), false);
+				.modifyBlockEntity(util.grid()
+						.at(2, 1, 0), NixieTubeBlockEntity.class, be -> be.updateRedstoneStrength(signal));
 		scene.overlay()
 				.showText(90)
-				.text("Comparators read the weight: 0 at the minimum, 15 at the maximum, evenly in between")
+				.text("Comparators read the weight: 0 at the minimum, 15 at the maximum, evenly in between. A Nixie Tube shows the signal")
 				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(util.vector()
-						.topOf(util.grid()
-								.at(2, 1, 1)));
+						.topOf(comparator));
 		scene.idle(100);
 
 		scene.overlay()
 				.showControls(util.vector()
-						.blockSurface(scale, Direction.SOUTH), Pointing.DOWN, 40)
+						.blockSurface(scale, Direction.NORTH), Pointing.DOWN, 40)
 				.rightClick();
 		scene.idle(7);
 		scene.overlay()
@@ -159,7 +163,7 @@ public class TerminalScenes {
 				.text("Right-click with an empty hand to set the minimum and maximum weight")
 				.placeNearTarget()
 				.pointAt(util.vector()
-						.blockSurface(scale, Direction.SOUTH));
+						.blockSurface(scale, Direction.NORTH));
 		scene.idle(90);
 		scene.markAsFinished();
 	}

@@ -1,5 +1,6 @@
 {
   "parent": "block/block",
+  "render_type": "minecraft:cutout",
   "textures": {
     "frame": "create:block/industrial_iron_block",
     "particle": "create:block/industrial_iron_block",
@@ -27,7 +28,21 @@
           ],
           "texture": "#light",
           "tintindex": 0
-        },
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        15,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
         "up": {
           "uv": [
             0,
@@ -35,15 +50,9 @@
             16,
             16
           ],
-          "texture": "#light",
-          "tintindex": 0
+          "texture": "#frame"
         }
-      },
-      "neoforge_data": {
-        "block_light": 15,
-        "sky_light": 15
       }
     }
-  ],
-  "render_type": "minecraft:cutout"
+  ]
 }

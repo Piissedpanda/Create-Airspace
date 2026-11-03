@@ -1,5 +1,6 @@
 {
   "parent": "block/block",
+  "render_type": "minecraft:cutout",
   "textures": {
     "frame": "create:block/industrial_iron_block",
     "particle": "create:block/industrial_iron_block",
@@ -14,26 +15,16 @@
       ],
       "to": [
         10,
-        16,
+        15.5,
         16
       ],
       "faces": {
-        "north": {
+        "down": {
           "uv": [
             6,
             0,
             10,
-            1.5
-          ],
-          "texture": "#light",
-          "tintindex": 0
-        },
-        "south": {
-          "uv": [
-            6,
-            0,
-            10,
-            1.5
+            16
           ],
           "texture": "#light",
           "tintindex": 0
@@ -41,7 +32,7 @@
         "west": {
           "uv": [
             0,
-            0,
+            0.5,
             16,
             1.5
           ],
@@ -51,29 +42,9 @@
         "east": {
           "uv": [
             0,
-            0,
+            0.5,
             16,
             1.5
-          ],
-          "texture": "#light",
-          "tintindex": 0
-        },
-        "up": {
-          "uv": [
-            6,
-            0,
-            10,
-            16
-          ],
-          "texture": "#light",
-          "tintindex": 0
-        },
-        "down": {
-          "uv": [
-            6,
-            0,
-            10,
-            16
           ],
           "texture": "#light",
           "tintindex": 0
@@ -101,6 +72,15 @@
           ],
           "texture": "#frame"
         },
+        "down": {
+          "uv": [
+            5.5,
+            0,
+            10.5,
+            16
+          ],
+          "texture": "#frame"
+        },
         "west": {
           "uv": [
             0,
@@ -118,9 +98,26 @@
             0.5
           ],
           "texture": "#frame"
+        },
+        "north": {
+          "uv": [
+            5.5,
+            0,
+            10.5,
+            0.5
+          ],
+          "texture": "#frame"
+        },
+        "south": {
+          "uv": [
+            5.5,
+            0,
+            10.5,
+            0.5
+          ],
+          "texture": "#frame"
         }
       }
     }
-  ],
-  "render_type": "minecraft:cutout"
+  ]
 }

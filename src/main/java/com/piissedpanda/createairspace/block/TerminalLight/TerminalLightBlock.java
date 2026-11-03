@@ -27,7 +27,9 @@ public abstract class TerminalLightBlock extends Block implements IWrenchable {
 
 	public static final IntegerProperty LEVEL = IntegerProperty.create("level", 0, 15);
 	public static final BooleanProperty ALWAYS_ON = BooleanProperty.create("always_on");
-	public static final EnumProperty<DyeColor> COLOR = EnumProperty.create("color", DyeColor.class);
+	// Greys and black make no light, white resets
+	public static final EnumProperty<DyeColor> COLOR = EnumProperty.create("color", DyeColor.class,
+			c -> c != DyeColor.GRAY && c != DyeColor.LIGHT_GRAY && c != DyeColor.BLACK);
 
 	public TerminalLightBlock(Properties properties) {
 		super(properties);
@@ -100,7 +102,8 @@ public abstract class TerminalLightBlock extends Block implements IWrenchable {
 			Player player, InteractionHand hand, BlockHitResult hitResult) {
 		// Dye is not used up
 		DyeColor dye = DyeColor.getColor(stack);
-		if (dye == null || !dyeable() || state.getValue(COLOR) == dye)
+		if (dye == null || !dyeable() || !COLOR.getPossibleValues()
+				.contains(dye) || state.getValue(COLOR) == dye)
 			return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		if (!level.isClientSide)
 			level.setBlockAndUpdate(pos, state.setValue(COLOR, dye));

@@ -1,5 +1,6 @@
 {
   "parent": "block/block",
+  "render_type": "minecraft:cutout",
   "textures": {
     "frame": "create:block/industrial_iron_block",
     "particle": "create:block/industrial_iron_block",
@@ -14,32 +15,14 @@
       ],
       "to": [
         1,
-        16,
+        15.5,
         10.5
       ],
       "faces": {
-        "north": {
-          "uv": [
-            0,
-            0,
-            1,
-            2
-          ],
-          "texture": "#frame"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            1,
-            2
-          ],
-          "texture": "#frame"
-        },
         "west": {
           "uv": [
             5.5,
-            0,
+            0.5,
             10.5,
             2
           ],
@@ -48,18 +31,27 @@
         "east": {
           "uv": [
             5.5,
-            0,
+            0.5,
             10.5,
             2
           ],
           "texture": "#frame"
         },
-        "up": {
+        "north": {
+          "uv": [
+            15,
+            0.5,
+            16,
+            2
+          ],
+          "texture": "#frame"
+        },
+        "south": {
           "uv": [
             0,
-            5.5,
+            0.5,
             1,
-            10.5
+            2
           ],
           "texture": "#frame"
         },

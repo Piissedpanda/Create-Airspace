@@ -1,53 +1,5 @@
 {
   "variants": {
-    "always_on=false,color=black,level=0": {
-      "model": "createairspace:block/terminal_light/floor"
-    },
-    "always_on=false,color=black,level=1": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=10": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=11": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=12": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=13": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=14": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=15": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=2": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=3": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=4": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=5": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=6": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=7": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=8": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=black,level=9": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
     "always_on=false,color=blue,level=0": {
       "model": "createairspace:block/terminal_light/floor"
     },
@@ -192,54 +144,6 @@
     "always_on=false,color=cyan,level=9": {
       "model": "createairspace:block/terminal_light/floor_on"
     },
-    "always_on=false,color=gray,level=0": {
-      "model": "createairspace:block/terminal_light/floor"
-    },
-    "always_on=false,color=gray,level=1": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=10": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=11": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=12": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=13": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=14": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=15": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=2": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=3": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=4": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=5": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=6": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=7": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=8": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=gray,level=9": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
     "always_on=false,color=green,level=0": {
       "model": "createairspace:block/terminal_light/floor"
     },
@@ -334,54 +238,6 @@
       "model": "createairspace:block/terminal_light/floor_on"
     },
     "always_on=false,color=light_blue,level=9": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=0": {
-      "model": "createairspace:block/terminal_light/floor"
-    },
-    "always_on=false,color=light_gray,level=1": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=10": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=11": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=12": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=13": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=14": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=15": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=2": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=3": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=4": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=5": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=6": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=7": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=8": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=false,color=light_gray,level=9": {
       "model": "createairspace:block/terminal_light/floor_on"
     },
     "always_on=false,color=lime,level=0": {
@@ -768,54 +624,6 @@
     "always_on=false,color=yellow,level=9": {
       "model": "createairspace:block/terminal_light/floor_on"
     },
-    "always_on=true,color=black,level=0": {
-      "model": "createairspace:block/terminal_light/floor"
-    },
-    "always_on=true,color=black,level=1": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=10": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=11": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=12": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=13": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=14": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=15": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=2": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=3": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=4": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=5": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=6": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=7": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=8": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=black,level=9": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
     "always_on=true,color=blue,level=0": {
       "model": "createairspace:block/terminal_light/floor"
     },
@@ -960,54 +768,6 @@
     "always_on=true,color=cyan,level=9": {
       "model": "createairspace:block/terminal_light/floor_on"
     },
-    "always_on=true,color=gray,level=0": {
-      "model": "createairspace:block/terminal_light/floor"
-    },
-    "always_on=true,color=gray,level=1": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=10": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=11": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=12": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=13": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=14": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=15": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=2": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=3": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=4": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=5": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=6": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=7": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=8": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=gray,level=9": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
     "always_on=true,color=green,level=0": {
       "model": "createairspace:block/terminal_light/floor"
     },
@@ -1102,54 +862,6 @@
       "model": "createairspace:block/terminal_light/floor_on"
     },
     "always_on=true,color=light_blue,level=9": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=0": {
-      "model": "createairspace:block/terminal_light/floor"
-    },
-    "always_on=true,color=light_gray,level=1": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=10": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=11": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=12": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=13": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=14": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=15": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=2": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=3": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=4": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=5": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=6": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=7": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=8": {
-      "model": "createairspace:block/terminal_light/floor_on"
-    },
-    "always_on=true,color=light_gray,level=9": {
       "model": "createairspace:block/terminal_light/floor_on"
     },
     "always_on=true,color=lime,level=0": {

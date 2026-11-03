@@ -382,7 +382,7 @@ public class CABlocks {
 									lightModel(p, state.getValue(TerminalLightBlock.LEVEL) > 0 ? "floor_on" : "floor"))
 							.build()))
 			.item()
-			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/terminal_light/floor_on")))
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/terminal_light/floor_item")))
 			.build()
 			.register();
 
