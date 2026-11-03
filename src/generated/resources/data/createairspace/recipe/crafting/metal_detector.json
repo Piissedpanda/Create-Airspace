@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "E": {
+      "item": "create:electron_tube"
+    },
+    "S": {
+      "item": "create:iron_sheet"
+    }
+  },
+  "pattern": [
+    "SES",
+    "S S",
+    "S S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createairspace:metal_detector"
+  }
+}

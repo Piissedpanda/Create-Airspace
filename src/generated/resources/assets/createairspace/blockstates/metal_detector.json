@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "alarm=false,facing=east,half=lower": {
+      "model": "createairspace:block/metal_detector/lower",
+      "y": 90
+    },
+    "alarm=false,facing=east,half=upper": {
+      "model": "createairspace:block/metal_detector/upper_idle",
+      "y": 90
+    },
+    "alarm=false,facing=north,half=lower": {
+      "model": "createairspace:block/metal_detector/lower"
+    },
+    "alarm=false,facing=north,half=upper": {
+      "model": "createairspace:block/metal_detector/upper_idle"
+    },
+    "alarm=false,facing=south,half=lower": {
+      "model": "createairspace:block/metal_detector/lower",
+      "y": 180
+    },
+    "alarm=false,facing=south,half=upper": {
+      "model": "createairspace:block/metal_detector/upper_idle",
+      "y": 180
+    },
+    "alarm=false,facing=west,half=lower": {
+      "model": "createairspace:block/metal_detector/lower",
+      "y": 270
+    },
+    "alarm=false,facing=west,half=upper": {
+      "model": "createairspace:block/metal_detector/upper_idle",
+      "y": 270
+    },
+    "alarm=true,facing=east,half=lower": {
+      "model": "createairspace:block/metal_detector/lower",
+      "y": 90
+    },
+    "alarm=true,facing=east,half=upper": {
+      "model": "createairspace:block/metal_detector/upper_alarm",
+      "y": 90
+    },
+    "alarm=true,facing=north,half=lower": {
+      "model": "createairspace:block/metal_detector/lower"
+    },
+    "alarm=true,facing=north,half=upper": {
+      "model": "createairspace:block/metal_detector/upper_alarm"
+    },
+    "alarm=true,facing=south,half=lower": {
+      "model": "createairspace:block/metal_detector/lower",
+      "y": 180
+    },
+    "alarm=true,facing=south,half=upper": {
+      "model": "createairspace:block/metal_detector/upper_alarm",
+      "y": 180
+    },
+    "alarm=true,facing=west,half=lower": {
+      "model": "createairspace:block/metal_detector/lower",
+      "y": 270
+    },
+    "alarm=true,facing=west,half=upper": {
+      "model": "createairspace:block/metal_detector/upper_alarm",
+      "y": 270
+    }
+  }
+}

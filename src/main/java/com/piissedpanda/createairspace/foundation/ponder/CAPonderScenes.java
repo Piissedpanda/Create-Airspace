@@ -2,6 +2,7 @@ package com.piissedpanda.createairspace.foundation.ponder;
 
 import com.piissedpanda.createairspace.CABlocks;
 import com.piissedpanda.createairspace.CAItems;
+import com.piissedpanda.createairspace.foundation.ponder.scenes.AirfieldSystemsScenes;
 import com.piissedpanda.createairspace.foundation.ponder.scenes.AirportAccessoriesScenes;
 import com.piissedpanda.createairspace.foundation.ponder.scenes.TerminalScenes;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
@@ -30,6 +31,13 @@ public class CAPonderScenes {
 				CAPonderTags.AIRPORT_ACCESSORIES);
 		HELPER.addStoryBoard(CABlocks.AIRPORT_BEACON, "airport_beacon", AirportAccessoriesScenes::airportBeacon,
 				CAPonderTags.AIRPORT_ACCESSORIES);
+		HELPER.addStoryBoard(CABlocks.PAPI_LIGHT, "papi_light", AirfieldSystemsScenes::papiLight,
+				CAPonderTags.AIRPORT_ACCESSORIES);
+		HELPER.forComponents(CABlocks.STOP_BAR, CABlocks.RUNWAY_GUARD_LIGHT)
+				.addStoryBoard("stop_bar", AirfieldSystemsScenes::stopBar, CAPonderTags.AIRPORT_ACCESSORIES);
+		HELPER.forComponents(CABlocks.BAGGAGE_SCANNER, CABlocks.METAL_DETECTOR)
+				.addStoryBoard("security_scanner", AirfieldSystemsScenes::securityScanner,
+						CAPonderTags.AIRPORT_ACCESSORIES);
 		HELPER.addStoryBoard(CABlocks.LUGGAGE_SCALE, "luggage_scale", TerminalScenes::luggageScale,
 				CAPonderTags.AIRPORT_ACCESSORIES);
 	}

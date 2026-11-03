@@ -1,0 +1,311 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "minecraft:block/light_gray_concrete",
+    "body": "minecraft:block/light_gray_concrete",
+    "beam": "minecraft:block/gray_concrete",
+    "frame": "create:block/industrial_iron_block",
+    "lamp": "minecraft:block/red_concrete"
+  },
+  "elements": [
+    {
+      "name": "post_west",
+      "from": [
+        0,
+        0,
+        5
+      ],
+      "to": [
+        2,
+        16,
+        11
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#body"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#body"
+        },
+        "east": {
+          "uv": [
+            5,
+            0,
+            11,
+            16
+          ],
+          "texture": "#body"
+        },
+        "west": {
+          "uv": [
+            5,
+            0,
+            11,
+            16
+          ],
+          "texture": "#body"
+        },
+        "up": {
+          "uv": [
+            0,
+            5,
+            2,
+            11
+          ],
+          "texture": "#body"
+        }
+      }
+    },
+    {
+      "name": "post_east",
+      "from": [
+        14,
+        0,
+        5
+      ],
+      "to": [
+        16,
+        16,
+        11
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            14,
+            0,
+            16,
+            16
+          ],
+          "texture": "#body"
+        },
+        "south": {
+          "uv": [
+            14,
+            0,
+            16,
+            16
+          ],
+          "texture": "#body"
+        },
+        "east": {
+          "uv": [
+            5,
+            0,
+            11,
+            16
+          ],
+          "texture": "#body"
+        },
+        "west": {
+          "uv": [
+            5,
+            0,
+            11,
+            16
+          ],
+          "texture": "#body"
+        },
+        "up": {
+          "uv": [
+            14,
+            5,
+            16,
+            11
+          ],
+          "texture": "#body"
+        }
+      }
+    },
+    {
+      "name": "beam",
+      "from": [
+        2,
+        12,
+        5
+      ],
+      "to": [
+        14,
+        16,
+        11
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            2,
+            0,
+            14,
+            4
+          ],
+          "texture": "#beam"
+        },
+        "south": {
+          "uv": [
+            2,
+            0,
+            14,
+            4
+          ],
+          "texture": "#beam"
+        },
+        "up": {
+          "uv": [
+            2,
+            5,
+            14,
+            11
+          ],
+          "texture": "#beam"
+        },
+        "down": {
+          "uv": [
+            2,
+            5,
+            14,
+            11
+          ],
+          "texture": "#beam"
+        }
+      }
+    },
+    {
+      "name": "lamp_north",
+      "from": [
+        6.5,
+        13,
+        4.5
+      ],
+      "to": [
+        9.5,
+        15,
+        5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            6.5,
+            1,
+            9.5,
+            3
+          ],
+          "texture": "#lamp"
+        },
+        "east": {
+          "uv": [
+            4.5,
+            1,
+            5,
+            3
+          ],
+          "texture": "#lamp"
+        },
+        "west": {
+          "uv": [
+            4.5,
+            1,
+            5,
+            3
+          ],
+          "texture": "#lamp"
+        },
+        "up": {
+          "uv": [
+            6.5,
+            4.5,
+            9.5,
+            5
+          ],
+          "texture": "#lamp"
+        },
+        "down": {
+          "uv": [
+            6.5,
+            4.5,
+            9.5,
+            5
+          ],
+          "texture": "#lamp"
+        }
+      },
+      "neoforge_data": {
+        "block_light": 15,
+        "sky_light": 15
+      }
+    },
+    {
+      "name": "lamp_south",
+      "from": [
+        6.5,
+        13,
+        11
+      ],
+      "to": [
+        9.5,
+        15,
+        11.5
+      ],
+      "faces": {
+        "south": {
+          "uv": [
+            6.5,
+            1,
+            9.5,
+            3
+          ],
+          "texture": "#lamp"
+        },
+        "east": {
+          "uv": [
+            11,
+            1,
+            11.5,
+            3
+          ],
+          "texture": "#lamp"
+        },
+        "west": {
+          "uv": [
+            11,
+            1,
+            11.5,
+            3
+          ],
+          "texture": "#lamp"
+        },
+        "up": {
+          "uv": [
+            6.5,
+            11,
+            9.5,
+            11.5
+          ],
+          "texture": "#lamp"
+        },
+        "down": {
+          "uv": [
+            6.5,
+            11,
+            9.5,
+            11.5
+          ],
+          "texture": "#lamp"
+        }
+      },
+      "neoforge_data": {
+        "block_light": 15,
+        "sky_light": 15
+      }
+    }
+  ]
+}

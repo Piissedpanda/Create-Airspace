@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "createairspace:edge_light"
+    },
+    {
+      "tag": "c:dyes/red"
+    },
+    {
+      "item": "create:iron_sheet"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "createairspace:stop_bar"
+  }
+}

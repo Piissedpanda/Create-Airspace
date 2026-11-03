@@ -38,6 +38,11 @@ public class CAPonderTags {
 				.add(CABlocks.WINDSOCK)
 				.add(CABlocks.AIRPORT_BEACON)
 				.add(CABlocks.LUGGAGE_SCALE)
+				.add(CABlocks.PAPI_LIGHT)
+				.add(CABlocks.STOP_BAR)
+				.add(CABlocks.RUNWAY_GUARD_LIGHT)
+				.add(CABlocks.METAL_DETECTOR)
+				.add(CABlocks.BAGGAGE_SCANNER)
 				.add(CAItems.PAINT_PAIL);
 	}
 

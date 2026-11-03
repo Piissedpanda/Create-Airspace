@@ -143,6 +143,16 @@ public class AirportBeaconRenderer extends SafeBlockEntityRenderer<AirportBeacon
 			AirportBeaconGlare.offer(strongest, color);
 	}
 
+	// Glow for lights that would be a single pixel from afar, local to the block
+	public static void renderFlareAt(PoseStack ms, MultiBufferSource buffer, Camera camera, Vec3 view, Vec3 local,
+			float size, float alpha, int rgb) {
+		ms.pushPose();
+		ms.translate(local.x + view.x * 0.3, local.y + view.y * 0.3, local.z + view.z * 0.3);
+		ms.mulPose(camera.rotation());
+		renderFlare(ms, buffer.getBuffer(RenderTypes.beaconFlare()), size, alpha, rgb);
+		ms.popPose();
+	}
+
 	private static boolean isVisible(Level level, Vec3 from, Vec3 to, BlockPos beacon) {
 		BlockHitResult hit = level.clip(new ClipContext(from, to, ClipContext.Block.VISUAL, ClipContext.Fluid.NONE,
 				CollisionContext.empty()));

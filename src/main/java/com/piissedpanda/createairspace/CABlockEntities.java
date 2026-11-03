@@ -17,6 +17,12 @@ import com.piissedpanda.createairspace.block.CheckIn.LuggageScaleRenderer;
 import com.piissedpanda.createairspace.block.Hangar.HangarLightBlockEntity;
 import com.piissedpanda.createairspace.block.Hangar.HangarLightRenderer;
 import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlockEntity;
+import com.piissedpanda.createairspace.block.Papi.PapiLightBlockEntity;
+import com.piissedpanda.createairspace.block.Papi.PapiLightRenderer;
+import com.piissedpanda.createairspace.block.Security.BaggageScannerBlockEntity;
+import com.piissedpanda.createairspace.block.Security.MetalDetectorBlockEntity;
+import com.piissedpanda.createairspace.block.StopBar.RunwayGuardLightBlockEntity;
+import com.piissedpanda.createairspace.block.StopBar.RunwayGuardLightRenderer;
 import com.piissedpanda.createairspace.block.Windsock.WindsockBlockEntity;
 import com.piissedpanda.createairspace.block.Windsock.WindsockRenderer;
 import com.simibubi.create.content.logistics.packager.PackagerRenderer;
@@ -92,6 +98,28 @@ public class CABlockEntities {
 	public static final BlockEntityEntry<ContainerPortBlockEntity> CONTAINER_PORT = REGISTRATE
 			.blockEntity("container_port", ContainerPortBlockEntity::new)
 			.validBlocks(CABlocks.CONTAINER_PORT)
+			.register();
+
+	public static final BlockEntityEntry<PapiLightBlockEntity> PAPI_LIGHT = REGISTRATE
+			.blockEntity("papi_light", PapiLightBlockEntity::new)
+			.validBlocks(CABlocks.PAPI_LIGHT)
+			.renderer(() -> PapiLightRenderer::new)
+			.register();
+
+	public static final BlockEntityEntry<RunwayGuardLightBlockEntity> RUNWAY_GUARD_LIGHT = REGISTRATE
+			.blockEntity("runway_guard_light", RunwayGuardLightBlockEntity::new)
+			.validBlocks(CABlocks.RUNWAY_GUARD_LIGHT)
+			.renderer(() -> RunwayGuardLightRenderer::new)
+			.register();
+
+	public static final BlockEntityEntry<MetalDetectorBlockEntity> METAL_DETECTOR = REGISTRATE
+			.blockEntity("metal_detector", MetalDetectorBlockEntity::new)
+			.validBlocks(CABlocks.METAL_DETECTOR)
+			.register();
+
+	public static final BlockEntityEntry<BaggageScannerBlockEntity> BAGGAGE_SCANNER = REGISTRATE
+			.blockEntity("baggage_scanner", BaggageScannerBlockEntity::new)
+			.validBlocks(CABlocks.BAGGAGE_SCANNER)
 			.register();
 
 	public static void register() {

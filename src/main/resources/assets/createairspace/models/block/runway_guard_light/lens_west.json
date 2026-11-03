@@ -1,0 +1,67 @@
+{
+  "textures": {
+    "lens": "minecraft:block/white_concrete"
+  },
+  "elements": [
+    {
+      "name": "lens",
+      "from": [
+        2.5,
+        8.5,
+        5.5
+      ],
+      "to": [
+        5.5,
+        11.5,
+        6
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            2.5,
+            4.5,
+            5.5,
+            7.5
+          ],
+          "texture": "#lens"
+        },
+        "east": {
+          "uv": [
+            5.5,
+            4.5,
+            6,
+            7.5
+          ],
+          "texture": "#lens"
+        },
+        "west": {
+          "uv": [
+            5.5,
+            4.5,
+            6,
+            7.5
+          ],
+          "texture": "#lens"
+        },
+        "up": {
+          "uv": [
+            2.5,
+            5.5,
+            5.5,
+            6
+          ],
+          "texture": "#lens"
+        },
+        "down": {
+          "uv": [
+            2.5,
+            5.5,
+            5.5,
+            6
+          ],
+          "texture": "#lens"
+        }
+      }
+    }
+  ]
+}

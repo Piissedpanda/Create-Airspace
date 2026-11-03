@@ -86,5 +86,29 @@
     "createairspace.luggage_scale.hint": "Comparator signal by weight",
 
     "createairspace.suitcase_packager.color": "Luggage color: %1$s",
-    "createairspace.suitcase_packager.random_color": "Luggage color: random"
+    "createairspace.suitcase_packager.random_color": "Luggage color: random",
+
+    "createairspace.papi_light.angle": "Glide path angle",
+
+    "block.createairspace.papi_light.tooltip.summary": "One light of a _PAPI_, a landing aid. Set four in a row next to the runway, the _lens facing the approach_.",
+    "block.createairspace.papi_light.tooltip.condition1": "When Powered by Redstone",
+    "block.createairspace.papi_light.tooltip.behaviour1": "Shows _white_ to pilots above its angle and _red_ to pilots below it. Every player sees the color of their _own approach_.",
+    "block.createairspace.papi_light.tooltip.condition2": "Angle",
+    "block.createairspace.papi_light.tooltip.behaviour2": "Set on the _back_ like other Create values. A new light next to a row gets the next lower angle, so start with the one _next to the runway_.",
+
+    "block.createairspace.stop_bar.tooltip.summary": "Red _inset lights_ across a taxiway that tell aircraft to _hold_. Placed next to each other they form one _bar_.",
+    "block.createairspace.stop_bar.tooltip.condition1": "When Powered by Redstone",
+    "block.createairspace.stop_bar.tooltip.behaviour1": "The _whole bar_ goes dark and the aircraft may cross.",
+
+    "block.createairspace.runway_guard_light.tooltip.summary": "Two _yellow lamps_ in front of a runway that flash in turns, a warning for anyone about to enter it.",
+    "block.createairspace.runway_guard_light.tooltip.condition1": "When Powered by Redstone",
+    "block.createairspace.runway_guard_light.tooltip.behaviour1": "The lamps _flash_.",
+
+    "block.createairspace.metal_detector.tooltip.summary": "A _walk-through frame_ that checks everyone passing through for _weapons and metal_, also inside luggage and packages.",
+    "block.createairspace.metal_detector.tooltip.condition1": "When Something is Found",
+    "block.createairspace.metal_detector.tooltip.behaviour1": "Beeps, turns its lamp _red_ and gives off a _redstone signal_ for two seconds. What counts is the item tag _createairspace:security_alarm_.",
+
+    "block.createairspace.baggage_scanner.tooltip.summary": "An _X-ray tunnel_ that sits on top of a _belt_ or _depot_ and screens everything passing underneath, including the _contents_ of luggage and packages.",
+    "block.createairspace.baggage_scanner.tooltip.condition1": "When Something is Found",
+    "block.createairspace.baggage_scanner.tooltip.behaviour1": "Beeps, turns its lamp _red_ and gives off a _redstone signal_. Sort the item out with Create, for example with a _brass tunnel_ or _funnel_."
 }

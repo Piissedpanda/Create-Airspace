@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "createairspace:edge_light"
+    },
+    {
+      "item": "createairspace:edge_light"
+    },
+    {
+      "tag": "c:dyes/yellow"
+    },
+    {
+      "item": "create:iron_sheet"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "createairspace:runway_guard_light"
+  }
+}

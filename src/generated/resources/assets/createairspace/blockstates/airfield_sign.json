@@ -1,62 +1,122 @@
 {
   "variants": {
-    "facing=east,style=direction": {
+    "facing=east,powered=false,style=direction": {
       "model": "createairspace:block/airfield_sign/direction",
       "y": 90
     },
-    "facing=east,style=information": {
+    "facing=east,powered=false,style=information": {
       "model": "createairspace:block/airfield_sign/information",
       "y": 90
     },
-    "facing=east,style=location": {
+    "facing=east,powered=false,style=location": {
       "model": "createairspace:block/airfield_sign/location",
       "y": 90
     },
-    "facing=east,style=mandatory": {
+    "facing=east,powered=false,style=mandatory": {
       "model": "createairspace:block/airfield_sign/mandatory",
       "y": 90
     },
-    "facing=north,style=direction": {
+    "facing=east,powered=true,style=direction": {
+      "model": "createairspace:block/airfield_sign/direction",
+      "y": 90
+    },
+    "facing=east,powered=true,style=information": {
+      "model": "createairspace:block/airfield_sign/information",
+      "y": 90
+    },
+    "facing=east,powered=true,style=location": {
+      "model": "createairspace:block/airfield_sign/location",
+      "y": 90
+    },
+    "facing=east,powered=true,style=mandatory": {
+      "model": "createairspace:block/airfield_sign/mandatory",
+      "y": 90
+    },
+    "facing=north,powered=false,style=direction": {
       "model": "createairspace:block/airfield_sign/direction"
     },
-    "facing=north,style=information": {
+    "facing=north,powered=false,style=information": {
       "model": "createairspace:block/airfield_sign/information"
     },
-    "facing=north,style=location": {
+    "facing=north,powered=false,style=location": {
       "model": "createairspace:block/airfield_sign/location"
     },
-    "facing=north,style=mandatory": {
+    "facing=north,powered=false,style=mandatory": {
       "model": "createairspace:block/airfield_sign/mandatory"
     },
-    "facing=south,style=direction": {
+    "facing=north,powered=true,style=direction": {
+      "model": "createairspace:block/airfield_sign/direction"
+    },
+    "facing=north,powered=true,style=information": {
+      "model": "createairspace:block/airfield_sign/information"
+    },
+    "facing=north,powered=true,style=location": {
+      "model": "createairspace:block/airfield_sign/location"
+    },
+    "facing=north,powered=true,style=mandatory": {
+      "model": "createairspace:block/airfield_sign/mandatory"
+    },
+    "facing=south,powered=false,style=direction": {
       "model": "createairspace:block/airfield_sign/direction",
       "y": 180
     },
-    "facing=south,style=information": {
+    "facing=south,powered=false,style=information": {
       "model": "createairspace:block/airfield_sign/information",
       "y": 180
     },
-    "facing=south,style=location": {
+    "facing=south,powered=false,style=location": {
       "model": "createairspace:block/airfield_sign/location",
       "y": 180
     },
-    "facing=south,style=mandatory": {
+    "facing=south,powered=false,style=mandatory": {
       "model": "createairspace:block/airfield_sign/mandatory",
       "y": 180
     },
-    "facing=west,style=direction": {
+    "facing=south,powered=true,style=direction": {
+      "model": "createairspace:block/airfield_sign/direction",
+      "y": 180
+    },
+    "facing=south,powered=true,style=information": {
+      "model": "createairspace:block/airfield_sign/information",
+      "y": 180
+    },
+    "facing=south,powered=true,style=location": {
+      "model": "createairspace:block/airfield_sign/location",
+      "y": 180
+    },
+    "facing=south,powered=true,style=mandatory": {
+      "model": "createairspace:block/airfield_sign/mandatory",
+      "y": 180
+    },
+    "facing=west,powered=false,style=direction": {
       "model": "createairspace:block/airfield_sign/direction",
       "y": 270
     },
-    "facing=west,style=information": {
+    "facing=west,powered=false,style=information": {
       "model": "createairspace:block/airfield_sign/information",
       "y": 270
     },
-    "facing=west,style=location": {
+    "facing=west,powered=false,style=location": {
       "model": "createairspace:block/airfield_sign/location",
       "y": 270
     },
-    "facing=west,style=mandatory": {
+    "facing=west,powered=false,style=mandatory": {
+      "model": "createairspace:block/airfield_sign/mandatory",
+      "y": 270
+    },
+    "facing=west,powered=true,style=direction": {
+      "model": "createairspace:block/airfield_sign/direction",
+      "y": 270
+    },
+    "facing=west,powered=true,style=information": {
+      "model": "createairspace:block/airfield_sign/information",
+      "y": 270
+    },
+    "facing=west,powered=true,style=location": {
+      "model": "createairspace:block/airfield_sign/location",
+      "y": 270
+    },
+    "facing=west,powered=true,style=mandatory": {
       "model": "createairspace:block/airfield_sign/mandatory",
       "y": 270
     }

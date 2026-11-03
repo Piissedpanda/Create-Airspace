@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "alarm=false,facing=east": {
+      "model": "createairspace:block/baggage_scanner/idle",
+      "y": 90
+    },
+    "alarm=false,facing=north": {
+      "model": "createairspace:block/baggage_scanner/idle"
+    },
+    "alarm=false,facing=south": {
+      "model": "createairspace:block/baggage_scanner/idle",
+      "y": 180
+    },
+    "alarm=false,facing=west": {
+      "model": "createairspace:block/baggage_scanner/idle",
+      "y": 270
+    },
+    "alarm=true,facing=east": {
+      "model": "createairspace:block/baggage_scanner/alarm",
+      "y": 90
+    },
+    "alarm=true,facing=north": {
+      "model": "createairspace:block/baggage_scanner/alarm"
+    },
+    "alarm=true,facing=south": {
+      "model": "createairspace:block/baggage_scanner/alarm",
+      "y": 180
+    },
+    "alarm=true,facing=west": {
+      "model": "createairspace:block/baggage_scanner/alarm",
+      "y": 270
+    }
+  }
+}

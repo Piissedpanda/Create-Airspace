@@ -33,6 +33,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
@@ -44,23 +45,27 @@ public class AirfieldSignBlock extends Block implements IWrenchable, IBE<Airfiel
 
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final EnumProperty<Style> STYLE = EnumProperty.create("style", Style.class);
+	public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 	public static final int MAX_ROW_LENGTH = 16;
 
 	public AirfieldSignBlock(Properties properties) {
 		super(properties);
 		registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH)
-				.setValue(STYLE, Style.LOCATION));
+				.setValue(STYLE, Style.LOCATION)
+				.setValue(POWERED, false));
 	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-		super.createBlockStateDefinition(pBuilder.add(FACING, STYLE));
+		super.createBlockStateDefinition(pBuilder.add(FACING, STYLE, POWERED));
 	}
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
 		BlockState state = defaultBlockState().setValue(FACING, pContext.getHorizontalDirection()
-				.getOpposite());
+				.getOpposite())
+				.setValue(POWERED, pContext.getLevel()
+						.hasNeighborSignal(pContext.getClickedPos()));
 
 		// Continue the style of a row the sign is placed next to
 		Direction facing = state.getValue(FACING);
@@ -160,8 +165,22 @@ public class AirfieldSignBlock extends Block implements IWrenchable, IBE<Airfiel
 	}
 
 	// Black signs only light their text, the others glow a little
+	// Redstone switches the sign lighting to full brightness
 	public static int lightLevel(BlockState state) {
+		if (state.getValue(POWERED))
+			return 12;
 		return state.getValue(STYLE) == Style.LOCATION ? 0 : 4;
+	}
+
+	@Override
+	protected void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pNeighborBlock,
+			BlockPos pNeighborPos, boolean pMovedByPiston) {
+		if (pLevel.isClientSide)
+			return;
+		boolean powered = pLevel.hasNeighborSignal(pPos);
+		if (powered == pState.getValue(POWERED))
+			return;
+		pLevel.setBlock(pPos, pState.setValue(POWERED, powered), 2);
 	}
 
 	// Height of the text centre in pixels

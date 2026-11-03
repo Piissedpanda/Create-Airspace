@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "createairspace:metal_detector",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
+          "name": "createairspace:metal_detector"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "createairspace:blocks/metal_detector"
+}

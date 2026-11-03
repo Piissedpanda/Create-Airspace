@@ -14,7 +14,10 @@ public class CAPartialModels {
 	BARRIER_POST = block("barrier_post/block"), BARRIER_POST_GUARD = block("barrier_post/guard"),
 			WINDSOCK_SOCK = block("windsock/sock"),
 			AIRPORT_BEACON_HEAD = block("airport_beacon/head"),
-			AIRPORT_BEACON_LENS = block("airport_beacon/lens");
+			AIRPORT_BEACON_LENS = block("airport_beacon/lens"),
+			PAPI_LIGHT_LENS = block("papi_light/lens"),
+			RUNWAY_GUARD_LIGHT_LENS_WEST = block("runway_guard_light/lens_west"),
+			RUNWAY_GUARD_LIGHT_LENS_EAST = block("runway_guard_light/lens_east");
 
 	private static PartialModel block(String path) {
 		return PartialModel.of(CreateAirspace.asResource("block/" + path));

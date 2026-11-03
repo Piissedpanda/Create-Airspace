@@ -35,6 +35,8 @@ public class CAShapes {
 					.add(7, 1, 7, 9, 24, 9)
 					.build(),
 
+			STOP_BAR = cuboid(3, 0, 3, 13, 2, 13),
+
 			TERMINAL_SEAT_COLLISION = cuboid(0, 0, 0, 16, 6, 16),
 			TERMINAL_SEAT_COLLISION_PLAYERS = cuboid(0, 0, 0, 16, 3, 16);
 
@@ -69,6 +71,22 @@ public class CAShapes {
 					.forHorizontal(Direction.NORTH),
 
 			WHEEL_CHOCK = shape(4, 0, 1, 12, 4, 5).add(4, 0, 11, 12, 4, 15)
+					.forHorizontal(Direction.NORTH),
+
+			PAPI_LIGHT = shape(1, 0, 1, 15, 11.5, 14).forHorizontal(Direction.NORTH),
+
+			RUNWAY_GUARD_LIGHT = shape(1, 0, 3.5, 15, 13, 12).forHorizontal(Direction.NORTH),
+
+			// Open in the middle so players walk through
+			METAL_DETECTOR_LOWER = shape(0, 0, 4, 2.5, 16, 12).add(13.5, 0, 4, 16, 16, 12)
+					.forHorizontal(Direction.NORTH),
+
+			METAL_DETECTOR_UPPER = shape(0, 0, 5, 2, 16, 11).add(14, 0, 5, 16, 16, 11)
+					.add(2, 12, 5, 14, 16, 11)
+					.forHorizontal(Direction.NORTH),
+
+			BAGGAGE_SCANNER = shape(0, 0, 0, 2, 12, 16).add(14, 0, 0, 16, 12, 16)
+					.add(0, 12, 0, 16, 16, 16)
 					.forHorizontal(Direction.NORTH);
 
 	private static VoxelShape trafficCone(double lift) {

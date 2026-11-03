@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "axis=x,lit=false": {
+      "model": "createairspace:block/stop_bar/off"
+    },
+    "axis=x,lit=true": {
+      "model": "createairspace:block/stop_bar/on"
+    },
+    "axis=z,lit=false": {
+      "model": "createairspace:block/stop_bar/off",
+      "y": 90
+    },
+    "axis=z,lit=true": {
+      "model": "createairspace:block/stop_bar/on",
+      "y": 90
+    }
+  }
+}

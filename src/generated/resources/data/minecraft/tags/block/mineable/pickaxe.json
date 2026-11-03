@@ -23,6 +23,11 @@
     "createairspace:roller_bed",
     "createairspace:cargo_container",
     "createairspace:container_lock",
-    "createairspace:container_port"
+    "createairspace:container_port",
+    "createairspace:papi_light",
+    "createairspace:stop_bar",
+    "createairspace:runway_guard_light",
+    "createairspace:metal_detector",
+    "createairspace:baggage_scanner"
   ]
 }

@@ -11,6 +11,8 @@ public class CATags {
 
 	public static final TagKey<Item> TERMINAL_SEATS = ItemTags.create(CreateAirspace.asResource("terminal_seats"));
 	public static final TagKey<Item> LUGGAGE = ItemTags.create(CreateAirspace.asResource("luggage"));
+	// Weapons and metal, set off the metal detector and the baggage scanner
+	public static final TagKey<Item> SECURITY_ALARM = ItemTags.create(CreateAirspace.asResource("security_alarm"));
 
 	// Sable gives these blocks no friction
 	public static final TagKey<Block> SABLE_SLIPPERY = BlockTags

@@ -28,6 +28,12 @@ import com.piissedpanda.createairspace.block.GroundCrew.WheelChockBlock;
 import com.piissedpanda.createairspace.block.Hangar.HangarDoorBlock;
 import com.piissedpanda.createairspace.block.Hangar.HangarLightBlock;
 import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlock;
+import com.piissedpanda.createairspace.block.Papi.PapiLightBlock;
+import com.piissedpanda.createairspace.block.Security.BaggageScannerBlock;
+import com.piissedpanda.createairspace.block.Security.MetalDetectorBlock;
+import com.piissedpanda.createairspace.block.Security.SecurityScan;
+import com.piissedpanda.createairspace.block.StopBar.RunwayGuardLightBlock;
+import com.piissedpanda.createairspace.block.StopBar.StopBarBlock;
 import com.piissedpanda.createairspace.block.TerminalLight.FloorLightBlock;
 import com.piissedpanda.createairspace.block.TerminalLight.LightPanelBlock;
 import com.piissedpanda.createairspace.block.TerminalLight.LightStripBlock;
@@ -68,6 +74,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -551,6 +558,140 @@ public class CABlocks {
 			.build()
 			.register();
 
+	// Airfield systems (1.4)
+	public static final BlockEntry<PapiLightBlock> PAPI_LIGHT = REGISTRATE.block("papi_light", PapiLightBlock::new)
+			.lang("PAPI Light")
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.METAL)
+					.lightLevel(s -> s.getValue(PapiLightBlock.POWERED) ? 8 : 0))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> p.horizontalBlock(c.get(), p.models()
+					.getExistingFile(p.modLoc("block/papi_light/base"))))
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, c.get())
+					.define('S', AllItems.IRON_SHEET)
+					.define('L', Items.REDSTONE_LAMP)
+					.define('B', Items.IRON_BARS)
+					.pattern("SLS")
+					.pattern("B B")
+					.unlockedBy("has_redstone_lamp", RegistrateRecipeProvider.has(Items.REDSTONE_LAMP))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/papi_light/item")))
+			.build()
+			.register();
+
+	public static final BlockEntry<StopBarBlock> STOP_BAR = REGISTRATE.block("stop_bar", StopBarBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.COLOR_RED)
+					.lightLevel(s -> s.getValue(StopBarBlock.LIT) ? 7 : 0))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> p.getVariantBuilder(c.get())
+					.forAllStates(state -> ConfiguredModel.builder()
+							.modelFile(p.models()
+									.getExistingFile(p.modLoc("block/stop_bar/"
+											+ (state.getValue(StopBarBlock.LIT) ? "on" : "off"))))
+							.rotationY(state.getValue(StopBarBlock.AXIS) == Direction.Axis.Z ? 90 : 0)
+							.build()))
+			.recipe((c, p) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, c.get(), 2)
+					.requires(EDGE_LIGHT.get())
+					.requires(Tags.Items.DYES_RED)
+					.requires(AllItems.IRON_SHEET)
+					.unlockedBy("has_edge_light", RegistrateRecipeProvider.has(EDGE_LIGHT.get()))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/stop_bar/on")))
+			.build()
+			.register();
+
+	public static final BlockEntry<RunwayGuardLightBlock> RUNWAY_GUARD_LIGHT = REGISTRATE
+			.block("runway_guard_light", RunwayGuardLightBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.COLOR_YELLOW)
+					.lightLevel(s -> s.getValue(RunwayGuardLightBlock.POWERED) ? 6 : 0))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> p.horizontalBlock(c.get(), p.models()
+					.getExistingFile(p.modLoc("block/runway_guard_light/base"))))
+			.recipe((c, p) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, c.get())
+					.requires(EDGE_LIGHT.get())
+					.requires(EDGE_LIGHT.get())
+					.requires(Tags.Items.DYES_YELLOW)
+					.requires(AllItems.IRON_SHEET)
+					.unlockedBy("has_edge_light", RegistrateRecipeProvider.has(EDGE_LIGHT.get()))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/runway_guard_light/item")))
+			.build()
+			.register();
+
+	public static final BlockEntry<MetalDetectorBlock> METAL_DETECTOR = REGISTRATE
+			.block("metal_detector", MetalDetectorBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.METAL)
+					.pushReaction(PushReaction.BLOCK))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> p.getVariantBuilder(c.get())
+					.forAllStates(state -> {
+						String model = state.getValue(MetalDetectorBlock.HALF) == DoubleBlockHalf.LOWER ? "lower"
+								: state.getValue(SecurityScan.ALARM) ? "upper_alarm" : "upper_idle";
+						return ConfiguredModel.builder()
+								.modelFile(p.models()
+										.getExistingFile(p.modLoc("block/metal_detector/" + model)))
+								.rotationY(((int) state.getValue(MetalDetectorBlock.FACING)
+										.toYRot() + 180) % 360)
+								.build();
+					}))
+			// Only the lower half drops the item
+			.loot((lt, b) -> lt.add(b, LootTable.lootTable()
+					.withPool(LootPool.lootPool()
+							.setRolls(ConstantValue.exactly(1))
+							.add(LootItem.lootTableItem(b)
+									.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
+											.setProperties(StatePropertiesPredicate.Builder.properties()
+													.hasProperty(MetalDetectorBlock.HALF, DoubleBlockHalf.LOWER)))))))
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, c.get())
+					.define('S', AllItems.IRON_SHEET)
+					.define('E', AllItems.ELECTRON_TUBE)
+					.pattern("SES")
+					.pattern("S S")
+					.pattern("S S")
+					.unlockedBy("has_electron_tube", RegistrateRecipeProvider.has(AllItems.ELECTRON_TUBE))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/metal_detector/item")))
+			.build()
+			.register();
+
+	public static final BlockEntry<BaggageScannerBlock> BAGGAGE_SCANNER = REGISTRATE
+			.block("baggage_scanner", BaggageScannerBlock::new)
+			.initialProperties(SharedProperties::softMetal)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.METAL))
+			.transform(pickaxeOnly())
+			.blockstate((c, p) -> p.getVariantBuilder(c.get())
+					.forAllStates(state -> ConfiguredModel.builder()
+							.modelFile(p.models()
+									.getExistingFile(p.modLoc("block/baggage_scanner/"
+											+ (state.getValue(SecurityScan.ALARM) ? "alarm" : "idle"))))
+							.rotationY(((int) state.getValue(BaggageScannerBlock.FACING)
+									.toYRot() + 180) % 360)
+							.build()))
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, c.get())
+					.define('S', AllItems.IRON_SHEET)
+					.define('E', AllItems.ELECTRON_TUBE)
+					.define('C', AllBlocks.ANDESITE_CASING)
+					.pattern("SES")
+					.pattern("C C")
+					.unlockedBy("has_electron_tube", RegistrateRecipeProvider.has(AllItems.ELECTRON_TUBE))
+					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/baggage_scanner/item")))
+			.build()
+			.register();
+
 	public static boolean isBarrierPost(BlockState state) {
 		return state.getBlock() instanceof BarrierPostBlock;
 	}
@@ -657,7 +798,8 @@ public class CABlocks {
 								.condition(HangarDoorBlock.FACING, facing)
 								.condition(property, false)
 								.end());
-						// Side edges stop before the corners, these fill the gap next to connected panels
+						// Side edges stop before the corners, these fill the gap next to connected
+						// panels
 						for (String side : new String[] { "left", "right" })
 							for (String end : new String[] { "up", "down" })
 								builder.part()
@@ -848,7 +990,8 @@ public class CABlocks {
 						.condition(LightPanelBlock.FACING, facing)
 						.condition(LightPanelBlock.CONNECTED.get(side), false)
 						.end();
-			// Side edges stop before the corners, these fill the gap next to connected panels
+			// Side edges stop before the corners, these fill the gap next to connected
+			// panels
 			for (Direction side : new Direction[] { Direction.WEST, Direction.EAST })
 				for (Direction end : new Direction[] { Direction.NORTH, Direction.SOUTH })
 					lightPart(builder, lightModel(p, "panel_corner_" + side.getSerializedName() + "_"

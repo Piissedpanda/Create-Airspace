@@ -34,6 +34,9 @@ public class CACreativeModeTabs {
 		ITEMS.add(CABlocks.AIRFIELD_SIGN);
 		ITEMS.add(CABlocks.GATE_SIGN);
 		ITEMS.add(CABlocks.EDGE_LIGHT);
+		ITEMS.add(CABlocks.PAPI_LIGHT);
+		ITEMS.add(CABlocks.STOP_BAR);
+		ITEMS.add(CABlocks.RUNWAY_GUARD_LIGHT);
 		ITEMS.add(CABlocks.WINDSOCK);
 		ITEMS.add(CABlocks.AIRPORT_BEACON);
 		ITEMS.add(CAItems.PAINT_PAIL);
@@ -45,6 +48,8 @@ public class CACreativeModeTabs {
 		ITEMS.add(CABlocks.HANGAR_LIGHT);
 		ITEMS.add(CABlocks.CHECK_IN_DESK);
 		ITEMS.add(CABlocks.LUGGAGE_SCALE);
+		ITEMS.add(CABlocks.METAL_DETECTOR);
+		ITEMS.add(CABlocks.BAGGAGE_SCANNER);
 		ITEMS.add(CABlocks.LIGHT_PANEL);
 		ITEMS.add(CABlocks.LIGHT_STRIP);
 		ITEMS.add(CABlocks.FLOOR_LIGHT);
