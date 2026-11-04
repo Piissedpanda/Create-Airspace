@@ -1,3 +1,3 @@
 {
-  "parent": "createairspace:block/container_port/in"
+  "parent": "createairspace:block/container_port/item"
 }

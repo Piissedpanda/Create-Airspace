@@ -15,7 +15,7 @@
       "when": {
         "down": "false",
         "formed": "true",
-        "slope": "none"
+        "slope": "false"
       }
     },
     {
@@ -24,7 +24,7 @@
       },
       "when": {
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "up": "false"
       }
     },
@@ -35,7 +35,7 @@
       "when": {
         "formed": "true",
         "north": "false",
-        "slope": "none"
+        "slope": "false"
       }
     },
     {
@@ -44,7 +44,7 @@
       },
       "when": {
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false"
       }
     },
@@ -54,7 +54,7 @@
       },
       "when": {
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "west": "false"
       }
     },
@@ -65,7 +65,7 @@
       "when": {
         "east": "false",
         "formed": "true",
-        "slope": "none"
+        "slope": "false"
       }
     },
     {
@@ -76,7 +76,7 @@
         "down": "false",
         "formed": "true",
         "north": "false",
-        "slope": "none"
+        "slope": "false"
       }
     },
     {
@@ -86,7 +86,7 @@
       "when": {
         "down": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false"
       }
     },
@@ -97,7 +97,7 @@
       "when": {
         "formed": "true",
         "north": "false",
-        "slope": "none",
+        "slope": "false",
         "up": "false"
       }
     },
@@ -107,7 +107,7 @@
       },
       "when": {
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false",
         "up": "false"
       }
@@ -119,7 +119,7 @@
       "when": {
         "formed": "true",
         "north": "false",
-        "slope": "none",
+        "slope": "false",
         "west": "false"
       }
     },
@@ -131,7 +131,7 @@
         "east": "false",
         "formed": "true",
         "north": "false",
-        "slope": "none"
+        "slope": "false"
       }
     },
     {
@@ -140,7 +140,7 @@
       },
       "when": {
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false",
         "west": "false"
       }
@@ -152,7 +152,7 @@
       "when": {
         "east": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false"
       }
     },
@@ -163,7 +163,7 @@
       "when": {
         "down": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "west": "false"
       }
     },
@@ -175,7 +175,7 @@
         "down": "false",
         "east": "false",
         "formed": "true",
-        "slope": "none"
+        "slope": "false"
       }
     },
     {
@@ -184,7 +184,7 @@
       },
       "when": {
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "up": "false",
         "west": "false"
       }
@@ -196,7 +196,7 @@
       "when": {
         "east": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "up": "false"
       }
     },
@@ -208,7 +208,7 @@
         "down": "false",
         "formed": "true",
         "north": "false",
-        "slope": "none",
+        "slope": "false",
         "west": "false"
       }
     },
@@ -220,7 +220,7 @@
         "down": "false",
         "formed": "true",
         "north": "false",
-        "slope": "none",
+        "slope": "false",
         "west": "true"
       }
     },
@@ -232,7 +232,7 @@
         "down": "true",
         "formed": "true",
         "north": "false",
-        "slope": "none",
+        "slope": "false",
         "west": "false"
       }
     },
@@ -244,7 +244,7 @@
         "down": "false",
         "formed": "true",
         "north": "true",
-        "slope": "none",
+        "slope": "false",
         "west": "false"
       }
     },
@@ -255,7 +255,7 @@
       "when": {
         "down": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false",
         "west": "false"
       }
@@ -267,7 +267,7 @@
       "when": {
         "down": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false",
         "west": "true"
       }
@@ -279,7 +279,7 @@
       "when": {
         "down": "true",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false",
         "west": "false"
       }
@@ -291,7 +291,7 @@
       "when": {
         "down": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "true",
         "west": "false"
       }
@@ -303,7 +303,7 @@
       "when": {
         "formed": "true",
         "north": "false",
-        "slope": "none",
+        "slope": "false",
         "up": "false",
         "west": "false"
       }
@@ -315,7 +315,7 @@
       "when": {
         "formed": "true",
         "north": "false",
-        "slope": "none",
+        "slope": "false",
         "up": "false",
         "west": "true"
       }
@@ -327,7 +327,7 @@
       "when": {
         "formed": "true",
         "north": "false",
-        "slope": "none",
+        "slope": "false",
         "up": "true",
         "west": "false"
       }
@@ -339,7 +339,7 @@
       "when": {
         "formed": "true",
         "north": "true",
-        "slope": "none",
+        "slope": "false",
         "up": "false",
         "west": "false"
       }
@@ -350,7 +350,7 @@
       },
       "when": {
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false",
         "up": "false",
         "west": "false"
@@ -362,7 +362,7 @@
       },
       "when": {
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false",
         "up": "false",
         "west": "true"
@@ -374,7 +374,7 @@
       },
       "when": {
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false",
         "up": "true",
         "west": "false"
@@ -386,7 +386,7 @@
       },
       "when": {
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "true",
         "up": "false",
         "west": "false"
@@ -401,7 +401,7 @@
         "east": "false",
         "formed": "true",
         "north": "false",
-        "slope": "none"
+        "slope": "false"
       }
     },
     {
@@ -413,7 +413,7 @@
         "east": "true",
         "formed": "true",
         "north": "false",
-        "slope": "none"
+        "slope": "false"
       }
     },
     {
@@ -425,7 +425,7 @@
         "east": "false",
         "formed": "true",
         "north": "false",
-        "slope": "none"
+        "slope": "false"
       }
     },
     {
@@ -437,7 +437,7 @@
         "east": "false",
         "formed": "true",
         "north": "true",
-        "slope": "none"
+        "slope": "false"
       }
     },
     {
@@ -448,7 +448,7 @@
         "down": "false",
         "east": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false"
       }
     },
@@ -460,7 +460,7 @@
         "down": "false",
         "east": "true",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false"
       }
     },
@@ -472,7 +472,7 @@
         "down": "true",
         "east": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false"
       }
     },
@@ -484,7 +484,7 @@
         "down": "false",
         "east": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "true"
       }
     },
@@ -496,7 +496,7 @@
         "east": "false",
         "formed": "true",
         "north": "false",
-        "slope": "none",
+        "slope": "false",
         "up": "false"
       }
     },
@@ -508,7 +508,7 @@
         "east": "true",
         "formed": "true",
         "north": "false",
-        "slope": "none",
+        "slope": "false",
         "up": "false"
       }
     },
@@ -520,7 +520,7 @@
         "east": "false",
         "formed": "true",
         "north": "false",
-        "slope": "none",
+        "slope": "false",
         "up": "true"
       }
     },
@@ -532,7 +532,7 @@
         "east": "false",
         "formed": "true",
         "north": "true",
-        "slope": "none",
+        "slope": "false",
         "up": "false"
       }
     },
@@ -543,7 +543,7 @@
       "when": {
         "east": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false",
         "up": "false"
       }
@@ -555,7 +555,7 @@
       "when": {
         "east": "true",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false",
         "up": "false"
       }
@@ -567,7 +567,7 @@
       "when": {
         "east": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "false",
         "up": "true"
       }
@@ -579,9 +579,99 @@
       "when": {
         "east": "false",
         "formed": "true",
-        "slope": "none",
+        "slope": "false",
         "south": "true",
         "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/slope_west",
+        "y": 180
+      },
+      "when": {
+        "east": "false",
+        "facing": "north",
+        "formed": "true",
+        "slope": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/slope_east",
+        "y": 180
+      },
+      "when": {
+        "facing": "north",
+        "formed": "true",
+        "slope": "true",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/point_lock_side"
+      },
+      "when": {
+        "facing": "north",
+        "formed": "true",
+        "point": "lock|lock_side"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/point_port"
+      },
+      "when": {
+        "facing": "north",
+        "formed": "true",
+        "point": "port"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/slope_west",
+        "y": 270
+      },
+      "when": {
+        "facing": "east",
+        "formed": "true",
+        "slope": "true",
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/slope_east",
+        "y": 270
+      },
+      "when": {
+        "facing": "east",
+        "formed": "true",
+        "north": "false",
+        "slope": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/point_lock_side",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "formed": "true",
+        "point": "lock|lock_side"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/point_port",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "formed": "true",
+        "point": "port"
       }
     },
     {
@@ -589,8 +679,9 @@
         "model": "createairspace:block/cargo_container/slope_west"
       },
       "when": {
+        "facing": "south",
         "formed": "true",
-        "slope": "north",
+        "slope": "true",
         "west": "false"
       }
     },
@@ -600,8 +691,31 @@
       },
       "when": {
         "east": "false",
+        "facing": "south",
         "formed": "true",
-        "slope": "north"
+        "slope": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/point_lock_side",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "formed": "true",
+        "point": "lock|lock_side"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/point_port",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "formed": "true",
+        "point": "port"
       }
     },
     {
@@ -610,9 +724,10 @@
         "y": 90
       },
       "when": {
+        "facing": "west",
         "formed": "true",
         "north": "false",
-        "slope": "east"
+        "slope": "true"
       }
     },
     {
@@ -621,53 +736,41 @@
         "y": 90
       },
       "when": {
+        "facing": "west",
         "formed": "true",
-        "slope": "east",
+        "slope": "true",
         "south": "false"
       }
     },
     {
       "apply": {
-        "model": "createairspace:block/cargo_container/slope_west",
-        "y": 180
-      },
-      "when": {
-        "east": "false",
-        "formed": "true",
-        "slope": "south"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/cargo_container/slope_east",
-        "y": 180
-      },
-      "when": {
-        "formed": "true",
-        "slope": "south",
-        "west": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "createairspace:block/cargo_container/slope_west",
+        "model": "createairspace:block/cargo_container/point_lock_side",
         "y": 270
       },
       "when": {
+        "facing": "west",
         "formed": "true",
-        "slope": "west",
-        "south": "false"
+        "point": "lock|lock_side"
       }
     },
     {
       "apply": {
-        "model": "createairspace:block/cargo_container/slope_east",
+        "model": "createairspace:block/cargo_container/point_port",
         "y": 270
       },
       "when": {
+        "facing": "west",
         "formed": "true",
-        "north": "false",
-        "slope": "west"
+        "point": "port"
+      }
+    },
+    {
+      "apply": {
+        "model": "createairspace:block/cargo_container/point_lock_bottom"
+      },
+      "when": {
+        "formed": "true",
+        "point": "lock|lock_bottom"
       }
     }
   ]

@@ -1,0 +1,72 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"particle": "createairspace:block/cargo/lock_side",
+		"side": "createairspace:block/cargo/lock_side",
+		"bottom": "createairspace:block/cargo/roller_bed_bottom",
+		"deck": "createairspace:block/cargo/lock_top",
+		"rim": "createairspace:block/cargo/roller_bed_rim",
+		"ball": "createairspace:block/cargo/roller_ball",
+		"claw": "createairspace:block/cargo/lock_claw"
+	},
+	"elements": [
+		{
+			"from": [
+				6,
+				14.05,
+				1.05
+			],
+			"to": [
+				10,
+				15.5,
+				4
+			],
+			"faces": {
+				"up": {
+					"texture": "#claw"
+				},
+				"north": {
+					"texture": "#claw"
+				},
+				"south": {
+					"texture": "#claw"
+				},
+				"east": {
+					"texture": "#claw"
+				},
+				"west": {
+					"texture": "#claw"
+				}
+			}
+		},
+		{
+			"from": [
+				6,
+				15.5,
+				3
+			],
+			"to": [
+				10,
+				16.5,
+				4
+			],
+			"faces": {
+				"up": {
+					"texture": "#claw"
+				},
+				"north": {
+					"texture": "#claw"
+				},
+				"south": {
+					"texture": "#claw"
+				},
+				"east": {
+					"texture": "#claw"
+				},
+				"west": {
+					"texture": "#claw"
+				}
+			}
+		}
+	]
+}
