@@ -6,23 +6,21 @@ import javax.annotation.Nullable;
 // shapes (width and depth in either order)
 public enum UldType {
 
-	LD2(1, 1, 2, false),
-	LD3(2, 2, 2, true),
-	LD11(2, 3, 2, false),
-	AMA(3, 3, 3, false);
+	LD2(1, 1, 2),
+	LD3(2, 2, 2),
+	LD11(2, 3, 2),
+	AMA(3, 3, 3);
 
 	public static final int MAX_BLOCKS = 27;
 
 	private final int shortSide;
 	private final int longSide;
 	private final int height;
-	public final boolean slope;
 
-	UldType(int shortSide, int longSide, int height, boolean slope) {
+	UldType(int shortSide, int longSide, int height) {
 		this.shortSide = shortSide;
 		this.longSide = longSide;
 		this.height = height;
-		this.slope = slope;
 	}
 
 	@Nullable

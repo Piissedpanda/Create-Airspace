@@ -17,10 +17,13 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.Tags;
 
 public class CAItems {
@@ -102,6 +105,16 @@ public class CAItems {
 					.pattern("W W")
 					.unlockedBy("has_yellow_wool", RegistrateRecipeProvider.has(Items.YELLOW_WOOL))
 					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
+			.register();
+
+	// Iron ingots cut into balls for the roller bed
+	public static final ItemEntry<Item> STEEL_BALL = REGISTRATE.item("steel_ball", Item::new)
+			.model((c, p) -> p.withExistingParent(c.getName(), p.mcLoc("item/generated"))
+					.texture("layer0", p.modLoc("item/steel_ball")))
+			.recipe((c, p) -> SingleItemRecipeBuilder
+					.stonecutting(Ingredient.of(Tags.Items.INGOTS_IRON), RecipeCategory.MISC, c.get(), 4)
+					.unlockedBy("has_iron_ingot", RegistrateRecipeProvider.has(Tags.Items.INGOTS_IRON))
+					.save(p, CreateAirspace.asResource("stonecutting/" + c.getName())))
 			.register();
 
 	public static void register() {

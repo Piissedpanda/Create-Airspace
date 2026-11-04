@@ -15,6 +15,10 @@ public class CAPartialModels {
 			WINDSOCK_SOCK = block("windsock/sock"),
 			AIRPORT_BEACON_HEAD = block("airport_beacon/head"),
 			AIRPORT_BEACON_LENS = block("airport_beacon/lens"),
+			CONTAINER_LOCK_CLAW = block("container_lock/claw"),
+			CONTAINER_LOCK_BOLT = block("container_lock/bolt"),
+			CONTAINER_PORT_PLATE = block("container_port/plate"),
+			CONTAINER_PORT_BOLTS = block("container_port/bolts"),
 			PAPI_LIGHT_LENS = block("papi_light/lens"),
 			RUNWAY_GUARD_LIGHT_LENS_WEST = block("runway_guard_light/lens_west"),
 			RUNWAY_GUARD_LIGHT_LENS_EAST = block("runway_guard_light/lens_east");

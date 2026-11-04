@@ -19,7 +19,8 @@ import com.piissedpanda.createairspace.block.BarrierPost.BarrierPostBlock;
 import com.piissedpanda.createairspace.block.EdgeLight.EdgeLightBlock;
 import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartBlock;
 import com.piissedpanda.createairspace.block.Cargo.CargoContainerBlock;
-import com.piissedpanda.createairspace.block.Cargo.CargoContainerBlock.Slope;
+import com.piissedpanda.createairspace.block.Cargo.CargoContainerBlock.Point;
+import com.piissedpanda.createairspace.block.Cargo.RollerBedBlock;
 import com.piissedpanda.createairspace.block.Cargo.ContainerLockBlock;
 import com.piissedpanda.createairspace.block.Cargo.ContainerPortBlock;
 import com.piissedpanda.createairspace.block.CheckIn.CheckInDeskBlock;
@@ -486,7 +487,7 @@ public class CABlocks {
 			.register();
 
 	// Sable lets physics objects slide over it, players keep their grip
-	public static final BlockEntry<Block> ROLLER_BED = REGISTRATE.block("roller_bed", Block::new)
+	public static final BlockEntry<RollerBedBlock> ROLLER_BED = REGISTRATE.block("roller_bed", RollerBedBlock::new)
 			.initialProperties(SharedProperties::stone)
 			.properties(p -> p.mapColor(MapColor.COLOR_GRAY)
 					.sound(SoundType.METAL))
@@ -494,13 +495,15 @@ public class CABlocks {
 			.tag(CATags.SABLE_SLIPPERY)
 			.blockstate((c, p) -> p.simpleBlock(c.get(), cargoModel(p, "roller_bed")))
 			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, c.get(), 3)
-					.define('S', AllBlocks.SHAFT)
-					.define('C', AllBlocks.ANDESITE_CASING)
-					.pattern("SSS")
-					.pattern("CCC")
-					.unlockedBy("has_andesite_casing", RegistrateRecipeProvider.has(AllBlocks.ANDESITE_CASING))
+					.define('B', CAItems.STEEL_BALL)
+					.define('I', AllBlocks.INDUSTRIAL_IRON_BLOCK)
+					.pattern("BBB")
+					.pattern("III")
+					.unlockedBy("has_steel_ball", RegistrateRecipeProvider.has(CAItems.STEEL_BALL))
 					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
-			.simpleItem()
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/roller_bed")))
+			.build()
 			.register();
 
 	public static final BlockEntry<CargoContainerBlock> CARGO_CONTAINER = REGISTRATE
@@ -525,18 +528,24 @@ public class CABlocks {
 			.block("container_lock", ContainerLockBlock::new)
 			.initialProperties(SharedProperties::stone)
 			.properties(p -> p.mapColor(MapColor.COLOR_GRAY)
-					.sound(SoundType.METAL))
+					.sound(SoundType.METAL)
+					.noOcclusion())
 			.transform(pickaxeOnly())
-			.blockstate((c, p) -> p.directionalBlock(c.get(), state -> cargoModel(p,
-					"container_lock/" + (state.getValue(ContainerLockBlock.LOCKED) ? "locked" : "block"))))
-			.recipe((c, p) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, c.get())
-					.requires(AllBlocks.STICKER)
-					.requires(AllBlocks.ANDESITE_CASING)
-					.requires(AllItems.IRON_SHEET)
-					.unlockedBy("has_sticker", RegistrateRecipeProvider.has(AllBlocks.STICKER))
+			.tag(CATags.SABLE_SLIPPERY)
+			.blockstate((c, p) -> p.directionalBlock(c.get(), cargoModel(p, "container_lock/block")))
+			// Simulated's docking connector recipe without the item transfer, small enough for a
+			// crafting table
+			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, c.get(), 2)
+					.define('P', Items.PISTON)
+					.define('A', AllBlocks.INDUSTRIAL_IRON_BLOCK)
+					.define('I', AllItems.IRON_SHEET)
+					.define('E', AllItems.ELECTRON_TUBE)
+					.pattern("PAP")
+					.pattern("IEI")
+					.unlockedBy("has_electron_tube", RegistrateRecipeProvider.has(AllItems.ELECTRON_TUBE))
 					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
 			.item()
-			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/container_lock/block")))
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/container_lock/item")))
 			.build()
 			.register();
 
@@ -544,17 +553,18 @@ public class CABlocks {
 			.block("container_port", ContainerPortBlock::new)
 			.initialProperties(SharedProperties::stone)
 			.properties(p -> p.mapColor(MapColor.COLOR_GRAY)
-					.sound(SoundType.METAL))
+					.sound(SoundType.METAL)
+					.noOcclusion())
 			.transform(pickaxeOnly())
-			.blockstate((c, p) -> p.horizontalBlock(c.get(), state -> cargoModel(p,
-					"container_port/" + (state.getValue(ContainerPortBlock.UNLOADING) ? "out" : "in"))))
+			.blockstate((c, p) -> p.horizontalBlock(c.get(), cargoModel(p, "container_port/block")))
 			.recipe((c, p) -> ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, c.get())
+					.requires(AllBlocks.INDUSTRIAL_IRON_BLOCK)
 					.requires(AllBlocks.CHUTE)
-					.requires(AllBlocks.ANDESITE_CASING)
+					.requires(AllItems.ELECTRON_TUBE)
 					.unlockedBy("has_chute", RegistrateRecipeProvider.has(AllBlocks.CHUTE))
 					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
 			.item()
-			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/container_port/in")))
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/container_port/item")))
 			.build()
 			.register();
 
@@ -854,7 +864,7 @@ public class CABlocks {
 	}
 
 	// Panels on the open sides, frame bars where two open sides meet, corner pieces
-	// join the bars. The two lower front blocks of an LD3 get the contour instead
+	// join the bars, dock points on top
 	private static void cargoContainerState(Block block, RegistrateBlockstateProvider p) {
 		MultiPartBlockStateBuilder builder = p.getMultipartBuilder(block);
 		builder.part()
@@ -902,18 +912,29 @@ public class CABlocks {
 
 		for (Direction facing : Direction.Plane.HORIZONTAL) {
 			int y = ((int) facing.toYRot() + 180) % 360;
-			Slope slope = Slope.of(facing);
-			for (Direction open : new Direction[] { facing.getCounterClockWise(), facing.getClockWise() })
-				builder.part()
-						.modelFile(cargoModel(p, "cargo_container/slope_"
-								+ (open == facing.getCounterClockWise() ? "west" : "east")))
-						.rotationY(y)
-						.addModel()
-						.condition(CargoContainerBlock.FORMED, true)
-						.condition(CargoContainerBlock.SLOPE, slope)
-						.condition(CargoContainerBlock.CONNECTED.get(open), false)
-						.end();
+			builder.part()
+					.modelFile(cargoModel(p, "cargo_container/point_lock_side"))
+					.rotationY(y)
+					.addModel()
+					.condition(CargoContainerBlock.FORMED, true)
+					.condition(CargoContainerBlock.FACING, facing)
+					.condition(CargoContainerBlock.POINT, Point.LOCK, Point.LOCK_SIDE)
+					.end();
+			builder.part()
+					.modelFile(cargoModel(p, "cargo_container/point_port"))
+					.rotationY(y)
+					.addModel()
+					.condition(CargoContainerBlock.FORMED, true)
+					.condition(CargoContainerBlock.FACING, facing)
+					.condition(CargoContainerBlock.POINT, Point.PORT)
+					.end();
 		}
+		builder.part()
+				.modelFile(cargoModel(p, "cargo_container/point_lock_bottom"))
+				.addModel()
+				.condition(CargoContainerBlock.FORMED, true)
+				.condition(CargoContainerBlock.POINT, Point.LOCK, Point.LOCK_BOTTOM)
+				.end();
 	}
 
 	private static MultiPartBlockStateBuilder.PartBuilder containerPart(MultiPartBlockStateBuilder builder,
@@ -921,8 +942,7 @@ public class CABlocks {
 		return builder.part()
 				.modelFile(cargoModel(p, "cargo_container/" + name))
 				.addModel()
-				.condition(CargoContainerBlock.FORMED, true)
-				.condition(CargoContainerBlock.SLOPE, Slope.NONE);
+				.condition(CargoContainerBlock.FORMED, true);
 	}
 
 	private static String sortedNames(Direction... directions) {

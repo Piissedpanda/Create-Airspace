@@ -1,5 +1,6 @@
 {
   "values": [
-    "createairspace:roller_bed"
+    "createairspace:roller_bed",
+    "createairspace:container_lock"
   ]
 }

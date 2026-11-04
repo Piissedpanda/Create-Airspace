@@ -9,11 +9,11 @@
       "x": 180
     },
     "facing=down,locked=true,powered=false": {
-      "model": "createairspace:block/container_lock/locked",
+      "model": "createairspace:block/container_lock/block",
       "x": 180
     },
     "facing=down,locked=true,powered=true": {
-      "model": "createairspace:block/container_lock/locked",
+      "model": "createairspace:block/container_lock/block",
       "x": 180
     },
     "facing=east,locked=false,powered=false": {
@@ -27,12 +27,12 @@
       "y": 90
     },
     "facing=east,locked=true,powered=false": {
-      "model": "createairspace:block/container_lock/locked",
+      "model": "createairspace:block/container_lock/block",
       "x": 90,
       "y": 90
     },
     "facing=east,locked=true,powered=true": {
-      "model": "createairspace:block/container_lock/locked",
+      "model": "createairspace:block/container_lock/block",
       "x": 90,
       "y": 90
     },
@@ -45,11 +45,11 @@
       "x": 90
     },
     "facing=north,locked=true,powered=false": {
-      "model": "createairspace:block/container_lock/locked",
+      "model": "createairspace:block/container_lock/block",
       "x": 90
     },
     "facing=north,locked=true,powered=true": {
-      "model": "createairspace:block/container_lock/locked",
+      "model": "createairspace:block/container_lock/block",
       "x": 90
     },
     "facing=south,locked=false,powered=false": {
@@ -63,12 +63,12 @@
       "y": 180
     },
     "facing=south,locked=true,powered=false": {
-      "model": "createairspace:block/container_lock/locked",
+      "model": "createairspace:block/container_lock/block",
       "x": 90,
       "y": 180
     },
     "facing=south,locked=true,powered=true": {
-      "model": "createairspace:block/container_lock/locked",
+      "model": "createairspace:block/container_lock/block",
       "x": 90,
       "y": 180
     },
@@ -79,10 +79,10 @@
       "model": "createairspace:block/container_lock/block"
     },
     "facing=up,locked=true,powered=false": {
-      "model": "createairspace:block/container_lock/locked"
+      "model": "createairspace:block/container_lock/block"
     },
     "facing=up,locked=true,powered=true": {
-      "model": "createairspace:block/container_lock/locked"
+      "model": "createairspace:block/container_lock/block"
     },
     "facing=west,locked=false,powered=false": {
       "model": "createairspace:block/container_lock/block",
@@ -95,12 +95,12 @@
       "y": 270
     },
     "facing=west,locked=true,powered=false": {
-      "model": "createairspace:block/container_lock/locked",
+      "model": "createairspace:block/container_lock/block",
       "x": 90,
       "y": 270
     },
     "facing=west,locked=true,powered=true": {
-      "model": "createairspace:block/container_lock/locked",
+      "model": "createairspace:block/container_lock/block",
       "x": 90,
       "y": 270
     }

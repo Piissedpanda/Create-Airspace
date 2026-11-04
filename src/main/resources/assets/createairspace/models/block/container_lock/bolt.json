@@ -1,0 +1,40 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"particle": "create:block/industrial_iron_block",
+		"side": "create:block/industrial_iron_block",
+		"bottom": "create:block/industrial_iron_block_top",
+		"deck": "createairspace:block/cargo/lock_top",
+		"rim": "create:block/industrial_iron_block",
+		"claw": "createairspace:block/cargo/lock_claw",
+		"bolt": "createairspace:block/cargo/lock_bolt"
+	},
+	"elements": [
+		{
+			"from": [
+				11.5,
+				10,
+				5
+			],
+			"to": [
+				14.95,
+				15.95,
+				11
+			],
+			"faces": {
+				"up": {
+					"texture": "#bolt"
+				},
+				"north": {
+					"texture": "#bolt"
+				},
+				"south": {
+					"texture": "#bolt"
+				},
+				"west": {
+					"texture": "#bolt"
+				}
+			}
+		}
+	]
+}

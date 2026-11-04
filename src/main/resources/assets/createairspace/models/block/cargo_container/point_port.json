@@ -1,0 +1,73 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"particle": "createairspace:block/cargo/container_panel",
+		"panel": "createairspace:block/cargo/container_panel",
+		"roof": "createairspace:block/cargo/container_roof",
+		"base": "createairspace:block/cargo/container_base",
+		"frame": "createairspace:block/cargo/container_frame",
+		"dock": "createairspace:block/cargo/container_dock",
+		"gate": "create:block/funnel/andesite_funnel"
+	},
+	"elements": [
+		{
+			"from": [
+				3,
+				3,
+				0.5
+			],
+			"to": [
+				13,
+				13,
+				1
+			],
+			"faces": {
+				"north": {
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						12,
+						6
+					]
+				},
+				"east": {
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						7,
+						6
+					]
+				},
+				"west": {
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						7,
+						6
+					]
+				},
+				"up": {
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						7,
+						6
+					]
+				},
+				"down": {
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						7,
+						6
+					]
+				}
+			}
+		}
+	]
+}

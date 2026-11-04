@@ -6,7 +6,6 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.ImmutableMap;
 import com.piissedpanda.createairspace.CABlockEntities;
-import com.piissedpanda.createairspace.CAShapes;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.item.ItemHelper;
@@ -20,9 +19,9 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.Rotation;
@@ -30,17 +29,17 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
 
 // Blocks join into a cargo container once they form one of the ULD shapes. The
 // blockstates alone describe the container, so it survives being moved and rotated
 public class CargoContainerBlock extends Block implements IBE<CargoContainerBlockEntity>, IWrenchable {
 
 	public static final BooleanProperty FORMED = BooleanProperty.create("formed");
-	public static final EnumProperty<Slope> SLOPE = EnumProperty.create("slope", Slope.class);
+	// Side with the lock and port points
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final EnumProperty<Point> POINT = EnumProperty.create("point", Point.class);
 
 	// Ordered, so datagen writes the blockstates the same way every run
 	public static final Map<Direction, BooleanProperty> CONNECTED = ImmutableMap.<Direction, BooleanProperty>builder()
@@ -61,7 +60,8 @@ public class CargoContainerBlock extends Block implements IBE<CargoContainerBloc
 		for (BooleanProperty property : CONNECTED.values())
 			state = state.setValue(property, false);
 		return state.setValue(FORMED, false)
-				.setValue(SLOPE, Slope.NONE);
+				.setValue(FACING, Direction.NORTH)
+				.setValue(POINT, Point.NONE);
 	}
 
 	public static boolean isConnected(BlockState state, Direction side) {
@@ -71,7 +71,7 @@ public class CargoContainerBlock extends Block implements IBE<CargoContainerBloc
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		super.createBlockStateDefinition(builder.add(FORMED, SLOPE)
+		super.createBlockStateDefinition(builder.add(FORMED, FACING, POINT)
 				.add(CONNECTED.values()
 						.toArray(BooleanProperty[]::new)));
 	}
@@ -80,7 +80,7 @@ public class CargoContainerBlock extends Block implements IBE<CargoContainerBloc
 	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer,
 			ItemStack stack) {
 		super.setPlacedBy(level, pos, state, placer, stack);
-		// The LD3 contour faces the player who finished the container
+		// The dock side faces the player who finished the container
 		if (placer != null)
 			withBlockEntityDo(level, pos, be -> be.placedFacing = placer.getDirection()
 					.getOpposite());
@@ -107,14 +107,14 @@ public class CargoContainerBlock extends Block implements IBE<CargoContainerBloc
 			CargoContainers.dissolveAround(level, pos, state);
 	}
 
-	// A wrench turns the contour of an LD3 to the next side
+	// A wrench turns the dock side to the next side
 	@Override
 	public InteractionResult onWrenched(BlockState state, UseOnContext context) {
 		Level level = context.getLevel();
 		if (!state.getValue(FORMED))
 			return InteractionResult.PASS;
-		if (!level.isClientSide && !CargoContainers.turnSlope(level, context.getClickedPos()))
-			return InteractionResult.PASS;
+		if (!level.isClientSide)
+			CargoContainers.turn(level, context.getClickedPos());
 		return InteractionResult.SUCCESS;
 	}
 
@@ -123,8 +123,7 @@ public class CargoContainerBlock extends Block implements IBE<CargoContainerBloc
 		BlockState rotated = state;
 		for (Direction side : Direction.Plane.HORIZONTAL)
 			rotated = rotated.setValue(CONNECTED.get(rotation.rotate(side)), state.getValue(CONNECTED.get(side)));
-		Direction slope = state.getValue(SLOPE).direction;
-		return rotated.setValue(SLOPE, Slope.of(slope == null ? null : rotation.rotate(slope)));
+		return rotated.setValue(FACING, rotation.rotate(state.getValue(FACING)));
 	}
 
 	@Override
@@ -132,14 +131,7 @@ public class CargoContainerBlock extends Block implements IBE<CargoContainerBloc
 		BlockState mirrored = state;
 		for (Direction side : Direction.Plane.HORIZONTAL)
 			mirrored = mirrored.setValue(CONNECTED.get(mirror.mirror(side)), state.getValue(CONNECTED.get(side)));
-		Direction slope = state.getValue(SLOPE).direction;
-		return mirrored.setValue(SLOPE, Slope.of(slope == null ? null : mirror.mirror(slope)));
-	}
-
-	@Override
-	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		Direction slope = state.getValue(SLOPE).direction;
-		return slope == null ? Shapes.block() : CAShapes.CONTAINER_SLOPE.get(slope);
+		return mirrored.setValue(FACING, mirror.mirror(state.getValue(FACING)));
 	}
 
 	@Override
@@ -164,22 +156,17 @@ public class CargoContainerBlock extends Block implements IBE<CargoContainerBloc
 		return CABlockEntities.CARGO_CONTAINER.get();
 	}
 
-	// Side of the LD3 that has the contour, only set on its two lower front blocks
-	public enum Slope implements StringRepresentable {
-		NONE(null), NORTH(Direction.NORTH), EAST(Direction.EAST), SOUTH(Direction.SOUTH), WEST(Direction.WEST);
+	// Dock points on a finished container: the lock sits on the dock side and below,
+	// ports next to or above it
+	public enum Point implements StringRepresentable {
+		NONE, LOCK, LOCK_SIDE, LOCK_BOTTOM, PORT;
 
-		@Nullable
-		public final Direction direction;
-
-		Slope(@Nullable Direction direction) {
-			this.direction = direction;
+		public boolean side() {
+			return this == LOCK || this == LOCK_SIDE || this == PORT;
 		}
 
-		public static Slope of(@Nullable Direction direction) {
-			for (Slope slope : values())
-				if (slope.direction == direction)
-					return slope;
-			return NONE;
+		public boolean lock() {
+			return this == LOCK || this == LOCK_SIDE || this == LOCK_BOTTOM;
 		}
 
 		@Override

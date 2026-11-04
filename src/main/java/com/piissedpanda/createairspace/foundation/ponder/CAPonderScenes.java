@@ -4,6 +4,7 @@ import com.piissedpanda.createairspace.CABlocks;
 import com.piissedpanda.createairspace.CAItems;
 import com.piissedpanda.createairspace.foundation.ponder.scenes.AirfieldSystemsScenes;
 import com.piissedpanda.createairspace.foundation.ponder.scenes.AirportAccessoriesScenes;
+import com.piissedpanda.createairspace.foundation.ponder.scenes.CargoScenes;
 import com.piissedpanda.createairspace.foundation.ponder.scenes.TerminalScenes;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
@@ -40,6 +41,9 @@ public class CAPonderScenes {
 						CAPonderTags.AIRPORT_ACCESSORIES);
 		HELPER.addStoryBoard(CABlocks.LUGGAGE_SCALE, "luggage_scale", TerminalScenes::luggageScale,
 				CAPonderTags.AIRPORT_ACCESSORIES);
+		HELPER.forComponents(CABlocks.CARGO_CONTAINER, CABlocks.CONTAINER_LOCK, CABlocks.CONTAINER_PORT,
+				CABlocks.ROLLER_BED)
+				.addStoryBoard("cargo_container", CargoScenes::cargoContainer, CAPonderTags.AIRPORT_ACCESSORIES);
 	}
 
 }

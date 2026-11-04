@@ -1,7 +1,7 @@
 package com.piissedpanda.createairspace;
 
-import com.piissedpanda.createairspace.block.Cargo.CargoContainerBlockEntity;
 import com.piissedpanda.createairspace.block.Cargo.CargoContainers;
+import com.piissedpanda.createairspace.block.Cargo.CargoDock;
 import com.piissedpanda.createairspace.block.Cargo.ContainerPortBlockEntity;
 import org.slf4j.Logger;
 
@@ -36,7 +36,7 @@ public class CreateAirspace {
 
 	public static final String MODID = "createairspace";
 
-	public static final String VERSION = "1.2.0";
+	public static final String VERSION = "1.3.0";
 
 	public static final Logger LOGGER = LogUtils.getLogger();
 
@@ -69,8 +69,8 @@ public class CreateAirspace {
 		modEventBus.addListener(BaggageCartBlockEntity::registerCapabilities);
 		modEventBus.addListener(PaintPailItem::registerCapabilities);
 		modEventBus.addListener(LuggageScaleBlockEntity::registerCapabilities);
-		modEventBus.addListener(CargoContainerBlockEntity::registerCapabilities);
 		modEventBus.addListener(ContainerPortBlockEntity::registerCapabilities);
+		CargoDock.register();
 		if (ModList.get()
 				.isLoaded("curios"))
 			EarDefendersCurios.init(modEventBus);

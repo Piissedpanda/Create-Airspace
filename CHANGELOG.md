@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.3.0 – Cargo
+
+### Added
+- **Cargo Containers** built from blocks in real ULD shapes: 1x1x2 is an LD2, 2x2x2 an LD3, 3x2x2 an LD11 and 3x3x3 an AMA. Each block holds as much as an Item Vault block. A Physics Assembler takes the whole container as one piece, no glue needed. The dock side (facing you when you place the last block, a wrench turns it) shows a lock point and port points.
+- **Container Lock** for the floor or the wall: it pulls in an assembled container like a magnet, lines it up, grips it with claws and bolts and holds it until a redstone signal lets go. A comparator shows whether a container is locked.
+- **Container Port**: works like a Portable Storage Interface. Once a locked container shows it a port point, its bolts slide forward and funnels, chutes and other logistics at the port fill or empty the container. Containers can only be loaded and unloaded through ports.
+- **Roller Bed** with steel balls: containers and other physics objects slide over it, players keep their grip. The balls rattle while something rolls across.
+- **Steel Balls**, cut from iron ingots in a stonecutter or with Create's saw.
+- Ponder scene for containers, locks, ports and roller beds.
+
+### Changed
+- **Create Aeronautics** (with Simulated and Sable) is now required.
+
 ## 1.2.0 – Terminal & Hangar
 
 ### Added

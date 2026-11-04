@@ -53,6 +53,11 @@ public class CACreativeModeTabs {
 		ITEMS.add(CABlocks.LIGHT_PANEL);
 		ITEMS.add(CABlocks.LIGHT_STRIP);
 		ITEMS.add(CABlocks.FLOOR_LIGHT);
+		ITEMS.add(CAItems.STEEL_BALL);
+		ITEMS.add(CABlocks.ROLLER_BED);
+		ITEMS.add(CABlocks.CARGO_CONTAINER);
+		ITEMS.add(CABlocks.CONTAINER_LOCK);
+		ITEMS.add(CABlocks.CONTAINER_PORT);
 		ITEMS.add(CAItems.MARSHALLING_WAND);
 		ITEMS.add(CAItems.EAR_DEFENDERS);
 		for (LuggageType type : LuggageType.values())

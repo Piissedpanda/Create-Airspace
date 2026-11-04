@@ -81,6 +81,12 @@ The **Suitcase Packager** works like Create's packager, but packs **suitcases, t
 
 **Hangar door panels** and **windows** join into one big door that you move with gantries, pistons or pulleys. **Hangar lights** throw a soft cone of light down to the floor.
 
+## Cargo
+
+<!-- Screenshot: LD11 locked on roller beds, two container ports in the wall next to it -->
+
+**Cargo containers** are built from blocks in real ULD shapes: an LD2, LD3, LD11 or AMA, each block holding as much as an Item Vault block. A Physics Assembler takes the whole container as one piece, no glue needed. Slide it over **roller beds** to a **container lock** in the floor or the wall: the lock pulls it in like a magnet, lines it up and holds it until redstone lets go. **Container ports** in the wall then connect to the container like a Portable Storage Interface, and funnels or chutes at the port load and unload it.
+
 ## Traffic Cones
 
 ![Traffic Cones](https://raw.githubusercontent.com/Piissedpanda/Create-Airspace/mc1.21.1/dev/docs/images/traffic_cones.jpg)
@@ -97,11 +103,11 @@ Simple blocks are crafted, everything else goes through Create: deploying, item 
 
 - Minecraft **1.21.1**, **NeoForge**
 - **Create 6.0.10** or newer
+- **Create Aeronautics 1.3.0** or newer (with Simulated and Sable)
 - Needed on both client and server
 - Optional: **Curios** for wearing ear defenders in the head slot
 - Optional: **Opal Light** for colored light under shaders
 
-Works alongside **Create Aeronautics**.
 
 ## License
 

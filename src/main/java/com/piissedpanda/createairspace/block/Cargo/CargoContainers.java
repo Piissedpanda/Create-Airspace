@@ -11,7 +11,7 @@ import java.util.Set;
 
 import javax.annotation.Nullable;
 
-import com.piissedpanda.createairspace.block.Cargo.CargoContainerBlock.Slope;
+import com.piissedpanda.createairspace.block.Cargo.CargoContainerBlock.Point;
 import com.simibubi.create.api.contraption.BlockMovementChecks;
 import com.simibubi.create.api.contraption.BlockMovementChecks.CheckResult;
 
@@ -166,18 +166,50 @@ public class CargoContainers {
 
 	private static void form(Level level, Set<BlockPos> blocks, Direction facing) {
 		UldType type = shape(blocks);
-		int bottom = min(blocks).getY();
+		BlockPos min = min(blocks), max = max(blocks);
+		// The LD11 docks on one of its long sides
+		if (type == UldType.LD11 && (max.getX() - min.getX() == 2) == (facing.getAxis() == Direction.Axis.X))
+			facing = facing.getClockWise();
+
+		// Looking at the dock side from outside, columns count from left to right
+		Direction right = facing.getOpposite()
+				.getClockWise();
+		int left = Integer.MAX_VALUE, width = 0;
+		for (BlockPos pos : blocks)
+			left = Math.min(left, along(pos, right));
+		for (BlockPos pos : blocks)
+			width = Math.max(width, along(pos, right) - left + 1);
+
 		for (BlockPos pos : blocks) {
 			BlockState state = level.getBlockState(pos)
-					.setValue(CargoContainerBlock.FORMED, true);
+					.setValue(CargoContainerBlock.FORMED, true)
+					.setValue(CargoContainerBlock.FACING, facing);
 			for (Direction side : Direction.values())
 				state = state.setValue(CargoContainerBlock.CONNECTED.get(side), blocks.contains(pos.relative(side)));
-			boolean contour = type != null && type.slope && pos.getY() == bottom
-					&& !blocks.contains(pos.relative(facing));
-			state = state.setValue(CargoContainerBlock.SLOPE, contour ? Slope.of(facing) : Slope.NONE);
+			Point point = Point.NONE;
+			if (!blocks.contains(pos.relative(facing)))
+				point = point(type, width, along(pos, right) - left, pos.getY() - min.getY());
+			if (type == UldType.AMA && pos.equals(min.offset(1, 0, 1)))
+				point = Point.LOCK_BOTTOM;
+			state = state.setValue(CargoContainerBlock.POINT, point);
 			level.setBlock(pos, state, Block.UPDATE_ALL);
 		}
 		refresh(level, blocks);
+	}
+
+	private static int along(BlockPos pos, Direction direction) {
+		return pos.getX() * direction.getStepX() + pos.getZ() * direction.getStepZ();
+	}
+
+	// Lock in the middle of the bottom row, ports next to it, or above it on an LD2.
+	// The AMA has its bottom lock in the centre instead of under the side lock
+	private static Point point(@Nullable UldType type, int width, int column, int row) {
+		int lock = width == 3 ? 1 : 0;
+		if (row == 0 && column == lock)
+			return type == UldType.AMA ? Point.LOCK_SIDE : Point.LOCK;
+		if (width == 1)
+			return row == 1 ? Point.PORT : Point.NONE;
+		return row == 0 ? Point.PORT : Point.NONE;
 	}
 
 	// Breaking one block turns the rest of its container back into loose blocks,
@@ -192,21 +224,16 @@ public class CargoContainers {
 		refresh(level, rest);
 	}
 
-	// Turns the contour of an LD3 clockwise, false for the other types
-	public static boolean turnSlope(Level level, BlockPos pos) {
+	// Turns the dock side to the next side
+	public static void turn(Level level, BlockPos pos) {
 		List<BlockPos> members = members(level, pos);
+		if (members.isEmpty())
+			return;
+		Direction facing = level.getBlockState(pos)
+				.getValue(CargoContainerBlock.FACING);
 		Set<BlockPos> blocks = new HashSet<>(members);
-		if (shape(blocks) != UldType.LD3)
-			return false;
-		Direction facing = Direction.NORTH;
-		for (BlockPos member : members) {
-			Direction slope = level.getBlockState(member)
-					.getValue(CargoContainerBlock.SLOPE).direction;
-			if (slope != null)
-				facing = slope.getClockWise();
-		}
-		form(level, blocks, facing);
-		return true;
+		// An LD11 has only two long sides
+		form(level, blocks, shape(blocks) == UldType.LD11 ? facing.getOpposite() : facing.getClockWise());
 	}
 
 	private static void refresh(Level level, Iterable<BlockPos> blocks) {

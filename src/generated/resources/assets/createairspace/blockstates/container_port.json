@@ -1,33 +1,18 @@
 {
   "variants": {
-    "facing=east,unloading=false": {
-      "model": "createairspace:block/container_port/in",
+    "facing=east": {
+      "model": "createairspace:block/container_port/block",
       "y": 90
     },
-    "facing=east,unloading=true": {
-      "model": "createairspace:block/container_port/out",
-      "y": 90
+    "facing=north": {
+      "model": "createairspace:block/container_port/block"
     },
-    "facing=north,unloading=false": {
-      "model": "createairspace:block/container_port/in"
-    },
-    "facing=north,unloading=true": {
-      "model": "createairspace:block/container_port/out"
-    },
-    "facing=south,unloading=false": {
-      "model": "createairspace:block/container_port/in",
+    "facing=south": {
+      "model": "createairspace:block/container_port/block",
       "y": 180
     },
-    "facing=south,unloading=true": {
-      "model": "createairspace:block/container_port/out",
-      "y": 180
-    },
-    "facing=west,unloading=false": {
-      "model": "createairspace:block/container_port/in",
-      "y": 270
-    },
-    "facing=west,unloading=true": {
-      "model": "createairspace:block/container_port/out",
+    "facing=west": {
+      "model": "createairspace:block/container_port/block",
       "y": 270
     }
   }

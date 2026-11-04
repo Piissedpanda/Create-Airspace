@@ -1,0 +1,319 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"particle": "create:block/industrial_iron_block",
+		"side": "create:block/industrial_iron_block",
+		"bottom": "create:block/industrial_iron_block_top",
+		"top": "create:block/industrial_iron_block_top",
+		"front": "createairspace:block/cargo/port_front",
+		"gate": "create:block/funnel/andesite_funnel",
+		"latch": "createairspace:block/cargo/lock_bolt",
+		"slot": "createairspace:block/cargo/port_front",
+		"bolt": "createairspace:block/cargo/lock_bolt"
+	},
+	"elements": [
+		{
+			"from": [
+				0,
+				0,
+				4
+			],
+			"to": [
+				16,
+				16,
+				16
+			],
+			"faces": {
+				"south": {
+					"texture": "#side",
+					"cullface": "south"
+				},
+				"east": {
+					"texture": "#side",
+					"cullface": "east"
+				},
+				"west": {
+					"texture": "#side",
+					"cullface": "west"
+				},
+				"up": {
+					"texture": "#top",
+					"cullface": "up"
+				},
+				"down": {
+					"texture": "#bottom",
+					"cullface": "down"
+				}
+			}
+		},
+		{
+			"from": [
+				2,
+				2,
+				4
+			],
+			"to": [
+				14,
+				14,
+				4
+			],
+			"faces": {
+				"north": {
+					"texture": "#front"
+				}
+			}
+		},
+		{
+			"from": [
+				0,
+				0,
+				0
+			],
+			"to": [
+				16,
+				2,
+				4
+			],
+			"faces": {
+				"north": {
+					"texture": "#side",
+					"cullface": "north"
+				},
+				"up": {
+					"texture": "#side"
+				},
+				"east": {
+					"texture": "#side",
+					"cullface": "east"
+				},
+				"west": {
+					"texture": "#side",
+					"cullface": "west"
+				},
+				"down": {
+					"texture": "#side",
+					"cullface": "down"
+				}
+			}
+		},
+		{
+			"from": [
+				0,
+				14,
+				0
+			],
+			"to": [
+				16,
+				16,
+				4
+			],
+			"faces": {
+				"north": {
+					"texture": "#side",
+					"cullface": "north"
+				},
+				"down": {
+					"texture": "#side"
+				},
+				"east": {
+					"texture": "#side",
+					"cullface": "east"
+				},
+				"west": {
+					"texture": "#side",
+					"cullface": "west"
+				},
+				"up": {
+					"texture": "#side",
+					"cullface": "up"
+				}
+			}
+		},
+		{
+			"from": [
+				0,
+				2,
+				0
+			],
+			"to": [
+				2,
+				14,
+				4
+			],
+			"faces": {
+				"north": {
+					"texture": "#side",
+					"cullface": "north"
+				},
+				"east": {
+					"texture": "#side"
+				},
+				"west": {
+					"texture": "#side",
+					"cullface": "west"
+				}
+			}
+		},
+		{
+			"from": [
+				14,
+				2,
+				0
+			],
+			"to": [
+				16,
+				14,
+				4
+			],
+			"faces": {
+				"north": {
+					"texture": "#side",
+					"cullface": "north"
+				},
+				"west": {
+					"texture": "#side"
+				},
+				"east": {
+					"texture": "#side",
+					"cullface": "east"
+				}
+			}
+		},
+		{
+			"from": [
+				16.05,
+				4,
+				2
+			],
+			"to": [
+				16.05,
+				6,
+				14
+			],
+			"faces": {
+				"east": {
+					"texture": "#slot"
+				}
+			}
+		},
+		{
+			"from": [
+				16.05,
+				10,
+				2
+			],
+			"to": [
+				16.05,
+				12,
+				14
+			],
+			"faces": {
+				"east": {
+					"texture": "#slot"
+				}
+			}
+		},
+		{
+			"from": [
+				10,
+				16.05,
+				2
+			],
+			"to": [
+				12,
+				16.05,
+				14
+			],
+			"faces": {
+				"up": {
+					"texture": "#slot"
+				}
+			}
+		},
+		{
+			"from": [
+				4,
+				16.05,
+				2
+			],
+			"to": [
+				6,
+				16.05,
+				14
+			],
+			"faces": {
+				"up": {
+					"texture": "#slot"
+				}
+			}
+		},
+		{
+			"from": [
+				-0.05000000000000071,
+				10,
+				2
+			],
+			"to": [
+				-0.05000000000000071,
+				12,
+				14
+			],
+			"faces": {
+				"west": {
+					"texture": "#slot"
+				}
+			}
+		},
+		{
+			"from": [
+				-0.05000000000000071,
+				4,
+				2
+			],
+			"to": [
+				-0.05000000000000071,
+				6,
+				14
+			],
+			"faces": {
+				"west": {
+					"texture": "#slot"
+				}
+			}
+		},
+		{
+			"from": [
+				4,
+				-0.05000000000000071,
+				2
+			],
+			"to": [
+				6,
+				-0.05000000000000071,
+				14
+			],
+			"faces": {
+				"down": {
+					"texture": "#slot"
+				}
+			}
+		},
+		{
+			"from": [
+				10,
+				-0.05000000000000071,
+				2
+			],
+			"to": [
+				12,
+				-0.05000000000000071,
+				14
+			],
+			"faces": {
+				"down": {
+					"texture": "#slot"
+				}
+			}
+		}
+	]
+}

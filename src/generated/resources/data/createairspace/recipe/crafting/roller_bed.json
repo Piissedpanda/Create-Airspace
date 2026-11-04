@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "C": {
-      "item": "create:andesite_casing"
+    "B": {
+      "item": "createairspace:steel_ball"
     },
-    "S": {
-      "item": "create:shaft"
+    "I": {
+      "item": "create:industrial_iron_block"
     }
   },
   "pattern": [
-    "SSS",
-    "CCC"
+    "BBB",
+    "III"
   ],
   "result": {
     "count": 3,
