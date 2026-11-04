@@ -15,12 +15,12 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 // Once a docked container is in front, the gate slides out against its port point
-// and the bolts on every side run forward along their rails and lock in
+// and the bolts on every side slide forward in their slots
 public class ContainerPortRenderer extends SafeBlockEntityRenderer<ContainerPortBlockEntity> {
 
 	private static final float TRAVEL = 1.5f / 16;
-	// The bolts run along their rails from the back until they stand 2 px past the front
-	private static final float BOLT_TRAVEL = 11 / 16f;
+	// The bolts slide from the middle of their slots to the front end
+	private static final float BOLT_TRAVEL = 5 / 16f;
 
 	public ContainerPortRenderer(Context context) {
 	}
@@ -45,24 +45,17 @@ public class ContainerPortRenderer extends SafeBlockEntityRenderer<ContainerPort
 				.overlay(overlay)
 				.renderInto(ms, vc);
 
-		// Two bolts on every side, they overshoot a little and settle, like a vault door
-		float bolt = lockIn(out);
+		// Two bolts on every side, like a vault door
 		for (int quarter = 0; quarter < 4; quarter++)
 			CachedBuffers.partial(CAPartialModels.CONTAINER_PORT_BOLTS, state)
 					.center()
 					.rotateYDegrees(angle)
 					.rotateZDegrees(quarter * 90)
 					.uncenter()
-					.translate(0, 0, -BOLT_TRAVEL * bolt)
+					.translate(0, 0, -BOLT_TRAVEL * eased)
 					.light(light)
 					.overlay(overlay)
 					.renderInto(ms, vc);
-	}
-
-	// Ease out with a small overshoot at the end
-	private static float lockIn(float t) {
-		float c1 = 1.70158f, c3 = c1 + 1, u = t - 1;
-		return 1 + c3 * u * u * u + c1 * u * u;
 	}
 
 }

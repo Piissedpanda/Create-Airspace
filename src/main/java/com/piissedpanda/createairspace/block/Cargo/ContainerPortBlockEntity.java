@@ -48,7 +48,7 @@ public class ContainerPortBlockEntity extends SmartBlockEntity {
 
 	public final LerpedFloat plate = LerpedFloat.linear()
 			.startWithValue(0)
-			.chase(0, 0.2, LerpedFloat.Chaser.LINEAR);
+			.chase(0, 0.05, LerpedFloat.Chaser.LINEAR);
 
 	private final IItemHandler passage = new Passage();
 
@@ -82,7 +82,7 @@ public class ContainerPortBlockEntity extends SmartBlockEntity {
 	public void tick() {
 		super.tick();
 		if (level.isClientSide) {
-			plate.chase(connected ? 1 : 0, 0.2, LerpedFloat.Chaser.LINEAR);
+			plate.chase(connected ? 1 : 0, 0.05, LerpedFloat.Chaser.LINEAR);
 			plate.tickChaser();
 			return;
 		}

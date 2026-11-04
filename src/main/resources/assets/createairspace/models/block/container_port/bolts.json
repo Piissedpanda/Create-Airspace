@@ -8,20 +8,20 @@
 		"front": "createairspace:block/cargo/port_front",
 		"gate": "create:block/funnel/andesite_funnel",
 		"latch": "createairspace:block/cargo/lock_bolt",
-		"rail": "create:block/industrial_iron_block_top",
+		"slot": "createairspace:block/cargo/port_front",
 		"bolt": "createairspace:block/cargo/lock_bolt"
 	},
 	"elements": [
 		{
 			"from": [
-				16,
-				3.1,
-				9
+				15.5,
+				4,
+				7
 			],
 			"to": [
-				17.5,
-				5.9,
-				13
+				16.75,
+				6,
+				10
 			],
 			"faces": {
 				"east": {
@@ -43,14 +43,14 @@
 		},
 		{
 			"from": [
-				16,
-				10.1,
-				9
+				15.5,
+				10,
+				7
 			],
 			"to": [
-				17.5,
-				12.9,
-				13
+				16.75,
+				12,
+				10
 			],
 			"faces": {
 				"east": {
