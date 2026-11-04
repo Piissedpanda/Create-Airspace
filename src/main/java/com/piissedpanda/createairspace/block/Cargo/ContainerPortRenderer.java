@@ -5,8 +5,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.piissedpanda.createairspace.CAPartialModels;
 import com.simibubi.create.foundation.blockEntity.renderer.SafeBlockEntityRenderer;
 
-import dev.engine_room.flywheel.lib.model.baked.PartialModel;
-
 import net.createmod.catnip.math.AngleHelper;
 import net.createmod.catnip.render.CachedBuffers;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -17,12 +15,12 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 // Once a docked container is in front, the gate slides out against its port point
-// and the latches on both sides reach forward and catch it
+// and the bolts on every side run forward along their rails and lock in
 public class ContainerPortRenderer extends SafeBlockEntityRenderer<ContainerPortBlockEntity> {
 
 	private static final float TRAVEL = 1.5f / 16;
-	// The side latches reach past the front and catch the container
-	private static final float LATCH_TRAVEL = 3.5f / 16;
+	// The bolts run along their rails from the back until they stand 2 px past the front
+	private static final float BOLT_TRAVEL = 11 / 16f;
 
 	public ContainerPortRenderer(Context context) {
 	}
@@ -47,17 +45,24 @@ public class ContainerPortRenderer extends SafeBlockEntityRenderer<ContainerPort
 				.overlay(overlay)
 				.renderInto(ms, vc);
 
-		// Latches on the east and west side of the port
-		for (PartialModel latch : new PartialModel[] { CAPartialModels.CONTAINER_PORT_LATCH_EAST,
-				CAPartialModels.CONTAINER_PORT_LATCH_WEST })
-			CachedBuffers.partial(latch, state)
+		// Two bolts on every side, they overshoot a little and settle, like a vault door
+		float bolt = lockIn(out);
+		for (int quarter = 0; quarter < 4; quarter++)
+			CachedBuffers.partial(CAPartialModels.CONTAINER_PORT_BOLTS, state)
 					.center()
 					.rotateYDegrees(angle)
+					.rotateZDegrees(quarter * 90)
 					.uncenter()
-					.translate(0, 0, -LATCH_TRAVEL * eased)
+					.translate(0, 0, -BOLT_TRAVEL * bolt)
 					.light(light)
 					.overlay(overlay)
 					.renderInto(ms, vc);
+	}
+
+	// Ease out with a small overshoot at the end
+	private static float lockIn(float t) {
+		float c1 = 1.70158f, c3 = c1 + 1, u = t - 1;
+		return 1 + c3 * u * u * u + c1 * u * u;
 	}
 
 }

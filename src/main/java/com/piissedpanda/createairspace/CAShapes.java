@@ -64,8 +64,8 @@ public class CAShapes {
 			LIGHT_PANEL = shape(0, 14.5, 0, 16, 16, 16).forDirectional(Direction.DOWN),
 
 			// Lower front block of an LD3, the contour steps back towards the bottom
-			CONTAINER_SLOPE = shape(0, 8, 0, 16, 16, 16).add(0, 4, 2, 16, 8, 16)
-					.add(0, 0, 4, 16, 4, 16)
+			CONTAINER_SLOPE = shape(0, 8, 0, 16, 16, 16).add(0, 4, 3, 16, 8, 16)
+					.add(0, 0, 6, 16, 4, 16)
 					.forHorizontal(Direction.NORTH),
 
 			WHEEL_CHOCK = shape(4, 0, 1, 12, 4, 5).add(4, 0, 11, 12, 4, 15)

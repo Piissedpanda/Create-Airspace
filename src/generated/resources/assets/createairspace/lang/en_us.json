@@ -24,7 +24,7 @@
   "block.createairspace.container_lock.tooltip.condition2": "When Powered by Redstone",
   "block.createairspace.container_lock.tooltip.summary": "Holds a cargo container. Fits _into the floor_ under it or _into the wall_ next to it. Containers _slide_ over it like over a Roller Bed.",
   "block.createairspace.container_port": "Container Port",
-  "block.createairspace.container_port.tooltip.behaviour1": "Connects to a _port point_ that faces it, the _latches_ reach out. _Funnels_, _chutes_ and other logistics at the port then _fill_ or _empty_ the container.",
+  "block.createairspace.container_port.tooltip.behaviour1": "Connects to a _port point_ that faces it, the _bolts_ on its sides run forward and lock in. _Funnels_, _chutes_ and other logistics at the port then _fill_ or _empty_ the container.",
   "block.createairspace.container_port.tooltip.condition1": "When a Container Is Locked in Front",
   "block.createairspace.container_port.tooltip.summary": "Sits in the _wall_ next to a docked container, like a _Portable Storage Interface_. It is placed with its front _towards you_, sneak to turn it away.",
   "block.createairspace.copper_barrier_post": "Copper Barrier Post",

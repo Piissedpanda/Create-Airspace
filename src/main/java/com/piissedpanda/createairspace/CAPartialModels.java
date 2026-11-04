@@ -18,8 +18,7 @@ public class CAPartialModels {
 			CONTAINER_LOCK_CLAW = block("container_lock/claw"),
 			CONTAINER_LOCK_BOLT = block("container_lock/bolt"),
 			CONTAINER_PORT_PLATE = block("container_port/plate"),
-			CONTAINER_PORT_LATCH_EAST = block("container_port/latch_east"),
-			CONTAINER_PORT_LATCH_WEST = block("container_port/latch_west");
+			CONTAINER_PORT_BOLTS = block("container_port/bolts");
 
 	private static PartialModel block(String path) {
 		return PartialModel.of(CreateAirspace.asResource("block/" + path));
