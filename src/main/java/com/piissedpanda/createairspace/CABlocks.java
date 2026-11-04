@@ -722,7 +722,7 @@ public class CABlocks {
 	}
 
 	// Panels on the open sides, frame bars where two open sides meet, corner pieces
-	// join the bars. The two lower front blocks of an LD3 get the contour instead
+	// join the bars, dock points on top
 	private static void cargoContainerState(Block block, RegistrateBlockstateProvider p) {
 		MultiPartBlockStateBuilder builder = p.getMultipartBuilder(block);
 		builder.part()
@@ -770,21 +770,6 @@ public class CABlocks {
 
 		for (Direction facing : Direction.Plane.HORIZONTAL) {
 			int y = ((int) facing.toYRot() + 180) % 360;
-			// The contour is on the side opposite the dock side
-			Direction contour = facing.getOpposite();
-			int contourY = ((int) contour.toYRot() + 180) % 360;
-			for (Direction open : new Direction[] { contour.getCounterClockWise(), contour.getClockWise() })
-				builder.part()
-						.modelFile(cargoModel(p, "cargo_container/slope_"
-								+ (open == contour.getCounterClockWise() ? "west" : "east")))
-						.rotationY(contourY)
-						.addModel()
-						.condition(CargoContainerBlock.FORMED, true)
-						.condition(CargoContainerBlock.FACING, facing)
-						.condition(CargoContainerBlock.SLOPE, true)
-						.condition(CargoContainerBlock.CONNECTED.get(open), false)
-						.end();
-
 			builder.part()
 					.modelFile(cargoModel(p, "cargo_container/point_lock_side"))
 					.rotationY(y)
@@ -815,8 +800,7 @@ public class CABlocks {
 		return builder.part()
 				.modelFile(cargoModel(p, "cargo_container/" + name))
 				.addModel()
-				.condition(CargoContainerBlock.FORMED, true)
-				.condition(CargoContainerBlock.SLOPE, false);
+				.condition(CargoContainerBlock.FORMED, true);
 	}
 
 	private static String sortedNames(Direction... directions) {

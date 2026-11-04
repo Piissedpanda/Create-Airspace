@@ -186,15 +186,12 @@ public class CargoContainers {
 					.setValue(CargoContainerBlock.FACING, facing);
 			for (Direction side : Direction.values())
 				state = state.setValue(CargoContainerBlock.CONNECTED.get(side), blocks.contains(pos.relative(side)));
-			boolean contour = type != null && type.slope && pos.getY() == min.getY()
-					&& !blocks.contains(pos.relative(facing.getOpposite()));
 			Point point = Point.NONE;
 			if (!blocks.contains(pos.relative(facing)))
 				point = point(type, width, along(pos, right) - left, pos.getY() - min.getY());
 			if (type == UldType.AMA && pos.equals(min.offset(1, 0, 1)))
 				point = Point.LOCK_BOTTOM;
-			state = state.setValue(CargoContainerBlock.SLOPE, contour)
-					.setValue(CargoContainerBlock.POINT, point);
+			state = state.setValue(CargoContainerBlock.POINT, point);
 			level.setBlock(pos, state, Block.UPDATE_ALL);
 		}
 		refresh(level, blocks);
@@ -227,7 +224,7 @@ public class CargoContainers {
 		refresh(level, rest);
 	}
 
-	// Turns the dock side (and the LD3 contour) to the next side
+	// Turns the dock side to the next side
 	public static void turn(Level level, BlockPos pos) {
 		List<BlockPos> members = members(level, pos);
 		if (members.isEmpty())

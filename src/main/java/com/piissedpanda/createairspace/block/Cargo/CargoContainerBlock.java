@@ -6,7 +6,6 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.ImmutableMap;
 import com.piissedpanda.createairspace.CABlockEntities;
-import com.piissedpanda.createairspace.CAShapes;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.item.ItemHelper;
@@ -20,7 +19,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -33,19 +31,14 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
 
 // Blocks join into a cargo container once they form one of the ULD shapes. The
 // blockstates alone describe the container, so it survives being moved and rotated
 public class CargoContainerBlock extends Block implements IBE<CargoContainerBlockEntity>, IWrenchable {
 
 	public static final BooleanProperty FORMED = BooleanProperty.create("formed");
-	// Side with the lock and port points, the LD3 contour is on the opposite side
+	// Side with the lock and port points
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-	// One of the two lower blocks of the LD3 contour
-	public static final BooleanProperty SLOPE = BooleanProperty.create("slope");
 	public static final EnumProperty<Point> POINT = EnumProperty.create("point", Point.class);
 
 	// Ordered, so datagen writes the blockstates the same way every run
@@ -68,7 +61,6 @@ public class CargoContainerBlock extends Block implements IBE<CargoContainerBloc
 			state = state.setValue(property, false);
 		return state.setValue(FORMED, false)
 				.setValue(FACING, Direction.NORTH)
-				.setValue(SLOPE, false)
 				.setValue(POINT, Point.NONE);
 	}
 
@@ -79,7 +71,7 @@ public class CargoContainerBlock extends Block implements IBE<CargoContainerBloc
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		super.createBlockStateDefinition(builder.add(FORMED, FACING, SLOPE, POINT)
+		super.createBlockStateDefinition(builder.add(FORMED, FACING, POINT)
 				.add(CONNECTED.values()
 						.toArray(BooleanProperty[]::new)));
 	}
@@ -115,7 +107,7 @@ public class CargoContainerBlock extends Block implements IBE<CargoContainerBloc
 			CargoContainers.dissolveAround(level, pos, state);
 	}
 
-	// A wrench turns the dock side (and the LD3 contour) to the next side
+	// A wrench turns the dock side to the next side
 	@Override
 	public InteractionResult onWrenched(BlockState state, UseOnContext context) {
 		Level level = context.getLevel();
@@ -140,12 +132,6 @@ public class CargoContainerBlock extends Block implements IBE<CargoContainerBloc
 		for (Direction side : Direction.Plane.HORIZONTAL)
 			mirrored = mirrored.setValue(CONNECTED.get(mirror.mirror(side)), state.getValue(CONNECTED.get(side)));
 		return mirrored.setValue(FACING, mirror.mirror(state.getValue(FACING)));
-	}
-
-	@Override
-	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		return state.getValue(SLOPE) ? CAShapes.CONTAINER_SLOPE.get(state.getValue(FACING)
-				.getOpposite()) : Shapes.block();
 	}
 
 	@Override

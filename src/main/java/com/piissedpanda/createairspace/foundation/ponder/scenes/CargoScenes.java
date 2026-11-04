@@ -63,7 +63,7 @@ public class CargoScenes {
 
 		scene.overlay()
 				.showText(90)
-				.text("1x1x2 is an LD2, 2x2x2 an LD3 with its contour, 3x2x2 an LD11 and 3x3x3 an AMA. Each block holds as much as an Item Vault")
+				.text("1x1x2 is an LD2, 2x2x2 an LD3, 3x2x2 an LD11 and 3x3x3 an AMA. Each block holds as much as an Item Vault")
 				.placeNearTarget()
 				.pointAt(util.vector()
 						.blockSurface(ld11.above(), Direction.NORTH));
@@ -90,7 +90,7 @@ public class CargoScenes {
 		});
 		scene.overlay()
 				.showText(70)
-				.text("A Wrench turns the dock side, and the contour of an LD3 with it")
+				.text("A Wrench turns the dock side")
 				.placeNearTarget()
 				.pointAt(util.vector()
 						.topOf(ld3.above()));
