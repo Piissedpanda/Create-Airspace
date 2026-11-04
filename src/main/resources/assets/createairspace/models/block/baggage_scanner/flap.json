@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "rubber": "create:block/belt"
+  },
+  "elements": [
+    {
+      "name": "flap",
+      "from": [
+        10.975,
+        -3,
+        0.95
+      ],
+      "to": [
+        14.025,
+        10.05,
+        1.95
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            10.975,
+            0,
+            14.025,
+            13.05
+          ],
+          "texture": "#rubber"
+        },
+        "south": {
+          "uv": [
+            10.975,
+            0,
+            14.025,
+            13.05
+          ],
+          "texture": "#rubber"
+        },
+        "east": {
+          "uv": [
+            0.95,
+            0,
+            1.95,
+            13.05
+          ],
+          "texture": "#rubber"
+        },
+        "west": {
+          "uv": [
+            0.95,
+            0,
+            1.95,
+            13.05
+          ],
+          "texture": "#rubber"
+        },
+        "up": {
+          "uv": [
+            10.975,
+            0.95,
+            14.025,
+            1.95
+          ],
+          "texture": "#rubber"
+        },
+        "down": {
+          "uv": [
+            10.975,
+            0.95,
+            14.025,
+            1.95
+          ],
+          "texture": "#rubber"
+        }
+      }
+    }
+  ]
+}

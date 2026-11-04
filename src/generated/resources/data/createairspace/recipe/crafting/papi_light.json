@@ -5,15 +5,15 @@
     "B": {
       "item": "minecraft:iron_bars"
     },
-    "L": {
-      "item": "minecraft:redstone_lamp"
+    "E": {
+      "item": "create:electron_tube"
     },
     "S": {
       "item": "create:iron_sheet"
     }
   },
   "pattern": [
-    "SLS",
+    "SES",
     "B B"
   ],
   "result": {

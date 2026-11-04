@@ -234,7 +234,7 @@ public class AirfieldSystemsScenes {
 		BlockPos scanner = util.grid()
 				.at(1, 2, 2);
 		Selection line = util.select()
-				.fromTo(0, 1, 1, 2, 1, 2);
+				.fromTo(0, 1, 1, 3, 1, 2);
 		Selection detector = util.select()
 				.fromTo(3, 1, 4, 3, 2, 4);
 
@@ -249,7 +249,7 @@ public class AirfieldSystemsScenes {
 		scene.idle(15);
 		scene.overlay()
 				.showText(90)
-				.text("The Baggage Scanner sits on top of a belt or depot and screens everything passing underneath")
+				.text("The Baggage Scanner goes on the middle of a straight belt like a tunnel. It encases the belt and screens everything passing through")
 				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(util.vector()
@@ -268,7 +268,7 @@ public class AirfieldSystemsScenes {
 		scene.idle(80);
 		scene.world()
 				.removeItemsFromBelt(util.grid()
-						.at(2, 1, 2));
+						.at(3, 1, 2));
 		scene.idle(10);
 
 		scene.world()
@@ -294,7 +294,7 @@ public class AirfieldSystemsScenes {
 				.text("Sorting the luggage out is left to Create, for example with a brass tunnel or a funnel")
 				.placeNearTarget()
 				.pointAt(util.vector()
-						.topOf(2, 1, 2));
+						.topOf(3, 1, 2));
 		scene.idle(90);
 
 		scene.world()

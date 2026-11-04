@@ -533,7 +533,8 @@ public class CABlocks {
 			.transform(pickaxeOnly())
 			.tag(CATags.SABLE_SLIPPERY)
 			.blockstate((c, p) -> p.directionalBlock(c.get(), cargoModel(p, "container_lock/block")))
-			// Simulated's docking connector recipe without the item transfer, small enough for a
+			// Simulated's docking connector recipe without the item transfer, small enough
+			// for a
 			// crafting table
 			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, c.get(), 2)
 					.define('P', Items.PISTON)
@@ -580,11 +581,11 @@ public class CABlocks {
 					.getExistingFile(p.modLoc("block/papi_light/base"))))
 			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, c.get())
 					.define('S', AllItems.IRON_SHEET)
-					.define('L', Items.REDSTONE_LAMP)
+					.define('E', AllItems.ELECTRON_TUBE)
 					.define('B', Items.IRON_BARS)
-					.pattern("SLS")
+					.pattern("SES")
 					.pattern("B B")
-					.unlockedBy("has_redstone_lamp", RegistrateRecipeProvider.has(Items.REDSTONE_LAMP))
+					.unlockedBy("has_electron_tube", RegistrateRecipeProvider.has(AllItems.ELECTRON_TUBE))
 					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
 			.item()
 			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/papi_light/item")))
@@ -686,8 +687,7 @@ public class CABlocks {
 							.modelFile(p.models()
 									.getExistingFile(p.modLoc("block/baggage_scanner/"
 											+ (state.getValue(SecurityScan.ALARM) ? "alarm" : "idle"))))
-							.rotationY(((int) state.getValue(BaggageScannerBlock.FACING)
-									.toYRot() + 180) % 360)
+							.rotationY(state.getValue(BaggageScannerBlock.AXIS) == Direction.Axis.X ? 90 : 0)
 							.build()))
 			.recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, c.get())
 					.define('S', AllItems.IRON_SHEET)

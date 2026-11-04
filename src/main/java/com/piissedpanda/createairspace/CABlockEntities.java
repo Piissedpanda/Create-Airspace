@@ -22,6 +22,7 @@ import com.piissedpanda.createairspace.block.Luggage.SuitcasePackagerBlockEntity
 import com.piissedpanda.createairspace.block.Papi.PapiLightBlockEntity;
 import com.piissedpanda.createairspace.block.Papi.PapiLightRenderer;
 import com.piissedpanda.createairspace.block.Security.BaggageScannerBlockEntity;
+import com.piissedpanda.createairspace.block.Security.BaggageScannerRenderer;
 import com.piissedpanda.createairspace.block.Security.MetalDetectorBlockEntity;
 import com.piissedpanda.createairspace.block.StopBar.RunwayGuardLightBlockEntity;
 import com.piissedpanda.createairspace.block.StopBar.RunwayGuardLightRenderer;
@@ -124,6 +125,7 @@ public class CABlockEntities {
 	public static final BlockEntityEntry<BaggageScannerBlockEntity> BAGGAGE_SCANNER = REGISTRATE
 			.blockEntity("baggage_scanner", BaggageScannerBlockEntity::new)
 			.validBlocks(CABlocks.BAGGAGE_SCANNER)
+			.renderer(() -> BaggageScannerRenderer::new)
 			.register();
 
 	public static void register() {

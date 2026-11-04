@@ -77,11 +77,12 @@ public class CAShapes {
 					.forHorizontal(Direction.NORTH),
 
 			METAL_DETECTOR_UPPER = shape(0, 0, 5, 2, 16, 11).add(14, 0, 5, 16, 16, 11)
-					.add(2, 12, 5, 14, 16, 11)
+					.add(2, 14, 5, 14, 16, 11)
 					.forHorizontal(Direction.NORTH),
 
-			BAGGAGE_SCANNER = shape(0, 0, 0, 2, 12, 16).add(14, 0, 0, 16, 12, 16)
-					.add(0, 12, 0, 16, 16, 16)
+			// Belt along north/south
+			BAGGAGE_SCANNER = shape(0, 0, 0, 2, 13, 16).add(14, 0, 0, 16, 13, 16)
+					.add(0, 13, 0, 16, 16, 16)
 					.forHorizontal(Direction.NORTH);
 
 	private static VoxelShape trafficCone(double lift) {
