@@ -1,9 +1,12 @@
 {
   "parent": "minecraft:block/block",
+  "ambientocclusion": false,
   "textures": {
     "particle": "create:block/industrial_iron_block",
     "frame": "create:block/industrial_iron_block",
-    "lens": "minecraft:block/red_concrete"
+    "top": "create:block/industrial_iron_block_top",
+    "lens": "minecraft:block/red_concrete",
+    "bolt": "createairspace:block/cargo/lock_bolt"
   },
   "elements": [
     {
@@ -62,7 +65,7 @@
             13,
             12
           ],
-          "texture": "#frame"
+          "texture": "#top"
         },
         "down": {
           "uv": [
@@ -71,7 +74,247 @@
             13,
             12
           ],
-          "texture": "#frame"
+          "texture": "#top"
+        }
+      }
+    },
+    {
+      "name": "bolt_0",
+      "from": [
+        3.5,
+        1,
+        4.5
+      ],
+      "to": [
+        4.5,
+        1.25,
+        5.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3.5,
+            14.75,
+            4.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "south": {
+          "uv": [
+            3.5,
+            14.75,
+            4.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "east": {
+          "uv": [
+            4.5,
+            14.75,
+            5.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "west": {
+          "uv": [
+            4.5,
+            14.75,
+            5.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "up": {
+          "uv": [
+            3.5,
+            4.5,
+            4.5,
+            5.5
+          ],
+          "texture": "#bolt"
+        }
+      }
+    },
+    {
+      "name": "bolt_1",
+      "from": [
+        11.5,
+        1,
+        4.5
+      ],
+      "to": [
+        12.5,
+        1.25,
+        5.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            11.5,
+            14.75,
+            12.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "south": {
+          "uv": [
+            11.5,
+            14.75,
+            12.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "east": {
+          "uv": [
+            4.5,
+            14.75,
+            5.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "west": {
+          "uv": [
+            4.5,
+            14.75,
+            5.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "up": {
+          "uv": [
+            11.5,
+            4.5,
+            12.5,
+            5.5
+          ],
+          "texture": "#bolt"
+        }
+      }
+    },
+    {
+      "name": "bolt_2",
+      "from": [
+        3.5,
+        1,
+        10.5
+      ],
+      "to": [
+        4.5,
+        1.25,
+        11.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3.5,
+            14.75,
+            4.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "south": {
+          "uv": [
+            3.5,
+            14.75,
+            4.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "east": {
+          "uv": [
+            10.5,
+            14.75,
+            11.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "west": {
+          "uv": [
+            10.5,
+            14.75,
+            11.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "up": {
+          "uv": [
+            3.5,
+            10.5,
+            4.5,
+            11.5
+          ],
+          "texture": "#bolt"
+        }
+      }
+    },
+    {
+      "name": "bolt_3",
+      "from": [
+        11.5,
+        1,
+        10.5
+      ],
+      "to": [
+        12.5,
+        1.25,
+        11.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            11.5,
+            14.75,
+            12.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "south": {
+          "uv": [
+            11.5,
+            14.75,
+            12.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "east": {
+          "uv": [
+            10.5,
+            14.75,
+            11.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "west": {
+          "uv": [
+            10.5,
+            14.75,
+            11.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "up": {
+          "uv": [
+            11.5,
+            10.5,
+            12.5,
+            11.5
+          ],
+          "texture": "#bolt"
         }
       }
     },

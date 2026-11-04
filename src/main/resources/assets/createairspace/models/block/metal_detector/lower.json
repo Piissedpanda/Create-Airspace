@@ -1,10 +1,14 @@
 {
   "parent": "minecraft:block/block",
+  "ambientocclusion": false,
   "textures": {
-    "particle": "minecraft:block/light_gray_concrete",
-    "body": "minecraft:block/light_gray_concrete",
-    "beam": "minecraft:block/gray_concrete",
-    "frame": "create:block/industrial_iron_block"
+    "particle": "create:block/industrial_iron_block",
+    "body": "create:block/industrial_iron_block",
+    "top": "create:block/industrial_iron_block_top",
+    "beam": "create:block/industrial_iron_block",
+    "niche": "createairspace:block/cargo/port_front",
+    "frame": "create:block/industrial_iron_block",
+    "bolt": "createairspace:block/cargo/lock_bolt"
   },
   "elements": [
     {
@@ -63,7 +67,7 @@
             2.5,
             12
           ],
-          "texture": "#frame"
+          "texture": "#top"
         },
         "down": {
           "uv": [
@@ -72,7 +76,7 @@
             2.5,
             12
           ],
-          "texture": "#frame"
+          "texture": "#top"
         }
       }
     },
@@ -132,7 +136,7 @@
             16,
             12
           ],
-          "texture": "#frame"
+          "texture": "#top"
         },
         "down": {
           "uv": [
@@ -141,7 +145,7 @@
             16,
             12
           ],
-          "texture": "#frame"
+          "texture": "#top"
         }
       }
     },

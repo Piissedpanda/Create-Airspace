@@ -1,10 +1,13 @@
 {
   "parent": "minecraft:block/block",
+  "ambientocclusion": false,
   "textures": {
-    "particle": "minecraft:block/light_gray_concrete",
-    "body": "minecraft:block/light_gray_concrete",
-    "front": "minecraft:block/black_concrete",
+    "particle": "create:block/industrial_iron_block",
+    "body": "create:block/industrial_iron_block",
+    "top": "create:block/industrial_iron_block_top",
+    "front": "createairspace:block/cargo/port_front",
     "frame": "create:block/industrial_iron_block",
+    "bolt": "createairspace:block/cargo/lock_bolt",
     "lens": "minecraft:block/white_concrete"
   },
   "elements": [
@@ -184,7 +187,7 @@
             15,
             14
           ],
-          "texture": "#body"
+          "texture": "#top"
         },
         "down": {
           "uv": [
@@ -193,7 +196,7 @@
             15,
             14
           ],
-          "texture": "#body"
+          "texture": "#top"
         }
       }
     },
@@ -217,7 +220,7 @@
             14,
             5
           ],
-          "texture": "#front"
+          "texture": "#body"
         },
         "south": {
           "uv": [
@@ -226,7 +229,7 @@
             14,
             5
           ],
-          "texture": "#front"
+          "texture": "#body"
         },
         "east": {
           "uv": [
@@ -235,7 +238,7 @@
             4,
             5
           ],
-          "texture": "#front"
+          "texture": "#body"
         },
         "west": {
           "uv": [
@@ -244,7 +247,7 @@
             4,
             5
           ],
-          "texture": "#front"
+          "texture": "#body"
         },
         "up": {
           "uv": [
@@ -253,7 +256,7 @@
             14,
             4
           ],
-          "texture": "#front"
+          "texture": "#top"
         },
         "down": {
           "uv": [
@@ -262,7 +265,247 @@
             14,
             4
           ],
-          "texture": "#front"
+          "texture": "#top"
+        }
+      }
+    },
+    {
+      "name": "bolt_back_0",
+      "from": [
+        2.0,
+        5.0,
+        14
+      ],
+      "to": [
+        3.0,
+        6.0,
+        14.5
+      ],
+      "faces": {
+        "south": {
+          "uv": [
+            2.0,
+            10.0,
+            3.0,
+            11.0
+          ],
+          "texture": "#bolt"
+        },
+        "east": {
+          "uv": [
+            14,
+            10.0,
+            14.5,
+            11.0
+          ],
+          "texture": "#bolt"
+        },
+        "west": {
+          "uv": [
+            14,
+            10.0,
+            14.5,
+            11.0
+          ],
+          "texture": "#bolt"
+        },
+        "up": {
+          "uv": [
+            2.0,
+            14,
+            3.0,
+            14.5
+          ],
+          "texture": "#bolt"
+        },
+        "down": {
+          "uv": [
+            2.0,
+            14,
+            3.0,
+            14.5
+          ],
+          "texture": "#bolt"
+        }
+      }
+    },
+    {
+      "name": "bolt_back_1",
+      "from": [
+        13.0,
+        5.0,
+        14
+      ],
+      "to": [
+        14.0,
+        6.0,
+        14.5
+      ],
+      "faces": {
+        "south": {
+          "uv": [
+            13.0,
+            10.0,
+            14.0,
+            11.0
+          ],
+          "texture": "#bolt"
+        },
+        "east": {
+          "uv": [
+            14,
+            10.0,
+            14.5,
+            11.0
+          ],
+          "texture": "#bolt"
+        },
+        "west": {
+          "uv": [
+            14,
+            10.0,
+            14.5,
+            11.0
+          ],
+          "texture": "#bolt"
+        },
+        "up": {
+          "uv": [
+            13.0,
+            14,
+            14.0,
+            14.5
+          ],
+          "texture": "#bolt"
+        },
+        "down": {
+          "uv": [
+            13.0,
+            14,
+            14.0,
+            14.5
+          ],
+          "texture": "#bolt"
+        }
+      }
+    },
+    {
+      "name": "bolt_back_2",
+      "from": [
+        2.0,
+        9.0,
+        14
+      ],
+      "to": [
+        3.0,
+        10.0,
+        14.5
+      ],
+      "faces": {
+        "south": {
+          "uv": [
+            2.0,
+            6.0,
+            3.0,
+            7.0
+          ],
+          "texture": "#bolt"
+        },
+        "east": {
+          "uv": [
+            14,
+            6.0,
+            14.5,
+            7.0
+          ],
+          "texture": "#bolt"
+        },
+        "west": {
+          "uv": [
+            14,
+            6.0,
+            14.5,
+            7.0
+          ],
+          "texture": "#bolt"
+        },
+        "up": {
+          "uv": [
+            2.0,
+            14,
+            3.0,
+            14.5
+          ],
+          "texture": "#bolt"
+        },
+        "down": {
+          "uv": [
+            2.0,
+            14,
+            3.0,
+            14.5
+          ],
+          "texture": "#bolt"
+        }
+      }
+    },
+    {
+      "name": "bolt_back_3",
+      "from": [
+        13.0,
+        9.0,
+        14
+      ],
+      "to": [
+        14.0,
+        10.0,
+        14.5
+      ],
+      "faces": {
+        "south": {
+          "uv": [
+            13.0,
+            6.0,
+            14.0,
+            7.0
+          ],
+          "texture": "#bolt"
+        },
+        "east": {
+          "uv": [
+            14,
+            6.0,
+            14.5,
+            7.0
+          ],
+          "texture": "#bolt"
+        },
+        "west": {
+          "uv": [
+            14,
+            6.0,
+            14.5,
+            7.0
+          ],
+          "texture": "#bolt"
+        },
+        "up": {
+          "uv": [
+            13.0,
+            14,
+            14.0,
+            14.5
+          ],
+          "texture": "#bolt"
+        },
+        "down": {
+          "uv": [
+            13.0,
+            14,
+            14.0,
+            14.5
+          ],
+          "texture": "#bolt"
         }
       }
     }

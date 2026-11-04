@@ -1,11 +1,14 @@
 {
   "parent": "minecraft:block/block",
+  "ambientocclusion": false,
   "textures": {
-    "particle": "minecraft:block/yellow_concrete",
-    "body": "minecraft:block/yellow_concrete",
-    "front": "minecraft:block/black_concrete",
+    "particle": "create:block/industrial_iron_block",
+    "body": "create:block/industrial_iron_block",
+    "top": "create:block/industrial_iron_block_top",
+    "front": "createairspace:block/cargo/port_front",
     "frame": "create:block/industrial_iron_block",
-    "lens": "minecraft:block/yellow_terracotta"
+    "bolt": "createairspace:block/cargo/lock_bolt",
+    "lens": "minecraft:block/yellow_concrete"
   },
   "elements": [
     {
@@ -64,7 +67,7 @@
             12,
             12
           ],
-          "texture": "#frame"
+          "texture": "#top"
         },
         "down": {
           "uv": [
@@ -73,7 +76,7 @@
             12,
             12
           ],
-          "texture": "#frame"
+          "texture": "#top"
         }
       }
     },
@@ -373,7 +376,7 @@
             6.5,
             6
           ],
-          "texture": "#body"
+          "texture": "#top"
         },
         "down": {
           "uv": [
@@ -382,7 +385,7 @@
             6.5,
             6
           ],
-          "texture": "#body"
+          "texture": "#top"
         }
       }
     },
@@ -442,7 +445,7 @@
             14.5,
             6
           ],
-          "texture": "#body"
+          "texture": "#top"
         },
         "down": {
           "uv": [
@@ -451,7 +454,247 @@
             14.5,
             6
           ],
-          "texture": "#body"
+          "texture": "#top"
+        }
+      }
+    },
+    {
+      "name": "bolt_0",
+      "from": [
+        4.5,
+        1,
+        4.5
+      ],
+      "to": [
+        5.5,
+        1.25,
+        5.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.5,
+            14.75,
+            5.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "south": {
+          "uv": [
+            4.5,
+            14.75,
+            5.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "east": {
+          "uv": [
+            4.5,
+            14.75,
+            5.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "west": {
+          "uv": [
+            4.5,
+            14.75,
+            5.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "up": {
+          "uv": [
+            4.5,
+            4.5,
+            5.5,
+            5.5
+          ],
+          "texture": "#bolt"
+        }
+      }
+    },
+    {
+      "name": "bolt_1",
+      "from": [
+        10.5,
+        1,
+        4.5
+      ],
+      "to": [
+        11.5,
+        1.25,
+        5.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            10.5,
+            14.75,
+            11.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "south": {
+          "uv": [
+            10.5,
+            14.75,
+            11.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "east": {
+          "uv": [
+            4.5,
+            14.75,
+            5.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "west": {
+          "uv": [
+            4.5,
+            14.75,
+            5.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "up": {
+          "uv": [
+            10.5,
+            4.5,
+            11.5,
+            5.5
+          ],
+          "texture": "#bolt"
+        }
+      }
+    },
+    {
+      "name": "bolt_2",
+      "from": [
+        4.5,
+        1,
+        10.5
+      ],
+      "to": [
+        5.5,
+        1.25,
+        11.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.5,
+            14.75,
+            5.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "south": {
+          "uv": [
+            4.5,
+            14.75,
+            5.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "east": {
+          "uv": [
+            10.5,
+            14.75,
+            11.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "west": {
+          "uv": [
+            10.5,
+            14.75,
+            11.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "up": {
+          "uv": [
+            4.5,
+            10.5,
+            5.5,
+            11.5
+          ],
+          "texture": "#bolt"
+        }
+      }
+    },
+    {
+      "name": "bolt_3",
+      "from": [
+        10.5,
+        1,
+        10.5
+      ],
+      "to": [
+        11.5,
+        1.25,
+        11.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            10.5,
+            14.75,
+            11.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "south": {
+          "uv": [
+            10.5,
+            14.75,
+            11.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "east": {
+          "uv": [
+            10.5,
+            14.75,
+            11.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "west": {
+          "uv": [
+            10.5,
+            14.75,
+            11.5,
+            15
+          ],
+          "texture": "#bolt"
+        },
+        "up": {
+          "uv": [
+            10.5,
+            10.5,
+            11.5,
+            11.5
+          ],
+          "texture": "#bolt"
         }
       }
     }
