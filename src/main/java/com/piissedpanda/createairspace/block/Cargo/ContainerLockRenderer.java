@@ -13,12 +13,15 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-// Four claws fold up out of their slots and grip the lock point of the container
+// Two claws fold up out of their slots and grip the lock point of the container,
+// two massive bolts push out next to them
 public class ContainerLockRenderer extends SafeBlockEntityRenderer<ContainerLockBlockEntity> {
 
 	private static final float GRIP_ANGLE = 80;
 	// Hinge of the claw in the north slot, the model faces up
 	private static final float HINGE_Y = 14.75f / 16, HINGE_Z = 1 / 16f;
+	// The bolts push out of the deck this far, a heavy sign that the lock holds
+	private static final float BOLT_TRAVEL = 3 / 16f;
 
 	public ContainerLockRenderer(Context context) {
 	}
@@ -32,7 +35,10 @@ public class ContainerLockRenderer extends SafeBlockEntityRenderer<ContainerLock
 		float angle = GRIP_ANGLE * grip * grip * (3 - 2 * grip);
 		VertexConsumer vc = buffer.getBuffer(RenderType.cutoutMipped());
 
-		for (int i = 0; i < 4; i++)
+		float eased = grip * grip * (3 - 2 * grip);
+
+		// Claws in the north and south slots
+		for (int i = 0; i < 4; i += 2)
 			CachedBuffers.partial(CAPartialModels.CONTAINER_LOCK_CLAW, state)
 					.center()
 					.rotate(facing.getRotation())
@@ -41,6 +47,18 @@ public class ContainerLockRenderer extends SafeBlockEntityRenderer<ContainerLock
 					.translate(0, HINGE_Y, HINGE_Z)
 					.rotateXDegrees(-angle)
 					.translate(0, -HINGE_Y, -HINGE_Z)
+					.light(light)
+					.overlay(overlay)
+					.renderInto(ms, vc);
+
+		// Bolts in the east and west slots
+		for (int i = 0; i < 2; i++)
+			CachedBuffers.partial(CAPartialModels.CONTAINER_LOCK_BOLT, state)
+					.center()
+					.rotate(facing.getRotation())
+					.rotateYDegrees(i * 180)
+					.uncenter()
+					.translate(0, BOLT_TRAVEL * eased, 0)
 					.light(light)
 					.overlay(overlay)
 					.renderInto(ms, vc);

@@ -1,12 +1,13 @@
 {
 	"parent": "block/block",
 	"textures": {
-		"particle": "createairspace:block/cargo/lock_side",
-		"side": "createairspace:block/cargo/lock_side",
-		"bottom": "createairspace:block/cargo/roller_bed_bottom",
-		"top": "createairspace:block/cargo/roller_bed_rim",
+		"particle": "create:block/industrial_iron_block",
+		"side": "create:block/industrial_iron_block",
+		"bottom": "create:block/industrial_iron_block_top",
+		"top": "create:block/industrial_iron_block_top",
 		"front": "createairspace:block/cargo/port_front",
-		"plate": "createairspace:block/cargo/port_plate"
+		"gate": "create:block/funnel/andesite_funnel",
+		"latch": "createairspace:block/cargo/lock_bolt"
 	},
 	"elements": [
 		{
@@ -73,22 +74,22 @@
 			],
 			"faces": {
 				"north": {
-					"texture": "#top",
+					"texture": "#side",
 					"cullface": "north"
 				},
 				"up": {
-					"texture": "#top"
+					"texture": "#side"
 				},
 				"east": {
-					"texture": "#top",
+					"texture": "#side",
 					"cullface": "east"
 				},
 				"west": {
-					"texture": "#top",
+					"texture": "#side",
 					"cullface": "west"
 				},
 				"down": {
-					"texture": "#top",
+					"texture": "#side",
 					"cullface": "down"
 				}
 			}
@@ -106,22 +107,22 @@
 			],
 			"faces": {
 				"north": {
-					"texture": "#top",
+					"texture": "#side",
 					"cullface": "north"
 				},
 				"down": {
-					"texture": "#top"
+					"texture": "#side"
 				},
 				"east": {
-					"texture": "#top",
+					"texture": "#side",
 					"cullface": "east"
 				},
 				"west": {
-					"texture": "#top",
+					"texture": "#side",
 					"cullface": "west"
 				},
 				"up": {
-					"texture": "#top",
+					"texture": "#side",
 					"cullface": "up"
 				}
 			}
@@ -139,14 +140,14 @@
 			],
 			"faces": {
 				"north": {
-					"texture": "#top",
+					"texture": "#side",
 					"cullface": "north"
 				},
 				"east": {
-					"texture": "#top"
+					"texture": "#side"
 				},
 				"west": {
-					"texture": "#top",
+					"texture": "#side",
 					"cullface": "west"
 				}
 			}
@@ -164,14 +165,14 @@
 			],
 			"faces": {
 				"north": {
-					"texture": "#top",
+					"texture": "#side",
 					"cullface": "north"
 				},
 				"west": {
-					"texture": "#top"
+					"texture": "#side"
 				},
 				"east": {
-					"texture": "#top",
+					"texture": "#side",
 					"cullface": "east"
 				}
 			}

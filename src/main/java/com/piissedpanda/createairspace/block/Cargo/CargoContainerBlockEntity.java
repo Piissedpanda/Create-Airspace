@@ -6,7 +6,6 @@ import javax.annotation.Nullable;
 
 import org.joml.Vector3d;
 
-import com.piissedpanda.createairspace.CABlockEntities;
 import com.piissedpanda.createairspace.block.Cargo.CargoContainerBlock.Point;
 import com.simibubi.create.infrastructure.config.AllConfigs;
 
@@ -19,15 +18,14 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.wrapper.CombinedInvWrapper;
 
 // Every block holds as many stacks as an item vault block, a finished container
-// offers all of them as one inventory. Its lock point is the magnet a lock pulls in
+// offers all of them as one inventory, but only to container ports: funnels and
+// chutes cannot reach it. Its lock point is the magnet a lock pulls in
 public class CargoContainerBlockEntity extends CargoMagnet {
 
 	public final ItemStackHandler inventory;
@@ -57,11 +55,6 @@ public class CargoContainerBlockEntity extends CargoMagnet {
 					level.updateNeighbourForOutputSignal(member, getBlockState().getBlock());
 			}
 		};
-	}
-
-	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, CABlockEntities.CARGO_CONTAINER.get(),
-				(be, context) -> be.getContainerInventory());
 	}
 
 	// Null while the block is not part of a finished container

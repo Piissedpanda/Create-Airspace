@@ -1,11 +1,11 @@
 {
 	"parent": "block/block",
 	"textures": {
-		"particle": "createairspace:block/cargo/roller_bed_side",
-		"side": "createairspace:block/cargo/roller_bed_side",
-		"bottom": "createairspace:block/cargo/roller_bed_bottom",
+		"particle": "create:block/industrial_iron_block",
+		"side": "create:block/industrial_iron_block",
+		"bottom": "create:block/industrial_iron_block_top",
 		"deck": "createairspace:block/cargo/roller_bed_deck",
-		"rim": "createairspace:block/cargo/roller_bed_rim",
+		"rim": "create:block/industrial_iron_block",
 		"ball": "createairspace:block/cargo/roller_ball"
 	},
 	"elements": [
@@ -23,19 +23,43 @@
 			"faces": {
 				"north": {
 					"texture": "#side",
-					"cullface": "north"
+					"cullface": "north",
+					"uv": [
+						0,
+						2,
+						16,
+						16
+					]
 				},
 				"south": {
 					"texture": "#side",
-					"cullface": "south"
+					"cullface": "south",
+					"uv": [
+						0,
+						2,
+						16,
+						16
+					]
 				},
 				"east": {
 					"texture": "#side",
-					"cullface": "east"
+					"cullface": "east",
+					"uv": [
+						0,
+						2,
+						16,
+						16
+					]
 				},
 				"west": {
 					"texture": "#side",
-					"cullface": "west"
+					"cullface": "west",
+					"uv": [
+						0,
+						2,
+						16,
+						16
+					]
 				},
 				"down": {
 					"texture": "#bottom",
@@ -74,21 +98,51 @@
 			"faces": {
 				"north": {
 					"texture": "#rim",
-					"cullface": "north"
+					"cullface": "north",
+					"uv": [
+						0,
+						0,
+						16,
+						2
+					]
 				},
 				"up": {
-					"texture": "#rim"
+					"texture": "#rim",
+					"uv": [
+						0,
+						0,
+						16,
+						1
+					]
 				},
 				"south": {
-					"texture": "#rim"
+					"texture": "#rim",
+					"uv": [
+						0,
+						0,
+						16,
+						2
+					]
 				},
 				"east": {
 					"texture": "#rim",
-					"cullface": "east"
+					"cullface": "east",
+					"uv": [
+						0,
+						0,
+						16,
+						2
+					]
 				},
 				"west": {
 					"texture": "#rim",
-					"cullface": "west"
+					"cullface": "west",
+					"uv": [
+						0,
+						0,
+						16,
+						2
+					]
 				}
 			}
 		},
@@ -106,21 +160,51 @@
 			"faces": {
 				"south": {
 					"texture": "#rim",
-					"cullface": "south"
+					"cullface": "south",
+					"uv": [
+						0,
+						0,
+						16,
+						2
+					]
 				},
 				"up": {
-					"texture": "#rim"
+					"texture": "#rim",
+					"uv": [
+						0,
+						0,
+						16,
+						1
+					]
 				},
 				"north": {
-					"texture": "#rim"
+					"texture": "#rim",
+					"uv": [
+						0,
+						0,
+						16,
+						2
+					]
 				},
 				"east": {
 					"texture": "#rim",
-					"cullface": "east"
+					"cullface": "east",
+					"uv": [
+						0,
+						0,
+						16,
+						2
+					]
 				},
 				"west": {
 					"texture": "#rim",
-					"cullface": "west"
+					"cullface": "west",
+					"uv": [
+						0,
+						0,
+						16,
+						2
+					]
 				}
 			}
 		},
@@ -138,13 +222,31 @@
 			"faces": {
 				"west": {
 					"texture": "#rim",
-					"cullface": "west"
+					"cullface": "west",
+					"uv": [
+						0,
+						0,
+						16,
+						2
+					]
 				},
 				"up": {
-					"texture": "#rim"
+					"texture": "#rim",
+					"uv": [
+						0,
+						0,
+						16,
+						1
+					]
 				},
 				"east": {
-					"texture": "#rim"
+					"texture": "#rim",
+					"uv": [
+						0,
+						0,
+						16,
+						2
+					]
 				}
 			}
 		},
@@ -162,13 +264,31 @@
 			"faces": {
 				"east": {
 					"texture": "#rim",
-					"cullface": "east"
+					"cullface": "east",
+					"uv": [
+						0,
+						0,
+						16,
+						2
+					]
 				},
 				"up": {
-					"texture": "#rim"
+					"texture": "#rim",
+					"uv": [
+						0,
+						0,
+						16,
+						1
+					]
 				},
 				"west": {
-					"texture": "#rim"
+					"texture": "#rim",
+					"uv": [
+						0,
+						0,
+						16,
+						2
+					]
 				}
 			}
 		},

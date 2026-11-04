@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_andesite_casing": {
+    "has_steel_ball": {
       "conditions": {
         "items": [
           {
-            "items": "create:andesite_casing"
+            "items": "createairspace:steel_ball"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_andesite_casing"
+      "has_steel_ball"
     ]
   ],
   "rewards": {

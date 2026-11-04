@@ -16,7 +16,10 @@ public class CAPartialModels {
 			AIRPORT_BEACON_HEAD = block("airport_beacon/head"),
 			AIRPORT_BEACON_LENS = block("airport_beacon/lens"),
 			CONTAINER_LOCK_CLAW = block("container_lock/claw"),
-			CONTAINER_PORT_PLATE = block("container_port/plate");
+			CONTAINER_LOCK_BOLT = block("container_lock/bolt"),
+			CONTAINER_PORT_PLATE = block("container_port/plate"),
+			CONTAINER_PORT_LATCH_EAST = block("container_port/latch_east"),
+			CONTAINER_PORT_LATCH_WEST = block("container_port/latch_west");
 
 	private static PartialModel block(String path) {
 		return PartialModel.of(CreateAirspace.asResource("block/" + path));

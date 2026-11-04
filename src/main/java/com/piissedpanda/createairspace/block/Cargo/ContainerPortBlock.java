@@ -5,6 +5,7 @@ import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.IBE;
 
 import net.minecraft.core.Direction;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -28,10 +29,13 @@ public class ContainerPortBlock extends Block implements IBE<ContainerPortBlockE
 		super.createBlockStateDefinition(builder.add(HorizontalDirectionalBlock.FACING));
 	}
 
-	// Faces away from the player, towards where the container goes
+	// The front faces the player, sneaking turns it away
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, context.getHorizontalDirection());
+		Direction facing = context.getHorizontalDirection();
+		Player player = context.getPlayer();
+		return defaultBlockState().setValue(HorizontalDirectionalBlock.FACING,
+				player != null && player.isShiftKeyDown() ? facing : facing.getOpposite());
 	}
 
 	@Override

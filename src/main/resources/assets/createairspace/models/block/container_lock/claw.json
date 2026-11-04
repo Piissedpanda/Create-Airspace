@@ -1,13 +1,13 @@
 {
 	"parent": "block/block",
 	"textures": {
-		"particle": "createairspace:block/cargo/lock_side",
-		"side": "createairspace:block/cargo/lock_side",
-		"bottom": "createairspace:block/cargo/roller_bed_bottom",
+		"particle": "create:block/industrial_iron_block",
+		"side": "create:block/industrial_iron_block",
+		"bottom": "create:block/industrial_iron_block_top",
 		"deck": "createairspace:block/cargo/lock_top",
-		"rim": "createairspace:block/cargo/roller_bed_rim",
-		"ball": "createairspace:block/cargo/roller_ball",
-		"claw": "createairspace:block/cargo/lock_claw"
+		"rim": "create:block/industrial_iron_block",
+		"claw": "createairspace:block/cargo/lock_claw",
+		"bolt": "createairspace:block/cargo/lock_bolt"
 	},
 	"elements": [
 		{

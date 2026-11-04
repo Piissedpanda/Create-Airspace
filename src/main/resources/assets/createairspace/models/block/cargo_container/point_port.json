@@ -7,7 +7,7 @@
 		"base": "createairspace:block/cargo/container_base",
 		"frame": "createairspace:block/cargo/container_frame",
 		"dock": "createairspace:block/cargo/container_dock",
-		"gate": "createairspace:block/cargo/container_gate"
+		"gate": "create:block/funnel/andesite_funnel"
 	},
 	"elements": [
 		{
@@ -23,19 +23,49 @@
 			],
 			"faces": {
 				"north": {
-					"texture": "#gate"
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						12,
+						6
+					]
 				},
 				"east": {
-					"texture": "#gate"
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						7,
+						6
+					]
 				},
 				"west": {
-					"texture": "#gate"
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						7,
+						6
+					]
 				},
 				"up": {
-					"texture": "#gate"
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						7,
+						6
+					]
 				},
 				"down": {
-					"texture": "#gate"
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						7,
+						6
+					]
 				}
 			}
 		}

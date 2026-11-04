@@ -7,7 +7,7 @@
 		"base": "createairspace:block/cargo/container_base",
 		"frame": "createairspace:block/cargo/container_frame",
 		"dock": "createairspace:block/cargo/container_dock",
-		"gate": "createairspace:block/cargo/container_gate"
+		"gate": "create:block/funnel/andesite_funnel"
 	},
 	"elements": [
 		{

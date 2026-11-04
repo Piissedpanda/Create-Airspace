@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sticker": {
+    "has_electron_tube": {
       "conditions": {
         "items": [
           {
-            "items": "create:sticker"
+            "items": "create:electron_tube"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_sticker"
+      "has_electron_tube"
     ]
   ],
   "rewards": {

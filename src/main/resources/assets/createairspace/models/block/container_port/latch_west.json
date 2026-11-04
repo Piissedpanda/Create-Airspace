@@ -1,0 +1,43 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"particle": "create:block/industrial_iron_block",
+		"side": "create:block/industrial_iron_block",
+		"bottom": "create:block/industrial_iron_block_top",
+		"top": "create:block/industrial_iron_block_top",
+		"front": "createairspace:block/cargo/port_front",
+		"gate": "create:block/funnel/andesite_funnel",
+		"latch": "createairspace:block/cargo/lock_bolt"
+	},
+	"elements": [
+		{
+			"from": [
+				-0.5,
+				6,
+				3
+			],
+			"to": [
+				1.5,
+				10,
+				11
+			],
+			"faces": {
+				"north": {
+					"texture": "#latch"
+				},
+				"south": {
+					"texture": "#latch"
+				},
+				"west": {
+					"texture": "#latch"
+				},
+				"up": {
+					"texture": "#latch"
+				},
+				"down": {
+					"texture": "#latch"
+				}
+			}
+		}
+	]
+}

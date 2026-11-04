@@ -1,12 +1,13 @@
 {
 	"parent": "block/block",
 	"textures": {
-		"particle": "createairspace:block/cargo/lock_side",
-		"side": "createairspace:block/cargo/lock_side",
-		"bottom": "createairspace:block/cargo/roller_bed_bottom",
-		"top": "createairspace:block/cargo/roller_bed_rim",
+		"particle": "create:block/industrial_iron_block",
+		"side": "create:block/industrial_iron_block",
+		"bottom": "create:block/industrial_iron_block_top",
+		"top": "create:block/industrial_iron_block_top",
 		"front": "createairspace:block/cargo/port_front",
-		"plate": "createairspace:block/cargo/port_plate"
+		"gate": "create:block/funnel/andesite_funnel",
+		"latch": "createairspace:block/cargo/lock_bolt"
 	},
 	"elements": [
 		{
@@ -22,19 +23,49 @@
 			],
 			"faces": {
 				"north": {
-					"texture": "#plate"
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						12,
+						6
+					]
 				},
 				"east": {
-					"texture": "#plate"
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						7,
+						6
+					]
 				},
 				"west": {
-					"texture": "#plate"
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						7,
+						6
+					]
 				},
 				"up": {
-					"texture": "#plate"
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						7,
+						6
+					]
 				},
 				"down": {
-					"texture": "#plate"
+					"texture": "#gate",
+					"uv": [
+						6,
+						0,
+						7,
+						6
+					]
 				}
 			}
 		}
