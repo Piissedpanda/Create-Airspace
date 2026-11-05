@@ -63,57 +63,6 @@
       }
     },
     {
-      "name": "wall_west_low",
-      "from": [
-        0,
-        -5,
-        0
-      ],
-      "to": [
-        2,
-        0,
-        16
-      ],
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            0,
-            2,
-            5
-          ],
-          "texture": "#body"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            2,
-            5
-          ],
-          "texture": "#body"
-        },
-        "east": {
-          "uv": [
-            0,
-            0,
-            16,
-            5
-          ],
-          "texture": "#inside"
-        },
-        "west": {
-          "uv": [
-            0,
-            0,
-            16,
-            5
-          ],
-          "texture": "#body"
-        }
-      }
-    },
-    {
       "name": "wall_east",
       "from": [
         14,
@@ -159,57 +108,6 @@
             3,
             16,
             16
-          ],
-          "texture": "#inside"
-        }
-      }
-    },
-    {
-      "name": "wall_east_low",
-      "from": [
-        14,
-        -5,
-        0
-      ],
-      "to": [
-        16,
-        0,
-        16
-      ],
-      "faces": {
-        "north": {
-          "uv": [
-            14,
-            0,
-            16,
-            5
-          ],
-          "texture": "#body"
-        },
-        "south": {
-          "uv": [
-            14,
-            0,
-            16,
-            5
-          ],
-          "texture": "#body"
-        },
-        "east": {
-          "uv": [
-            0,
-            0,
-            16,
-            5
-          ],
-          "texture": "#body"
-        },
-        "west": {
-          "uv": [
-            0,
-            0,
-            16,
-            5
           ],
           "texture": "#inside"
         }
@@ -984,6 +882,108 @@
             14.5
           ],
           "texture": "#bolt"
+        }
+      }
+    },
+    {
+      "name": "wall_west_low",
+      "from": [
+        0,
+        -5,
+        0
+      ],
+      "to": [
+        2,
+        0,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            2,
+            5
+          ],
+          "texture": "#body"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            2,
+            5
+          ],
+          "texture": "#body"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            5
+          ],
+          "texture": "#inside"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            5
+          ],
+          "texture": "#body"
+        }
+      }
+    },
+    {
+      "name": "wall_east_low",
+      "from": [
+        14,
+        -5,
+        0
+      ],
+      "to": [
+        16,
+        0,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            14,
+            0,
+            16,
+            5
+          ],
+          "texture": "#body"
+        },
+        "south": {
+          "uv": [
+            14,
+            0,
+            16,
+            5
+          ],
+          "texture": "#body"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            5
+          ],
+          "texture": "#body"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            5
+          ],
+          "texture": "#inside"
         }
       }
     },
