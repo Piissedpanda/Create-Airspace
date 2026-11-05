@@ -2,7 +2,7 @@
 
 ![Banner](https://raw.githubusercontent.com/Piissedpanda/Create-Airspace/mc1.21.1/dev/docs/images/banner.jpg)
 
-**Aviation and airport accessories for Create.** Build a proper airfield around your aircraft: paint runway markings, handle luggage with Create's logistics, set up barrier posts, terminal seats, terminal lights, check-in desks with luggage scales, hangar doors, taxiway signs, edge lights, a windsock that follows the wind and a rotating airport beacon.
+**Aviation and airport accessories for Create.** Build a proper airfield around your aircraft: paint runway markings, handle luggage with Create's logistics, set up barrier posts, terminal seats, terminal lights, check-in desks with luggage scales, hangar doors, taxiway signs, edge lights, PAPI lights, stop bars, security scanners, a windsock that follows the wind and a rotating airport beacon.
 
 Made for aviation builds, Create: Airspace sits right next to Create and Create Aeronautics. It uses Create's own processes, Ponder scenes and wrench handling, so everything feels like part of Create.
 
@@ -86,6 +86,14 @@ The **Suitcase Packager** works like Create's packager, but packs **suitcases, t
 <!-- Screenshot: LD11 locked on roller beds, two container ports in the wall next to it -->
 
 **Cargo containers** are built from blocks in real ULD shapes: an LD2, LD3, LD11 or AMA, each block holding as much as an Item Vault block. A Physics Assembler takes the whole container as one piece, no glue needed. Slide it over **roller beds** to a **container lock** in the floor or the wall: the lock pulls it in like a magnet, lines it up and holds it until redstone lets go. **Container ports** in the wall then connect to the container like a Portable Storage Interface, and funnels or chutes at the port load and unload it.
+
+## Airfield Systems
+
+<!-- Screenshot: four PAPI lights next to a runway (two red, two white), a stop bar across the taxiway with runway guard lights, and a baggage scanner on a belt next to a metal detector -->
+
+**PAPI lights** are a real landing aid: set four in a row next to the runway, and every pilot sees white above a light's angle and red below it. Two red and two white means you are on the glide path, and every player sees the colors of their own approach. **Stop bars** are red inset lights across a taxiway that go dark together as soon as one of them gets a redstone signal, **runway guard lights** flash yellow in turns, and airfield and gate signs light up fully with redstone.
+
+For security, the **metal detector** checks everyone who walks through it and the **baggage scanner** sits on a belt like a Create tunnel, in an industrial iron casing with rubber curtains. Both look for weapons and metal, also inside luggage and packages, and answer with a beep, a red lamp and a redstone signal. Sorting the suspicious luggage out is left to Create.
 
 ## Traffic Cones
 

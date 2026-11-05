@@ -6,10 +6,11 @@
 - **PAPI Lights**, a real landing aid: set four in a row next to the runway. Each pilot sees white above a light's angle and red below it, two red and two white means on the glide path. Every player sees the colors of their own approach. The angle is set on the back like other Create values; a light placed next to a row takes the next lower angle (3.5, 3.2, 2.8 and 2.5 degrees).
 - **Stop Bars**: red inset lights across a taxiway. A redstone signal into any of them switches off the whole bar.
 - **Runway Guard Lights**: two yellow lamps that flash in turns while powered.
-- **Metal Detector**: a walk-through frame that checks players and mobs for weapons and metal, including what is packed in luggage, packages, shulker boxes and bundles. It beeps, turns its lamp red and gives off a redstone signal.
-- **Baggage Scanner**: an X-ray tunnel on top of a belt or depot that screens everything passing underneath the same way, without holding it up.
+- **Metal Detector**: a walk-through frame, tall enough to walk through upright, that checks players and mobs for weapons and metal, including what is packed in luggage, packages, shulker boxes and bundles. It beeps, turns its lamp red and gives off a redstone signal.
+- **Baggage Scanner**: an X-ray tunnel placed like a Create tunnel on the middle of a straight belt. It encases the belt in industrial iron, has rubber curtains that swing as luggage passes and screens everything the same way, without holding it up. An andesite or brass belt casing comes off and drops.
 - What the scanners react to is the item tag `createairspace:security_alarm`, datapacks can extend it.
 - Ponder scenes for PAPI lights, stop bars and the scanners.
+- Recipes: PAPI lights from iron sheets, an electron tube and iron bars; stop bars and runway guard lights from edge lights; both scanners with electron tubes, the baggage scanner on industrial iron blocks.
 
 ### Changed
 - Airfield and gate signs light up fully while powered by redstone.
