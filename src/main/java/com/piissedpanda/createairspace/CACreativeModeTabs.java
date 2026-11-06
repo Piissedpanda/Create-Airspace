@@ -55,6 +55,7 @@ public class CACreativeModeTabs {
 		ITEMS.add(CABlocks.FLOOR_LIGHT);
 		ITEMS.add(CAItems.STEEL_BALL);
 		ITEMS.add(CABlocks.ROLLER_BED);
+		ITEMS.add(CABlocks.ROLLER_FLOOR);
 		ITEMS.add(CABlocks.CARGO_CONTAINER);
 		ITEMS.add(CABlocks.CONTAINER_LOCK);
 		ITEMS.add(CABlocks.CONTAINER_PORT);

@@ -41,6 +41,11 @@ public class CAItems {
 			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/suitcase_packager/item")))
 			.register();
 
+	public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_ROLLER_FLOOR = REGISTRATE
+			.item("incomplete_roller_floor", SequencedAssemblyItem::new)
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/roller_bed")))
+			.register();
+
 	// Every luggage type in every colour, only the suitcase packager makes them
 	public static final Map<LuggageType, Map<DyeColor, ItemEntry<LuggageItem>>> LUGGAGE = new EnumMap<>(
 			LuggageType.class);

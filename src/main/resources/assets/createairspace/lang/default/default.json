@@ -108,6 +108,10 @@
     "block.createairspace.metal_detector.tooltip.condition1": "When Something is Found",
     "block.createairspace.metal_detector.tooltip.behaviour1": "Beeps, turns its lamp _red_ and gives off a _redstone signal_ for two seconds. What counts is the item tag _createairspace:security_alarm_.",
 
+    "block.createairspace.roller_floor.tooltip.summary": "A _powered_ roller floor for cargo. It has _shafts on all four sides_: west and east belong to one network, north and south to a second, independent one. Joined floors turn together and pass rotation on.",
+    "block.createairspace.roller_floor.tooltip.condition1": "When Rotated",
+    "block.createairspace.roller_floor.tooltip.behaviour1": "Moves _physics objects_ like cargo containers across it in the direction its rollers turn. Two networks at once move them _diagonally_. Players, mobs and items are not moved.",
+
     "block.createairspace.baggage_scanner.tooltip.summary": "An _X-ray tunnel_ for the middle of a straight _belt_, placed like a Create tunnel. It encases the belt in industrial iron and screens everything passing through, including the _contents_ of luggage and packages.",
     "block.createairspace.baggage_scanner.tooltip.condition1": "When Something is Found",
     "block.createairspace.baggage_scanner.tooltip.behaviour1": "Beeps, turns its lamp _red_ and gives off a _redstone signal_. Sort the item out with Create, for example with a _brass tunnel_ or _funnel_."

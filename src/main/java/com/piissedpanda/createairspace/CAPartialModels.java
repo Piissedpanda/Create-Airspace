@@ -22,7 +22,9 @@ public class CAPartialModels {
 			PAPI_LIGHT_LENS = block("papi_light/lens"),
 			RUNWAY_GUARD_LIGHT_LENS_WEST = block("runway_guard_light/lens_west"),
 			RUNWAY_GUARD_LIGHT_LENS_EAST = block("runway_guard_light/lens_east"),
-			BAGGAGE_SCANNER_CURTAIN = block("baggage_scanner/flap");
+			BAGGAGE_SCANNER_CURTAIN = block("baggage_scanner/flap"),
+			ROLLER_FLOOR_ROLLER_X = block("roller_floor/roller_x"),
+			ROLLER_FLOOR_ROLLER_Z = block("roller_floor/roller_z");
 
 	private static PartialModel block(String path) {
 		return PartialModel.of(CreateAirspace.asResource("block/" + path));

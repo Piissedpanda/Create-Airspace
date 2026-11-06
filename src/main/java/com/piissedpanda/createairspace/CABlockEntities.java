@@ -3,6 +3,8 @@ package com.piissedpanda.createairspace;
 import com.piissedpanda.createairspace.block.Cargo.CargoContainerBlockEntity;
 import com.piissedpanda.createairspace.block.Cargo.ContainerLockBlockEntity;
 import com.piissedpanda.createairspace.block.Cargo.ContainerPortBlockEntity;
+import com.piissedpanda.createairspace.block.Cargo.RollerFloorBlockEntity;
+import com.piissedpanda.createairspace.block.Cargo.RollerFloorRenderer;
 import com.piissedpanda.createairspace.block.Cargo.ContainerLockRenderer;
 import com.piissedpanda.createairspace.block.Cargo.ContainerPortRenderer;
 import com.piissedpanda.createairspace.block.AirfieldSign.AirfieldSignBlockEntity;
@@ -126,6 +128,12 @@ public class CABlockEntities {
 			.blockEntity("baggage_scanner", BaggageScannerBlockEntity::new)
 			.validBlocks(CABlocks.BAGGAGE_SCANNER)
 			.renderer(() -> BaggageScannerRenderer::new)
+			.register();
+
+	public static final BlockEntityEntry<RollerFloorBlockEntity> ROLLER_FLOOR = REGISTRATE
+			.blockEntity("roller_floor", RollerFloorBlockEntity::new)
+			.validBlocks(CABlocks.ROLLER_FLOOR)
+			.renderer(() -> RollerFloorRenderer::new)
 			.register();
 
 	public static void register() {

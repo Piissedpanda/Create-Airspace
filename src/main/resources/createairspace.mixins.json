@@ -2,7 +2,10 @@
   "required": true,
   "package": "com.piissedpanda.createairspace.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "KineticBlockEntityMixin",
+    "RotationPropagatorMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   },

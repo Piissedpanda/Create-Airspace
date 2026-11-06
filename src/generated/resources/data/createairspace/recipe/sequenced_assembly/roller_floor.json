@@ -1,0 +1,93 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "createairspace:roller_bed"
+  },
+  "results": [
+    {
+      "id": "createairspace:roller_floor"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_roller_floor"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_roller_floor"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_roller_floor"
+        },
+        {
+          "item": "create:shaft"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_roller_floor"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_roller_floor"
+        },
+        {
+          "item": "create:shaft"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_roller_floor"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_roller_floor"
+        },
+        {
+          "item": "createairspace:steel_ball"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_roller_floor"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "createairspace:incomplete_roller_floor"
+        }
+      ],
+      "results": [
+        {
+          "id": "createairspace:incomplete_roller_floor"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "createairspace:incomplete_roller_floor"
+  }
+}

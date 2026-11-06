@@ -43,6 +43,7 @@ public class CAPonderTags {
 				.add(CABlocks.RUNWAY_GUARD_LIGHT)
 				.add(CABlocks.METAL_DETECTOR)
 				.add(CABlocks.BAGGAGE_SCANNER)
+				.add(CABlocks.ROLLER_FLOOR)
 				.add(CAItems.PAINT_PAIL);
 	}
 

@@ -21,6 +21,7 @@
     "createairspace:check_in_desk",
     "createairspace:luggage_scale",
     "createairspace:roller_bed",
+    "createairspace:roller_floor",
     "createairspace:cargo_container",
     "createairspace:container_lock",
     "createairspace:container_port",

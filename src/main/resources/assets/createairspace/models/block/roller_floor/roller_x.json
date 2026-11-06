@@ -1,0 +1,77 @@
+{
+  "textures": {
+    "roller": "create:block/axis",
+    "roller_end": "create:block/axis_top"
+  },
+  "elements": [
+    {
+      "name": "roller",
+      "from": [
+        -3,
+        -1.25,
+        -1.25
+      ],
+      "to": [
+        3,
+        1.25,
+        1.25
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            10,
+            0,
+            16,
+            2.5
+          ],
+          "texture": "#roller"
+        },
+        "south": {
+          "uv": [
+            10,
+            0,
+            16,
+            2.5
+          ],
+          "texture": "#roller"
+        },
+        "east": {
+          "uv": [
+            13.5,
+            0,
+            16,
+            2.5
+          ],
+          "texture": "#roller_end"
+        },
+        "west": {
+          "uv": [
+            13.5,
+            0,
+            16,
+            2.5
+          ],
+          "texture": "#roller_end"
+        },
+        "up": {
+          "uv": [
+            10,
+            13.5,
+            16,
+            16
+          ],
+          "texture": "#roller"
+        },
+        "down": {
+          "uv": [
+            10,
+            13.5,
+            16,
+            16
+          ],
+          "texture": "#roller"
+        }
+      }
+    }
+  ]
+}

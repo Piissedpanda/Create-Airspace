@@ -39,6 +39,17 @@ public class CASequencedAssemblyRecipeGen extends SequencedAssemblyRecipeGen {
 					.addStep(DeployerApplicationRecipe::new, rb -> rb.require(Tags.Items.LEATHERS))
 					.addStep(DeployerApplicationRecipe::new, rb -> rb.require(AllItems.BRASS_SHEET.get()))
 					.addStep(DeployerApplicationRecipe::new, rb -> rb.require(Tags.Items.STRINGS))
+					.addStep(PressingRecipe::new, rb -> rb)),
+
+			// A roller bed gets its drive: gears, two shafts and fresh steel balls
+			ROLLER_FLOOR = create("roller_floor", b -> b.require(CABlocks.ROLLER_BED.get())
+					.transitionTo(CAItems.INCOMPLETE_ROLLER_FLOOR.get())
+					.addOutput(CABlocks.ROLLER_FLOOR.get(), 1)
+					.loops(1)
+					.addStep(DeployerApplicationRecipe::new, rb -> rb.require(AllItems.PRECISION_MECHANISM.get()))
+					.addStep(DeployerApplicationRecipe::new, rb -> rb.require(AllBlocks.SHAFT.get()))
+					.addStep(DeployerApplicationRecipe::new, rb -> rb.require(AllBlocks.SHAFT.get()))
+					.addStep(DeployerApplicationRecipe::new, rb -> rb.require(CAItems.STEEL_BALL.get()))
 					.addStep(PressingRecipe::new, rb -> rb));
 
 	public CASequencedAssemblyRecipeGen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

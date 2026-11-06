@@ -21,6 +21,7 @@ import com.piissedpanda.createairspace.block.BaggageCart.BaggageCartBlock;
 import com.piissedpanda.createairspace.block.Cargo.CargoContainerBlock;
 import com.piissedpanda.createairspace.block.Cargo.CargoContainerBlock.Point;
 import com.piissedpanda.createairspace.block.Cargo.RollerBedBlock;
+import com.piissedpanda.createairspace.block.Cargo.RollerFloorBlock;
 import com.piissedpanda.createairspace.block.Cargo.ContainerLockBlock;
 import com.piissedpanda.createairspace.block.Cargo.ContainerPortBlock;
 import com.piissedpanda.createairspace.block.CheckIn.CheckInDeskBlock;
@@ -503,6 +504,23 @@ public class CABlocks {
 					.save(p, CreateAirspace.asResource("crafting/" + c.getName())))
 			.item()
 			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/roller_bed")))
+			.build()
+			.register();
+
+	// Not slippery, the rollers push physics objects instead
+	public static final BlockEntry<RollerFloorBlock> ROLLER_FLOOR = REGISTRATE
+			.block("roller_floor", RollerFloorBlock::new)
+			.lang("Motorized Roller Floor")
+			.initialProperties(SharedProperties::stone)
+			.properties(p -> p.noOcclusion()
+					.mapColor(MapColor.COLOR_GRAY)
+					.sound(SoundType.METAL))
+			.transform(pickaxeOnly())
+			.onRegister(b -> BlockStressValues.IMPACTS.register(b, () -> 1.0))
+			.blockstate((c, p) -> p.simpleBlock(c.get(), p.models()
+					.getExistingFile(p.modLoc("block/roller_floor/block"))))
+			.item()
+			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/roller_floor/item")))
 			.build()
 			.register();
 
