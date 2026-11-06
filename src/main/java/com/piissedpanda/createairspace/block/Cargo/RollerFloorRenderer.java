@@ -20,7 +20,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
 // Shaft ends of both networks and the discs on top. Like on an omnidirectional floor the discs spin
-// and lean towards the direction the floor moves things
+// and lean, the raised edge is the contact point and its spin points where things move
 public class RollerFloorRenderer extends SafeBlockEntityRenderer<RollerFloorBlockEntity> {
 
 	private static final float DISC_Y = 15.5f / 16;
@@ -55,7 +55,7 @@ public class RollerFloorRenderer extends SafeBlockEntityRenderer<RollerFloorBloc
 		if (speed > 0) {
 			float time = AnimationTickHolder.getRenderTime(be.getLevel());
 			float lean = MAX_LEAN * Math.min(1, speed / FULL_LEAN_SPEED);
-			pose.rotateAxis(lean, (float) velocity.z / speed, 0, (float) -velocity.x / speed)
+			pose.rotateAxis(lean, (float) -velocity.x / speed, 0, (float) -velocity.z / speed)
 					.rotateY(time * speed * SPIN_PER_BLOCK);
 		}
 

@@ -8,6 +8,7 @@ import java.util.List;
 import com.piissedpanda.createairspace.foundation.kinetics.MultiKineticBlockEntity;
 import com.simibubi.create.content.kinetics.base.IRotate;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
+import com.simibubi.create.content.kinetics.transmission.sequencer.SequencerInstructions;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.utility.CreateLang;
 
@@ -69,9 +70,10 @@ public class RollerFloorBlockEntity extends KineticBlockEntity implements MultiK
 		super.remove();
 	}
 
-	// Blocks per second like a belt, X rollers move things along Z and back
+	// Blocks per second as fast as a piston, the X network moves things along Z and
+	// back
 	public Vec3 getSurfaceVelocity() {
-		return new Vec3(-driveZ.getSpeed() / 24f, 0, driveX.getSpeed() / 24f);
+		return new Vec3(-driveZ.getLinearStep() * 20, 0, driveX.getLinearStep() * 20);
 	}
 
 	public Drive getDrive(Direction.Axis axis) {
@@ -140,6 +142,7 @@ public class RollerFloorBlockEntity extends KineticBlockEntity implements MultiK
 
 		private final RollerFloorBlockEntity floor;
 		public final Direction.Axis axis;
+		private double sequencedLimit = -1;
 
 		public Drive(BlockEntityType<?> type, BlockPos pos, BlockState state, RollerFloorBlockEntity floor,
 				Direction.Axis axis) {
@@ -163,6 +166,43 @@ public class RollerFloorBlockEntity extends KineticBlockEntity implements MultiK
 					own.add(pos);
 			}
 			return own;
+		}
+
+		// Blocks per tick, a sequenced gearshift set to a distance stops it after
+		// exactly that distance
+		public float getLinearStep() {
+			float step = convertToLinear(getSpeed());
+			if (sequencedLimit < 0)
+				return step;
+			return (float) Math.copySign(Math.min(Math.abs(step), sequencedLimit), step);
+		}
+
+		@Override
+		public void tick() {
+			super.tick();
+			if (sequencedLimit > 0)
+				sequencedLimit = Math.max(0, sequencedLimit - Math.abs(convertToLinear(getSpeed())));
+		}
+
+		// As in LinearActuatorBlockEntity
+		@Override
+		public void onSpeedChanged(float previousSpeed) {
+			super.onSpeedChanged(previousSpeed);
+			sequencedLimit = -1;
+			if (sequenceContext != null && sequenceContext.instruction() == SequencerInstructions.TURN_DISTANCE)
+				sequencedLimit = sequenceContext.getEffectiveValue(getTheoreticalSpeed());
+		}
+
+		@Override
+		protected void write(CompoundTag tag, HolderLookup.Provider registries, boolean clientPacket) {
+			super.write(tag, registries, clientPacket);
+			tag.putDouble("SequencedLimit", sequencedLimit);
+		}
+
+		@Override
+		protected void read(CompoundTag tag, HolderLookup.Provider registries, boolean clientPacket) {
+			super.read(tag, registries, clientPacket);
+			sequencedLimit = tag.contains("SequencedLimit") ? tag.getDouble("SequencedLimit") : -1;
 		}
 
 		@Override
