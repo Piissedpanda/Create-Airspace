@@ -516,7 +516,7 @@ public class CABlocks {
 					.mapColor(MapColor.COLOR_GRAY)
 					.sound(SoundType.METAL))
 			.transform(pickaxeOnly())
-			.onRegister(b -> BlockStressValues.IMPACTS.register(b, () -> 1.0))
+			.onRegister(b -> BlockStressValues.IMPACTS.register(b, () -> 0.25))
 			.blockstate((c, p) -> p.simpleBlock(c.get(), p.models()
 					.getExistingFile(p.modLoc("block/roller_floor/block"))))
 			.item()

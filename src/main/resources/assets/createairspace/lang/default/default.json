@@ -110,7 +110,7 @@
 
     "block.createairspace.roller_floor.tooltip.summary": "A _powered_ roller floor for cargo. It has _shafts on all four sides_: west and east drive one network, north and south a second, independent one. All floors joined into an area share both networks and pass rotation on.",
     "block.createairspace.roller_floor.tooltip.condition1": "When Rotated",
-    "block.createairspace.roller_floor.tooltip.behaviour1": "Moves _physics objects_ like cargo containers across it in the direction its rollers turn. Two networks at once move them _diagonally_. Players, mobs and items are not moved.",
+    "block.createairspace.roller_floor.tooltip.behaviour1": "Moves _physics objects_ like cargo containers across it, pushed along by the _spinning discs_. Two networks at once move them _diagonally_. Every floor adds a little _stress_ to both networks. Players, mobs and items are not moved.",
 
     "block.createairspace.baggage_scanner.tooltip.summary": "An _X-ray tunnel_ for the middle of a straight _belt_, placed like a Create tunnel. It encases the belt in industrial iron and screens everything passing through, including the _contents_ of luggage and packages.",
     "block.createairspace.baggage_scanner.tooltip.condition1": "When Something is Found",

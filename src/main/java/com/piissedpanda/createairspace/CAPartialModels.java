@@ -23,8 +23,7 @@ public class CAPartialModels {
 			RUNWAY_GUARD_LIGHT_LENS_WEST = block("runway_guard_light/lens_west"),
 			RUNWAY_GUARD_LIGHT_LENS_EAST = block("runway_guard_light/lens_east"),
 			BAGGAGE_SCANNER_CURTAIN = block("baggage_scanner/flap"),
-			ROLLER_FLOOR_ROLLER_X = block("roller_floor/roller_x"),
-			ROLLER_FLOOR_ROLLER_Z = block("roller_floor/roller_z");
+			ROLLER_FLOOR_DISC = block("roller_floor/disc");
 
 	private static PartialModel block(String path) {
 		return PartialModel.of(CreateAirspace.asResource("block/" + path));

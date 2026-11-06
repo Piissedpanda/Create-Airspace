@@ -29,4 +29,9 @@ public interface MultiKineticBlockEntity {
 		return part == null ? original : part;
 	}
 
+	static boolean owns(@Nullable BlockEntity original, KineticBlockEntity part) {
+		return original instanceof MultiKineticBlockEntity multi && multi.getKineticParts()
+				.contains(part);
+	}
+
 }

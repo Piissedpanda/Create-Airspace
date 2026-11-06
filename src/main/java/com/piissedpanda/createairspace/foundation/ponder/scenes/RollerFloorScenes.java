@@ -70,7 +70,7 @@ public class RollerFloorScenes {
 		scene.idle(10);
 		scene.overlay()
 				.showText(90)
-				.text("Physics objects like cargo containers move the way the rollers turn. Players, mobs and items stay where they are")
+				.text("Physics objects like cargo containers are pushed along by the spinning discs. Players, mobs and items stay where they are")
 				.attachKeyFrame()
 				.placeNearTarget()
 				.pointAt(util.vector()
@@ -101,7 +101,7 @@ public class RollerFloorScenes {
 
 		scene.overlay()
 				.showText(80)
-				.text("Unlike Roller Beds they are not slippery, a container stops as soon as the rollers stop")
+				.text("Unlike Roller Beds they are not slippery, a container stops as soon as the shafts stop")
 				.placeNearTarget()
 				.pointAt(util.vector()
 						.topOf(1, 1, 3));
