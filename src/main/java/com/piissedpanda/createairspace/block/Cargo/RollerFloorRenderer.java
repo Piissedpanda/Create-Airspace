@@ -26,7 +26,9 @@ public class RollerFloorRenderer extends SafeBlockEntityRenderer<RollerFloorBloc
 	private static final float DISC_Y = 15.5f / 16;
 	private static final float[][] DISCS = { { 4.5f, 4.5f }, { 4.5f, 11.5f }, { 11.5f, 4.5f }, { 11.5f, 11.5f } };
 	private static final float SPIN_PER_BLOCK = 0.06f;
-	private static final float MAX_LEAN = 10 * Mth.DEG_TO_RAD;
+	private static final float MAX_LEAN = 25 * Mth.DEG_TO_RAD;
+	// Full lean from 2 blocks per second on, so the contact point stays easy to see
+	private static final float FULL_LEAN_SPEED = 2;
 
 	public RollerFloorRenderer(Context context) {
 	}
@@ -52,7 +54,7 @@ public class RollerFloorRenderer extends SafeBlockEntityRenderer<RollerFloorBloc
 		Quaternionf pose = new Quaternionf();
 		if (speed > 0) {
 			float time = AnimationTickHolder.getRenderTime(be.getLevel());
-			float lean = Math.min(MAX_LEAN, speed * 1.5f * Mth.DEG_TO_RAD);
+			float lean = MAX_LEAN * Math.min(1, speed / FULL_LEAN_SPEED);
 			pose.rotateAxis(lean, (float) velocity.z / speed, 0, (float) -velocity.x / speed)
 					.rotateY(time * speed * SPIN_PER_BLOCK);
 		}
