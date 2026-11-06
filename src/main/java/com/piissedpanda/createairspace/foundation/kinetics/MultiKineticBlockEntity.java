@@ -16,16 +16,16 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 // https://github.com/Cannoneers-of-Create/CreateBigCannons
 public interface MultiKineticBlockEntity {
 
-	// from: position of the neighbour relative to this block
+	// from: neighbour position relative to this block, asking: the neighbour
 	@Nullable
-	KineticBlockEntity getKineticPart(BlockPos from);
+	KineticBlockEntity getKineticPart(BlockPos from, @Nullable KineticBlockEntity asking);
 
 	List<KineticBlockEntity> getKineticParts();
 
-	static BlockEntity replace(BlockEntity original, BlockPos from) {
+	static BlockEntity replace(BlockEntity original, BlockPos from, @Nullable KineticBlockEntity asking) {
 		if (!(original instanceof MultiKineticBlockEntity multi))
 			return original;
-		KineticBlockEntity part = multi.getKineticPart(from);
+		KineticBlockEntity part = multi.getKineticPart(from, asking);
 		return part == null ? original : part;
 	}
 

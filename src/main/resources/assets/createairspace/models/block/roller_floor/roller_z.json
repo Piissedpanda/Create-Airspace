@@ -17,59 +17,61 @@
         3
       ],
       "faces": {
-        "north": {
-          "uv": [
-            13.5,
-            0,
-            16,
-            2.5
-          ],
-          "texture": "#roller_end"
-        },
-        "south": {
-          "uv": [
-            13.5,
-            0,
-            16,
-            2.5
-          ],
-          "texture": "#roller_end"
-        },
         "east": {
           "uv": [
+            6,
+            5,
             10,
-            0,
-            16,
-            2.5
+            11
           ],
-          "texture": "#roller"
+          "texture": "#roller",
+          "rotation": 90
         },
         "west": {
           "uv": [
+            6,
+            5,
             10,
-            0,
-            16,
-            2.5
+            11
           ],
-          "texture": "#roller"
+          "texture": "#roller",
+          "rotation": 90
         },
         "up": {
           "uv": [
-            13.5,
+            6,
+            5,
             10,
-            16,
-            16
+            11
           ],
           "texture": "#roller"
         },
         "down": {
           "uv": [
-            13.5,
+            6,
+            5,
             10,
-            16,
-            16
+            11
           ],
           "texture": "#roller"
+        },
+        "north": {
+          "uv": [
+            6,
+            6,
+            10,
+            10
+          ],
+          "texture": "#roller_end"
+        },
+        "south": {
+          "uv": [
+            6,
+            6,
+            10,
+            10
+          ],
+          "texture": "#roller_end"
         }
       }
     }

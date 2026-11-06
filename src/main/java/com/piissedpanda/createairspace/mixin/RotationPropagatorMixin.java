@@ -47,61 +47,54 @@ public class RotationPropagatorMixin {
 	private static BlockEntity createairspace$findConnectedNeighbour(BlockEntity original,
 			@Local(argsOnly = true) KineticBlockEntity current, @Local(argsOnly = true) BlockPos neighbourPos) {
 		return MultiKineticBlockEntity.replace(original, current.getBlockPos()
-				.subtract(neighbourPos));
+				.subtract(neighbourPos), current);
 	}
 
 	@ModifyExpressionValue(method = "handleRemoved", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getBlockEntity(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/entity/BlockEntity;"))
 	private static BlockEntity createairspace$handleRemoved(BlockEntity original,
 			@Local(argsOnly = true) KineticBlockEntity removed, @Local(ordinal = 1) BlockPos neighbourPos) {
 		return MultiKineticBlockEntity.replace(original, removed.getBlockPos()
-				.subtract(neighbourPos));
+				.subtract(neighbourPos), removed);
 	}
 
-	// Remembers from which neighbour the search reached a block with parts
+	// The search walks positions, so it remembers which part it reached
 	@WrapMethod(method = "propagateMissingSource")
 	private static void createairspace$propagateMissingSource(KineticBlockEntity update, Operation<Void> original,
-			@Share("sources") LocalRef<Map<BlockPos, Queue<BlockPos>>> sourcesRef) {
-		Map<BlockPos, Queue<BlockPos>> sources = new HashMap<>();
-		if (update.hasSource() && update.getLevel()
-				.getBlockEntity(update.getBlockPos()) instanceof MultiKineticBlockEntity) {
-			Queue<BlockPos> queue = new LinkedList<>();
-			queue.add(update.source);
-			sources.put(update.getBlockPos(), queue);
-		}
-		sourcesRef.set(sources);
+			@Share("parts") LocalRef<Map<BlockPos, Queue<KineticBlockEntity>>> partsRef) {
+		Map<BlockPos, Queue<KineticBlockEntity>> parts = new HashMap<>();
+		if (update.getLevel()
+				.getBlockEntity(update.getBlockPos()) instanceof MultiKineticBlockEntity)
+			parts.computeIfAbsent(update.getBlockPos(), p -> new LinkedList<>())
+					.add(update);
+		partsRef.set(parts);
 		original.call(update);
 	}
 
 	@ModifyExpressionValue(method = "propagateMissingSource", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getBlockEntity(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/entity/BlockEntity;"))
 	private static BlockEntity createairspace$propagateMissingSourceLookup(BlockEntity original,
-			@Share("sources") LocalRef<Map<BlockPos, Queue<BlockPos>>> sourcesRef) {
+			@Share("parts") LocalRef<Map<BlockPos, Queue<KineticBlockEntity>>> partsRef) {
 		if (original == null)
 			return null;
-		BlockPos pos = original.getBlockPos();
-		Map<BlockPos, Queue<BlockPos>> sources = sourcesRef.get();
-		Queue<BlockPos> queue = sources.get(pos);
+		Map<BlockPos, Queue<KineticBlockEntity>> parts = partsRef.get();
+		Queue<KineticBlockEntity> queue = parts.get(original.getBlockPos());
 		if (queue == null)
 			return original;
-		BlockPos from = queue.poll();
+		KineticBlockEntity part = queue.poll();
 		if (queue.isEmpty())
-			sources.remove(pos);
-		if (from == null)
-			return original;
-		return MultiKineticBlockEntity.replace(original, from.subtract(pos));
+			parts.remove(original.getBlockPos());
+		return part == null ? original : part;
 	}
 
 	@WrapOperation(method = "propagateMissingSource", at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 3))
 	private static boolean createairspace$propagateMissingSourceFrontier(List<Object> instance, Object e,
 			Operation<Boolean> original, @Local(name = "world") Level level,
-			@Local(name = "currentBE") KineticBlockEntity current,
 			@Local(name = "neighbourBE") KineticBlockEntity neighbour,
-			@Share("sources") LocalRef<Map<BlockPos, Queue<BlockPos>>> sourcesRef) {
+			@Share("parts") LocalRef<Map<BlockPos, Queue<KineticBlockEntity>>> partsRef) {
 		boolean result = original.call(instance, e);
-		if (!(level.getBlockEntity(neighbour.getBlockPos()) instanceof MultiKineticBlockEntity))
-			return result;
-		sourcesRef.get()
-				.computeIfAbsent(neighbour.getBlockPos(), p -> new LinkedList<>())
-				.add(current.getBlockPos());
+		if (level.getBlockEntity(neighbour.getBlockPos()) instanceof MultiKineticBlockEntity)
+			partsRef.get()
+					.computeIfAbsent(neighbour.getBlockPos(), p -> new LinkedList<>())
+					.add(neighbour);
 		return result;
 	}
 

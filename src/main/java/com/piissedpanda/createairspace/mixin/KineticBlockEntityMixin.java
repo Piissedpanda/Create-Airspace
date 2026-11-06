@@ -32,12 +32,16 @@ public abstract class KineticBlockEntityMixin extends SmartBlockEntity {
 
 	@ModifyExpressionValue(method = "validateKinetics", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getBlockEntity(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/entity/BlockEntity;"))
 	private BlockEntity createairspace$validateKinetics(BlockEntity original) {
-		return MultiKineticBlockEntity.replace(original, getBlockPos().subtract(source));
+		return MultiKineticBlockEntity.replace(original, getBlockPos().subtract(source), createairspace$self());
 	}
 
 	@ModifyExpressionValue(method = "setSource", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getBlockEntity(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/entity/BlockEntity;"))
 	private BlockEntity createairspace$setSource(BlockEntity original) {
-		return MultiKineticBlockEntity.replace(original, getBlockPos().subtract(source));
+		return MultiKineticBlockEntity.replace(original, getBlockPos().subtract(source), createairspace$self());
+	}
+
+	private KineticBlockEntity createairspace$self() {
+		return (KineticBlockEntity) (Object) this;
 	}
 
 }

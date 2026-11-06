@@ -11,6 +11,7 @@ import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.utility.CreateLang;
 
+import net.createmod.catnip.data.Iterate;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -78,7 +79,10 @@ public class RollerFloorBlockEntity extends KineticBlockEntity implements MultiK
 	}
 
 	@Override
-	public KineticBlockEntity getKineticPart(BlockPos from) {
+	public KineticBlockEntity getKineticPart(BlockPos from, KineticBlockEntity asking) {
+		// Neighbouring floors join drive to drive, whatever side they are on
+		if (asking instanceof Drive drive && drive.floor != this)
+			return getDrive(drive.axis);
 		if (from.getY() != 0)
 			return null;
 		if (from.getX() != 0 && from.getZ() == 0)
@@ -148,11 +152,16 @@ public class RollerFloorBlockEntity extends KineticBlockEntity implements MultiK
 		public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
 		}
 
+		// Shafts on the own axis, floors all around: a floor area is one network
 		@Override
 		public List<BlockPos> addPropagationLocations(IRotate block, BlockState state, List<BlockPos> neighbours) {
 			List<BlockPos> own = new ArrayList<>();
-			for (Direction.AxisDirection sign : Direction.AxisDirection.values())
-				own.add(worldPosition.relative(Direction.fromAxisAndDirection(axis, sign)));
+			for (Direction side : Iterate.horizontalDirections) {
+				BlockPos pos = worldPosition.relative(side);
+				if (side.getAxis() == axis || level != null && level.getBlockState(pos)
+						.getBlock() instanceof RollerFloorBlock)
+					own.add(pos);
+			}
 			return own;
 		}
 

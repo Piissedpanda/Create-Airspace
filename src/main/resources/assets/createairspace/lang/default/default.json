@@ -108,7 +108,7 @@
     "block.createairspace.metal_detector.tooltip.condition1": "When Something is Found",
     "block.createairspace.metal_detector.tooltip.behaviour1": "Beeps, turns its lamp _red_ and gives off a _redstone signal_ for two seconds. What counts is the item tag _createairspace:security_alarm_.",
 
-    "block.createairspace.roller_floor.tooltip.summary": "A _powered_ roller floor for cargo. It has _shafts on all four sides_: west and east belong to one network, north and south to a second, independent one. Joined floors turn together and pass rotation on.",
+    "block.createairspace.roller_floor.tooltip.summary": "A _powered_ roller floor for cargo. It has _shafts on all four sides_: west and east drive one network, north and south a second, independent one. All floors joined into an area share both networks and pass rotation on.",
     "block.createairspace.roller_floor.tooltip.condition1": "When Rotated",
     "block.createairspace.roller_floor.tooltip.behaviour1": "Moves _physics objects_ like cargo containers across it in the direction its rollers turn. Two networks at once move them _diagonally_. Players, mobs and items are not moved.",
 
