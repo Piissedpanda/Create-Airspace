@@ -239,9 +239,13 @@ dependencies {
 
 // Ship the license inside the jar
 def licenseFileName = "LICENSE_${mod_id}"
+def noticesFileName = "THIRD_PARTY_NOTICES_${mod_id}.md"
 tasks.named('jar', Jar) {
     from('LICENSE') {
         rename { licenseFileName }
+    }
+    from('THIRD_PARTY_NOTICES.md') {
+        rename { noticesFileName }
     }
 }
 

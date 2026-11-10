@@ -27,6 +27,7 @@ Minecraft 1.21.1 · NeoForge · Create 6.0.10 or newer · Create Aeronautics 1.3
 | **Container Lock** | Pulls in an assembled container like a magnet, lines it up and holds it until redstone lets go. Floor or wall. |
 | **Container Port** | Like a Portable Storage Interface for a locked container, the only way to load and unload it. |
 | **Roller Bed** | Physics objects slide over it, players keep their grip. Made with steel balls cut from iron ingots. |
+| **Motorized Roller Floor** | Shafts on all four sides drive two independent networks, one per axis, shared by a whole floor area. Pushes physics objects with spinning steel discs, not slippery, and a Sequenced Gearshift moves them an exact distance. |
 | **PAPI Lights** | Landing aid in rows of four: each pilot sees white above a light's angle and red below it, two red and two white is on the glide path. The angle is set like a Create value. |
 | **Stop Bars, Runway Guard Lights** | Red inset lights across a taxiway that all go dark when one of them gets redstone, and yellow lamps that flash in turns while powered. Airfield and gate signs light up fully with redstone. |
 | **Metal Detector, Baggage Scanner** | A walk-through frame and an X-ray tunnel on a belt check people and luggage for weapons and metal, contents included, and answer with a beep, a red lamp and redstone. What counts is the item tag `createairspace:security_alarm`. |
@@ -50,4 +51,4 @@ For shader testing in the dev client, `./gradlew installDevMods` copies Sodium a
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE). Parts of the kinetics code are adapted from Create Big Cannons, see [third-party notices](THIRD_PARTY_NOTICES.md).

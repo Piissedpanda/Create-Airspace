@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.5.0 – Motorized Roller Floor
+
+### Added
+- **Motorized Roller Floor**: built like a roller bed, but driven. It has shafts on all four sides: west and east drive one network, north and south a second, independent one, and all floors joined into an area share both networks. Physics objects like cargo containers are pushed across it, with two networks at once they move diagonally. Players, mobs and items are not moved, and unlike a roller bed it is not slippery: a container stops when the shafts stop.
+- Steel discs on top spin and lean like on an omnidirectional floor, the raised edge shows the contact point.
+- It moves as fast as a Mechanical Piston, and a Sequenced Gearshift set to a piston distance moves things exactly that far.
+- Every floor adds a little stress to both networks.
+- Ponder scene and a sequenced assembly recipe from a roller bed with a precision mechanism, shafts and a steel ball.
+
 ## 1.4.0 – Airfield Systems
 
 ### Added

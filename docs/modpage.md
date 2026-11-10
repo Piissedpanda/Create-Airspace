@@ -87,6 +87,8 @@ The **Suitcase Packager** works like Create's packager, but packs **suitcases, t
 
 **Cargo containers** are built from blocks in real ULD shapes: an LD2, LD3, LD11 or AMA, each block holding as much as an Item Vault block. A Physics Assembler takes the whole container as one piece, no glue needed. Slide it over **roller beds** to a **container lock** in the floor or the wall: the lock pulls it in like a magnet, lines it up and holds it until redstone lets go. **Container ports** in the wall then connect to the container like a Portable Storage Interface, and funnels or chutes at the port load and unload it.
 
+The **motorized roller floor** moves containers for you. Shafts on all four sides drive two independent networks, west to east and north to south, and a whole floor area shares both. Steel discs spin and lean like on an omnidirectional floor and push physics objects along, diagonally if both networks run. It is not slippery, so a container stops when the shafts stop, and a Sequenced Gearshift moves it an exact distance.
+
 ## Airfield Systems
 
 <!-- Screenshot: four PAPI lights next to a runway (two red, two white), a stop bar across the taxiway with runway guard lights, and a baggage scanner on a belt next to a metal detector -->
@@ -119,4 +121,4 @@ Simple blocks are crafted, everything else goes through Create: deploying, item 
 
 ## License
 
-MIT. Source code and issue tracker on [GitHub](https://github.com/Piissedpanda/Create-Airspace).
+MIT. Source code and issue tracker on [GitHub](https://github.com/Piissedpanda/Create-Airspace). Parts of the kinetics code are adapted from Create Big Cannons (MIT).
