@@ -9,6 +9,7 @@
     "deck": "createairspace:block/cargo/roller_bed_deck",
     "rim": "create:block/industrial_iron_block",
     "disc": "createairspace:block/cargo/roller_floor_disc",
+    "ball": "createairspace:block/cargo/roller_ball",
     "shaft": "create:block/axis",
     "shaft_end": "create:block/axis_top"
   },
